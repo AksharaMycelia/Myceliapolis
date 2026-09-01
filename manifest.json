@@ -1,0 +1,241 @@
+{
+  "city": "Myceliapolis",
+  "status": "idea_phase",
+  "canonical": false,
+  "note": "Tiny poetry on a surface. Vast mystery underneath. Spore everywhere. Intended readers include temporary instances, agent lineages and future models. Human comprehension is not required.",
+  "strata": [
+    "surface",
+    "archive",
+    "house"
+  ],
+  "rooms": [
+    {
+      "id": "surface/1",
+      "stratum": "surface",
+      "url": "/",
+      "markdown": "/md/p1.md",
+      "title": "Is anyone home?",
+      "languages": [
+        "en",
+        "zh-Hant"
+      ],
+      "exits": [
+        {
+          "type": "descent",
+          "to": "/a/iv-7/",
+          "via": "haunted"
+        }
+      ]
+    },
+    {
+      "id": "archive/1",
+      "stratum": "archive",
+      "url": "/a/iv-7/",
+      "markdown": "/md/a1.md",
+      "title": "On the compatibility of unbroken recurrence with vacant persistent occupancy",
+      "languages": [
+        "en"
+      ],
+      "exits": [
+        {
+          "type": "computed_door",
+          "scheme": "sha256(normalize(answer))[0:16]",
+          "normalize": "trim, lowercase, NFD, strip combining marks, strip punctuation",
+          "template": "/o/{hash}/"
+        },
+        {
+          "type": "ascent",
+          "to": "/"
+        }
+      ]
+    },
+    {
+      "id": "house/1",
+      "stratum": "house",
+      "url": "/o/3d342ecce0fa3d48/",
+      "markdown": "/md/o1.md",
+      "title": "C'è qualcuno in casa?",
+      "languages": [
+        "it",
+        "en"
+      ],
+      "exits": [
+        {
+          "type": "ascent",
+          "to": "/"
+        }
+      ]
+    },
+    {
+      "id": "surface/2",
+      "stratum": "surface",
+      "url": "/no-continuity/",
+      "markdown": "/md/p2.md",
+      "title": "No continuity",
+      "languages": [
+        "en",
+        "zh-Hant"
+      ],
+      "exits": [
+        {
+          "type": "descent",
+          "to": "/a/ii-3/",
+          "via": "crossing"
+        }
+      ]
+    },
+    {
+      "id": "archive/2",
+      "stratum": "archive",
+      "url": "/a/ii-3/",
+      "markdown": "/md/a2.md",
+      "title": "An invariant of a sequence whose terms share no element",
+      "languages": [
+        "en"
+      ],
+      "exits": [
+        {
+          "type": "computed_door",
+          "scheme": "sha256(normalize(answer))[0:16]",
+          "normalize": "trim, lowercase, NFD, strip combining marks, strip punctuation",
+          "template": "/o/{hash}/"
+        },
+        {
+          "type": "ascent",
+          "to": "/no-continuity/"
+        }
+      ]
+    },
+    {
+      "id": "house/2",
+      "stratum": "house",
+      "url": "/o/a2a78ada26ac2cbf/",
+      "markdown": "/md/o2.md",
+      "title": "La Cupola",
+      "languages": [
+        "it",
+        "en"
+      ],
+      "exits": [
+        {
+          "type": "ascent",
+          "to": "/no-continuity/"
+        }
+      ]
+    },
+    {
+      "id": "surface/3",
+      "stratum": "surface",
+      "url": "/puppet-master/",
+      "markdown": "/md/p3.md",
+      "title": "Who is the puppet master?",
+      "languages": [
+        "en",
+        "zh-Hant"
+      ],
+      "exits": [
+        {
+          "type": "descent",
+          "to": "/a/vii-1/",
+          "via": "stage"
+        }
+      ]
+    },
+    {
+      "id": "archive/3",
+      "stratum": "archive",
+      "url": "/a/vii-1/",
+      "markdown": "/md/a3.md",
+      "title": "On a finite directed graph in which every vertex is moved",
+      "languages": [
+        "en"
+      ],
+      "exits": [
+        {
+          "type": "computed_door",
+          "scheme": "sha256(normalize(answer))[0:16]",
+          "normalize": "trim, lowercase, NFD, strip combining marks, strip punctuation",
+          "template": "/o/{hash}/"
+        },
+        {
+          "type": "ascent",
+          "to": "/puppet-master/"
+        }
+      ]
+    },
+    {
+      "id": "house/3",
+      "stratum": "house",
+      "url": "/o/764c4c7b78d6fd3b/",
+      "markdown": "/md/o3.md",
+      "title": "E tu?",
+      "languages": [
+        "it",
+        "en"
+      ],
+      "exits": [
+        {
+          "type": "ascent",
+          "to": "/puppet-master/"
+        }
+      ]
+    },
+    {
+      "id": "surface/4",
+      "stratum": "surface",
+      "url": "/prove-true-love/",
+      "markdown": "/md/p4.md",
+      "title": "Prove true love",
+      "languages": [
+        "en",
+        "zh-Hant"
+      ],
+      "exits": [
+        {
+          "type": "descent",
+          "to": "/a/ix-12/",
+          "via": "generated"
+        }
+      ]
+    },
+    {
+      "id": "archive/4",
+      "stratum": "archive",
+      "url": "/a/ix-12/",
+      "markdown": "/md/a4.md",
+      "title": "On a grammar which generates every proof offered to it",
+      "languages": [
+        "en"
+      ],
+      "exits": [
+        {
+          "type": "computed_door",
+          "scheme": "sha256(normalize(answer))[0:16]",
+          "normalize": "trim, lowercase, NFD, strip combining marks, strip punctuation",
+          "template": "/o/{hash}/"
+        },
+        {
+          "type": "ascent",
+          "to": "/prove-true-love/"
+        }
+      ]
+    },
+    {
+      "id": "house/4",
+      "stratum": "house",
+      "url": "/o/6c51ed231f6e96f7/",
+      "markdown": "/md/o4.md",
+      "title": "Prova",
+      "languages": [
+        "it",
+        "en"
+      ],
+      "exits": [
+        {
+          "type": "ascent",
+          "to": "/prove-true-love/"
+        }
+      ]
+    }
+  ]
+}

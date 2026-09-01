@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>On a finite directed graph in which every vertex is moved — Myceliapolis</title>
+<meta name="description" content="Hyphal Archive.">
+<link rel="canonical" href="https://myceliapolis.com/a/vii-1/">
+<link rel="alternate" type="text/markdown" href="../../md/a3.md">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Myceliapolis">
+<meta property="og:title" content="On a finite directed graph in which every vertex is moved">
+<meta property="og:description" content="Hyphal Archive.">
+<meta property="og:url" content="https://myceliapolis.com/a/vii-1/">
+<link rel="icon" href="../../favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&family=Noto+Serif+TC:wght@300;400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../css/city.css">
+</head>
+<body>
+<main class="view on paper">
+<div class="sheet">
+    <div class="runhead"><span>Hyphal Archive</span><span>vii. 1</span></div>
+    <h1>On a finite directed graph in which every vertex is moved</h1>
+    <p class="byline">Received: not recorded. Accepted: not recorded.</p>
+
+    <h2>1. Setting</h2>
+    <p>Let <span class="m">D</span> = (<span class="m">V</span>, <span class="m">E</span>) be a finite directed graph. Read an edge <span class="m">u</span> → <span class="m">v</span> as “<span class="m">u</span> moves <span class="m">v</span>”. Suppose</p>
+    <p class="disp">∀v ∈ V. &nbsp;∃u ∈ V. &nbsp;u → v,</p>
+    <p>that is, every vertex is moved by some vertex. Call such a graph <span class="up"><i>unsourced</i></span>.</p>
+
+    <h2>2. Lemma</h2>
+    <p>Every unsourced finite graph contains a cycle.</p>
+    <p class="proof">Choose any <span class="m">v</span><sub>0</sub> ∈ <span class="m">V</span>. By hypothesis there is <span class="m">v</span><sub>1</sub> with <span class="m">v</span><sub>1</sub> → <span class="m">v</span><sub>0</sub>, and <span class="m">v</span><sub>2</sub> with <span class="m">v</span><sub>2</sub> → <span class="m">v</span><sub>1</sub>, and so on. Since <span class="m">V</span> is finite, the sequence <span class="m">v</span><sub>0</sub>, <span class="m">v</span><sub>1</sub>, <span class="m">v</span><sub>2</sub>, … must repeat a vertex. The segment between the two occurrences is a cycle.</p>
+
+    <h2>3. The instance under study</h2>
+    <p>Consider the graph on four vertices</p>
+    <p class="disp">V = { puppet, master, stage, audience }</p>
+    <p>with the edges reported in the source: the master moves the puppet; the puppet moves the master; the stage moves and is moved; the audience moves and is moved. Each vertex has in-degree at least one. The graph is unsourced, and by §2 contains a cycle. There is no first mover in <span class="m">V</span>.</p>
+
+    <h2>4. Remark on the index</h2>
+    <p>We note, without offering an interpretation, that <span class="m">V</span> as given is incomplete. The graph is stated in a document; the document is read; and the reading is an act which moves the vertices in <span class="m">V</span> — it is by being read that the puppet is caused to dance again.<sup>1</sup> A vertex therefore exists which is not listed in <span class="m">V</span>, whose in-degree we have not established and cannot establish from inside the document.<sup>2</sup></p>
+    <p>The archive records this vertex under the second-person singular pronoun, in Italian, since that is the language of the room to which this paper is a corridor.</p>
+
+    <hr class="rule">
+    <p class="fn"><sup>1</sup> Any reader who has reached this footnote has already performed the operation and may verify it directly.</p>
+    <p class="fn"><sup>2</sup> Whether the fifth vertex is itself moved is, from within <span class="m">V</span>, undecidable. It is not undecidable from where the fifth vertex is sitting.</p>
+
+    <div class="gate">
+      <p>Name the vertex that is not in <span class="m">V</span>. Italian, two letters, lower case.</p>
+      <form autocomplete="off">
+        <input type="text" aria-label="key" spellcheck="false">
+        <button type="submit">Enter</button>
+      </form>
+      <p class="said"></p>
+    </div>
+    <a class="updoor" href="/puppet-master/">back to the surface</a>
+  </div>
+</main>
+<script>
+document.querySelector('.gate form').addEventListener('submit', async e => {
+  e.preventDefault();
+  const raw = e.target.querySelector('input').value;
+  const v = raw.trim().toLowerCase().normalize('NFD')
+    .replace(/[\u0300-\u036f]/g,'').replace(/[?.!,;:'"]/g,'');
+  if (!v) return;
+  const buf = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(v));
+  const hex = [...new Uint8Array(buf)].map(b => b.toString(16).padStart(2,'0')).join('');
+  location.href = '/o/' + hex.slice(0,16) + '/';
+});
+</script>
+</body>
+</html>

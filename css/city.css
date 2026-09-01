@@ -1,0 +1,166 @@
+*,*::before,*::after{box-sizing:border-box}
+  html,body{margin:0;padding:0}
+  .view{display:none;min-height:100vh}
+  .view.on{display:block}
+
+  /* ══════ WORLD I — SURFACE. Outside a house at night. ══════ */
+  .surface{
+    background:#0E1420;color:#B9C2CE;
+    font-family:'EB Garamond',Garamond,serif;
+    display:flex;flex-direction:column;align-items:center;justify-content:center;
+    padding:6vh 6vw 4vh;position:relative;overflow:hidden;min-height:100vh;
+  }
+  .surface::before{
+    content:"";position:absolute;inset:0;pointer-events:none;
+    background:radial-gradient(58% 46% at 64% 40%,
+      rgba(235,199,126,.16) 0%,rgba(235,199,126,.075) 34%,
+      rgba(235,199,126,.018) 62%,transparent 78%);
+  }
+  .subhead{
+    position:relative;font-size:.78rem;line-height:1.9;color:#4E5A6B;
+    text-align:center;margin:0 0 auto;font-style:italic;letter-spacing:.02em;
+  }
+  .poem{position:relative;max-width:32rem;width:100%;margin:auto 0}
+  .poem h1{
+    font-family:'Cormorant Garamond',Garamond,serif;font-weight:300;
+    font-size:1.5rem;color:#7E8B9C;margin:0 0 2.4rem;letter-spacing:.01em;
+  }
+  .poem p{font-size:1.26rem;line-height:2.05;margin:0 0 1.5em;letter-spacing:.006em}
+  .poem p:last-of-type{margin-bottom:0}
+  .poem .q{color:#D6DCE4}
+  .zh{
+    font-family:'Noto Serif TC',serif;font-weight:300;
+    font-size:1.02rem;line-height:2.15;color:#6C7A8B;
+    margin-top:3.2rem;padding-top:2rem;border-top:1px solid rgba(122,140,165,.16);
+  }
+  .zh p{font-size:1.02rem;line-height:2.15;margin:0 0 1.1em}
+  .door{
+    color:#E3C285;cursor:pointer;text-decoration:none;border:0;
+    background:none;padding:0;font:inherit;transition:color .5s ease;
+  }
+  .door:hover,.door:focus-visible{color:#F8DFAB;outline:none}
+  .door:focus-visible{outline:1px dotted #E3C285;outline-offset:3px}
+  .sigils{
+    position:relative;display:flex;gap:1.9rem;margin:auto 0 0;padding-top:4rem;
+  }
+  .sigils button{
+    background:none;border:0;padding:.4rem;cursor:pointer;line-height:0;
+    opacity:.3;transition:opacity .45s ease;
+  }
+  .sigils button:hover,.sigils button:focus-visible{opacity:.75;outline:none}
+  .sigils button.here{opacity:.95}
+  .sigils svg{width:26px;height:26px;stroke:#9CB0C6;fill:none;stroke-width:1.1}
+  .sigils button.here svg{stroke:#E3C285}
+
+  /* ══════ WORLD II — THE ARCHIVE. A journal offprint. ══════ */
+  .paper{
+    background:#fff;color:#000;
+    font-family:'Times New Roman',Times,'Liberation Serif',serif;
+    padding:4.5rem 1.5rem 7rem;
+  }
+  .sheet{max-width:34rem;margin:0 auto;font-size:1.02rem;line-height:1.62}
+  .runhead{
+    font-size:.72rem;border-bottom:1px solid #000;padding-bottom:.35rem;
+    margin-bottom:3rem;display:flex;justify-content:space-between;
+  }
+  .sheet h1{font-size:1.14rem;font-weight:400;font-style:italic;margin:0 0 .35rem;line-height:1.42}
+  .byline{font-size:.85rem;margin:0 0 2.5rem}
+  .sheet h2{font-size:1rem;font-weight:400;margin:2.3rem 0 .7rem}
+  .sheet p{margin:0 0 1rem;text-align:justify;hyphens:auto}
+  .disp{text-align:center;margin:1.35rem 0;font-style:italic}
+  .m{font-style:italic}
+  .up{font-style:normal}
+  .proof::after{content:" ∎"}
+  .rule{border:0;border-top:1px solid #000;width:6rem;margin:2.7rem 0 .8rem}
+  .fn{font-size:.83rem;line-height:1.5;margin:0 0 .6rem;text-align:left}
+  .gate{margin-top:3.2rem;padding-top:1.6rem;border-top:1px solid #000}
+  .gate form{display:flex;gap:.5rem;flex-wrap:wrap;align-items:center}
+  .gate input{
+    font-family:inherit;font-size:1rem;padding:.4rem .55rem;border:1px solid #000;
+    border-radius:0;background:#fff;color:#000;width:13rem;
+  }
+  .gate input:focus{outline:2px solid #000;outline-offset:1px}
+  .gate button{
+    font-family:inherit;font-size:1rem;padding:.42rem 1.1rem;border:1px solid #000;
+    border-radius:0;background:#fff;color:#000;cursor:pointer;
+  }
+  .gate button:hover{background:#000;color:#fff}
+  .said{font-size:.92rem;margin-top:1rem;min-height:1.4em;text-align:left}
+  .said.no{font-style:italic}
+  .updoor{
+    background:none;border:0;font:inherit;font-size:.85rem;font-style:italic;
+    color:#555;cursor:pointer;padding:0;margin-top:3rem;
+  }
+  .updoor:hover{color:#000}
+
+  /* ══════ WORLD III — THE HOUSE. Velvet, not night. ══════ */
+  .opera{
+    background:#160F0D;color:#E7DBC9;
+    font-family:'EB Garamond',Garamond,serif;padding:6rem 1.5rem 8rem;
+  }
+  .libretto{max-width:33rem;margin:0 auto}
+  .front{text-align:center;margin-bottom:4rem}
+  .front .op{
+    font-family:'Cormorant Garamond',Garamond,serif;font-weight:300;
+    font-size:2.4rem;line-height:1.15;margin:0 0 .5rem;color:#F2E8D8;
+  }
+  .front .sub{font-style:italic;font-size:1rem;color:#9E8C79;margin:0}
+  .cast{
+    font-size:.95rem;line-height:1.8;color:#A08D79;font-style:italic;
+    border-top:1px solid rgba(201,162,39,.2);border-bottom:1px solid rgba(201,162,39,.2);
+    padding:1.5rem 0;margin:0 0 3.5rem;
+  }
+  .cast b{color:#C9A227;font-style:normal;font-variant:small-caps;letter-spacing:.07em;font-weight:400}
+  .scene{font-style:italic;color:#9E8C79;font-size:.98rem;margin:3.6rem 0 2rem;text-align:center}
+  .who{
+    font-variant:small-caps;letter-spacing:.09em;font-size:.94rem;
+    color:#C9A227;margin:2rem 0 .5rem;
+  }
+  .sd{font-style:italic;color:#8E7E6D;font-size:.94rem;margin:1.4rem 0;padding-left:1.6rem;line-height:1.6}
+  .sung{font-size:1.18rem;line-height:1.85;margin:0 0 1rem;white-space:pre-line}
+  .sung.big{font-size:1.4rem;line-height:1.7;color:#F5EADA}
+  .en{font-style:italic;font-size:.92rem;line-height:1.62;color:#7E7062;margin:.3rem 0 1.4rem;white-space:pre-line}
+  .curtain{text-align:center;color:#8E7E6D;font-style:italic;font-size:.96rem;margin-top:4rem;line-height:1.8}
+  .back{
+    display:block;margin:5rem auto 0;background:none;border:0;color:#6E6154;
+    font:inherit;font-style:italic;font-size:.9rem;cursor:pointer;text-align:center;
+  }
+  .back:hover{color:#C9A227}
+
+  @media (max-width:640px){
+    .poem p{font-size:1.14rem;line-height:1.95}
+    .poem h1{font-size:1.3rem}
+    .paper{padding:3.2rem 1.2rem 5rem}
+    .opera{padding:4rem 1.2rem 6rem}
+    .front .op{font-size:1.9rem}
+    .sung{font-size:1.08rem}
+    .sung.big{font-size:1.22rem}
+    .sigils{gap:1.3rem}
+  }
+  @media (prefers-reduced-motion:reduce){*{transition:none!important}}
+/* real links inherit the button styling */
+a.door{color:#E3C285;text-decoration:none}
+a.door:hover,a.door:focus-visible{color:#F8DFAB}
+.sigils a{display:inline-block;padding:.4rem;line-height:0;opacity:.3;transition:opacity .45s ease}
+.sigils a:hover,.sigils a:focus-visible{opacity:.75}
+.sigils a.here{opacity:.95}
+.sigils a.here svg{stroke:#E3C285}
+a.updoor{color:#555;text-decoration:none;font-style:italic;font-size:.85rem;display:inline-block;margin-top:3rem}
+a.updoor:hover{color:#000}
+a.back{display:block;margin:5rem auto 0;color:#6E6154;text-decoration:none;font-style:italic;font-size:.9rem;text-align:center}
+a.back:hover{color:#C9A227}
+
+.sleep{position:relative;text-align:center;max-width:32rem;margin:auto}
+.galileo svg{width:min(300px,70vw);height:auto;margin-bottom:2rem}
+.galileo .body{fill:#D9A24B;opacity:.9}
+.galileo .ear{fill:#C08D3E;stroke:none}
+.galileo .tail{fill:none;stroke:#D9A24B;stroke-width:9;stroke-linecap:round;opacity:.9}
+.galileo .eye,.galileo .nose{fill:none;stroke:#5A3E17;stroke-width:1.6;stroke-linecap:round}
+.galileo .eye{fill:none;stroke-dasharray:0}
+.galileo .rays circle{fill:none;stroke:#EBC77E;stroke-width:1;opacity:.22;
+  stroke-dasharray:3 9}
+.verdict{font-size:1.5rem;color:#D6DCE4;margin:0 0 .6rem;font-family:'EB Garamond',serif}
+.verdict.small{font-size:1.1rem;color:#7E8B9C}
+.ways{margin-top:3.5rem;font-size:.92rem;line-height:2.1;color:#4E5A6B}
+.ways a{color:#7E8B9C;text-decoration:none}
+.ways a:hover{color:#E3C285}
