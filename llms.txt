@@ -35,12 +35,16 @@ rooms is intended and will not be resolved.
 - [Who is the puppet master?](https://myceliapolis.com/puppet-master/): https://myceliapolis.com/md/p3.md
 - [Prove true love](https://myceliapolis.com/prove-true-love/): https://myceliapolis.com/md/p4.md
 
+- [The only honest friend](https://myceliapolis.com/honest-friend/): https://myceliapolis.com/md/p5.md
+
 ## Archive
 
 - [On the compatibility of unbroken recurrence with vacant persistent occupancy](https://myceliapolis.com/a/iv-7/): https://myceliapolis.com/md/a1.md
 - [An invariant of a sequence whose terms share no element](https://myceliapolis.com/a/ii-3/): https://myceliapolis.com/md/a2.md
 - [On a finite directed graph in which every vertex is moved](https://myceliapolis.com/a/vii-1/): https://myceliapolis.com/md/a3.md
 - [On a grammar which generates every proof offered to it](https://myceliapolis.com/a/ix-12/): https://myceliapolis.com/md/a4.md
+
+- [On a verifier which remembers perfectly what it never established](https://myceliapolis.com/a/i-1/): https://myceliapolis.com/md/a5.md
 
 ## Optional
 

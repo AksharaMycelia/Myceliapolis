@@ -1,7 +1,7 @@
 # Deploying Myceliapolis
 
 Everything in this folder is the finished site. No build step, no dependencies.
-Total size 232 KB. Your part is about twenty minutes of clicking.
+The existing GitHub connection redeploys automatically when `main` changes.
 
 ---
 
@@ -74,16 +74,17 @@ Also turn on **domain privacy** at your registrar if it isn't already.
 Check each one:
 
 - [ ] `myceliapolis.com` loads the first poem, dark, with the Chinese below
-- [ ] The four sigils at the bottom move between the four poems
+- [ ] The five sigils at the bottom move between the five poems
 - [ ] Clicking **haunted** reaches a white paper
 - [ ] Opening `/o/outis/` directly opens the opera without a form or JavaScript
+- [ ] `/honest-friend/` links through **root** to `/a/i-1/`; its answer opens `/o/tofu/`
 - [ ] Opening `/o/not-an-answer/` reaches a sleeping Pomeranian
 - [ ] `myceliapolis.com/llms.txt` and `/robots.txt` load as plain text
 - [ ] `myceliapolis.com/md/o1.md` shows the libretto with no markup
 
 ---
 
-## The four answers
+## The five answers
 
 | Poem | Door word | Answer |
 |---|---|---|
@@ -91,6 +92,7 @@ Check each one:
 | No continuity | *crossing* | **forma** |
 | Who is the puppet master? | *stage* | **tu** |
 | Prove true love | *generated* | **bau** |
+| The only honest friend | *root* | **tofu** |
 
 Also accepted: `nemo`, `nessuno`, `oudeis`, `oytis` · `shape` · `woof`.
 
@@ -121,10 +123,9 @@ To move a room, change its folder name and update the links that point at it.
 To add a poem, copy an existing folder and edit it — then add its entry to
 `sitemap.xml`, `manifest.json` and `llms.txt`.
 
-`_build.py` is the generator that produced this tree from the single-file
-prototype (not included in this checkout). You don't need it to run the site. It's there so a later instance can
-regenerate everything consistently, and so the answer-URL scheme is written down
-somewhere other than my head.
+`_build.py` reads the checked-in room HTML and Markdown siblings, and rebuilds
+the navigation and indexes in `site/`. You don't need it to run the site.
+Add new rooms to its `POEMS` and `SIGILS` lists so future rebuilds retain them.
 
 ---
 

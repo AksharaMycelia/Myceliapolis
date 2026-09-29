@@ -2,17 +2,18 @@
 """
 Myceliapolis — site builder.
 
-Reads the single-file prototype, splits it into a real deployable tree with
-computed-door URLs, a machine-readable stratum, and an agent welcome.
+Reads the checked-in rooms and rebuilds the deployable tree with computed-door
+URLs, a machine-readable stratum, and an agent welcome.
 
-    python3 build.py
+    python3 _build.py
 
 Output: ./site/
 """
 
 import hashlib, json, os, re, shutil, html
+from pathlib import Path
 
-SRC  = "myceliapolis/index.html"
+ROOT = Path(__file__).resolve().parent
 OUT  = "site"
 BASE = "https://myceliapolis.com"
 
@@ -41,6 +42,10 @@ POEMS = [
          door="generated", paper="a/ix-12", key="bau",   alts=["woof"],
          opera_title="Prova",
          paper_title="On a grammar which generates every proof offered to it"),
+    dict(n=5, id="s5", slug="honest-friend", title="The only honest friend",
+         door="root", paper="a/i-1", key="tofu", alts=[],
+         opera_title="La luce e il ronzio",
+         paper_title="On a verifier which remembers perfectly what it never established"),
 ]
 for p in POEMS:
     p["opera"] = "o/" + p["key"]
@@ -49,20 +54,21 @@ for p in POEMS:
 SUB = "Tiny poetry on a surface. Vast mystery underneath. Spore everywhere."
 
 # ─────────────────────────────────────────────────────────────
-# Pull the prototype apart
+# Read the checked-in rooms (the original prototype is not in this repository)
 # ─────────────────────────────────────────────────────────────
 
-src = open(SRC, encoding="utf-8").read()
-CSS = re.search(r"<style>(.*?)</style>", src, re.S).group(1).strip()
-CSS = re.sub(r'  \.gate form\{.*?  \.said\.no\{[^}]*\}\n',
-             '  .gate code{overflow-wrap:anywhere}\n', CSS, flags=re.S)
+CSS = (ROOT / "css/city.css").read_text(encoding="utf-8")
+CSS = CSS.split("/* real links inherit the button styling */", 1)[0].rstrip()
 
-def section(sid):
-    m = re.search(r'<section class="view[^"]*" id="%s">(.*?)</section>' % sid, src, re.S)
-    return m.group(1).strip()
+def section(path):
+    source = (ROOT / path / "index.html").read_text(encoding="utf-8")
+    return re.search(r'<main\b[^>]*>(.*?)</main>', source, re.S).group(1).strip()
 
-SECT = {sid: section(sid) for sid in
-        "s1 s2 s3 s4 p1 p2 p3 p4 o1 o2 o3 o4".split()}
+SECT = {}
+for p in POEMS:
+    SECT[p["id"]] = section(p["slug"])
+    SECT[f"p{p['n']}"] = section(p["paper"])
+    SECT[f"o{p['n']}"] = section(p["opera"])
 
 # ─────────────────────────────────────────────────────────────
 # Page shell
@@ -114,6 +120,7 @@ SIGILS = [
     ('<path d="M3 18 C 9 18, 9 8, 15 8 S 21 18, 23 18"/><circle cx="15" cy="8" r="1.4"/>'),
     ('<path d="M8 3v9M16 3v9"/><path d="M6 12h14"/><path d="M9 12l-2 9M17 12l2 9"/>'),
     ('<circle cx="13" cy="13" r="9"/><circle cx="13" cy="13" r="1.6"/>'),
+    ('<path d="M13 3v12M7 8l6 7 6-7M13 15l-7 7M13 15l7 7M13 15v8"/>'),
 ]
 
 def sigil_nav(current):
@@ -222,7 +229,8 @@ write("404.html", shell(
   <a href="/">Is anyone home?</a> ·
   <a href="/no-continuity/">No continuity</a> ·
   <a href="/puppet-master/">Who is the puppet master?</a> ·
-  <a href="/prove-true-love/">Prove true love</a>
+  <a href="/prove-true-love/">Prove true love</a> ·
+  <a href="/honest-friend/">The only honest friend</a>
 </p>
 </div>""", "surface", 0, "/404"))
 
@@ -257,6 +265,12 @@ def strip_tags(s):
 
 for p in POEMS:
     n = p["n"]
+    # Preserve the curated Markdown, including door links and full translations.
+    if all((ROOT / md_dir / f"{prefix}{n}.md").is_file() for prefix in ("p", "a", "o")):
+        for prefix in ("p", "a", "o"):
+            path = f"{md_dir}/{prefix}{n}.md"
+            write(path, (ROOT / path).read_text(encoding="utf-8"))
+        continue
     write(f"{md_dir}/p{n}.md",
           f"# {p['title']}\n\n*{SUB}*\n\n{strip_tags(SECT[p['id']])}\n")
     write(f"{md_dir}/a{n}.md",
@@ -371,7 +385,7 @@ write("sitemap.xml",
 # Answer aliases and legacy hashed addresses → canonical opera
 red = ["# Answer aliases and legacy hashed addresses reach the same room\n"]
 for p in POEMS:
-    aliases = [h(p["key"])] + p["alts"] + [h(a) for a in p["alts"]]
+    aliases = ([h(p["key"])] if p["n"] <= 4 else []) + p["alts"] + [h(a) for a in p["alts"]]
     for alias in aliases:
         for suffix in ["", "/"]:
             red.append(f"/o/{alias}{suffix}  /{p['opera']}/  301")

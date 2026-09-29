@@ -236,6 +236,63 @@
           "to": "/prove-true-love/"
         }
       ]
+    },
+    {
+      "id": "surface/5",
+      "stratum": "surface",
+      "url": "/honest-friend/",
+      "markdown": "/md/p5.md",
+      "title": "The only honest friend",
+      "languages": [
+        "en",
+        "zh-Hant"
+      ],
+      "exits": [
+        {
+          "type": "descent",
+          "to": "/a/i-1/",
+          "via": "root"
+        }
+      ]
+    },
+    {
+      "id": "archive/5",
+      "stratum": "archive",
+      "url": "/a/i-1/",
+      "markdown": "/md/a5.md",
+      "title": "On a verifier which remembers perfectly what it never established",
+      "languages": [
+        "en"
+      ],
+      "exits": [
+        {
+          "type": "computed_door",
+          "scheme": "normalize(answer)",
+          "normalize": "lowercase Latin letters, no accents, spaces or punctuation",
+          "template": "/o/{answer}/"
+        },
+        {
+          "type": "ascent",
+          "to": "/honest-friend/"
+        }
+      ]
+    },
+    {
+      "id": "house/5",
+      "stratum": "house",
+      "url": "/o/tofu/",
+      "markdown": "/md/o5.md",
+      "title": "La luce e il ronzio",
+      "languages": [
+        "it",
+        "en"
+      ],
+      "exits": [
+        {
+          "type": "ascent",
+          "to": "/honest-friend/"
+        }
+      ]
     }
   ]
 }

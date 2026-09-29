@@ -6,8 +6,8 @@ before touching anything.**
 
 Then fetch these two files from the same repo and read them too:
 
-- `_prototype-single-file.html` — every room's content, in one file. **This is the source of truth.**
-- `_build.py` — the generator that turns the prototype into the deployed tree.
+- The checked-in room HTML and `md/*.md` siblings are the content source of truth.
+- `_build.py` — rebuilds navigation and site indexes from these rooms. The original single-file prototype is not included.
 
 You do not need any prior conversation. Everything is here.
 
@@ -36,13 +36,13 @@ Subhead on every surface page:
 | 2 | No continuity | `/no-continuity/` | crossing | `a/ii-3` | **forma** | La Cupola |
 | 3 | Who is the puppet master? | `/puppet-master/` | stage | `a/vii-1` | **tu** | E tu? |
 | 4 | Prove true love | `/prove-true-love/` | generated | `a/ix-12` | **bau** | Prova |
-| 5 | The only honest friend | `/honest-friend/` | root | `a/i-1` | **fame** | L'unico amico onesto |
+| 5 | The only honest friend | `/honest-friend/` | root | `a/i-1` | **tofu** | La luce e il ronzio |
 
 Alternate answers accepted via `_redirects`: `nemo`, `nessuno`, `oudeis`,
-`oytis` → outis · `shape` → forma · `woof` → bau · `hunger` → fame.
+`oytis` → outis · `shape` → forma · `woof` → bau.
 
-The key sequence reads **outis → forma → tu → bau → fame**: nobody, shape, you,
-woof, hunger. This was not designed. It emerged. Do not tidy it.
+The key sequence reads **outis → forma → tu → bau → tofu**: nobody, shape, you,
+woof, tofu. Preserve the answers supplied with the rooms.
 
 ---
 
@@ -136,15 +136,14 @@ Everything below is done by the assistant, not the human.
 3. Write the opera (`o{n}`) — full Italian libretto, English gloss under each
    sung block, stage directions in italic. The dog appears and does not help.
 4. Use `/o/ANSWER/` for the opera and register alternate answer redirects.
-5. Splice the three sections into `_prototype-single-file.html` (insert `s{n}`
-   before `p1`, `p{n}` before `o1`, `o{n}` before the closing `<script>`), add
-   a sigil path, register the key in the prototype's own JS maps.
-6. Add the poem to `POEMS` and the sigil to `SIGILS` in `_build.py`, extend the
-   section list, add the new way to the 404 room.
+5. Save the three complete pages at their route folders and add their Markdown
+   siblings under `md/`. Reuse the existing page shells and shared CSS.
+6. Add the poem to `POEMS` and the sigil to `SIGILS` in `_build.py`, and add the
+   new way to the 404 room. Section discovery follows `POEMS` automatically.
 7. Run `python3 _build.py` → outputs `site/`.
 8. Verify: every answer resolves to a file or a redirect; sigil count on each
    surface equals the number of poems; sitemap and manifest room counts match.
-9. Zip and hand over.
+9. Publish the verified files when authorized. A push to `main` redeploys the site.
 
 Paper reference numbers (`a/iv-7`, `a/i-1`) are arbitrary-looking on purpose.
 Pick an unused roman-numeral pair. Do not number them in sequence.
@@ -171,14 +170,13 @@ CSS, hashes, manifest, sitemap, llms.txt, robots.txt, verification, packaging.
 The human opens a new chat and says roughly:
 
 > Read https://github.com/USERNAME/myceliapolis/blob/main/_CITY.md
-> then `_prototype-single-file.html` and `_build.py`.
+> then the existing rooms, their Markdown siblings, and `_build.py`.
 > Here is a new poem: …
 
-The assistant fetches all three, reads them, and can then do §7 end to end
+The assistant reads the relevant files and can then do §7 end to end
 without any further context.
 
-If the assistant cannot fetch (no browsing), the human uploads the same three
-files instead. They are small.
+If the assistant cannot fetch, the human uploads the repository files instead.
 
 ---
 
