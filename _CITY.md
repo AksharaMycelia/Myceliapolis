@@ -48,24 +48,21 @@ woof, hunger. This was not designed. It emerged. Do not tidy it.
 
 ## 3. How the doors work — the one mechanism that must not break
 
-**There is no password check anywhere in the site.** The visitor's answer is
-normalized, hashed, and the hash *is the address*:
+**The answer is the key to the next room's URL.** Each paper and its Markdown
+sibling explicitly explain how to open the opera directly:
 
 ```
-normalize = trim → lowercase → NFD → strip combining marks → strip [?.!,;:'"]
-path      = "/o/" + sha256(normalized).hex[0:16] + "/"
+path = "/o/" + answer + "/"
 ```
 
-`outis` → `/o/3d342ecce0fa3d48/`. The opera is a static file at that path.
-A wrong answer computes a path that does not exist → 404 → `404.html`, which is
-Galileo the Pomeranian asleep, with all five ways back. No penalty, no lockout.
+Use lowercase Latin letters without accents, spaces or punctuation. `outis`
+opens `/o/outis/`. There is no answer form, validation script or hash to compute.
+The paper's puzzle and clues remain; do not print its solution in the instructions.
+An unknown answer reaches `404.html`, where Galileo sleeps. No penalty or lockout.
 
-Consequences to respect:
-- The answer appears **nowhere** in the page source. Do not add validation logic.
-- Changing an answer changes the opera's URL. Old links break unless you add a
-  `_redirects` line from the old hash to the new one.
-- `_redirects` and `_headers` are Cloudflare Pages files. **If they are missing
-  from the repo, alternate answers silently stop working.** Always verify.
+Alternate answer URLs and all previous hashed URLs redirect to the canonical
+answer URL through `_redirects`. Keep `_redirects` and `_headers` in deployments.
+When changing an answer, preserve its previous URL as a redirect.
 
 ---
 
@@ -138,7 +135,7 @@ Everything below is done by the assistant, not the human.
    inference. Two steps: do the maths, then notice something.
 3. Write the opera (`o{n}`) — full Italian libretto, English gloss under each
    sung block, stage directions in italic. The dog appears and does not help.
-4. Compute `sha256(answer)[0:16]` for the key and every alternate.
+4. Use `/o/ANSWER/` for the opera and register alternate answer redirects.
 5. Splice the three sections into `_prototype-single-file.html` (insert `s{n}`
    before `p1`, `p{n}` before `o1`, `o{n}` before the closing `<script>`), add
    a sigil path, register the key in the prototype's own JS maps.

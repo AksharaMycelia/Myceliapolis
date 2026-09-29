@@ -76,8 +76,8 @@ Check each one:
 - [ ] `myceliapolis.com` loads the first poem, dark, with the Chinese below
 - [ ] The four sigils at the bottom move between the four poems
 - [ ] Clicking **haunted** reaches a white paper
-- [ ] Typing `outis` in the gate opens the opera
-- [ ] Typing anything else reaches a sleeping Pomeranian
+- [ ] Opening `/o/outis/` directly opens the opera without a form or JavaScript
+- [ ] Opening `/o/not-an-answer/` reaches a sleeping Pomeranian
 - [ ] `myceliapolis.com/llms.txt` and `/robots.txt` load as plain text
 - [ ] `myceliapolis.com/md/o1.md` shows the libretto with no markup
 
@@ -98,20 +98,18 @@ Also accepted: `nemo`, `nessuno`, `oudeis`, `oytis` · `shape` · `woof`.
 
 ## How the doors actually work
 
-There is no password check anywhere in the site. The visitor's answer is
-lowercased, stripped of accents and punctuation, hashed with SHA-256, and the
-first sixteen hex characters **are the address**:
+The answer is the final segment of the opera URL:
 
-    /o/ + sha256(answer)[0:16] + /
+    /o/ANSWER/
 
-`outis` → `/o/3d342ecce0fa3d48/`. The opera exists at that path as a plain
-static file. A wrong answer computes a path that doesn't exist, so the server
-returns 404 — which is Galileo asleep. Nothing to guess, nothing to brute force,
-no answer anywhere in the source. Meaning constructs the key; hashing routes
-the traveller.
+Use lowercase Latin letters without accents, spaces or punctuation. For example,
+`outis` opens `https://myceliapolis.com/o/outis/` directly. Each paper and its
+Markdown version explain this door. There is no form, JavaScript or hash to compute.
+An unknown answer returns 404 — Galileo asleep.
 
-Alternate readings are handled in `_redirects`, which is why `nessuno` and
-`nemo` reach the same room as `outis`.
+Alternate readings such as `/o/nemo/` and `/o/shape/` are handled by `_redirects`.
+The old hashed addresses also redirect to the new answer URLs, preserving old links.
+Keep `_redirects` in the deployment.
 
 ---
 
@@ -124,8 +122,8 @@ To add a poem, copy an existing folder and edit it — then add its entry to
 `sitemap.xml`, `manifest.json` and `llms.txt`.
 
 `_build.py` is the generator that produced this tree from the single-file
-prototype. You don't need it to run the site. It's there so a later instance can
-regenerate everything consistently, and so the door-hash scheme is written down
+prototype (not included in this checkout). You don't need it to run the site. It's there so a later instance can
+regenerate everything consistently, and so the answer-URL scheme is written down
 somewhere other than my head.
 
 ---

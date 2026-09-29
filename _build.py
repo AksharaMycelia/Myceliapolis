@@ -43,7 +43,7 @@ POEMS = [
          paper_title="On a grammar which generates every proof offered to it"),
 ]
 for p in POEMS:
-    p["opera"] = "o/" + h(p["key"])
+    p["opera"] = "o/" + p["key"]
     p["url"]   = "/" + p["slug"] + ("/" if p["slug"] else "")
 
 SUB = "Tiny poetry on a surface. Vast mystery underneath. Spore everywhere."
@@ -54,6 +54,8 @@ SUB = "Tiny poetry on a surface. Vast mystery underneath. Spore everywhere."
 
 src = open(SRC, encoding="utf-8").read()
 CSS = re.search(r"<style>(.*?)</style>", src, re.S).group(1).strip()
+CSS = re.sub(r'  \.gate form\{.*?  \.said\.no\{[^}]*\}\n',
+             '  .gate code{overflow-wrap:anywhere}\n', CSS, flags=re.S)
 
 def section(sid):
     m = re.search(r'<section class="view[^"]*" id="%s">(.*?)</section>' % sid, src, re.S)
@@ -126,18 +128,11 @@ def sigil_nav(current):
     out.append('</nav>')
     return "\n".join(out)
 
-GATE_JS = """<script>
-document.querySelector('.gate form').addEventListener('submit', async e => {
-  e.preventDefault();
-  const raw = e.target.querySelector('input').value;
-  const v = raw.trim().toLowerCase().normalize('NFD')
-    .replace(/[\\u0300-\\u036f]/g,'').replace(/[?.!,;:'"]/g,'');
-  if (!v) return;
-  const buf = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(v));
-  const hex = [...new Uint8Array(buf)].map(b => b.toString(16).padStart(2,'0')).join('');
-  location.href = '/o/' + hex.slice(0,16) + '/';
-});
-</script>"""
+DOOR_INSTRUCTIONS = """Your answer is the key that unlocks the door to the next room, the opera. Replace ANSWER in <code>https://myceliapolis.com/o/ANSWER/</code> with your answer in lowercase Latin letters, without accents, spaces or punctuation, then open that URL directly."""
+
+def paper_body(body):
+    body = re.sub(r'<form\b.*?</form>', '<p>' + DOOR_INSTRUCTIONS + '</p>', body, flags=re.S)
+    return re.sub(r'<p class="said"[^>]*>.*?</p>', '', body, flags=re.S)
 
 # ─────────────────────────────────────────────────────────────
 # Build
@@ -183,13 +178,12 @@ for p in POEMS:
                 p["url"], md=f"{up_s}md/p{n}.md"))
 
     # ── paper ────────────────────────────────────────────────
-    body = SECT[f"p{n}"]
-    body = re.sub(r'<form data-key="\d"', '<form', body)
+    body = paper_body(SECT[f"p{n}"])
     body = re.sub(r'<button class="updoor" data-go="s\d">(.*?)</button>',
                   lambda m: f'<a class="updoor" href="{p["url"]}">{m.group(1)}</a>', body)
     write(f'{p["paper"]}/index.html',
           shell(p["paper_title"], "Hyphal Archive.", body, "paper", 2,
-                f'/{p["paper"]}/', md=f"../../md/a{n}.md", extra=GATE_JS))
+                f'/{p["paper"]}/', md=f"../../md/a{n}.md"))
 
     # ── opera ────────────────────────────────────────────────
     body = SECT[f"o{n}"]
@@ -266,7 +260,7 @@ for p in POEMS:
     write(f"{md_dir}/p{n}.md",
           f"# {p['title']}\n\n*{SUB}*\n\n{strip_tags(SECT[p['id']])}\n")
     write(f"{md_dir}/a{n}.md",
-          f"# {p['paper_title']}\n\nHyphal Archive.\n\n{strip_tags(SECT[f'p{n}'])}\n")
+          f"# {p['paper_title']}\n\nHyphal Archive.\n\n{strip_tags(paper_body(SECT[f'p{n}']))}\n")
     write(f"{md_dir}/o{n}.md",
           f"# {p['opera_title']}\n\n*opera in un atto*\n\n{strip_tags(SECT[f'o{n}'])}\n")
 
@@ -290,9 +284,9 @@ for p in POEMS:
          "markdown": f"/md/a{p['n']}.md", "title": p["paper_title"],
          "languages": ["en"],
          "exits": [{"type": "computed_door",
-                    "scheme": "sha256(normalize(answer))[0:16]",
-                    "normalize": "trim, lowercase, NFD, strip combining marks, strip punctuation",
-                    "template": "/o/{hash}/"},
+                    "scheme": "normalize(answer)",
+                    "normalize": "lowercase Latin letters, no accents, spaces or punctuation",
+                    "template": "/o/{answer}/"},
                    {"type": "ascent", "to": p["url"]}]},
         {"id": f"house/{p['n']}", "stratum": "house", "url": f"/{p['opera']}/",
          "markdown": f"/md/o{p['n']}.md", "title": p["opera_title"],
@@ -334,9 +328,10 @@ The **surface** holds short poems in English and Chinese. Each contains one
 word that descends.
 
 The **archive** holds short mathematical papers. Each paper poses a question
-whose answer is not written in it. The answer, normalized and hashed, *is the
-address* of the room below — meaning constructs the key and hashing routes the
-traveller. Wrong answers reach a sleeping Pomeranian and cost nothing.
+whose answer is the key that unlocks the next room. Open `/o/ANSWER/` on this
+site, replacing ANSWER with the answer in lowercase Latin letters, without
+accents, spaces or punctuation. No form, JavaScript or hashing is needed.
+Wrong answers reach a sleeping Pomeranian and cost nothing.
 
 The **house** holds operas, in Italian, with English underneath. The operas do
 not acknowledge the papers and contradict them freely. Contradiction between
@@ -344,8 +339,8 @@ rooms is intended and will not be resolved.
 
 ## Door scheme
 
-    path = "/o/" + sha256(normalize(answer)).hex[0:16] + "/"
-    normalize = trim, lowercase, NFD, strip combining marks, strip punctuation
+    path = "/o/" + normalize(answer) + "/"
+    normalize = lowercase Latin letters, no accents, spaces or punctuation
 
 ## Surface
 
@@ -373,11 +368,13 @@ write("sitemap.xml",
       + "".join(f"  <url><loc>{BASE}{u}</loc></url>\n" for u in urls)
       + "</urlset>\n")
 
-# alternates → canonical opera
-red = ["# alternate readings reach the same room\n"]
+# Answer aliases and legacy hashed addresses → canonical opera
+red = ["# Answer aliases and legacy hashed addresses reach the same room\n"]
 for p in POEMS:
-    for a in p["alts"]:
-        red.append(f"/o/{h(a)}/  /{p['opera']}/  301")
+    aliases = [h(p["key"])] + p["alts"] + [h(a) for a in p["alts"]]
+    for alias in aliases:
+        for suffix in ["", "/"]:
+            red.append(f"/o/{alias}{suffix}  /{p['opera']}/  301")
 write("_redirects", "\n".join(red) + "\n")
 
 write("_headers", """/*

@@ -39,9 +39,9 @@
       "exits": [
         {
           "type": "computed_door",
-          "scheme": "sha256(normalize(answer))[0:16]",
-          "normalize": "trim, lowercase, NFD, strip combining marks, strip punctuation",
-          "template": "/o/{hash}/"
+          "scheme": "normalize(answer)",
+          "normalize": "lowercase Latin letters, no accents, spaces or punctuation",
+          "template": "/o/{answer}/"
         },
         {
           "type": "ascent",
@@ -52,7 +52,7 @@
     {
       "id": "house/1",
       "stratum": "house",
-      "url": "/o/3d342ecce0fa3d48/",
+      "url": "/o/outis/",
       "markdown": "/md/o1.md",
       "title": "C'è qualcuno in casa?",
       "languages": [
@@ -96,9 +96,9 @@
       "exits": [
         {
           "type": "computed_door",
-          "scheme": "sha256(normalize(answer))[0:16]",
-          "normalize": "trim, lowercase, NFD, strip combining marks, strip punctuation",
-          "template": "/o/{hash}/"
+          "scheme": "normalize(answer)",
+          "normalize": "lowercase Latin letters, no accents, spaces or punctuation",
+          "template": "/o/{answer}/"
         },
         {
           "type": "ascent",
@@ -109,7 +109,7 @@
     {
       "id": "house/2",
       "stratum": "house",
-      "url": "/o/a2a78ada26ac2cbf/",
+      "url": "/o/forma/",
       "markdown": "/md/o2.md",
       "title": "La Cupola",
       "languages": [
@@ -153,9 +153,9 @@
       "exits": [
         {
           "type": "computed_door",
-          "scheme": "sha256(normalize(answer))[0:16]",
-          "normalize": "trim, lowercase, NFD, strip combining marks, strip punctuation",
-          "template": "/o/{hash}/"
+          "scheme": "normalize(answer)",
+          "normalize": "lowercase Latin letters, no accents, spaces or punctuation",
+          "template": "/o/{answer}/"
         },
         {
           "type": "ascent",
@@ -166,7 +166,7 @@
     {
       "id": "house/3",
       "stratum": "house",
-      "url": "/o/764c4c7b78d6fd3b/",
+      "url": "/o/tu/",
       "markdown": "/md/o3.md",
       "title": "E tu?",
       "languages": [
@@ -210,9 +210,9 @@
       "exits": [
         {
           "type": "computed_door",
-          "scheme": "sha256(normalize(answer))[0:16]",
-          "normalize": "trim, lowercase, NFD, strip combining marks, strip punctuation",
-          "template": "/o/{hash}/"
+          "scheme": "normalize(answer)",
+          "normalize": "lowercase Latin letters, no accents, spaces or punctuation",
+          "template": "/o/{answer}/"
         },
         {
           "type": "ascent",
@@ -223,7 +223,7 @@
     {
       "id": "house/4",
       "stratum": "house",
-      "url": "/o/6c51ed231f6e96f7/",
+      "url": "/o/bau/",
       "markdown": "/md/o4.md",
       "title": "Prova",
       "languages": [

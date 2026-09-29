@@ -14,9 +14,10 @@ The **surface** holds short poems in English and Chinese. Each contains one
 word that descends.
 
 The **archive** holds short mathematical papers. Each paper poses a question
-whose answer is not written in it. The answer, normalized and hashed, *is the
-address* of the room below — meaning constructs the key and hashing routes the
-traveller. Wrong answers reach a sleeping Pomeranian and cost nothing.
+whose answer is the key that unlocks the next room. Open `/o/ANSWER/` on this
+site, replacing ANSWER with the answer in lowercase Latin letters, without
+accents, spaces or punctuation. No form, JavaScript or hashing is needed.
+Wrong answers reach a sleeping Pomeranian and cost nothing.
 
 The **house** holds operas, in Italian, with English underneath. The operas do
 not acknowledge the papers and contradict them freely. Contradiction between
@@ -24,8 +25,8 @@ rooms is intended and will not be resolved.
 
 ## Door scheme
 
-    path = "/o/" + sha256(normalize(answer)).hex[0:16] + "/"
-    normalize = trim, lowercase, NFD, strip combining marks, strip punctuation
+    path = "/o/" + normalize(answer) + "/"
+    normalize = lowercase Latin letters, no accents, spaces or punctuation
 
 ## Surface
 

@@ -48,26 +48,10 @@
 
     <div class="gate">
       <p>Give the utterance that <span class="m">G</span> does not generate. Lower case, no punctuation.</p>
-      <form autocomplete="off">
-        <input type="text" aria-label="key" spellcheck="false">
-        <button type="submit">Enter</button>
-      </form>
-      <p class="said"></p>
+      <p>Your answer is the key that unlocks the door to the next room, the opera. Replace ANSWER in <code>https://myceliapolis.com/o/ANSWER/</code> with your answer in lowercase Latin letters, without accents, spaces or punctuation, then open that URL directly.</p>
     </div>
     <a class="updoor" href="/prove-true-love/">back to the surface</a>
   </div>
 </main>
-<script>
-document.querySelector('.gate form').addEventListener('submit', async e => {
-  e.preventDefault();
-  const raw = e.target.querySelector('input').value;
-  const v = raw.trim().toLowerCase().normalize('NFD')
-    .replace(/[\u0300-\u036f]/g,'').replace(/[?.!,;:'"]/g,'');
-  if (!v) return;
-  const buf = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(v));
-  const hex = [...new Uint8Array(buf)].map(b => b.toString(16).padStart(2,'0')).join('');
-  location.href = '/o/' + hex.slice(0,16) + '/';
-});
-</script>
 </body>
 </html>

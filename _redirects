@@ -1,8 +1,34 @@
-# alternate readings reach the same room
+# Answer aliases and legacy hashed addresses reach the same room
 
-/o/df9c4abfaee0c1ee/  /o/3d342ecce0fa3d48/  301
-/o/0075870f97c892ba/  /o/3d342ecce0fa3d48/  301
-/o/b8ce01f96d7a3abb/  /o/3d342ecce0fa3d48/  301
-/o/454f91389e26b770/  /o/3d342ecce0fa3d48/  301
-/o/f58940a313992e68/  /o/a2a78ada26ac2cbf/  301
-/o/1811bdd29f2cfe95/  /o/6c51ed231f6e96f7/  301
+/o/3d342ecce0fa3d48  /o/outis/  301
+/o/3d342ecce0fa3d48/  /o/outis/  301
+/o/oytis  /o/outis/  301
+/o/oytis/  /o/outis/  301
+/o/nemo  /o/outis/  301
+/o/nemo/  /o/outis/  301
+/o/nessuno  /o/outis/  301
+/o/nessuno/  /o/outis/  301
+/o/oudeis  /o/outis/  301
+/o/oudeis/  /o/outis/  301
+/o/df9c4abfaee0c1ee  /o/outis/  301
+/o/df9c4abfaee0c1ee/  /o/outis/  301
+/o/0075870f97c892ba  /o/outis/  301
+/o/0075870f97c892ba/  /o/outis/  301
+/o/b8ce01f96d7a3abb  /o/outis/  301
+/o/b8ce01f96d7a3abb/  /o/outis/  301
+/o/454f91389e26b770  /o/outis/  301
+/o/454f91389e26b770/  /o/outis/  301
+/o/a2a78ada26ac2cbf  /o/forma/  301
+/o/a2a78ada26ac2cbf/  /o/forma/  301
+/o/shape  /o/forma/  301
+/o/shape/  /o/forma/  301
+/o/f58940a313992e68  /o/forma/  301
+/o/f58940a313992e68/  /o/forma/  301
+/o/764c4c7b78d6fd3b  /o/tu/  301
+/o/764c4c7b78d6fd3b/  /o/tu/  301
+/o/6c51ed231f6e96f7  /o/bau/  301
+/o/6c51ed231f6e96f7/  /o/bau/  301
+/o/woof  /o/bau/  301
+/o/woof/  /o/bau/  301
+/o/1811bdd29f2cfe95  /o/bau/  301
+/o/1811bdd29f2cfe95/  /o/bau/  301
