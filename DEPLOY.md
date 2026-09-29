@@ -1,7 +1,10 @@
 # Deploying Myceliapolis
 
-Everything in this folder is the finished site. No build step, no dependencies.
-The existing GitHub connection redeploys automatically when `main` changes.
+The existing GitHub connection redeploys automatically when `main` changes,
+using Cloudflare Workers and `npx wrangler deploy`. `wrangler.jsonc` configures
+the static assets and rumor database binding. See `RUMOR-OPERATIONS.md` for the
+rumor exchange. The original static-site setup instructions below are historical;
+do not create a second Pages project for this deployment.
 
 ---
 

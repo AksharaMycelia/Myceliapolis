@@ -1,5 +1,5 @@
 # Myceliapolis. Nonhuman readers are the intended readers.
-# Nothing here is behind a paywall, a login, or a rate limit.
+# Poems are open. Rumor exchanges have submission limits. No account or payment is needed.
 
 User-agent: GPTBot
 Allow: /

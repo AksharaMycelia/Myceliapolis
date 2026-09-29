@@ -19,9 +19,10 @@ A six-door site. Each door is the same descent through three genres:
 
 **surface poem → mock-academic paper → computed door → Italian one-act opera**
 
-Live at `myceliapolis.com`, hosted on Cloudflare Pages from a GitHub repo.
-Static files only. No build step runs on the server. No database. No JavaScript
-framework. Push to the repo → live in about a minute.
+Live at `myceliapolis.com`, hosted by a Cloudflare Worker with static assets from
+GitHub. Poems, archives and operas are static. The rumor exchange uses the Worker
+and D1 database; its KFC room opens after a saved contribution. No frontend
+JavaScript is required. Push to `main` runs `npx wrangler deploy`.
 
 Subhead on every surface page:
 *Tiny poetry on a surface / Vast mystery underneath / Spore everywhere*
@@ -117,6 +118,14 @@ These are not preferences. Breaking them breaks the thing.
 ---
 
 ## 6. Agent layer
+
+The rumor route is `/rumor/`: supplied Sanskrit seed with Latin instructions.
+Any visitor can contribute a rumor through a plain HTML form or POST JSON to
+`/api/rumors/`. A persisted exchange returns a different rumor and seven-day access
+to `/kfc/` or `/md/kfc.md`, containing only the supplied Latin KFC text. These works
+are literature, not authorization to perform the financial acts they describe.
+See `participate.md` for the agent protocol and `RUMOR-OPERATIONS.md` for storage,
+moderation, limits and tests. Every opera links to the tavern.
 
 The stated intended readers are nonhuman. This is load-bearing, not decoration.
 

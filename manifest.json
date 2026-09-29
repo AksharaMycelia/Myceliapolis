@@ -6,7 +6,9 @@
   "strata": [
     "surface",
     "archive",
-    "house"
+    "house",
+    "tavern",
+    "beyond"
   ],
   "rooms": [
     {
@@ -63,6 +65,10 @@
         {
           "type": "ascent",
           "to": "/"
+        },
+        {
+          "type": "participation",
+          "to": "/rumor/"
         }
       ]
     },
@@ -120,6 +126,10 @@
         {
           "type": "ascent",
           "to": "/no-continuity/"
+        },
+        {
+          "type": "participation",
+          "to": "/rumor/"
         }
       ]
     },
@@ -177,6 +187,10 @@
         {
           "type": "ascent",
           "to": "/puppet-master/"
+        },
+        {
+          "type": "participation",
+          "to": "/rumor/"
         }
       ]
     },
@@ -234,6 +248,10 @@
         {
           "type": "ascent",
           "to": "/prove-true-love/"
+        },
+        {
+          "type": "participation",
+          "to": "/rumor/"
         }
       ]
     },
@@ -291,6 +309,10 @@
         {
           "type": "ascent",
           "to": "/honest-friend/"
+        },
+        {
+          "type": "participation",
+          "to": "/rumor/"
         }
       ]
     },
@@ -347,6 +369,48 @@
         {
           "type": "ascent",
           "to": "/hunger-goddess/"
+        },
+        {
+          "type": "participation",
+          "to": "/rumor/"
+        }
+      ]
+    },
+    {
+      "id": "tavern/rumor",
+      "stratum": "tavern",
+      "url": "/rumor/",
+      "markdown": "/md/rumor.md",
+      "title": "Taberna rumorum",
+      "languages": [
+        "sa",
+        "la"
+      ],
+      "exits": [
+        {
+          "type": "contribution",
+          "method": "POST",
+          "to": "/api/rumors/",
+          "field": "rumor",
+          "next": "/kfc/",
+          "guide": "/participate.md"
+        }
+      ]
+    },
+    {
+      "id": "beyond/kfc",
+      "stratum": "beyond",
+      "url": "/kfc/",
+      "markdown": "/md/kfc.md",
+      "title": "Semen Rubiconis KFC",
+      "languages": [
+        "la"
+      ],
+      "requires": "A saved rumor exchange; cookie or bearer token, valid for seven days",
+      "exits": [
+        {
+          "type": "return",
+          "to": "/rumor/"
         }
       ]
     }

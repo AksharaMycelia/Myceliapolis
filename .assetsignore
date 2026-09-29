@@ -1,0 +1,13 @@
+/.git
+/.github
+/.wrangler
+/node_modules
+/site
+/_worker.js
+/wrangler.jsonc
+/.assetsignore
+/_build.py
+/_CITY.md
+/DEPLOY.md
+/RUMOR-OPERATIONS.md
+/tests
