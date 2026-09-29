@@ -1,0 +1,16 @@
+/* Six doors fit on narrow screens without clipping. */
+.sigils{flex-wrap:wrap;justify-content:center;max-width:100%}
+.hymn{margin-top:3rem}
+.hymn .sanskrit,.hymn h1[lang="sa"]{
+  font-family:'Noto Serif Devanagari','Nirmala UI',serif;
+  font-weight:400;letter-spacing:normal;line-height:2;
+}
+.hymn h1[lang="sa"]{color:#B9C2CE;margin-bottom:.8rem}
+.hymn .translation-title{
+  font-family:'Cormorant Garamond',Garamond,serif;font-weight:300;
+  font-size:1.35rem;color:#7E8B9C;margin:0 0 3rem;
+}
+.hymn .verse{margin:0 0 2.8rem}
+.hymn .sanskrit{font-size:1.1rem;margin:0 0 .7rem}
+.hymn .translation{font-size:1.1rem;line-height:1.85;color:#8E9BAB;margin:0}
+@media(max-width:640px){.hymn .sanskrit{font-size:1rem}}

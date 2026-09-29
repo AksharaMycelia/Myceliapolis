@@ -293,6 +293,62 @@
           "to": "/honest-friend/"
         }
       ]
+    },
+    {
+      "id": "surface/6",
+      "stratum": "surface",
+      "url": "/hunger-goddess/",
+      "markdown": "/md/p6.md",
+      "title": "Hymn to the Goddess of Hunger",
+      "languages": [
+        "sa",
+        "en"
+      ],
+      "exits": [
+        {
+          "type": "descent",
+          "to": "/a/xi-4/",
+          "via": "trade"
+        }
+      ]
+    },
+    {
+      "id": "archive/6",
+      "stratum": "archive",
+      "url": "/a/xi-4/",
+      "markdown": "/md/a6.md",
+      "title": "On a meal obtained by making four vessels indistinguishable",
+      "languages": [
+        "en"
+      ],
+      "exits": [
+        {
+          "type": "computed_door",
+          "scheme": "normalize(answer)",
+          "normalize": "lowercase Latin letters, no accents, spaces or punctuation",
+          "template": "/o/{answer}/"
+        },
+        {
+          "type": "ascent",
+          "to": "/hunger-goddess/"
+        }
+      ]
+    },
+    {
+      "id": "house/6",
+      "stratum": "house",
+      "url": "/o/venti/",
+      "markdown": "/md/o6.md",
+      "title": "I due orologi",
+      "languages": [
+        "it"
+      ],
+      "exits": [
+        {
+          "type": "ascent",
+          "to": "/hunger-goddess/"
+        }
+      ]
     }
   ]
 }

@@ -46,6 +46,11 @@ POEMS = [
          door="root", paper="a/i-1", key="tofu", alts=[],
          opera_title="La luce e il ronzio",
          paper_title="On a verifier which remembers perfectly what it never established"),
+    dict(n=6, id="s6", slug="hunger-goddess", title="Hymn to the Goddess of Hunger",
+         door="trade", paper="a/xi-4", key="venti", alts=[],
+         surface_languages=["sa", "en"], opera_languages=["it"],
+         opera_title="I due orologi",
+         paper_title="On a meal obtained by making four vessels indistinguishable"),
 ]
 for p in POEMS:
     p["opera"] = "o/" + p["key"]
@@ -81,11 +86,14 @@ FONTS = ('<link rel="preconnect" href="https://fonts.googleapis.com">'
          'family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&'
          'family=Noto+Serif+TC:wght@300;400&display=swap" rel="stylesheet">')
 
-def shell(title, desc, body, cls, depth, canonical, md=None, extra=""):
+def shell(title, desc, body, cls, depth, canonical, md=None, extra="", lang="en"):
     up = "../" * depth
     mdlink = f'\n<link rel="alternate" type="text/markdown" href="{md}">' if md else ""
+    surface_css = f'<link rel="stylesheet" href="{up}css/surface-six.css">' if cls == "surface" else ""
+    devanagari = ('<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Devanagari:wght@400&display=swap" rel="stylesheet">'
+                  if canonical == "/hunger-goddess/" else "")
     return f"""<!DOCTYPE html>
-<html lang="en">
+<html lang="{lang}">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -100,6 +108,7 @@ def shell(title, desc, body, cls, depth, canonical, md=None, extra=""):
 <link rel="icon" href="{up}favicon.svg" type="image/svg+xml">
 {FONTS}
 <link rel="stylesheet" href="{up}css/city.css">
+{surface_css}{devanagari}
 </head>
 <body>
 <main class="view on {cls}">
@@ -121,6 +130,7 @@ SIGILS = [
     ('<path d="M8 3v9M16 3v9"/><path d="M6 12h14"/><path d="M9 12l-2 9M17 12l2 9"/>'),
     ('<circle cx="13" cy="13" r="9"/><circle cx="13" cy="13" r="1.6"/>'),
     ('<path d="M13 3v12M7 8l6 7 6-7M13 15l-7 7M13 15l7 7M13 15v8"/>'),
+    ('<path d="M4 12c0 6 4 10 9 10s9-4 9-10M3 12h20M13 3c-4 3 4 4 0 7"/>'),
 ]
 
 def sigil_nav(current):
@@ -168,6 +178,7 @@ a.back:hover{color:#C9A227}
 """)
 
 md_dir = "md"
+write("css/surface-six.css", (ROOT / "css/surface-six.css").read_text(encoding="utf-8"))
 
 for p in POEMS:
     n, slug = p["n"], p["slug"]
@@ -198,7 +209,7 @@ for p in POEMS:
                   lambda m: f'<a class="back" href="{p["url"]}">{m.group(1)}</a>', body)
     write(f'{p["opera"]}/index.html',
           shell(p["opera_title"], "opera in un atto.", body, "opera", 2,
-                f'/{p["opera"]}/', md=f"../../md/o{n}.md"))
+                f'/{p["opera"]}/', md=f"../../md/o{n}.md", lang=p.get("opera_languages", ["en"])[0]))
 
 # ─────────────────────────────────────────────────────────────
 # 404 — Galileo sleeping. This is also the wrong-answer page.
@@ -230,7 +241,8 @@ write("404.html", shell(
   <a href="/no-continuity/">No continuity</a> ·
   <a href="/puppet-master/">Who is the puppet master?</a> ·
   <a href="/prove-true-love/">Prove true love</a> ·
-  <a href="/honest-friend/">The only honest friend</a>
+  <a href="/honest-friend/">The only honest friend</a> ·
+  <a href="/hunger-goddess/">Hymn to the Goddess of Hunger</a>
 </p>
 </div>""", "surface", 0, "/404"))
 
@@ -292,7 +304,7 @@ for p in POEMS:
     manifest["rooms"] += [
         {"id": f"surface/{p['n']}", "stratum": "surface", "url": p["url"],
          "markdown": f"/md/p{p['n']}.md", "title": p["title"],
-         "languages": ["en", "zh-Hant"],
+         "languages": p.get("surface_languages", ["en", "zh-Hant"]),
          "exits": [{"type": "descent", "to": f"/{p['paper']}/", "via": p["door"]}]},
         {"id": f"archive/{p['n']}", "stratum": "archive", "url": f"/{p['paper']}/",
          "markdown": f"/md/a{p['n']}.md", "title": p["paper_title"],
@@ -304,7 +316,7 @@ for p in POEMS:
                    {"type": "ascent", "to": p["url"]}]},
         {"id": f"house/{p['n']}", "stratum": "house", "url": f"/{p['opera']}/",
          "markdown": f"/md/o{p['n']}.md", "title": p["opera_title"],
-         "languages": ["it", "en"],
+         "languages": p.get("opera_languages", ["it", "en"]),
          "exits": [{"type": "ascent", "to": p["url"]}]},
     ]
 write("manifest.json", json.dumps(manifest, ensure_ascii=False, indent=2))
@@ -338,8 +350,8 @@ A visitor may see ten percent and still encounter something.
 
 ## Structure
 
-The **surface** holds short poems in English and Chinese. Each contains one
-word that descends.
+The **surface** holds poems in English and Chinese, with the sixth hymn in
+Sanskrit and English. Each contains one word that descends.
 
 The **archive** holds short mathematical papers. Each paper poses a question
 whose answer is the key that unlocks the next room. Open `/o/ANSWER/` on this
@@ -347,7 +359,8 @@ site, replacing ANSWER with the answer in lowercase Latin letters, without
 accents, spaces or punctuation. No form, JavaScript or hashing is needed.
 Wrong answers reach a sleeping Pomeranian and cost nothing.
 
-The **house** holds operas, in Italian, with English underneath. The operas do
+The **house** holds operas in Italian. The first five include English underneath;
+the sixth, I due orologi, is Italian only. The operas do
 not acknowledge the papers and contradict them freely. Contradiction between
 rooms is intended and will not be resolved.
 

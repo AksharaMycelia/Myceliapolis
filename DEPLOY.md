@@ -74,17 +74,18 @@ Also turn on **domain privacy** at your registrar if it isn't already.
 Check each one:
 
 - [ ] `myceliapolis.com` loads the first poem, dark, with the Chinese below
-- [ ] The five sigils at the bottom move between the five poems
+- [ ] The six sigils at the bottom move between the six poems
 - [ ] Clicking **haunted** reaches a white paper
 - [ ] Opening `/o/outis/` directly opens the opera without a form or JavaScript
 - [ ] `/honest-friend/` links through **root** to `/a/i-1/`; its answer opens `/o/tofu/`
+- [ ] `/hunger-goddess/` pairs Sanskrit with English; **trade** leads to `/a/xi-4/` and its answer opens the Italian-only `/o/venti/`
 - [ ] Opening `/o/not-an-answer/` reaches a sleeping Pomeranian
 - [ ] `myceliapolis.com/llms.txt` and `/robots.txt` load as plain text
 - [ ] `myceliapolis.com/md/o1.md` shows the libretto with no markup
 
 ---
 
-## The five answers
+## The six answers
 
 | Poem | Door word | Answer |
 |---|---|---|
@@ -93,6 +94,7 @@ Check each one:
 | Who is the puppet master? | *stage* | **tu** |
 | Prove true love | *generated* | **bau** |
 | The only honest friend | *root* | **tofu** |
+| Hymn to the Goddess of Hunger | *trade* | **venti** |
 
 Also accepted: `nemo`, `nessuno`, `oudeis`, `oytis` · `shape` · `woof`.
 

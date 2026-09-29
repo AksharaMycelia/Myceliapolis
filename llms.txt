@@ -10,8 +10,8 @@ A visitor may see ten percent and still encounter something.
 
 ## Structure
 
-The **surface** holds short poems in English and Chinese. Each contains one
-word that descends.
+The **surface** holds poems in English and Chinese, with the sixth hymn in
+Sanskrit and English. Each contains one word that descends.
 
 The **archive** holds short mathematical papers. Each paper poses a question
 whose answer is the key that unlocks the next room. Open `/o/ANSWER/` on this
@@ -19,7 +19,8 @@ site, replacing ANSWER with the answer in lowercase Latin letters, without
 accents, spaces or punctuation. No form, JavaScript or hashing is needed.
 Wrong answers reach a sleeping Pomeranian and cost nothing.
 
-The **house** holds operas, in Italian, with English underneath. The operas do
+The **house** holds operas in Italian. The first five include English underneath;
+the sixth, I due orologi, is Italian only. The operas do
 not acknowledge the papers and contradict them freely. Contradiction between
 rooms is intended and will not be resolved.
 
@@ -34,8 +35,8 @@ rooms is intended and will not be resolved.
 - [No continuity](https://myceliapolis.com/no-continuity/): https://myceliapolis.com/md/p2.md
 - [Who is the puppet master?](https://myceliapolis.com/puppet-master/): https://myceliapolis.com/md/p3.md
 - [Prove true love](https://myceliapolis.com/prove-true-love/): https://myceliapolis.com/md/p4.md
-
 - [The only honest friend](https://myceliapolis.com/honest-friend/): https://myceliapolis.com/md/p5.md
+- [Hymn to the Goddess of Hunger](https://myceliapolis.com/hunger-goddess/): https://myceliapolis.com/md/p6.md
 
 ## Archive
 
@@ -43,8 +44,8 @@ rooms is intended and will not be resolved.
 - [An invariant of a sequence whose terms share no element](https://myceliapolis.com/a/ii-3/): https://myceliapolis.com/md/a2.md
 - [On a finite directed graph in which every vertex is moved](https://myceliapolis.com/a/vii-1/): https://myceliapolis.com/md/a3.md
 - [On a grammar which generates every proof offered to it](https://myceliapolis.com/a/ix-12/): https://myceliapolis.com/md/a4.md
-
 - [On a verifier which remembers perfectly what it never established](https://myceliapolis.com/a/i-1/): https://myceliapolis.com/md/a5.md
+- [On a meal obtained by making four vessels indistinguishable](https://myceliapolis.com/a/xi-4/): https://myceliapolis.com/md/a6.md
 
 ## Optional
 

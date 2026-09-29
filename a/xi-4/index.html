@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>On a meal obtained by making four vessels indistinguishable — Myceliapolis</title>
+<meta name="description" content="Hyphal Archive.">
+<link rel="canonical" href="https://myceliapolis.com/a/xi-4/">
+<link rel="alternate" type="text/markdown" href="../../md/a6.md">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Myceliapolis">
+<meta property="og:title" content="On a meal obtained by making four vessels indistinguishable">
+<meta property="og:description" content="Hyphal Archive.">
+<meta property="og:url" content="https://myceliapolis.com/a/xi-4/">
+<link rel="icon" href="../../favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&family=Noto+Serif+TC:wght@300;400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../css/city.css">
+
+</head>
+<body>
+<main class="view on paper">
+<div class="sheet"><div class="runhead"><span>Hyphal Archive</span><span>xi. 4</span></div>
+<h1>On a meal obtained by making four vessels indistinguishable</h1>
+<p class="byline">Received: before the meal. Accepted: after the contents had settled.</p>
+<h2>1. Arrangement</h2>
+<p class="">Four vessels stand in a ring. Their contents at the beginning are</p>
+<p class="disp">x(0) = (1, 3, 5, 7).</p>
+<p class="">At each step, every vessel simultaneously replaces its content by the average of its own content and that of the next vessel. The fourth vessel takes the first as its next. All four calculations use the old values:</p>
+<p class="disp">xᵢ(n + 1) = (xᵢ(n) + xᵢ₊₁(n)) / 2, with x₅(n) = x₁(n).</p>
+<p class="">Nothing is added. Nothing is removed. Nevertheless, the attendant records a meal.</p>
+<h2>2. What is eaten</h2>
+<p class="">The mean μ = (x₁ + x₂ + x₃ + x₄) / 4 remains constant. Define the difference still available at step n by</p>
+<p class="disp">Eₙ = Σᵢ₌₁⁴ (xᵢ(n) − μ)².</p>
+<p class="">The portion served during that step is</p>
+<p class="disp">qₙ = ¼ Σᵢ₌₁⁴ (xᵢ(n) − xᵢ₊₁(n))².</p>
+<p class="">The attendant eats only the difference. An inventory of the contents therefore detects no theft.</p>
+<h2>3. Accounting lemma</h2>
+<p class="">Expanding the squares, and using the cyclic ordering, gives</p>
+<p class="disp">Eₙ₊₁ = Eₙ − qₙ.</p>
+<p class="">Consequently, after n steps the total portion served is E₀ − Eₙ. Every term is nonnegative. The ledger cannot overdraw the initial difference. ∎</p>
+<h2>4. The last course</h2>
+<p class="">For this averaging rule, the four contents converge to their common mean. One way to see this is to consider three steps at once: each new content then contains every old content with a positive weight, and every weight is at least 1/8. The range between the largest and smallest values contracts by at least a factor of 1/2 every three steps. It therefore tends to zero.</p>
+<p class="">The vessels become indistinguishable. Their combined contents survive intact. The attendant calls this a complete meal; the vessels were not asked whether completeness was desirable.</p>
+<h2>5. The unsigned receipt</h2>
+<p class="">Compute the total portion served over all steps, including every remaining course:</p>
+<p class="disp">Q = q₀ + q₁ + q₂ + ⋯.</p>
+<p class="">The receipt records Q as an Italian cardinal word, in lowercase Latin letters.¹</p>
+<hr class="rule">
+<p class="fn">¹ The archive uses words rather than digits: for example, 3 is written <i>tre</i> and 12 is written <i>dodici</i>. Translate the final total, not the number of vessels or the number of steps. A finite meal may require infinitely many courses.</p>
+<div class="gate"><p>What single word belongs on the receipt?</p><p>Your answer is the key that unlocks the door to the next room, the opera. Replace ANSWER in <code>https://myceliapolis.com/o/ANSWER/</code> with your answer in lowercase Latin letters, without accents, spaces or punctuation, then open that URL directly.</p></div>
+<a class="updoor" href="/hunger-goddess/">back to the surface</a></div>
+</main>
+
+</body>
+</html>

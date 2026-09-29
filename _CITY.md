@@ -15,7 +15,7 @@ You do not need any prior conversation. Everything is here.
 
 ## 1. What this is
 
-A five-door site. Each door is the same descent through three genres:
+A six-door site. Each door is the same descent through three genres:
 
 **surface poem → mock-academic paper → computed door → Italian one-act opera**
 
@@ -28,7 +28,7 @@ Subhead on every surface page:
 
 ---
 
-## 2. The five doors
+## 2. The six doors
 
 | # | Surface | slug | door word | paper | **answer** | opera |
 |---|---|---|---|---|---|---|
@@ -37,12 +37,19 @@ Subhead on every surface page:
 | 3 | Who is the puppet master? | `/puppet-master/` | stage | `a/vii-1` | **tu** | E tu? |
 | 4 | Prove true love | `/prove-true-love/` | generated | `a/ix-12` | **bau** | Prova |
 | 5 | The only honest friend | `/honest-friend/` | root | `a/i-1` | **tofu** | La luce e il ronzio |
+| 6 | Hymn to the Goddess of Hunger | `/hunger-goddess/` | trade | `a/xi-4` | **venti** | I due orologi |
 
 Alternate answers accepted via `_redirects`: `nemo`, `nessuno`, `oudeis`,
 `oytis` → outis · `shape` → forma · `woof` → bau.
 
-The key sequence reads **outis → forma → tu → bau → tofu**: nobody, shape, you,
-woof, tofu. Preserve the answers supplied with the rooms.
+The key sequence reads **outis → forma → tu → bau → tofu → venti**: nobody, shape,
+you, woof, tofu, twenty. Preserve the answers supplied with the rooms.
+
+The sixth poem pairs the supplied Sanskrit verses with their English translation.
+Its opera is Italian only, as requested by the author. Preserve these language
+choices in both HTML and Markdown. The sixth puzzle's initial squared deviation
+is 20; its cumulative portions telescope to this value as the vessels equalize.
+The receipt uses the Italian cardinal word, giving `/o/venti/`.
 
 ---
 
@@ -129,12 +136,14 @@ The stated intended readers are nonhuman. This is load-bearing, not decoration.
 Everything below is done by the assistant, not the human.
 
 1. Write the surface section (`s{n}`) — English poem, Chinese translation
-   underneath, exactly one word wrapped as the door.
+   underneath by default, exactly one word wrapped as the door. Respect an
+   author's requested languages; the sixth poem uses Sanskrit and English.
 2. Write the paper (`p{n}`) — a short formal paper in the archive voice whose
    answer is *not stated in it* but is recoverable from a footnote plus one
    inference. Two steps: do the maths, then notice something.
 3. Write the opera (`o{n}`) — full Italian libretto, English gloss under each
-   sung block, stage directions in italic. The dog appears and does not help.
+   sung block by default, stage directions in italic. The sixth opera has no
+   English translation. Preserve supplied casts and text.
 4. Use `/o/ANSWER/` for the opera and register alternate answer redirects.
 5. Save the three complete pages at their route folders and add their Markdown
    siblings under `md/`. Reuse the existing page shells and shared CSS.
@@ -190,7 +199,7 @@ Not built yet, in rough order of what matters:
 - Galileo's radio room — asynchronous public/private transmissions. Needs a
   form, a datastore (Cloudflare D1 is free at this scale) and a moderation
   decision. First real feature beyond static.
-- Sanskrit and Greek deep rooms.
+- Further Sanskrit rooms and Greek deep rooms.
 - Rooms that require artifacts from two different agents (`σ_A ⊗ σ_B`).
 - A relocation layer: content-addressed room IDs with placement in a separate
   manifest, so rooms can be moved without breaking any door ever opened.
