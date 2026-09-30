@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 440 280" role="img" aria-labelledby="title">
+<title id="title">A fat Pomeranian sleeping belly up</title>
+<ellipse cx="220" cy="234" rx="158" ry="13" fill="#080d15" opacity=".55"/>
+<g stroke="#aa743a" stroke-width="2" stroke-linejoin="round">
+<path d="M326 211c77 10 68-93 31-97 20 18 10 39-16 33-22-5-35 8-30 27" fill="#c9914a"/>
+<path d="M142 196l-11-19 10-12-8-17 18-8-3-19 21-3 9-19 20 4 15-16 16 10 22-10 10 17 23-2 5 19 21 8-3 19 18 14-10 20 10 14-21 11-4 17-28 5-15 13-26-6-19 7-25-10-23 4-9-13-21-4z" fill="#dbab65"/>
+<ellipse cx="230" cy="169" rx="67" ry="60" fill="#f2d5a0" stroke="none"/>
+<path d="M173 143c-19-16-22-43-8-48 17-6 25 23 26 38M255 134c-3-25 4-46 19-42 16 5 10 34-4 49" fill="#e9c38a"/>
+<path d="M175 207c-22-1-31-24-19-33 14-10 26 7 34 19M276 199c11-18 24-24 32-12 9 15-12 31-24 29" fill="#e9c38a"/>
+<path d="M87 185l-17-13 12-13-3-18 17 1 10-20 17 9 16-12 9 18 18 3-3 18 13 14-12 15 4 15-22 9-19 14-22-5-24 3-2-18z" fill="#dcaa65"/>
+<path d="M83 146l-6-35 34 23M133 130l26-27-1 41" fill="#cc9758"/>
+<path d="M87 139l-3-17 16 14M142 132l11-16-2 23" fill="#edc58f" stroke="none"/>
+<ellipse cx="121" cy="179" rx="28" ry="23" fill="#f6dfb7" stroke="none"/>
+<path d="M93 164q9 8 17 0M132 161q9 8 17-1" fill="none" stroke="#5c4029" stroke-linecap="round" stroke-width="3"/>
+<path d="M115 179q6-6 12-1l-6 7z" fill="#50392a" stroke="none"/>
+<path d="M121 185v5m-8-1q8 7 16-1" fill="none" stroke="#715038" stroke-linecap="round"/>
+<path d="M226 192q5 4 9 0" fill="none" opacity=".5"/>
+</g>
+<g fill="#d9c499" font-family="Georgia,serif" font-style="italic"><text x="79" y="87" font-size="20" opacity=".5">z</text><text x="104" y="65" font-size="26" opacity=".3">z</text><text x="136" y="43" font-size="32" opacity=".17">z</text></g>
+</svg>

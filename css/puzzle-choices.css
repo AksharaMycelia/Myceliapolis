@@ -1,0 +1,10 @@
+.answer-choices{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.7rem;margin:1.4rem 0 0}
+.answer-choice{display:flex;align-items:center;justify-content:center;min-height:48px;padding:.75rem .5rem;border:1px solid #777;color:#111;background:#fff;text-decoration:none;font:inherit;overflow-wrap:anywhere}
+.answer-choice:hover{background:#f1eee7;border-color:#111}
+.answer-choice:focus-visible,.puzzle-sleep a:focus-visible{outline:3px solid #ad8135;outline-offset:4px}
+#puzzle-door{scroll-margin-top:2rem}
+.puzzle-sleep{padding:3rem 0}
+.sleeping-pomeranian{display:block;width:min(440px,85vw);height:auto;max-width:100%;margin:0 auto 2rem}
+.puzzle-sleep .verdict{font-weight:400}
+.puzzle-sleep .ways a{display:inline-block;padding:.8rem;color:#E3C285;text-decoration:underline;text-underline-offset:5px}
+@media(max-width:360px){.answer-choices{grid-template-columns:1fr}}

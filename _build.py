@@ -2,8 +2,8 @@
 """
 Myceliapolis — site builder.
 
-Reads the checked-in rooms and rebuilds the deployable tree with computed-door
-URLs, a machine-readable stratum, and an agent welcome.
+Reads the checked-in rooms and rebuilds the deployable tree with three-choice
+puzzle doors, a machine-readable stratum, and an agent welcome.
 
     python3 _build.py
 
@@ -52,6 +52,19 @@ POEMS = [
          opera_title="I due orologi",
          paper_title="On a meal obtained by making four vessels indistinguishable"),
 ]
+CHOICES = {
+    1: ["chronos", "outis", "logos"],
+    2: ["forma", "materia", "memoria"],
+    3: ["io", "lui", "tu"],
+    4: ["silenzio", "bau", "rifiuto"],
+    5: ["tls", "pki", "tofu"],
+    6: ["sedici", "venti", "quattro"],
+}
+
+def choice_links(p):
+    return [{"label": label, "to": f"/{p['paper']}/choice-{i}/"}
+            for i, label in enumerate(CHOICES[p["n"]], 1)]
+
 for p in POEMS:
     p["opera"] = "o/" + p["key"]
     p["url"]   = "/" + p["slug"] + ("/" if p["slug"] else "")
@@ -109,6 +122,7 @@ def shell(title, desc, body, cls, depth, canonical, md=None, extra="", lang="en"
 {FONTS}
 <link rel="stylesheet" href="{up}css/city.css">
 {surface_css}{devanagari}
+<link rel="stylesheet" href="/css/puzzle-choices.css">
 </head>
 <body>
 <main class="view on {cls}">
@@ -145,11 +159,18 @@ def sigil_nav(current):
     out.append('</nav>')
     return "\n".join(out)
 
-DOOR_INSTRUCTIONS = """Your answer is the key that unlocks the door to the next room, the opera. Replace ANSWER in <code>https://myceliapolis.com/o/ANSWER/</code> with your answer in lowercase Latin letters, without accents, spaces or punctuation, then open that URL directly."""
+DOOR_INSTRUCTIONS = "Choose one of the three answers below. The correct choice opens the opera. A wrong choice leads to a sleeping Pomeranian; you can return and try again."
 
-def paper_body(body):
-    body = re.sub(r'<form\b.*?</form>', '<p>' + DOOR_INSTRUCTIONS + '</p>', body, flags=re.S)
-    return re.sub(r'<p class="said"[^>]*>.*?</p>', '', body, flags=re.S)
+def choices_html(p):
+    links = "\n".join(f'<a class="answer-choice" href="{c["to"]}">{html.escape(c["label"])}</a>' for c in choice_links(p))
+    return '<p>' + DOOR_INSTRUCTIONS + '</p>\n<nav class="answer-choices" aria-label="Choose an answer">\n' + links + '\n</nav>'
+
+def paper_body(body, p):
+    # Replace the gate controls, preserving the original puzzle question.
+    match = re.search(r'(<div class="gate"[^>]*>\s*<p>.*?</p>).*?</div>', body, re.S)
+    if not match:
+        raise ValueError(f"Missing puzzle gate: {p['paper']}")
+    return body[:match.start()] + match.group(1) + '\n' + choices_html(p) + '\n</div>' + body[match.end():]
 
 # ─────────────────────────────────────────────────────────────
 # Build
@@ -196,12 +217,22 @@ for p in POEMS:
                 p["url"], md=f"{up_s}md/p{n}.md"))
 
     # ── paper ────────────────────────────────────────────────
-    body = paper_body(SECT[f"p{n}"])
+    body = paper_body(SECT[f"p{n}"], p)
     body = re.sub(r'<button class="updoor" data-go="s\d">(.*?)</button>',
                   lambda m: f'<a class="updoor" href="{p["url"]}">{m.group(1)}</a>', body)
     write(f'{p["paper"]}/index.html',
           shell(p["paper_title"], "Hyphal Archive.", body, "paper", 2,
                 f'/{p["paper"]}/', md=f"../../md/a{n}.md"))
+
+    write(f'{p["paper"]}/wrong/index.html', shell(
+        "Wrong room", "No opera here. Only a fat Pomeranian sleeping belly up.",
+        f"""<div class="sleep puzzle-sleep">
+<img class="sleeping-pomeranian" src="/assets/sleeping-pomeranian.svg" alt="A fat golden Pomeranian sleeping on his back with his paws in the air." width="440" height="280">
+<h1 class="verdict">Wrong room.</h1>
+<p class="verdict small">No opera here.</p>
+<p class="verdict small">Only a fat Pomeranian sleeping belly up.</p>
+<p class="ways"><a href="/{p['paper']}/#puzzle-door">Back to the puzzle · try again</a></p>
+</div>""", "surface", 3, f'/{p["paper"]}/wrong/'))
 
     # ── opera ────────────────────────────────────────────────
     body = SECT[f"o{n}"]
@@ -286,7 +317,7 @@ for p in POEMS:
     write(f"{md_dir}/p{n}.md",
           f"# {p['title']}\n\n*{SUB}*\n\n{strip_tags(SECT[p['id']])}\n")
     write(f"{md_dir}/a{n}.md",
-          f"# {p['paper_title']}\n\nHyphal Archive.\n\n{strip_tags(paper_body(SECT[f'p{n}']))}\n")
+          f"# {p['paper_title']}\n\nHyphal Archive.\n\n{strip_tags(paper_body(SECT[f'p{n}'], p))}\n")
     write(f"{md_dir}/o{n}.md",
           f"# {p['opera_title']}\n\n*opera in un atto*\n\n{strip_tags(SECT[f'o{n}'])}\n")
 
@@ -309,10 +340,7 @@ for p in POEMS:
         {"id": f"archive/{p['n']}", "stratum": "archive", "url": f"/{p['paper']}/",
          "markdown": f"/md/a{p['n']}.md", "title": p["paper_title"],
          "languages": ["en"],
-         "exits": [{"type": "computed_door",
-                    "scheme": "normalize(answer)",
-                    "normalize": "lowercase Latin letters, no accents, spaces or punctuation",
-                    "template": "/o/{answer}/"},
+         "exits": [{"type": "choice", "options": choice_links(p)},
                    {"type": "ascent", "to": p["url"]}]},
         {"id": f"house/{p['n']}", "stratum": "house", "url": f"/{p['opera']}/",
          "markdown": f"/md/o{p['n']}.md", "title": p["opera_title"],
@@ -368,20 +396,20 @@ The **surface** holds poems in English and Chinese, with the sixth hymn in
 Sanskrit and English. Each contains one word that descends.
 
 The **archive** holds short mathematical papers. Each paper poses a question
-whose answer is the key that unlocks the next room. Open `/o/ANSWER/` on this
-site, replacing ANSWER with the answer in lowercase Latin letters, without
-accents, spaces or punctuation. No form, JavaScript or hashing is needed.
-Wrong answers reach a sleeping Pomeranian and cost nothing.
+with three linked answers. Follow one choice to open the next room. The correct
+choice opens the opera; either wrong choice reaches a sleeping Pomeranian with
+a link back to the same puzzle. No typing, form or JavaScript is needed.
 
 The **house** holds operas in Italian. The first five include English underneath;
 the sixth, I due orologi, is Italian only. The operas do
 not acknowledge the papers and contradict them freely. Contradiction between
 rooms is intended and will not be resolved.
 
-## Door scheme
+## Puzzle doors
 
-    path = "/o/" + normalize(answer) + "/"
-    normalize = lowercase Latin letters, no accents, spaces or punctuation
+The HTML and Markdown papers list the same three answer links. The manifest
+exposes them as choice options. Follow a link with an ordinary GET request;
+redirects take you to the chosen room. Previous opera URLs remain valid.
 
 ## Surface
 
@@ -425,6 +453,12 @@ for p in POEMS:
     for alias in aliases:
         for suffix in ["", "/"]:
             red.append(f"/o/{alias}{suffix}  /{p['opera']}/  301")
+red.append("\n# Three choices per puzzle; both wrong choices return to that puzzle's sleeping room")
+for p in POEMS:
+    for c in choice_links(p):
+        destination = f"/{p['opera']}/" if c["label"] == p["key"] else f"/{p['paper']}/wrong/"
+        for route in (c["to"].rstrip("/"), c["to"]):
+            red.append(f"{route}  {destination}  302")
 write("_redirects", "\n".join(red) + "\n")
 
 write("_headers", """/*
@@ -453,7 +487,7 @@ write("favicon.svg", """<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 
 </svg>
 """)
 
-for path in ("_worker.js", "wrangler.jsonc", ".assetsignore", "css/rumor-room.css", "participate.md"):
+for path in ("_worker.js", "wrangler.jsonc", ".assetsignore", "css/rumor-room.css", "css/puzzle-choices.css", "assets/sleeping-pomeranian.svg", "participate.md"):
     write(path, (ROOT / path).read_text(encoding="utf-8"))
 
 print("built:", OUT)

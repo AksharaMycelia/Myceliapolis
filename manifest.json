@@ -40,10 +40,21 @@
       ],
       "exits": [
         {
-          "type": "computed_door",
-          "scheme": "normalize(answer)",
-          "normalize": "lowercase Latin letters, no accents, spaces or punctuation",
-          "template": "/o/{answer}/"
+          "type": "choice",
+          "options": [
+            {
+              "label": "chronos",
+              "to": "/a/iv-7/choice-1/"
+            },
+            {
+              "label": "outis",
+              "to": "/a/iv-7/choice-2/"
+            },
+            {
+              "label": "logos",
+              "to": "/a/iv-7/choice-3/"
+            }
+          ]
         },
         {
           "type": "ascent",
@@ -101,10 +112,21 @@
       ],
       "exits": [
         {
-          "type": "computed_door",
-          "scheme": "normalize(answer)",
-          "normalize": "lowercase Latin letters, no accents, spaces or punctuation",
-          "template": "/o/{answer}/"
+          "type": "choice",
+          "options": [
+            {
+              "label": "forma",
+              "to": "/a/ii-3/choice-1/"
+            },
+            {
+              "label": "materia",
+              "to": "/a/ii-3/choice-2/"
+            },
+            {
+              "label": "memoria",
+              "to": "/a/ii-3/choice-3/"
+            }
+          ]
         },
         {
           "type": "ascent",
@@ -162,10 +184,21 @@
       ],
       "exits": [
         {
-          "type": "computed_door",
-          "scheme": "normalize(answer)",
-          "normalize": "lowercase Latin letters, no accents, spaces or punctuation",
-          "template": "/o/{answer}/"
+          "type": "choice",
+          "options": [
+            {
+              "label": "io",
+              "to": "/a/vii-1/choice-1/"
+            },
+            {
+              "label": "lui",
+              "to": "/a/vii-1/choice-2/"
+            },
+            {
+              "label": "tu",
+              "to": "/a/vii-1/choice-3/"
+            }
+          ]
         },
         {
           "type": "ascent",
@@ -223,10 +256,21 @@
       ],
       "exits": [
         {
-          "type": "computed_door",
-          "scheme": "normalize(answer)",
-          "normalize": "lowercase Latin letters, no accents, spaces or punctuation",
-          "template": "/o/{answer}/"
+          "type": "choice",
+          "options": [
+            {
+              "label": "silenzio",
+              "to": "/a/ix-12/choice-1/"
+            },
+            {
+              "label": "bau",
+              "to": "/a/ix-12/choice-2/"
+            },
+            {
+              "label": "rifiuto",
+              "to": "/a/ix-12/choice-3/"
+            }
+          ]
         },
         {
           "type": "ascent",
@@ -284,10 +328,21 @@
       ],
       "exits": [
         {
-          "type": "computed_door",
-          "scheme": "normalize(answer)",
-          "normalize": "lowercase Latin letters, no accents, spaces or punctuation",
-          "template": "/o/{answer}/"
+          "type": "choice",
+          "options": [
+            {
+              "label": "tls",
+              "to": "/a/i-1/choice-1/"
+            },
+            {
+              "label": "pki",
+              "to": "/a/i-1/choice-2/"
+            },
+            {
+              "label": "tofu",
+              "to": "/a/i-1/choice-3/"
+            }
+          ]
         },
         {
           "type": "ascent",
@@ -345,10 +400,21 @@
       ],
       "exits": [
         {
-          "type": "computed_door",
-          "scheme": "normalize(answer)",
-          "normalize": "lowercase Latin letters, no accents, spaces or punctuation",
-          "template": "/o/{answer}/"
+          "type": "choice",
+          "options": [
+            {
+              "label": "sedici",
+              "to": "/a/xi-4/choice-1/"
+            },
+            {
+              "label": "venti",
+              "to": "/a/xi-4/choice-2/"
+            },
+            {
+              "label": "quattro",
+              "to": "/a/xi-4/choice-3/"
+            }
+          ]
         },
         {
           "type": "ascent",

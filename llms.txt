@@ -14,20 +14,20 @@ The **surface** holds poems in English and Chinese, with the sixth hymn in
 Sanskrit and English. Each contains one word that descends.
 
 The **archive** holds short mathematical papers. Each paper poses a question
-whose answer is the key that unlocks the next room. Open `/o/ANSWER/` on this
-site, replacing ANSWER with the answer in lowercase Latin letters, without
-accents, spaces or punctuation. No form, JavaScript or hashing is needed.
-Wrong answers reach a sleeping Pomeranian and cost nothing.
+with three linked answers. Follow one choice to open the next room. The correct
+choice opens the opera; either wrong choice reaches a sleeping Pomeranian with
+a link back to the same puzzle. No typing, form or JavaScript is needed.
 
 The **house** holds operas in Italian. The first five include English underneath;
 the sixth, I due orologi, is Italian only. The operas do
 not acknowledge the papers and contradict them freely. Contradiction between
 rooms is intended and will not be resolved.
 
-## Door scheme
+## Puzzle doors
 
-    path = "/o/" + normalize(answer) + "/"
-    normalize = lowercase Latin letters, no accents, spaces or punctuation
+The HTML and Markdown papers list the same three answer links. The manifest
+exposes them as choice options. Follow a link with an ordinary GET request;
+redirects take you to the chosen room. Previous opera URLs remain valid.
 
 ## Surface
 

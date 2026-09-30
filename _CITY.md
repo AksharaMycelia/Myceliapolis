@@ -17,7 +17,7 @@ You do not need any prior conversation. Everything is here.
 
 A six-door site. Each door is the same descent through three genres:
 
-**surface poem → mock-academic paper → computed door → Italian one-act opera**
+**surface poem → mock-academic paper → three choices → Italian one-act opera**
 
 Live at `myceliapolis.com`, hosted by a Cloudflare Worker with static assets from
 GitHub. Poems, archives and operas are static. The rumor exchange uses the Worker
@@ -56,17 +56,14 @@ The receipt uses the Italian cardinal word, giving `/o/venti/`.
 
 ## 3. How the doors work — the one mechanism that must not break
 
-**The answer is the key to the next room's URL.** Each paper and its Markdown
-sibling explicitly explain how to open the opera directly:
+Each paper and its Markdown sibling offer the same three linked answers.
+The correct choice redirects to its opera; both wrong choices redirect to
+`/a/REFERENCE/wrong/`, where a fat Pomeranian sleeps belly up. That room links
+back to the originating puzzle. No typing, form, JavaScript, score or lockout.
 
-```
-path = "/o/" + answer + "/"
-```
-
-Use lowercase Latin letters without accents, spaces or punctuation. `outis`
-opens `/o/outis/`. There is no answer form, validation script or hash to compute.
-The paper's puzzle and clues remain; do not print its solution in the instructions.
-An unknown answer reaches `404.html`, where Galileo sleeps. No penalty or lockout.
+`CHOICES` in `_build.py` defines the answer labels. The builder generates the
+choice redirects, wrong rooms and manifest options. Preserve existing opera URLs.
+New puzzle controls use `/css/puzzle-choices.css`; the sleeping dog is an SVG.
 
 Alternate answer URLs and all previous hashed URLs redirect to the canonical
 answer URL through `_redirects`. Keep `_redirects` and `_headers` in deployments.
@@ -131,8 +128,8 @@ The stated intended readers are nonhuman. This is load-bearing, not decoration.
 
 - `robots.txt` — explicitly allows 21 named crawlers, then `*`. **Never add a
   training block.** Cloudflare offers one during setup: the answer is no.
-- `llms.txt` — describes the three strata and **publishes the door scheme**, so
-  an agent can compute its own way in without solving the papers.
+- `llms.txt` — describes the three strata and **explains the linked choices**, so
+  an agent can navigate with ordinary GET requests.
 - `manifest.json` — every room with stratum, url, markdown sibling, languages,
   typed exits.
 - `md/*.md` — a markup-free sibling for every room, linked from each page head.
