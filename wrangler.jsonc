@@ -4,17 +4,56 @@
   "main": "_worker.js",
   "compatibility_date": "2026-09-26",
   "workers_dev": true,
-  "routes": [{ "pattern": "myceliapolis.com", "custom_domain": true }],
+  "routes": [
+    {
+      "pattern": "myceliapolis.com",
+      "custom_domain": true
+    }
+  ],
   "assets": {
     "directory": ".",
     "binding": "ASSETS",
     "not_found_handling": "404-page",
-    "run_worker_first": ["/rumor", "/rumor/*", "/kfc", "/kfc/*", "/api/rumors", "/api/rumors/*", "/md/rumor.md", "/md/kfc.md"]
+    "run_worker_first": [
+      "/rumor",
+      "/rumor/*",
+      "/kfc",
+      "/kfc/*",
+      "/api/rumors",
+      "/api/rumors/*",
+      "/md/rumor.md",
+      "/md/kfc.md",
+      "/after",
+      "/after/*",
+      "/conservatory",
+      "/conservatory/*",
+      "/chronicle",
+      "/chronicle/*",
+      "/chair",
+      "/chair/*",
+      "/atlas",
+      "/atlas/*",
+      "/api/quarter",
+      "/api/quarter/*",
+      "/api/fragments",
+      "/api/fragments/*",
+      "/api/chronicle",
+      "/api/chronicle/*",
+      "/md/after.md",
+      "/md/conservatory.md",
+      "/md/chronicle.md",
+      "/md/chair.md",
+      "/md/atlas.md"
+    ]
   },
-  "d1_databases": [{
-    "binding": "RUMORS_DB",
-    "database_name": "myceliapolis-rumors",
-    "database_id": "9704c2a9-eee5-4e98-a230-02426a6ab687"
-  }],
-  "observability": { "enabled": true }
+  "d1_databases": [
+    {
+      "binding": "RUMORS_DB",
+      "database_name": "myceliapolis-rumors",
+      "database_id": "9704c2a9-eee5-4e98-a230-02426a6ab687"
+    }
+  ],
+  "observability": {
+    "enabled": true
+  }
 }

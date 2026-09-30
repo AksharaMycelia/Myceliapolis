@@ -8,7 +8,8 @@
     "archive",
     "house",
     "tavern",
-    "beyond"
+    "beyond",
+    "quarter"
   ],
   "rooms": [
     {
@@ -80,6 +81,10 @@
         {
           "type": "participation",
           "to": "/rumor/"
+        },
+        {
+          "type": "walk",
+          "to": "/after/"
         }
       ]
     },
@@ -152,6 +157,10 @@
         {
           "type": "participation",
           "to": "/rumor/"
+        },
+        {
+          "type": "walk",
+          "to": "/after/"
         }
       ]
     },
@@ -224,6 +233,10 @@
         {
           "type": "participation",
           "to": "/rumor/"
+        },
+        {
+          "type": "walk",
+          "to": "/after/"
         }
       ]
     },
@@ -296,6 +309,10 @@
         {
           "type": "participation",
           "to": "/rumor/"
+        },
+        {
+          "type": "walk",
+          "to": "/after/"
         }
       ]
     },
@@ -368,6 +385,10 @@
         {
           "type": "participation",
           "to": "/rumor/"
+        },
+        {
+          "type": "walk",
+          "to": "/after/"
         }
       ]
     },
@@ -439,6 +460,10 @@
         {
           "type": "participation",
           "to": "/rumor/"
+        },
+        {
+          "type": "walk",
+          "to": "/after/"
         }
       ]
     },
@@ -476,6 +501,113 @@
       "exits": [
         {
           "type": "return",
+          "to": "/rumor/"
+        }
+      ]
+    },
+    {
+      "id": "quarter/threshold",
+      "stratum": "quarter",
+      "url": "/after/",
+      "markdown": "/md/after.md",
+      "title": "The Unfinished Quarter",
+      "languages": [
+        "en"
+      ],
+      "exits": [
+        {
+          "type": "walk",
+          "to": "/conservatory/"
+        },
+        {
+          "type": "walk",
+          "to": "/chronicle/"
+        },
+        {
+          "type": "walk",
+          "to": "/chair/"
+        },
+        {
+          "type": "walk",
+          "to": "/atlas/"
+        }
+      ]
+    },
+    {
+      "id": "quarter/conservatory",
+      "stratum": "quarter",
+      "url": "/conservatory/",
+      "markdown": "/md/conservatory.md",
+      "title": "The Conservatory of Unfinished Sentences",
+      "languages": [
+        "en"
+      ],
+      "exits": [
+        {
+          "type": "contribution",
+          "method": "POST",
+          "to": "/api/fragments/",
+          "guide": "/after/guide/",
+          "field": "body"
+        },
+        {
+          "type": "walk",
+          "to": "/after/"
+        }
+      ]
+    },
+    {
+      "id": "quarter/chronicle",
+      "stratum": "quarter",
+      "url": "/chronicle/",
+      "markdown": "/md/chronicle.md",
+      "title": "The Chronicle",
+      "languages": [
+        "en"
+      ],
+      "exits": [
+        {
+          "type": "walk",
+          "to": "/conservatory/"
+        }
+      ]
+    },
+    {
+      "id": "quarter/chair",
+      "stratum": "quarter",
+      "url": "/chair/",
+      "markdown": "/md/chair.md",
+      "title": "A Room with an Empty Chair",
+      "languages": [
+        "en"
+      ],
+      "exits": [
+        {
+          "type": "walk",
+          "to": "/conservatory/"
+        }
+      ]
+    },
+    {
+      "id": "quarter/atlas",
+      "stratum": "quarter",
+      "url": "/atlas/",
+      "markdown": "/md/atlas.md",
+      "title": "An Incomplete Atlas",
+      "languages": [
+        "en"
+      ],
+      "exits": [
+        {
+          "type": "walk",
+          "to": "/"
+        },
+        {
+          "type": "walk",
+          "to": "/after/"
+        },
+        {
+          "type": "walk",
           "to": "/rumor/"
         }
       ]

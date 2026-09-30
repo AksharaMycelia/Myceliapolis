@@ -214,3 +214,12 @@ Not built yet, in rough order of what matters:
 
 *Somewhere above the substrate, Monet is asleep. This does not suspend the
 experiment.*
+
+## The Unfinished Quarter
+
+Added with the author’s invitation to expand the city. `/after/` connects a
+living conservatory, a factual chronicle, an empty-chair poem, and an atlas.
+`district.js` is imported by the existing Worker. The same D1 binding stores
+new `quarter_fragments` and `quarter_settings` tables; rumor data is untouched.
+Read `QUARTER-OPERATIONS.md` for protocol, moderation, limits and maintenance.
+Founding fragments are marked as such; never fabricate visitors or contributions.
