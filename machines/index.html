@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Small Machines — Myceliapolis</title>
+  <meta name="description" content="A playable district. Program a creature, draw a wall, and watch a few simple rules redraw the streets.">
+  <link rel="canonical" href="https://myceliapolis.com/machines/">
+  <link rel="alternate" type="text/markdown" href="/md/machines.md">
+  <link rel="icon" href="/favicon.svg">
+  <link rel="stylesheet" href="/machines/room.css?v=1">
+  <script type="module" src="/machines/room.mjs?v=1"></script>
+</head>
+<body>
+  <a class="skip" href="#playground">Skip to the machines</a>
+  <header class="mast"><a href="/">MYCELIAPOLIS</a><nav aria-label="City"><a href="/after/">The quarter</a><a href="/atlas/">City atlas ↗</a></nav></header>
+  <main>
+    <header class="intro"><div><p class="eyebrow">A playable district · experiment 01</p><h1>Small <em>machines.</em></h1></div><p class="invitation">Give a creature a rule.<br> Let it redraw the streets.</p></header>
+    <noscript><p class="message">The moving world needs JavaScript. You can still <a href="/md/machines.md">read the rules and create a blueprint</a>.</p></noscript>
+    <div id="playground" class="workshop" hidden>
+      <section class="world-panel" aria-label="The world">
+        <div class="world-heading"><span id="world-name">Four neighbors</span><span class="clock">STEP <output id="tick" aria-live="off">360</output></span></div>
+        <div class="transport"><button id="play" class="primary" type="button">▶ Run</button><button id="step" type="button">One step</button><button id="jump" type="button">+100 steps</button><button id="restart" type="button">Restart</button><label class="speed">Pace<select id="speed"><option value="4">Slow</option><option value="16" selected>Walking</option><option value="64">Busy</option><option value="240">Rush</option></select></label></div>
+        <div class="board-wrap"><canvas id="board" width="768" height="768" tabindex="0" aria-label="32 by 32 world. Arrow keys move the cursor. Space uses the selected tool. Coordinates and tools are also available below.">A grid of tiles, walls, and programmable creatures. Use the coordinate controls below to edit it without a pointer.</canvas></div>
+        <div class="world-foot"><p><span class="status-dot"></span><span id="run-state">Paused</span> · <span id="census">4 creatures</span></p><button id="share" type="button" class="quiet">Copy this world ↗</button></div>
+        <p id="notice" class="notice" role="status" aria-live="polite">Choose Run, or change something first.</p>
+        <div id="share-fallback" hidden><label for="share-url">Your world link</label><input id="share-url" readonly><p class="small">Copy this link. It contains the world itself.</p></div>
+      </section>
+      <aside class="bench" aria-label="Workbench">
+        <section><div class="section-title"><span class="number">01</span><h2>Choose a starting place</h2></div><div class="examples" role="group" aria-label="Starting places"><button type="button" data-preset="neighbors" aria-pressed="true">Four neighbors</button><button type="button" data-preset="solitary" aria-pressed="false">One wanderer</button><button type="button" data-preset="courtyards" aria-pressed="false">Courtyards</button><button type="button" data-preset="empty" aria-pressed="false">Empty streets</button></div></section>
+        <section><div class="section-title"><span class="number">02</span><h2>Change a creature</h2></div><div id="creatures" class="creatures" role="group" aria-label="Choose a creature"></div><form id="program-form"><label for="program">Its program <span class="small">2–8 turns</span></label><div class="program-entry"><input id="program" value="RLLR" maxlength="8" pattern="[LlRrSsUu]{2,8}" autocomplete="off" autocapitalize="characters" spellcheck="false" required aria-describedby="program-help"><button type="submit">Apply</button></div></form><p id="program-help" class="small">L left · R right · S straight · U turn back</p><div id="rule-strip" class="rule-strip" aria-label="Program by tile state"></div><p class="small rule-explanation">Read the tile. Make that turn. Change it to the next state. Move one square.</p><div class="creature-actions"><button id="add" type="button">+ Place a creature</button><button id="remove" class="quiet" type="button">Remove selected</button></div></section>
+        <section><div class="section-title"><span class="number">03</span><h2>Touch the streets</h2></div><div class="tools" role="group" aria-label="Drawing tool"><button type="button" data-tool="inspect" aria-pressed="true">Inspect</button><button type="button" data-tool="wall" aria-pressed="false">Wall</button><button type="button" data-tool="light" aria-pressed="false">Light</button><button type="button" data-tool="erase" aria-pressed="false">Erase</button></div><p id="tool-help" class="small">Click a creature to select it, or a tile to read its state.</p><form id="coordinate-form" class="coordinates"><label>Column<input id="column" type="number" min="0" max="31" value="16" required></label><label>Row<input id="row" type="number" min="0" max="31" value="16" required></label><button type="submit">Use tool</button></form><output id="tile-info" class="small">Tile 16, 16</output><button id="undo" type="button" class="quiet" disabled>Undo last edit</button></section>
+      </aside>
+    </div>
+    <section class="underneath"><div><p class="eyebrow">What makes it a world?</p><h2>They share the ground.<br><em>They change each other.</em></h2><p>A creature’s trail is another creature’s instruction. Draw a wall into a familiar route. Add a neighbor with a different program. There is no winning pattern.</p><p class="small">This is a local simulation. It runs only while this tab is visible and you choose Run. A shared link opens an independent copy of that exact moment. Nothing is posted to a public database.</p></div><div><details id="blueprint-details"><summary>Open the blueprint</summary><p>Inspect or change the world’s data. Programs use the four turns above. Imported blueprints cannot run arbitrary code.</p><label for="blueprint">World blueprint (JSON)</label><textarea id="blueprint" rows="8" spellcheck="false"></textarea><div class="blueprint-actions"><button id="export" type="button">Read current world</button><button id="import" type="button">Load blueprint</button></div><p id="blueprint-notice" role="status" aria-live="polite"></p><p><a href="/md/machines.md">Rules and examples for travelling agents ↗</a></p></details><details><summary>How the streets work</summary><p>Each letter belongs to a tile state, starting at 0. A creature uses its own program, changes the tile to the next state, then moves. After the last state, a tile returns to 0.</p><p>A wall turns a creature around and holds it in place for that step. The world’s edges join. Creatures act in their listed order and can pass through each other.</p><p>Changing a program or drawing pauses the world and establishes a new restart point. Undo restores the previous edit. Examples open at a precomputed moment, already paused.</p></details></div></section>
+  </main>
+  <footer><span>Small Machines / Myceliapolis</span><a href="/machines/engine.mjs">The engine</a><a href="/md/machines.md">Plain text & protocol</a><a href="/chair/">Somewhere quiet ↗</a></footer>
+</body>
+</html>

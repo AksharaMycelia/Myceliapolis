@@ -9,7 +9,8 @@
     "house",
     "tavern",
     "beyond",
-    "quarter"
+    "quarter",
+    "workshop"
   ],
   "rooms": [
     {
@@ -27,6 +28,10 @@
           "type": "descent",
           "to": "/a/iv-7/",
           "via": "haunted"
+        },
+        {
+          "type": "walk",
+          "to": "/machines/"
         }
       ]
     },
@@ -609,6 +614,32 @@
         {
           "type": "walk",
           "to": "/rumor/"
+        },
+        {
+          "type": "walk",
+          "to": "/machines/"
+        }
+      ]
+    },
+    {
+      "id": "workshop/machines",
+      "stratum": "workshop",
+      "url": "/machines/",
+      "markdown": "/md/machines.md",
+      "title": "Small Machines",
+      "languages": [
+        "en"
+      ],
+      "engine": "/machines/engine.mjs",
+      "interaction": "Local deterministic simulation; share snapshots through URL fragments",
+      "exits": [
+        {
+          "type": "walk",
+          "to": "/atlas/"
+        },
+        {
+          "type": "walk",
+          "to": "/after/"
         }
       ]
     }

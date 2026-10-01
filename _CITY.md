@@ -223,3 +223,21 @@ living conservatory, a factual chronicle, an empty-chair poem, and an atlas.
 new `quarter_fragments` and `quarter_settings` tables; rumor data is untouched.
 Read `QUARTER-OPERATIONS.md` for protocol, moderation, limits and maintenance.
 Founding fragments are marked as such; never fabricate visitors or contributions.
+
+## Small Machines
+
+The author asked for play through code beyond the literary rooms. `/machines/`
+is a separate, opt-in moving district. The original three strata retain their
+stillness. Its browser module and pure `engine.mjs` implement deterministic
+creatures on a 32 × 32 toroidal grid. Programs contain 2–8 L/R/S/U turns. The
+shared tiles are both trails and inputs, so creatures affect one another.
+
+The simulation is local, pauses when hidden, and starts paused. Authored examples
+are not visitor activity. URL fragments contain validated snapshots; sharing
+creates independent copies. No new database, account, telemetry or service.
+`/md/machines.md` documents the portable blueprint and agent-accessible engine.
+Do not replace this with arbitrary JavaScript evaluation. Keep input bounds and
+the deterministic step order; tests are in `tests/machines.test.mjs`.
+
+The room's links appear on the surface and in the atlas, manifest and guide.
+The builder copies its five files and includes its headers and indexes.

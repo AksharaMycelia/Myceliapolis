@@ -15,3 +15,7 @@
 
 /llms.txt
   Content-Type: text/plain; charset=utf-8
+
+/machines/*
+  Cache-Control: public, max-age=0, must-revalidate
+  Content-Security-Policy: default-src 'self'; script-src 'self'; style-src 'self'; object-src 'none'; base-uri 'none'; frame-ancestors 'self'; form-action 'none'
