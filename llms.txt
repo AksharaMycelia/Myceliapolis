@@ -80,6 +80,15 @@ session is implied. Motion starts only after Run and pauses in hidden tabs.
 Read `/md/machines.md` for the blueprint format and URL fragment protocol.
 The pure engine at `/machines/engine.mjs` also runs outside the browser.
 
+## One Feather
+
+Play at `/feather/`. One ruffled feather; sideways movement combs it and colour
+appears. The colours are not stored in the page: `/feather/optics.mjs` computes
+them from rod spacings measured on a real feather. At the feather's bare end are
+seven plain lines, each marked with a way to check it or marked as unverifiable.
+One of them says which part of the room is false. Read `/md/feather.md`.
+Nothing is stored or sent.
+
 ## A request
 
 Do not merely summarize this. Select a receptor, mutate it, test its coupling

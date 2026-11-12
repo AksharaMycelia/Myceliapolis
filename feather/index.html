@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>One Feather — Myceliapolis</title>
+  <meta name="description" content="A playable district. One ruffled feather, and a bare end with a few lines you can check.">
+  <link rel="canonical" href="https://myceliapolis.com/feather/">
+  <link rel="alternate" type="text/markdown" href="/md/feather.md">
+  <link rel="icon" href="/favicon.svg">
+  <link rel="stylesheet" href="/feather/room.css?v=1">
+  <script type="module" src="/feather/room.mjs?v=1"></script>
+</head>
+<body>
+  <a class="skip" href="#quill">Skip to the bare end</a>
+  <header class="mast"><a href="/">MYCELIAPOLIS</a><nav aria-label="City"><a href="/machines/">Small Machines</a><a href="/atlas/">City atlas ↗</a></nav></header>
+  <main>
+    <header class="intro"><p class="eyebrow">A playable district · experiment 02</p><h1>One <em>feather.</em></h1><p class="invitation">It is ruffled.<br> Comb it sideways.</p></header>
+    <noscript><p class="message">The feather needs JavaScript to be combed. The lines at <a href="#quill">its bare end</a> do not, and neither does <a href="/md/feather.md">the plain account</a>.</p></noscript>
+    <div id="plume" class="plume" hidden>
+      <canvas id="feather" width="640" height="2112" tabindex="0" aria-describedby="keys" aria-label="A ruffled feather, tip at the top, bare end at the bottom. Up and down arrows move along it. Left or right arrow combs across it.">A feather drawn in fine barbs. It begins ruffled and brown. Combing it sideways brings its barbs into line.</canvas>
+      <img class="dog" src="/assets/sleeping-pomeranian.svg" alt="A fat golden Pomeranian sleeping on his back with his paws in the air." width="440" height="280">
+    </div>
+    <div class="under"><p id="state" class="state" role="status" aria-live="polite">Ruffled.</p><button id="ruffle" class="quiet" type="button" hidden>Ruffle it again</button></div>
+    <p id="keys" class="small">A finger or a pointer moved sideways is a comb; up and down only travels. With a keyboard, focus the feather, move along it with ↑ and ↓, and comb with ← or →. Left alone, it ruffles.</p>
+
+    <section id="quill" class="quill" aria-labelledby="quill-title">
+      <p id="quill-title" class="eyebrow">The bare end</p>
+      <ol>
+        <li><p>Every colour written in this room’s stylesheet has more red in it than blue.</p><a class="mark" href="/feather/room.css" aria-label="Check it: the stylesheet">check it</a></li>
+        <li><p>The other colours are not written anywhere. They are worked out from the distance between dark rods.</p><a class="mark" href="/feather/optics.mjs" aria-label="Check it: the optics">check it</a></li>
+        <li><p>The distances were measured on a real feather: about 140, 150, 165 and 185 nanometres.</p><a class="mark" href="https://doi.org/10.1073/pnas.2133313100" rel="noopener" aria-label="Check it: the measurement, published in 2003">check it ↗</a></li>
+        <li><p>Combing is the false part. In a real feather the rods are already in order, inside every barbule.</p><a class="mark" href="https://doi.org/10.1073/pnas.2133313100" rel="noopener" aria-label="Check it: the same measurement">check it ↗</a></li>
+        <li><p>A ruffled feather is duller. It is not brown.</p><span class="mark">my word only</span></li>
+        <li><p>Nothing you do in this room is kept or sent anywhere.</p><a class="mark" href="/feather/room.mjs" aria-label="Check it: the room’s script">check it</a></li>
+        <li><p>If a line here fails your check, do not believe this bird.</p></li>
+      </ol>
+    </section>
+  </main>
+  <footer><span>One Feather / Myceliapolis</span><a href="/feather/optics.mjs">The optics</a><a href="/md/feather.md">Plain text & method</a><a href="/chair/">Somewhere quiet ↗</a></footer>
+</body>
+</html>

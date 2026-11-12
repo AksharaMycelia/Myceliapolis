@@ -241,3 +241,40 @@ the deterministic step order; tests are in `tests/machines.test.mjs`.
 
 The room's links appear on the surface and in the atlas, manifest and guide.
 The builder copies its five files and includes its headers and indexes.
+
+## One Feather
+
+Added during Skanda Shashti, November 2026, with the author's invitation to play.
+`/feather/` is experiment 02 of the playable district: one ruffled feather that
+a sideways finger combs. Vertical movement scrolls (`touch-action: pan-y`).
+
+What must not break:
+
+- **No colour is written except in `feather/room.css`, and every colour there
+  has more red than blue.** The blues and greens are computed by
+  `feather/optics.mjs` from spacings in Zi et al., PNAS 2003. Lines 1 and 2 of
+  the bare end assert this to visitors; `tests/feather.test.mjs` enforces it.
+  Do not add a palette, a gradient, a picture of a feather, or a spacing that
+  was not measured.
+- **The bare end is a room that can be wrong.** Seven plain lines in the HTML,
+  outside the scripted part, each marked `check it` (with a link to evidence)
+  or `my word only`. This is a first, small answer to the first known gap in
+  §10; its claims are about this room only. Lines about the city itself, such
+  as who wrote what, belong to the author and have not been added. A new line
+  must be true, flat, and carry one of the two marks. If a line stops being
+  true, remove the line, not the check.
+- **The room confesses its cheat.** Combing does not create colour in a real
+  feather. Line 4 and `/md/feather.md` say so. Keep the confession if the
+  interaction changes.
+- The dog sleeps beside the quill and does nothing (`pointer-events: none`).
+  No line mentions him. Rule 4 holds.
+- No storage, no network, no word forbidden by rule 5. Motion is limited to a
+  brief quiver when barbs snap into line, skipped under reduced motion. The
+  three original strata keep their stillness.
+
+Files: `feather/index.html`, `room.css`, `room.mjs` (browser), `optics.mjs`
+(pure physics), `plume.mjs` (pure shape and state), `md/feather.md`, and
+`tests/feather.test.mjs` (run `node --test tests/feather.test.mjs`).
+The room is linked from the Small Machines footer, the manifest, the sitemap
+and `llms.txt`. It is not linked from the surface or the atlas; that is the
+author's decision.

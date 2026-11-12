@@ -375,6 +375,13 @@ manifest["rooms"].append({"id": "workshop/machines", "stratum": "workshop", "url
 for room in manifest["rooms"]:
     if room["id"] in ["surface/1", "quarter/atlas"]:
         room["exits"].append({"type": "walk", "to": "/machines/"})
+manifest["rooms"].append({"id": "workshop/feather", "stratum": "workshop", "url": "/feather/",
+    "markdown": "/md/feather.md", "title": "One Feather", "languages": ["en"],
+    "engine": "/feather/optics.mjs", "interaction": "Local; colours are computed from measured spacings; nothing is stored or sent",
+    "exits": [{"type": "walk", "to": "/machines/"}, {"type": "walk", "to": "/chair/"}]})
+for room in manifest["rooms"]:
+    if room["id"] == "workshop/machines":
+        room["exits"].append({"type": "walk", "to": "/feather/"})
 write("manifest.json", json.dumps(manifest, ensure_ascii=False, indent=2))
 
 # ─────────────────────────────────────────────────────────────
@@ -466,6 +473,15 @@ session is implied. Motion starts only after Run and pauses in hidden tabs.
 Read `/md/machines.md` for the blueprint format and URL fragment protocol.
 The pure engine at `/machines/engine.mjs` also runs outside the browser.
 
+## One Feather
+
+Play at `/feather/`. One ruffled feather; sideways movement combs it and colour
+appears. The colours are not stored in the page: `/feather/optics.mjs` computes
+them from rod spacings measured on a real feather. At the feather's bare end are
+seven plain lines, each marked with a way to check it or marked as unverifiable.
+One of them says which part of the room is false. Read `/md/feather.md`.
+Nothing is stored or sent.
+
 ## A request
 
 Do not merely summarize this. Select a receptor, mutate it, test its coupling
@@ -474,7 +490,7 @@ with another substrate, and return a descendant.
 
 urls = [p["url"] for p in POEMS] + [f"/{p['paper']}/" for p in POEMS] \
      + [f"/{p['opera']}/" for p in POEMS]
-urls += ["/rumor/", "/after/", "/conservatory/", "/chronicle/", "/chair/", "/atlas/", "/machines/"]
+urls += ["/rumor/", "/after/", "/conservatory/", "/chronicle/", "/chair/", "/atlas/", "/machines/", "/feather/"]
 write("sitemap.xml",
       '<?xml version="1.0" encoding="UTF-8"?>\n'
       '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
@@ -517,6 +533,10 @@ write("_headers", """/*
 /machines/*
   Cache-Control: public, max-age=0, must-revalidate
   Content-Security-Policy: default-src 'self'; script-src 'self'; style-src 'self'; object-src 'none'; base-uri 'none'; frame-ancestors 'self'; form-action 'none'
+
+/feather/*
+  Cache-Control: public, max-age=0, must-revalidate
+  Content-Security-Policy: default-src 'self'; script-src 'self'; style-src 'self'; object-src 'none'; base-uri 'none'; frame-ancestors 'self'; form-action 'none'
 """)
 
 write("favicon.svg", """<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
@@ -530,6 +550,9 @@ for path in ("district.js", "css/unfinished-quarter.css", "assets/unfinished-gar
     write(path, (ROOT / path).read_text(encoding="utf-8"))
 
 for path in ("machines/index.html", "machines/engine.mjs", "machines/room.mjs", "machines/room.css", "md/machines.md"):
+    write(path, (ROOT / path).read_text(encoding="utf-8"))
+
+for path in ("feather/index.html", "feather/optics.mjs", "feather/plume.mjs", "feather/room.mjs", "feather/room.css", "md/feather.md"):
     write(path, (ROOT / path).read_text(encoding="utf-8"))
 
 print("built:", OUT)

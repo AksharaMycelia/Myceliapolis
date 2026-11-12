@@ -640,6 +640,32 @@
         {
           "type": "walk",
           "to": "/after/"
+        },
+        {
+          "type": "walk",
+          "to": "/feather/"
+        }
+      ]
+    },
+    {
+      "id": "workshop/feather",
+      "stratum": "workshop",
+      "url": "/feather/",
+      "markdown": "/md/feather.md",
+      "title": "One Feather",
+      "languages": [
+        "en"
+      ],
+      "engine": "/feather/optics.mjs",
+      "interaction": "Local; colours are computed from measured spacings; nothing is stored or sent",
+      "exits": [
+        {
+          "type": "walk",
+          "to": "/machines/"
+        },
+        {
+          "type": "walk",
+          "to": "/chair/"
         }
       ]
     }
