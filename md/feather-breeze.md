@@ -1,44 +1,45 @@
-# A Feather, With Weather
+# மயிலிறகு
 
-A separate variation of [One Feather](/feather/), at [/feather/breeze/](/feather/breeze/).
-Brush sideways. Repeat a stroke and that patch brightens more easily. Nearby
-barbs echo the pace and curl a little. Familiarity fades over about a minute;
-the echo fades over seconds. There is no completion message or winning state.
+முருகா,
+ஒரு கணம் திரும்பிப் பார்.
+எதைக் காட்டுவதென்று
+இன்னும் முடிவு செய்யவில்லை.
 
-A breeze sometimes aligns one patch and loosens another, including patches
-never touched. A sleeping dog occasionally turns over and leaves the feather
-at a different angle. He does not solve anything.
+அடுத்த தெருவில்
+மேளம் நின்றுவிட்டது.
+இந்த நூல் மட்டும்
+இன்னும் அசைகிறது.
 
-## The bare end
+x ≠ y,  P(x) = P(y)
 
-1. Every colour written in this room’s stylesheet has more red in it than blue.
-2. The other colours are not written anywhere. They are worked out from the distance between dark rods.
-3. The distances were measured on a real feather: about 140, 150, 165 and 185 nanometres.
-4. Combing is the false part. In a real feather the rods are already in order, inside every barbule.
-5. A ruffled feather is duller. It is not brown.
-6. The feather remembers only while this page is open. Reloading forgets; your strokes are not saved or sent.
-7. The habits, the answering curls and the weather are invented.
+P : கண்ணுக்குத் தெரிவது
 
-The warm palette is inherited from [/feather/room.css](/feather/room.css).
-The original [optics](/feather/optics.mjs) and [shape](/feather/plume.mjs) are
-unchanged. See [the original method](/md/feather.md) for the measured spacings
-and the limitations of the optical approximation. This variation adds
-invented behaviour in [/feather/breeze/temper.mjs](/feather/breeze/temper.mjs);
-it makes no additional biological claims.
+கந்த சஷ்டி முடிந்த மறுநாள்.
+படிக்கட்டில் உதிர்ந்த பூக்களைப்
+பெருக்கிக்கொண்டிருந்தாள்.
+        ஒரு நூல் மட்டும்
+துடைப்பத்தோடு வரவில்லை.
+        அதை அங்கேயே விட்டாள்.
 
-## Playing
+திரும்பி வந்தது
+அதே…
 
-Mouse or finger: brush sideways; vertical touch movement scrolls.
-Keyboard: focus the feather, ↑/↓ move along it, ←/→ (or Space/Enter) brush.
-Shift + ↑/↓ takes larger steps. The marker tilts with the feather.
-“A little breeze” and “A sleepy roll” also work without waiting.
-“Let the room rest” pauses time and motion while brushing remains available.
-“Begin again” clears the feather, habits, rhythm, tilt and weather clock.
+## வருடுவது எப்படி?
 
-Automatic time stops in hidden tabs and when the feather leaves the viewport.
-Reduced motion disables automatic time, quivering and the dog animation;
-the buttons apply changes immediately. Changing that preference is supported.
-There are no scores, accounts, browser storage or interaction uploads.
-Reloading starts over. This is not a shareable snapshot.
+விரலையோ சுட்டியையோ குறுக்கே நகர்த்தி வருடலாம். மேலும் கீழும் நகர்த்தினால் பக்கம் உருளும். விசைப்பலகையில் இறகைத் தேர்ந்தெடுத்து ↑ ↓ அம்புகளால் இடத்தை மாற்றலாம்; ← → அம்புகளால் வருடலாம். இடைவெளி விசையும் உள்ளீட்டு விசையும் வருடும். ஓய்வில் தானியக்கம் நிற்கும்; வருடலாம். இயக்கத்தைக் குறைக்கும் உலாவி அமைப்பில் தானியக்கம் இல்லை; பொத்தான்களைப் பயன்படுத்தலாம்.
 
-[The first feather](/feather/) · [Somewhere quiet](/chair/)
+## ஒரு குறிப்பு
+
+இங்குள்ள கவிதைகள் இந்த அறைக்காகப் புதிதாக எழுதப்பட்டவை. மரபுப் பாடல்களிலிருந்து எடுத்தவை அல்ல.
+
+இறகின் வடிவமும் வண்ணக் கணக்கீடும் முதல் அறையிலிருந்து வந்தவை. வண்ணங்கள், உண்மையான மயிலிறகில் அளக்கப்பட்ட சுமார் 140, 150, 165, 185 நானோமீட்டர் இடைவெளிகளை அடிப்படையாகக் கொண்ட ஓர் எளிமைப்படுத்தப்பட்ட கணக்கீடு.
+
+வருடுதலால் வண்ணம் உருவாவது இங்கு ஒரு புனைவு. உண்மையான இறகின் நுண்கட்டமைப்பு ஏற்கெனவே அமைந்திருக்கிறது. இங்குள்ள பழக்கம், அலை, நினைவு ஆகியவையும் புனைவுகளே.
+
+இந்தப் பக்கத்தை மீளேற்றினால் தொடுதல்களின் தடம் மறையும். அவை சேமிக்கப்படுவதோ அனுப்பப்படுவதோ இல்லை. அறை பார்வைக்கு வெளியே இருக்கும்போது காலம் நிற்கும்.
+
+சமன்பாட்டில் வெவ்வேறு நிலைகள் ஒரே தோற்றத்தைத் தரலாம். அது ஒரு கணிதக் குறிப்பு; இறகைப் பற்றிய நிரூபணம் அல்ல.
+
+[அறை](/feather/breeze/) · [முகப்பு](/) · [முதல் இறகு](/feather/)
+
+[அளவீட்டின் ஆய்வு](https://doi.org/10.1073/pnas.2133313100) · [வண்ணக் கணக்கு](/feather/optics.mjs) · [இயக்கத்தின் நிரல்](/feather/breeze/temper.mjs)

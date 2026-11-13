@@ -289,4 +289,9 @@ he teaches and solves nothing. The original optics and warm CSS palette are
 shared. Motion pauses when hidden/offscreen, with a rest control and reduced
 motion support. Memory is in the current page only, with no saved state or
 interaction uploads. The Markdown sibling is `md/feather-breeze.md`; tests are
-`tests/feather-breeze.test.mjs`. No new surface or atlas door is added.
+`tests/feather-breeze.test.mjs`. The author subsequently authorized a prominent feather icon on the home page.
+The variation is now Tamil-only: original Murugan/Skanda Shasti poems, mathematics,
+and a coupled-band activity that receives and transports temporary touch traces.
+No interpretive status messages or manual dog-roll control. The first feather stays
+unchanged. A self-hosted Noto Serif Tamil font and its OFL license are copied by
+the builder. Keep the home icon outside the six poem sigils.

@@ -14,3 +14,6 @@
 .hymn .sanskrit{font-size:1.1rem;margin:0 0 .7rem}
 .hymn .translation{font-size:1.1rem;line-height:1.85;color:#8E9BAB;margin:0}
 @media(max-width:640px){.hymn .sanskrit{font-size:1rem}}
+
+/* A direct, visible entrance; the six poem sigils remain separate. */
+.feather-door{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:10px 14px;width:fit-content;max-width:100%;margin:0 auto 2.8rem;padding:12px 20px;border:1px solid #645740;border-radius:4px;color:#E3C285;text-decoration:none;min-height:48px;line-height:1.6}.feather-door svg{width:32px;height:32px;fill:none;stroke:currentColor;stroke-width:1.25}.feather-door [lang=ta]{font-family:'Nirmala UI','Noto Serif Tamil',serif;font-size:14px}.feather-door-label{font-size:14px;letter-spacing:.02em}.feather-door:hover{border-color:#E3C285}.feather-door:focus-visible{outline:2px solid #E3C285;outline-offset:5px}

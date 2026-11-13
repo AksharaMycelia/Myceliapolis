@@ -34,25 +34,26 @@ test('room controls, keyboard, visibility and reduced motion work together', asy
     assert.equal(elements.plume.hidden, false); assert.equal(elements.controls.hidden, false);
     viewport([{ isIntersecting: true }]); tick();
     assert.equal(frames.size, 1, 'one animation loop');
-    key('ArrowRight'); assert.equal(elements.state.textContent, 'A stroke, and an answer.');
-    elements.gust.emit('click'); assert.equal(elements.state.textContent, 'A little weather passed through.');
+    key('ArrowRight'); tick(); assert.equal(frames.size, 1);
+    elements.gust.emit('click'); tick();
+    for (let i = 0; i < 340; i++) tick(100);
+    assert.ok(rotations.at(-1) < 0, 'the dog rolls autonomously');
     elements.pause.emit('click'); tick();
     assert.equal(frames.size, 0, 'rest stops automatic frames');
     assert.equal(elements.pause.attributes.get('aria-pressed'), 'true');
-    elements.roll.emit('click'); tick(); assert.ok(rotations.at(-1) < 0, 'resting roll applies instantly');
-    key('ArrowLeft'); tick(); assert.equal(elements.state.textContent, 'A stroke, and an answer.');
+    key('ArrowLeft'); tick(); assert.equal(frames.size, 0);
     elements.pause.emit('click'); tick(); assert.equal(frames.size, 1);
     doc.hidden = true; doc.emit('visibilitychange'); tick(60000);
     assert.equal(frames.size, 0);
     doc.hidden = false; doc.emit('visibilitychange'); tick(60000);
-    assert.equal(elements.state.textContent, 'A stroke, and an answer.', 'no hidden-time weather catch-up');
+    assert.ok(rotations.at(-1) < 0, 'no hidden-time roll catch-up');
     viewport([{ isIntersecting: false }]); tick(); assert.equal(frames.size, 0);
     viewport([{ isIntersecting: true }]); tick(); assert.equal(frames.size, 1);
     media.matches = true; media.emit('change'); tick(); assert.equal(frames.size, 0);
     assert.equal(elements.pause.disabled, true);
-    elements.roll.emit('click'); tick(); assert.ok(rotations.at(-1) > 0);
+    elements.gust.emit('click'); tick(); assert.equal(frames.size, 0);
     elements.restart.emit('click'); tick(); assert.equal(rotations.at(-1), 0);
-    assert.equal(elements.state.textContent, 'Nothing to finish.');
+    assert.equal(elements.pause.textContent, 'அசைவின்றி');
     media.matches = false; media.emit('change'); tick(); assert.equal(frames.size, 1);
   } finally {
     for (const [name, descriptor] of saved) {

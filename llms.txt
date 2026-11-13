@@ -89,11 +89,14 @@ seven plain lines, each marked with a way to check it or marked as unverifiable.
 One of them says which part of the room is false. Read `/md/feather.md`.
 Nothing is stored or sent.
 
-## A Feather, With Weather
+## மயிலிறகு
 
-A separate variation at `/feather/breeze/`: temporary brushing habits, answering
-barbs, a breeze and an occasional sleepy roll. No score or completion state.
-The optics and first feather remain unchanged. Read `/md/feather-breeze.md`.
+Enter directly through the feather icon near the top of the home page, or at
+`/feather/breeze/`. Tamil poems address Murugan and the aftermath of Skanda Shasti;
+a mathematical fragment sits beside a feather with coupled local rhythms.
+Touch can enter those rhythms. The poems are newly written, not traditional quotations.
+All room text and instructions are Tamil. Read `/md/feather-breeze.md`.
+The original feather at `/feather/` remains unchanged.
 
 ## A request
 

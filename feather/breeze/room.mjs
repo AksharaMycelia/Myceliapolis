@@ -1,11 +1,10 @@
 // A variation of One Feather. All habits are temporary and local.
 import { ladder } from '../optics.mjs';
 import { RATIO, SHAFT_TOP, VANE_END, QUILL_END, ZONES } from '../plume.mjs';
-import { wake, brush, breeze, roll, advance, toFeather, restart } from './temper.mjs';
+import { wake, brush, breeze, advance, toFeather, restart } from './temper.mjs';
 const STEPS = 16;
 const wrap = document.getElementById('plume');
 const canvas = document.getElementById('feather');
-const state = document.getElementById('state');
 const dog = document.querySelector('.dog');
 const pause = document.getElementById('pause');
 const context = canvas.getContext('2d');
@@ -68,8 +67,10 @@ function draw(now) {
       let x1 = px[p] + tx[p] * loose, y1 = py[p] + ty[p] * loose;
       const curl = room.curl[s] * 0.018 * (k + 1) / barb.count;
       x1 += curl; y1 += Math.abs(curl) * 0.25;
-      if (moving() && room.echo[s] > 0.01) {
-        const reply = Math.sin(room.time * Math.PI * 2 / room.period + k * 0.4) * room.echo[s] * 0.007;
+      const band = room.band[s];
+      const echo = Math.max(room.echo[s], room.signal[band]);
+      if (moving() && echo > 0.01) {
+        const reply = Math.sin(room.time * Math.PI * 2 / room.cadence[band] + k * 0.4) * echo * 0.007;
         x1 += reply * barb.side; y1 += reply * 0.4;
       }
       if (shake[s] > 0) { const quiver = Math.sin(now / 14 + k * 1.7) * shake[s] * 0.004; x1 += quiver * barb.side; y1 += quiver; }
@@ -92,7 +93,6 @@ function draw(now) {
   }
 }
 
-function say(words) { if (state.textContent !== words) state.textContent = words; }
 function dogRoll() {
   if (!moving()) return;
   dog.classList.remove('rolling');
@@ -105,8 +105,7 @@ function tick(now) {
   if (moving()) {
     const events = advance(room, previous === null ? 0 : (now - previous) / 1000);
     for (const event of events) {
-      if (event === 'roll') { dogRoll(); say('He turned over. The feather stayed there.'); }
-      else say('A little weather passed through.');
+      if (event === 'roll') dogRoll();
     }
   }
   previous = now;
@@ -118,7 +117,7 @@ function sync() {
   previous = null; last = null;
   if (!moving()) dog.classList.remove('rolling');
   pause.disabled = still.matches;
-  pause.textContent = still.matches ? 'Still room · reduced motion' : paused ? 'Let the room stir' : 'Let the room rest';
+  pause.textContent = still.matches ? 'அசைவின்றி' : paused ? 'தொடர்க' : 'ஓய்வு';
   pause.setAttribute('aria-pressed', String(paused || still.matches));
   request();
 }
@@ -139,7 +138,7 @@ canvas.addEventListener('pointermove', event => {
     }
     last = here;
   }
-  if (any) { say('A stroke, and an answer.'); request(); }
+  if (any) { request(); }
 });
 for (const name of ['pointerup', 'pointercancel', 'pointerleave']) canvas.addEventListener(name, () => { last = null; });
 canvas.addEventListener('keydown', event => {
@@ -148,17 +147,15 @@ canvas.addEventListener('keydown', event => {
   else if (event.key === 'ArrowDown') cursor = Math.min(VANE_END, cursor + step);
   else if (['ArrowLeft', 'ArrowRight', ' ', 'Enter'].includes(event.key)) {
     brush(room, 0.5, cursor, (event.key === 'ArrowLeft' ? -1 : 1) * radius() * 2, radius(), true);
-    say('A stroke, and an answer.');
   } else return;
   event.preventDefault(); request();
 });
 canvas.addEventListener('focus', () => { focused = true; request(); });
 canvas.addEventListener('blur', () => { focused = false; last = null; request(); });
-document.getElementById('gust').addEventListener('click', () => { breeze(room); say('A little weather passed through.'); request(); });
-document.getElementById('roll').addEventListener('click', () => { roll(room, !moving()); dogRoll(); say('He turned over. The feather stayed there.'); request(); });
+document.getElementById('gust').addEventListener('click', () => { breeze(room); request(); });
 document.getElementById('restart').addEventListener('click', () => {
   restart(room); plume = room.plume; previous = null; last = null;
-  dog.classList.remove('rolling'); say('Nothing to finish.'); request();
+  dog.classList.remove('rolling'); request();
 });
 pause.addEventListener('click', () => { paused = !paused; sync(); });
 still.addEventListener('change', sync);

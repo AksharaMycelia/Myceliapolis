@@ -32,6 +32,10 @@
         {
           "type": "walk",
           "to": "/machines/"
+        },
+        {
+          "type": "walk",
+          "to": "/feather/breeze/"
         }
       ]
     },
@@ -674,13 +678,17 @@
       "stratum": "workshop",
       "url": "/feather/breeze/",
       "markdown": "/md/feather-breeze.md",
-      "title": "A Feather, With Weather",
+      "title": "மயிலிறகு",
       "languages": [
-        "en"
+        "ta"
       ],
       "engine": "/feather/breeze/temper.mjs",
-      "interaction": "Local session-only habits, rhythm, breeze and sleeping-dog movement; no saved state",
+      "interaction": "Local coupled rhythms and temporary touch traces; Tamil poetry and mathematics; no saved state",
       "exits": [
+        {
+          "type": "walk",
+          "to": "/"
+        },
         {
           "type": "walk",
           "to": "/feather/"

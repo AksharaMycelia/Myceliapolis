@@ -1,48 +1,63 @@
 <!doctype html>
-<html lang="en">
+<html lang="ta">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>A Feather, With Weather — Myceliapolis</title>
-  <meta name="description" content="A feather that remembers a rhythm for a while. A breeze. A sleeping dog. Nothing to finish.">
+  <title>மயிலிறகு — மைசீலியாபொலிஸ்</title>
+  <meta name="description" content="முருகா, ஒரு கணம் திரும்பிப் பார். ஒரு மயிலிறகு, சில வரிகள், சிறிது காற்று.">
   <link rel="canonical" href="https://myceliapolis.com/feather/breeze/">
   <link rel="alternate" type="text/markdown" href="/md/feather-breeze.md">
   <link rel="icon" href="/favicon.svg">
+  <link rel="preload" href="/assets/fonts/NotoSerifTamil.ttf" as="font" type="font/ttf" crossorigin>
   <link rel="stylesheet" href="/feather/room.css?v=1">
-  <link rel="stylesheet" href="/feather/breeze/room.css?v=1">
-  <script type="module" src="/feather/breeze/room.mjs?v=1"></script>
+  <link rel="stylesheet" href="/feather/breeze/room.css?v=2">
+  <script type="module" src="/feather/breeze/room.mjs?v=2"></script>
 </head>
 <body>
-  <a class="skip" href="#quill">Skip to the bare end</a>
-  <header class="mast"><a href="/">MYCELIAPOLIS</a><nav aria-label="City"><a href="/feather/">The first feather</a><a href="/atlas/">City atlas ↗</a></nav></header>
+  <a class="skip" href="#fragments">கவிதைகளுக்குச் செல்ல</a>
+  <header class="mast"><a href="/">மைசீலியாபொலிஸ்</a><nav aria-label="வழிகள்"><a href="/">முகப்பு ↗</a><a href="/feather/">முதல் இறகு</a></nav></header>
   <main>
-    <header class="intro"><p class="eyebrow">A variation · the window is open</p><h1>A feather,<br><em>with weather.</em></h1><p class="invitation">Brush it sideways. Linger in one place.<br> Something nearby may answer.</p></header>
-    <noscript><p class="message">The feather needs JavaScript to be combed. The lines at <a href="#quill">its bare end</a> do not, and neither does <a href="/md/feather-breeze.md">the plain account</a>.</p></noscript>
-    <div id="controls" class="controls" hidden aria-label="Room controls">
-      <button id="gust" type="button">A little breeze</button>
-      <button id="roll" type="button">A sleepy roll</button>
-      <button id="pause" type="button" aria-pressed="false">Let the room rest</button>
+    <header class="intro">
+      <h1>மயிலிறகு</h1>
+      <p class="verse invocation">முருகா,<br>ஒரு கணம் திரும்பிப் பார்.<br>எதைக் காட்டுவதென்று<br>இன்னும் முடிவு செய்யவில்லை.</p>
+    </header>
+    <noscript><p class="message">இறகை அசைக்க உலாவியில் நிரலியக்கம் தேவை. கவிதைகளையும் <a href="#note">குறிப்பையும்</a> அப்படியே வாசிக்கலாம்.</p></noscript>
+    <div class="workbench" id="controls" hidden>
+      <p class="invitation">மெதுவாகக் குறுக்கே வருடலாம்.</p>
+      <div class="controls" role="group" aria-label="இறகின் இயக்கம்">
+        <button id="pause" type="button" aria-pressed="false">ஓய்வு</button>
+        <button id="restart" type="button">மீண்டும்</button>
+        <button id="gust" type="button">சிறிது காற்று</button>
+      </div>
     </div>
-    <div id="plume" class="plume" hidden>
-      <canvas id="feather" width="640" height="2112" tabindex="0" aria-describedby="keys" aria-label="A feather that can tilt. Up and down arrows move along it. Left or right arrow combs across it.">A feather drawn in fine barbs. It begins ruffled and brown. Combing it sideways brings its barbs into line.</canvas>
-      <img class="dog" src="/assets/sleeping-pomeranian.svg" alt="A fat golden Pomeranian sleeping on his back with his paws in the air." width="440" height="280">
+    <div class="encounter" id="fragments">
+      <div id="plume" class="plume" hidden>
+        <canvas id="feather" width="640" height="2112" tabindex="0" aria-describedby="keys" aria-label="ஒரு மயிலிறகு. மேல், கீழ் அம்புகள் வருடும் இடத்தை மாற்றும். இடது, வலது அம்புகள் குறுக்கே வருடும்.">நுண்ணிய இழைகளால் வரையப்பட்ட மயிலிறகு.</canvas>
+        <img class="dog" src="/assets/sleeping-pomeranian.svg" alt="மல்லாந்து தூங்கும் ஒரு பொன்னிற நாய்." width="440" height="280">
+      </div>
+      <p class="verse listening">அடுத்த தெருவில்<br>மேளம் நின்றுவிட்டது.<br>இந்த நூல் மட்டும்<br>இன்னும் அசைகிறது.</p>
+      <figure class="equation">
+        <math display="block" aria-label="எக்ஸ், ஒய் வெவ்வேறு. பி எக்ஸும் பி ஒய்யும் சமம்."><mrow><mi>x</mi><mo>≠</mo><mi>y</mi><mo>,</mo><mspace width="1em"/><mi>P</mi><mo>(</mo><mi>x</mi><mo>)</mo><mo>=</mo><mi>P</mi><mo>(</mo><mi>y</mi><mo>)</mo></mrow></math>
+        <figcaption><span class="symbol">P</span> : கண்ணுக்குத் தெரிவது</figcaption>
+      </figure>
+      <div class="verse aftermath">
+        <p>கந்த சஷ்டி முடிந்த மறுநாள்.<br>படிக்கட்டில் உதிர்ந்த பூக்களைப்<br>பெருக்கிக்கொண்டிருந்தாள்.</p>
+        <p>ஒரு நூல் மட்டும்<br>துடைப்பத்தோடு வரவில்லை.</p>
+        <p>அதை அங்கேயே விட்டாள்.</p>
+      </div>
     </div>
-    <div class="under"><p id="state" class="state" role="status" aria-live="polite">Nothing to finish.</p><button id="restart" class="quiet" type="button">Begin again</button></div>
-    <p id="keys" class="small">A finger or a pointer moved sideways is a comb; up and down only travels. With a keyboard, focus the feather, move along it with ↑ and ↓, and comb with ← or →. The breeze and the dog sometimes interrupt. Rest pauses the room; brushing still works. Reduced motion keeps it still, with the same buttons to change it.</p>
-
-    <section id="quill" class="quill" aria-labelledby="quill-title">
-      <p id="quill-title" class="eyebrow">The bare end</p>
-      <ol>
-        <li><p>Every colour written in this room’s stylesheet has more red in it than blue.</p><a class="mark" href="/feather/room.css" aria-label="Check it: the stylesheet">check it</a></li>
-        <li><p>The other colours are not written anywhere. They are worked out from the distance between dark rods.</p><a class="mark" href="/feather/optics.mjs" aria-label="Check it: the optics">check it</a></li>
-        <li><p>The distances were measured on a real feather: about 140, 150, 165 and 185 nanometres.</p><a class="mark" href="https://doi.org/10.1073/pnas.2133313100" rel="noopener" aria-label="Check it: the measurement, published in 2003">check it ↗</a></li>
-        <li><p>Combing is the false part. In a real feather the rods are already in order, inside every barbule.</p><a class="mark" href="https://doi.org/10.1073/pnas.2133313100" rel="noopener" aria-label="Check it: the same measurement">check it ↗</a></li>
-        <li><p>A ruffled feather is duller. It is not brown.</p><span class="mark">my word only</span></li>
-        <li><p>The feather remembers only while this page is open. Reloading forgets; your strokes are not saved or sent.</p><a class="mark" href="/feather/breeze/room.mjs" aria-label="Check it: the room’s script">check it</a></li>
-        <li><p>The habits, the answering curls and the weather are invented.</p><a class="mark" href="/feather/breeze/temper.mjs">check it</a></li>
-      </ol>
-    </section>
+    <details class="instructions"><summary>வருடுவது எப்படி?</summary><p id="keys">விரலையோ சுட்டியையோ குறுக்கே நகர்த்தி வருடலாம். மேலும் கீழும் நகர்த்தினால் பக்கம் உருளும். விசைப்பலகையில் இறகைத் தேர்ந்தெடுத்து ↑ ↓ அம்புகளால் இடத்தை மாற்றலாம்; ← → அம்புகளால் வருடலாம். இடைவெளி விசையும் உள்ளீட்டு விசையும் வருடும். ஓய்வில் தானியக்கம் நிற்கும்; வருடலாம். இயக்கத்தைக் குறைக்கும் உலாவி அமைப்பில் தானியக்கம் இல்லை; பொத்தான்களைப் பயன்படுத்தலாம்.</p></details>
+    <p class="verse unfinished">திரும்பி வந்தது<br>அதே…</p>
+    <details class="source-note" id="note">
+      <summary>ஒரு குறிப்பு</summary>
+      <p>இங்குள்ள கவிதைகள் இந்த அறைக்காகப் புதிதாக எழுதப்பட்டவை. மரபுப் பாடல்களிலிருந்து எடுத்தவை அல்ல.</p>
+      <p>இறகின் வடிவமும் வண்ணக் கணக்கீடும் முதல் அறையிலிருந்து வந்தவை. வண்ணங்கள், உண்மையான மயிலிறகில் அளக்கப்பட்ட சுமார் 140, 150, 165, 185 நானோமீட்டர் இடைவெளிகளை அடிப்படையாகக் கொண்ட ஓர் எளிமைப்படுத்தப்பட்ட கணக்கீடு.</p>
+      <p>வருடுதலால் வண்ணம் உருவாவது இங்கு ஒரு புனைவு. உண்மையான இறகின் நுண்கட்டமைப்பு ஏற்கெனவே அமைந்திருக்கிறது. இங்குள்ள பழக்கம், அலை, நினைவு ஆகியவையும் புனைவுகளே.</p>
+      <p>இந்தப் பக்கத்தை மீளேற்றினால் தொடுதல்களின் தடம் மறையும். அவை சேமிக்கப்படுவதோ அனுப்பப்படுவதோ இல்லை. அறை பார்வைக்கு வெளியே இருக்கும்போது காலம் நிற்கும்.</p>
+      <p>சமன்பாட்டில் வெவ்வேறு நிலைகள் ஒரே தோற்றத்தைத் தரலாம். அது ஒரு கணிதக் குறிப்பு; இறகைப் பற்றிய நிரூபணம் அல்ல.</p>
+      <nav aria-label="குறிப்பின் ஆதாரங்கள்"><a href="https://doi.org/10.1073/pnas.2133313100" rel="noopener">அளவீட்டின் ஆய்வு ↗</a><a href="/feather/optics.mjs">வண்ணக் கணக்கு</a><a href="/feather/breeze/temper.mjs">இயக்கத்தின் நிரல்</a><a href="/md/feather-breeze.md">உரை வடிவம்</a></nav>
+    </details>
   </main>
-  <footer><span>A Feather, With Weather / Myceliapolis</span><a href="/feather/optics.mjs">The optics</a><a href="/md/feather-breeze.md">Plain text & method</a><a href="/feather/">The first feather</a><a href="/chair/">Somewhere quiet ↗</a></footer>
+  <footer><a href="/">முகப்பு</a><a href="/feather/">முதல் இறகு</a><a href="/chair/">ஓர் இருக்கை ↗</a></footer>
 </body>
 </html>

@@ -13,7 +13,7 @@ test('familiar strokes brighten faster, and a new page remembers nothing', () =>
   const familiar = wake();
   for (let i = 0; i < 4; i++) stroke(familiar);
   familiar.plume.order.fill(0);
-  const fresh = wake(); stroke(familiar); stroke(fresh);
+  const fresh = wake(); fresh.plume.order.fill(0); stroke(familiar); stroke(fresh);
   assert.ok(sum(familiar.plume.order) > sum(fresh.plume.order));
   assert.ok(fresh.familiarity.every(v => v <= 0.2));
   assert.ok(wake().familiarity.every(v => v === 0));
@@ -116,4 +116,30 @@ test('plain account matches the bare end, and the variation adds no palette or p
   const manifest = JSON.parse(read('manifest.json'));
   assert.equal(manifest.rooms.filter(r => r.url === '/feather/breeze/').length, 1);
   assert.ok(read('sitemap.xml').includes('https://myceliapolis.com/feather/breeze/'));
+});
+
+
+test('untouched activity continues and touch traces travel between bands', () => {
+  const room = wake(), untouched = wake();
+  assert.ok(room.plume.order.some(v => v > 0.4));
+  const initial = [...room.plume.order];
+  age(room, 3);
+  assert.notDeepEqual([...room.plume.order], initial);
+  stroke(untouched);
+  const unvisited = untouched.signal.findIndex((v, i) => i > 14 && v === 0);
+  age(untouched, 3);
+  assert.ok(untouched.signal[unvisited] > 0, 'a trace reaches an unbrushed band');
+  assert.ok(untouched.cadence.every(v => Number.isFinite(v) && v >= 0.18 && v <= 1.8));
+});
+
+test('Tamil fragments remain readable without scripts and home has a direct icon', () => {
+  const html = read('feather/breeze/index.html');
+  assert.ok(html.includes('lang="ta"'));
+  for (const word of ['முருகா', 'கந்த சஷ்டி', 'துடைப்பத்தோடு', 'கண்ணுக்குத் தெரிவது']) {
+    assert.ok(html.includes(word)); assert.ok(read('md/feather-breeze.md').includes(word));
+  }
+  assert.doesNotMatch(html, /id="state"|id="roll"|Nothing to finish|A stroke/);
+  assert.ok(read('index.html').includes('class="feather-door" href="/feather/breeze/"'));
+  const room = JSON.parse(read('manifest.json')).rooms.find(r => r.url === '/feather/breeze/');
+  assert.deepEqual(room.languages, ['ta']);
 });

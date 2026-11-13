@@ -102,7 +102,7 @@ FONTS = ('<link rel="preconnect" href="https://fonts.googleapis.com">'
 def shell(title, desc, body, cls, depth, canonical, md=None, extra="", lang="en"):
     up = "../" * depth
     mdlink = f'\n<link rel="alternate" type="text/markdown" href="{md}">' if md else ""
-    surface_css = f'<link rel="stylesheet" href="{up}css/surface-six.css">' if cls == "surface" else ""
+    surface_css = f'<link rel="stylesheet" href="{up}css/surface-six.css?v=2">' if cls == "surface" else ""
     devanagari = ('<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Devanagari:wght@400&display=swap" rel="stylesheet">'
                   if canonical == "/hunger-goddess/" else "")
     return f"""<!DOCTYPE html>
@@ -382,7 +382,10 @@ manifest["rooms"].append({"id": "workshop/feather", "stratum": "workshop", "url"
 for room in manifest["rooms"]:
     if room["id"] == "workshop/machines":
         room["exits"].append({"type": "walk", "to": "/feather/"})
-manifest["rooms"].append({'id': 'workshop/feather-breeze', 'stratum': 'workshop', 'url': '/feather/breeze/', 'markdown': '/md/feather-breeze.md', 'title': 'A Feather, With Weather', 'languages': ['en'], 'engine': '/feather/breeze/temper.mjs', 'interaction': 'Local session-only habits, rhythm, breeze and sleeping-dog movement; no saved state', 'exits': [{'type': 'walk', 'to': '/feather/'}, {'type': 'walk', 'to': '/chair/'}]})
+manifest["rooms"].append({'id': 'workshop/feather-breeze', 'stratum': 'workshop', 'url': '/feather/breeze/', 'markdown': '/md/feather-breeze.md', 'title': 'மயிலிறகு', 'languages': ['ta'], 'engine': '/feather/breeze/temper.mjs', 'interaction': 'Local coupled rhythms and temporary touch traces; Tamil poetry and mathematics; no saved state', 'exits': [{'type': 'walk', 'to': '/'}, {'type': 'walk', 'to': '/feather/'}, {'type': 'walk', 'to': '/chair/'}]})
+for room in manifest["rooms"]:
+    if room["id"] == "surface/1":
+        room["exits"].append({"type": "walk", "to": "/feather/breeze/"})
 write("manifest.json", json.dumps(manifest, ensure_ascii=False, indent=2))
 
 # ─────────────────────────────────────────────────────────────
@@ -483,11 +486,14 @@ seven plain lines, each marked with a way to check it or marked as unverifiable.
 One of them says which part of the room is false. Read `/md/feather.md`.
 Nothing is stored or sent.
 
-## A Feather, With Weather
+## மயிலிறகு
 
-A separate variation at `/feather/breeze/`: temporary brushing habits, answering
-barbs, a breeze and an occasional sleepy roll. No score or completion state.
-The optics and first feather remain unchanged. Read `/md/feather-breeze.md`.
+Enter directly through the feather icon near the top of the home page, or at
+`/feather/breeze/`. Tamil poems address Murugan and the aftermath of Skanda Shasti;
+a mathematical fragment sits beside a feather with coupled local rhythms.
+Touch can enter those rhythms. The poems are newly written, not traditional quotations.
+All room text and instructions are Tamil. Read `/md/feather-breeze.md`.
+The original feather at `/feather/` remains unchanged.
 
 ## A request
 
@@ -564,6 +570,11 @@ for path in ("feather/index.html", "feather/optics.mjs", "feather/plume.mjs", "f
 
 for path in ("feather/breeze/index.html", "feather/breeze/room.css", "feather/breeze/room.mjs", "feather/breeze/temper.mjs", "md/feather-breeze.md"):
     write(path, (ROOT / path).read_text(encoding="utf-8"))
+
+for name in ("NotoSerifTamil.ttf", "NotoSerifTamil-OFL.txt"):
+    destination = Path(OUT) / "assets/fonts" / name
+    destination.parent.mkdir(parents=True, exist_ok=True)
+    shutil.copyfile(ROOT / "assets/fonts" / name, destination)
 
 print("built:", OUT)
 for root, dirs, files in sorted(os.walk(OUT)):
