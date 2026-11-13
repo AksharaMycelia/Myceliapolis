@@ -278,3 +278,15 @@ Files: `feather/index.html`, `room.css`, `room.mjs` (browser), `optics.mjs`
 The room is linked from the Small Machines footer, the manifest, the sitemap
 and `llms.txt`. It is not linked from the surface or the atlas; that is the
 author's decision.
+
+
+## A Feather, With Weather
+
+An authorized separate variation lives at `/feather/breeze/`. The original
+feather remains unchanged. This room deliberately permits temporary habits,
+answering curls, automatic weather and a sleepy dog roll. The dog stays a dog;
+he teaches and solves nothing. The original optics and warm CSS palette are
+shared. Motion pauses when hidden/offscreen, with a rest control and reduced
+motion support. Memory is in the current page only, with no saved state or
+interaction uploads. The Markdown sibling is `md/feather-breeze.md`; tests are
+`tests/feather-breeze.test.mjs`. No new surface or atlas door is added.
