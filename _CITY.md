@@ -343,3 +343,14 @@ Her poems are hers: do not alter a word. She has also written a seven-part
 Latin libretto (*Monologus Fungi*) that was not available when this was
 built; when she supplies it, room I is its natural home. Everything else here
 is meant to be changed. The honest node must never be drawn as the fool.
+
+### The drawn map
+
+`/atlas/` now opens with a drawn island (inline SVG in `district.js`, no CSS of
+its own): the six poems along the west shore, the feather and Small Machines
+to the east, the switchboard rooms inside a dashed ring, the chair in the
+middle, an empty pier to the south. Every place is a link; unbuilt places are
+dashed and unlinked. When a room is added, add a `place(...)` to the drawing as
+well as to the list beneath it. Every poem page and the front page carry a
+"Map of the whole city" link under the sigils. Still missing: sideways doors
+between rooms, and a way to the map from the papers and operas.
