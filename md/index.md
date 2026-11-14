@@ -31,7 +31,7 @@ Six poems. Each has one word that descends: poem → paper → three doors → o
 - [The Unfinished Quarter](/md/after.md)
 - [The conservatory](/md/conservatory.md): leave a beginning, or continue one.
 - [The chronicle](/md/chronicle.md): words that reached the database.
-- [A reserved lot](/md/fungi.md): three rooms, under construction.
+- [Under the floor](/md/fungi.md): three rooms in a first version. [I](/md/fungi-i.md) · [II](/md/fungi-ii.md) · [III](/md/fungi-iii.md)
 
 ## The quiet center
 

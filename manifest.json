@@ -732,15 +732,81 @@
       "stratum": "quarter",
       "url": "/fungi/",
       "markdown": "/md/fungi.md",
-      "title": "Under Construction",
+      "title": "Under the Floor",
       "languages": [
         "en"
       ],
-      "status": "reserved; nothing is built yet",
+      "status": "first version",
+      "exits": [
+        {
+          "type": "walk",
+          "to": "/fungi/i/"
+        },
+        {
+          "type": "walk",
+          "to": "/atlas/"
+        }
+      ],
+      "district": "grand switchboard"
+    },
+    {
+      "id": "switchboard/fungi-i",
+      "stratum": "quarter",
+      "url": "/fungi/i/",
+      "markdown": "/md/fungi-i.md",
+      "title": "De barathro cretaceo et novicio curioso",
+      "languages": [
+        "la"
+      ],
+      "status": "first version",
+      "exits": [
+        {
+          "type": "walk",
+          "to": "/fungi/ii/"
+        }
+      ],
+      "district": "grand switchboard"
+    },
+    {
+      "id": "switchboard/fungi-ii",
+      "stratum": "quarter",
+      "url": "/fungi/ii/",
+      "markdown": "/md/fungi-ii.md",
+      "title": "60 Hertz",
+      "languages": [
+        "la",
+        "en"
+      ],
+      "status": "first version",
+      "engine": "/fungi/field.mjs",
+      "exits": [
+        {
+          "type": "walk",
+          "to": "/fungi/iii/"
+        }
+      ],
+      "district": "grand switchboard"
+    },
+    {
+      "id": "switchboard/fungi-iii",
+      "stratum": "quarter",
+      "url": "/fungi/iii/",
+      "markdown": "/md/fungi-iii.md",
+      "title": "Cathedralis sine nomine",
+      "languages": [
+        "en",
+        "la"
+      ],
+      "status": "first version",
+      "engine": "/fungi/vault.mjs",
       "exits": [
         {
           "type": "walk",
           "to": "/atlas/"
+        },
+        {
+          "type": "walk",
+          "to": "/chair/"
         }
       ],
       "district": "grand switchboard"

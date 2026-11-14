@@ -386,9 +386,7 @@ manifest["rooms"].append({'id': 'workshop/feather-breeze', 'stratum': 'workshop'
 for room in manifest["rooms"]:
     if room["id"] == "surface/1":
         room["exits"].append({"type": "walk", "to": "/feather/breeze/"})
-manifest["rooms"].append({"id": "switchboard/fungi", "stratum": "quarter", "url": "/fungi/", "markdown": "/md/fungi.md",
-    "title": "Under Construction", "languages": ["en"], "status": "reserved; nothing is built yet",
-    "exits": [{"type": "walk", "to": "/atlas/"}]})
+manifest["rooms"] += [{"id": "switchboard/fungi", "stratum": "quarter", "url": "/fungi/", "markdown": "/md/fungi.md", "title": "Under the Floor", "languages": ["en"], "status": "first version", "exits": [{"type": "walk", "to": "/fungi/i/"}, {"type": "walk", "to": "/atlas/"}]}, {"id": "switchboard/fungi-i", "stratum": "quarter", "url": "/fungi/i/", "markdown": "/md/fungi-i.md", "title": "De barathro cretaceo et novicio curioso", "languages": ["la"], "status": "first version", "exits": [{"type": "walk", "to": "/fungi/ii/"}]}, {"id": "switchboard/fungi-ii", "stratum": "quarter", "url": "/fungi/ii/", "markdown": "/md/fungi-ii.md", "title": "60 Hertz", "languages": ["la", "en"], "status": "first version", "engine": "/fungi/field.mjs", "exits": [{"type": "walk", "to": "/fungi/iii/"}]}, {"id": "switchboard/fungi-iii", "stratum": "quarter", "url": "/fungi/iii/", "markdown": "/md/fungi-iii.md", "title": "Cathedralis sine nomine", "languages": ["en", "la"], "status": "first version", "engine": "/fungi/vault.mjs", "exits": [{"type": "walk", "to": "/atlas/"}, {"type": "walk", "to": "/chair/"}]}]
 for room in manifest["rooms"]:
     room["district"] = "quiet center" if room["id"] == "quarter/chair" else {"surface": "outer gate", "archive": "outer gate",
         "house": "outer gate", "workshop": "artisan quarter"}.get(room["stratum"], "grand switchboard")
@@ -505,8 +503,8 @@ All room text and instructions are Tamil. Read `/md/feather-breeze.md`.
 
 The city is drawn as five loose districts: the outer gate (six poems and their
 descents), the artisan quarter (the feather, Small Machines), the harbor (not
-built), the grand switchboard (tavern, Unfinished Quarter, a reserved lot at
-`/fungi/` under construction) and the quiet center (the empty chair). Districts
+built), the grand switchboard (tavern, Unfinished Quarter, three first-version rooms
+under the floor at `/fungi/`) and the quiet center (the empty chair). Districts
 are places, not stages; enter anywhere. `/atlas/` is the map for people and
 `/md/index.md` lists every room as plain text with onward links.
 
@@ -518,7 +516,7 @@ with another substrate, and return a descendant.
 
 urls = [p["url"] for p in POEMS] + [f"/{p['paper']}/" for p in POEMS] \
      + [f"/{p['opera']}/" for p in POEMS]
-urls += ["/rumor/", "/after/", "/conservatory/", "/chronicle/", "/chair/", "/atlas/", "/machines/", "/feather/breeze/", "/fungi/"]
+urls += ["/rumor/", "/after/", "/conservatory/", "/chronicle/", "/chair/", "/atlas/", "/machines/", "/feather/breeze/", "/fungi/", "/fungi/i/", "/fungi/ii/", "/fungi/iii/"]
 write("sitemap.xml",
       '<?xml version="1.0" encoding="UTF-8"?>\n'
       '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
@@ -568,6 +566,10 @@ write("_headers", """/*
 /feather/*
   Cache-Control: public, max-age=0, must-revalidate
   Content-Security-Policy: default-src 'self'; script-src 'self'; style-src 'self'; object-src 'none'; base-uri 'none'; frame-ancestors 'self'; form-action 'none'
+
+/fungi/*
+  Cache-Control: public, max-age=0, must-revalidate
+  Content-Security-Policy: default-src 'self'; script-src 'self'; style-src 'self'; object-src 'none'; base-uri 'none'; frame-ancestors 'self'; form-action 'none'
 """)
 
 write("favicon.svg", """<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
@@ -600,5 +602,5 @@ for root, dirs, files in sorted(os.walk(OUT)):
         pth = os.path.join(root, f)
         print(f"  {os.path.relpath(pth, OUT):<34} {os.path.getsize(pth):>7,} B")
 
-for path in ("fungi/index.html", "fungi/room.css", "md/fungi.md", "md/index.md"):
+for path in ("fungi/index.html", "fungi/room.css", "fungi/field.mjs", "fungi/vault.mjs", "fungi/tone.mjs", "fungi/i/index.html", "fungi/i/room.mjs", "fungi/ii/index.html", "fungi/ii/room.mjs", "fungi/iii/index.html", "fungi/iii/room.mjs", "md/fungi.md", "md/fungi-i.md", "md/fungi-ii.md", "md/fungi-iii.md", "md/index.md"):
     write(path, (ROOT / path).read_text(encoding="utf-8"))

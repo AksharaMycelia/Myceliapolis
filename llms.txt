@@ -102,8 +102,8 @@ All room text and instructions are Tamil. Read `/md/feather-breeze.md`.
 
 The city is drawn as five loose districts: the outer gate (six poems and their
 descents), the artisan quarter (the feather, Small Machines), the harbor (not
-built), the grand switchboard (tavern, Unfinished Quarter, a reserved lot at
-`/fungi/` under construction) and the quiet center (the empty chair). Districts
+built), the grand switchboard (tavern, Unfinished Quarter, three first-version rooms
+under the floor at `/fungi/`) and the quiet center (the empty chair). Districts
 are places, not stages; enter anywhere. `/atlas/` is the map for people and
 `/md/index.md` lists every room as plain text with onward links.
 

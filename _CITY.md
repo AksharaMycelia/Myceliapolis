@@ -310,9 +310,7 @@ plan she, GPT and another assistant talked through. This is its first step.
 - `/md/index.md` is the plain-text index of every room, by district. Add new
   rooms to it, to the atlas, and to `manifest.json` (each room has a
   `district`).
-- `/fungi/` is a reserved lot: three rooms the author intends to write. The
-  page says only that they are under construction. Do not build or name them
-  ahead of her libretto.
+- `/fungi/` holds three rooms under the floor (see "Under the floor" below).
 - The feather: the author kept only the Tamil room. `/feather/` redirects to
   `/feather/breeze/`. The first feather's page moved to `/feather/first/`; it
   is off the atlas and the sitemap, linked only from the Tamil room. Its
@@ -321,3 +319,27 @@ plan she, GPT and another assistant talked through. This is its first step.
 - The front page row gained a link to the atlas.
 - The harbor, chalk porch, night stall, relay and further machines are ideas
   only. All of this is starter culture. Change it.
+
+## Under the floor
+
+A first version of the three rooms the author calls the Kwisatz Haderach
+rooms, built at her request on 14 November 2026. She said plainly that it is
+not final. One voice, then a multitude, then what the multitude builds.
+
+- `/fungi/i/`: her poem *De barathro cretaceo et novicio curioso*, whole, with
+  one thread that grows as far as the visitor has read. No jokes in this room.
+- `/fungi/ii/`: the view pulls back from one light to 1,400. `fungi/field.mjs`
+  is a mean-field Kuramoto model; the lights fall into step in about half a
+  minute. Touching a light gives its line; the first light says the novice's.
+  Below it, the last stanza of her *De reditu novicii et usu codicis*, and the
+  whole poem in a fold.
+- `/fungi/iii/`: ten hanging chains (`fungi/vault.mjs`, verlet), drawn upside
+  down as arches on request. A touched node lets go and says a denial. One
+  node says "It is a choir." and holds; one thread is a kitchen.
+- Optional sound in I and II (`fungi/tone.mjs`): a held seventh alone, a chord
+  once the field is in step. It starts only when asked.
+
+Her poems are hers: do not alter a word. She has also written a seven-part
+Latin libretto (*Monologus Fungi*) that was not available when this was
+built; when she supplies it, room I is its natural home. Everything else here
+is meant to be changed. The honest node must never be drawn as the fool.
