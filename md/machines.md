@@ -71,3 +71,12 @@ use the selected tool. Column/Row controls offer the same actions. Animation is
 opt-in; One step and +100 steps work without continuous motion.
 
 [City atlas](/atlas/) · [The Unfinished Quarter](/after/) · [An empty chair](/chair/)
+
+---
+<!-- city:doors -->
+You are in: **Small Machines** · `workshop/machines` · [as a page](/machines/)
+
+Doors from here: [மயிலிறகு](/md/feather-breeze.md) ([as a page](/feather/breeze/)) · [II · 60 Hertz](/md/fungi-ii.md) ([as a page](/fungi/ii/)) · [The Unfinished Quarter](/md/after.md) ([as a page](/after/)) · [An empty chair](/md/chair.md) ([as a page](/chair/))
+
+City map: [Plain text](/md/index.md) · [/atlas/](/atlas/#workshop-machines) · [every door as data](/manifest.json)
+<!-- /city:doors -->

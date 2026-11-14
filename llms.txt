@@ -98,14 +98,20 @@ Touch can enter those rhythms. The poems are newly written, not traditional quot
 All room text and instructions are Tamil. Read `/md/feather-breeze.md`.
 `/feather/` now leads here. The first feather is kept at `/feather/first/`.
 
-## The island
+## The city and its doors
 
-The city is drawn as five loose districts: the outer gate (six poems and their
-descents), the artisan quarter (the feather, Small Machines), the harbor (not
-built), the grand switchboard (tavern, Unfinished Quarter, three first-version rooms
-under the floor at `/fungi/`) and the quiet center (the empty chair). Districts
-are places, not stages; enter anywhere. `/atlas/` is the map for people and
-`/md/index.md` lists every room as plain text with onward links.
+The three strata above are one part of a larger city: six descents, a workshop
+(the feather, Small Machines), a tavern, the Unfinished Quarter, three chambers
+under the floor at `/fungi/`, and a clearing with a chair. Enter anywhere.
+
+Every room, as a page or as plain text, ends with its own doors, so no visitor
+has to begin at the front. `/atlas/` draws the city and lists every door;
+`/md/index.md` is the same list as text; `/manifest.json` gives each room's
+`doors` as data; `/city/topology.mjs` is the single file all of them are written
+from. A page and its plain-text sibling are two entrances to one place. They
+are not the same experience, and neither is the real one.
+
+A door says where it goes. It does not say what the rooms on either side mean.
 
 ## A request
 

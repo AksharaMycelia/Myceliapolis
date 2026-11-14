@@ -354,3 +354,40 @@ dashed and unlinked. When a room is added, add a `place(...)` to the drawing as
 well as to the list beneath it. Every poem page and the front page carry a
 "Map of the whole city" link under the sigils. Still missing: sideways doors
 between rooms, and a way to the map from the papers and operas.
+
+## The doors (14 November 2026)
+
+The city had five hand-kept lists of its rooms and they had drifted apart. Now
+there is one: `city/topology.mjs`. It holds every room and every door, and
+nothing about what a room means.
+
+`node city/apply.mjs` writes from it: the door list at the foot of every page
+(`<!-- city:doors -->`), the door list at the end of every plain-text room, the
+whole of `md/index.md`, `city/topology.json`, and the `doors` of each room in
+`manifest.json`. The atlas at `/atlas/`, `/md/atlas.md` and the served rooms
+read the same file through `city/doors.mjs`. `_build.py` runs the same step on
+`site/`. `node city/apply.mjs --check` (also a test) fails when the root is stale.
+
+To add a room: add it and its doors to `city/topology.mjs`, run apply, push.
+Do not edit the marked blocks or `md/index.md` by hand.
+
+Rules the list keeps:
+
+- A visitor may arrive in the middle, with no memory and no eyes. Every room
+  must show a way on that is not the front page.
+- A door already present in a page's own body is not repeated at its foot.
+- The words around the links follow the room's language (Tamil, Latin, Italian).
+- A door says where it goes. Never why, and never what it proves.
+- The paper's three answers stay three answers. The list does not say which is the opera.
+- The room behind the tavern is listed as shut, with its condition, and nothing of its contents.
+
+Doors opened that day: machines ↔ feather, machines ↔ 60 Hertz, feather ↔ No
+continuity, feather ↔ chair, tavern ↔ conservatory, Unfinished Quarter ↔ the
+third chamber. *per rimam* now leads to the Unfinished Quarter, not the map.
+The third chamber returns to the first. The atlas is no longer "Room IV" of
+the Quarter; it has its own heading and no district.
+
+Not done, on purpose: the front page is still the first poem (the plan of the
+same day asked for that; an atlas-as-home-page version was built and shelved).
+Not done, for lack of time: a larger map for small screens; Tamil names for
+the rooms the feather opens onto.

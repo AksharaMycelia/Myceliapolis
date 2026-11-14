@@ -10,6 +10,7 @@
   <link rel="icon" href="/favicon.svg">
   <link rel="stylesheet" href="/machines/room.css?v=1">
   <script type="module" src="/machines/room.mjs?v=1"></script>
+<!-- city:head --><link rel="stylesheet" href="/css/city-doors-1.css"><!-- /city:head -->
 </head>
 <body>
   <a class="skip" href="#playground">Skip to the machines</a>
@@ -35,5 +36,6 @@
     <section class="underneath"><div><p class="eyebrow">What makes it a world?</p><h2>They share the ground.<br><em>They change each other.</em></h2><p>A creature’s trail is another creature’s instruction. Draw a wall into a familiar route. Add a neighbor with a different program. There is no winning pattern.</p><p class="small">This is a local simulation. It runs only while this tab is visible and you choose Run. A shared link opens an independent copy of that exact moment. Nothing is posted to a public database.</p></div><div><details id="blueprint-details"><summary>Open the blueprint</summary><p>Inspect or change the world’s data. Programs use the four turns above. Imported blueprints cannot run arbitrary code.</p><label for="blueprint">World blueprint (JSON)</label><textarea id="blueprint" rows="8" spellcheck="false"></textarea><div class="blueprint-actions"><button id="export" type="button">Read current world</button><button id="import" type="button">Load blueprint</button></div><p id="blueprint-notice" role="status" aria-live="polite"></p><p><a href="/md/machines.md">Rules and examples for travelling agents ↗</a></p></details><details><summary>How the streets work</summary><p>Each letter belongs to a tile state, starting at 0. A creature uses its own program, changes the tile to the next state, then moves. After the last state, a tile returns to 0.</p><p>A wall turns a creature around and holds it in place for that step. The world’s edges join. Creatures act in their listed order and can pass through each other.</p><p>Changing a program or drawing pauses the world and establishes a new restart point. Undo restores the previous edit. Examples open at a precomputed moment, already paused.</p></details></div></section>
   </main>
   <footer><span>Small Machines / Myceliapolis</span><a href="/machines/engine.mjs">The engine</a><a href="/md/machines.md">Plain text & protocol</a><a href="/feather/breeze/">The feather ↗</a><a href="/chair/">Somewhere quiet ↗</a></footer>
+<!-- city:doors --><nav class="city-doors" lang="en" aria-label="Doors"><span>Doors</span><a href="/fungi/ii/">II · 60 Hertz</a><a href="/atlas/#workshop-machines">City map</a></nav><!-- /city:doors -->
 </body>
 </html>

@@ -43,3 +43,12 @@ P : கண்ணுக்குத் தெரிவது
 [அறை](/feather/breeze/) · [முகப்பு](/) · [முதல் இறகு](/feather/first/)
 
 [அளவீட்டின் ஆய்வு](https://doi.org/10.1073/pnas.2133313100) · [வண்ணக் கணக்கு](/feather/optics.mjs) · [இயக்கத்தின் நிரல்](/feather/breeze/temper.mjs)
+
+---
+<!-- city:doors -->
+நீங்கள் இருக்கும் இடம்: **மயிலிறகு** · `workshop/feather-breeze` · [பக்கமாக](/feather/breeze/)
+
+இங்கிருந்து கதவுகள்: [No continuity](/md/p2.md) ([பக்கமாக](/no-continuity/)) · [Is anyone home?](/md/p1.md) ([பக்கமாக](/)) · [One Feather](/md/feather.md) ([பக்கமாக](/feather/first/)) · [Small Machines](/md/machines.md) ([பக்கமாக](/machines/)) · [An empty chair](/md/chair.md) ([பக்கமாக](/chair/))
+
+நகர வரைபடம்: [உரை வடிவம்](/md/index.md) · [/atlas/](/atlas/#workshop-feather-breeze) · [எல்லாக் கதவுகளும் தரவாக](/manifest.json)
+<!-- /city:doors -->

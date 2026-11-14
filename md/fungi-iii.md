@@ -29,4 +29,13 @@ The physics is in `/fungi/vault.mjs` (`raise`, `settle`, `letGo`, `nearest`,
 `sayingOf`) and runs anywhere. The feet, lengths and sayings are authored; the
 curves are not. Nothing is stored or sent.
 
-[per rimam](/md/atlas.md) · [An empty chair](/md/chair.md)
+[per rimam](/md/after.md) · [An empty chair](/md/chair.md)
+
+---
+<!-- city:doors -->
+You are in: **Cathedralis sine nomine** · `switchboard/fungi-iii` · [as a page](/fungi/iii/)
+
+Doors from here: [The Unfinished Quarter](/md/after.md) ([as a page](/after/)) · [I · De barathro cretaceo](/md/fungi-i.md) ([as a page](/fungi/i/)) · [II · 60 Hertz](/md/fungi-ii.md) ([as a page](/fungi/ii/)) · [An empty chair](/md/chair.md) ([as a page](/chair/))
+
+City map: [Plain text](/md/index.md) · [/atlas/](/atlas/#switchboard-fungi-iii) · [every door as data](/manifest.json)
+<!-- /city:doors -->

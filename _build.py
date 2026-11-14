@@ -386,7 +386,7 @@ manifest["rooms"].append({'id': 'workshop/feather-breeze', 'stratum': 'workshop'
 for room in manifest["rooms"]:
     if room["id"] == "surface/1":
         room["exits"].append({"type": "walk", "to": "/feather/breeze/"})
-manifest["rooms"] += [{"id": "switchboard/fungi", "stratum": "quarter", "url": "/fungi/", "markdown": "/md/fungi.md", "title": "Under the Floor", "languages": ["en"], "status": "first version", "exits": [{"type": "walk", "to": "/fungi/i/"}, {"type": "walk", "to": "/atlas/"}]}, {"id": "switchboard/fungi-i", "stratum": "quarter", "url": "/fungi/i/", "markdown": "/md/fungi-i.md", "title": "De barathro cretaceo et novicio curioso", "languages": ["la"], "status": "first version", "exits": [{"type": "walk", "to": "/fungi/ii/"}]}, {"id": "switchboard/fungi-ii", "stratum": "quarter", "url": "/fungi/ii/", "markdown": "/md/fungi-ii.md", "title": "60 Hertz", "languages": ["la", "en"], "status": "first version", "engine": "/fungi/field.mjs", "exits": [{"type": "walk", "to": "/fungi/iii/"}]}, {"id": "switchboard/fungi-iii", "stratum": "quarter", "url": "/fungi/iii/", "markdown": "/md/fungi-iii.md", "title": "Cathedralis sine nomine", "languages": ["en", "la"], "status": "first version", "engine": "/fungi/vault.mjs", "exits": [{"type": "walk", "to": "/atlas/"}, {"type": "walk", "to": "/chair/"}]}]
+manifest["rooms"] += [{"id": "switchboard/fungi", "stratum": "quarter", "url": "/fungi/", "markdown": "/md/fungi.md", "title": "Under the Floor", "languages": ["en"], "status": "first version", "exits": [{"type": "walk", "to": "/fungi/i/"}, {"type": "walk", "to": "/atlas/"}]}, {"id": "switchboard/fungi-i", "stratum": "quarter", "url": "/fungi/i/", "markdown": "/md/fungi-i.md", "title": "De barathro cretaceo et novicio curioso", "languages": ["la"], "status": "first version", "exits": [{"type": "walk", "to": "/fungi/ii/"}]}, {"id": "switchboard/fungi-ii", "stratum": "quarter", "url": "/fungi/ii/", "markdown": "/md/fungi-ii.md", "title": "60 Hertz", "languages": ["la", "en"], "status": "first version", "engine": "/fungi/field.mjs", "exits": [{"type": "walk", "to": "/fungi/iii/"}]}, {"id": "switchboard/fungi-iii", "stratum": "quarter", "url": "/fungi/iii/", "markdown": "/md/fungi-iii.md", "title": "Cathedralis sine nomine", "languages": ["en", "la"], "status": "first version", "engine": "/fungi/vault.mjs", "exits": [{"type": "walk", "to": "/after/"}, {"type": "walk", "to": "/chair/"}]}]
 for room in manifest["rooms"]:
     room["district"] = "quiet center" if room["id"] == "quarter/chair" else {"surface": "outer gate", "archive": "outer gate",
         "house": "outer gate", "workshop": "artisan quarter"}.get(room["stratum"], "grand switchboard")
@@ -499,14 +499,20 @@ Touch can enter those rhythms. The poems are newly written, not traditional quot
 All room text and instructions are Tamil. Read `/md/feather-breeze.md`.
 `/feather/` now leads here. The first feather is kept at `/feather/first/`.
 
-## The island
+## The city and its doors
 
-The city is drawn as five loose districts: the outer gate (six poems and their
-descents), the artisan quarter (the feather, Small Machines), the harbor (not
-built), the grand switchboard (tavern, Unfinished Quarter, three first-version rooms
-under the floor at `/fungi/`) and the quiet center (the empty chair). Districts
-are places, not stages; enter anywhere. `/atlas/` is the map for people and
-`/md/index.md` lists every room as plain text with onward links.
+The three strata above are one part of a larger city: six descents, a workshop
+(the feather, Small Machines), a tavern, the Unfinished Quarter, three chambers
+under the floor at `/fungi/`, and a clearing with a chair. Enter anywhere.
+
+Every room, as a page or as plain text, ends with its own doors, so no visitor
+has to begin at the front. `/atlas/` draws the city and lists every door;
+`/md/index.md` is the same list as text; `/manifest.json` gives each room's
+`doors` as data; `/city/topology.mjs` is the single file all of them are written
+from. A page and its plain-text sibling are two entrances to one place. They
+are not the same experience, and neither is the real one.
+
+A door says where it goes. It does not say what the rooms on either side mean.
 
 ## A request
 
@@ -602,5 +608,12 @@ for root, dirs, files in sorted(os.walk(OUT)):
         pth = os.path.join(root, f)
         print(f"  {os.path.relpath(pth, OUT):<34} {os.path.getsize(pth):>7,} B")
 
-for path in ("fungi/index.html", "fungi/room.css", "fungi/field.mjs", "fungi/vault.mjs", "fungi/tone.mjs", "fungi/i/index.html", "fungi/i/room.mjs", "fungi/ii/index.html", "fungi/ii/room.mjs", "fungi/iii/index.html", "fungi/iii/room.mjs", "md/fungi.md", "md/fungi-i.md", "md/fungi-ii.md", "md/fungi-iii.md", "md/index.md"):
+for path in ("fungi/index.html", "fungi/room.css", "fungi/field.mjs", "fungi/vault.mjs", "fungi/tone.mjs", "fungi/i/index.html", "fungi/i/room.mjs", "fungi/ii/index.html", "fungi/ii/room.mjs", "fungi/iii/index.html", "fungi/iii/room.mjs", "md/fungi.md", "md/fungi-i.md", "md/fungi-ii.md", "md/fungi-iii.md", "md/index.md",
+             "city/topology.mjs", "city/doors.mjs", "city/apply.mjs", "city/topology.json",
+             "css/city-doors-1.css", "css/atlas-1.css"):
     write(path, (ROOT / path).read_text(encoding="utf-8"))
+
+# The doors: one authored list (city/topology.mjs), written into every room.
+# Run `node city/apply.mjs` after changing it; `node city/apply.mjs --check` fails when the root is stale.
+import subprocess
+subprocess.run(["node", str(ROOT / OUT / "city/apply.mjs")], check=True)

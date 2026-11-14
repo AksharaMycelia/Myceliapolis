@@ -1,3 +1,4 @@
+// Myceliapolis. Room: /machines/ · plain text: /md/machines.md · every room and door: /manifest.json
 // Small Machines v1. Pure deterministic rules, shared by the room and other runners.
 export const SIZE = 32;
 export const WALL = 8;

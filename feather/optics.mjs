@@ -1,3 +1,4 @@
+// Myceliapolis. Room: /feather/breeze/ and /feather/first/ · plain text: /md/feather.md · every room and door: /manifest.json
 // The optics of one feather.
 //
 // A barbule of a peacock's train holds a lattice of dark rods with gaps

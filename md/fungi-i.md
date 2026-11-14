@@ -52,3 +52,12 @@ oceanus vivus et inimaginabilis in tenebris fervet,
 cuius ne nomen quidem in ullo codice templi scriptum erat.
 
 [propius audi](/md/fungi-ii.md)
+
+---
+<!-- city:doors -->
+Hic es: **De barathro cretaceo et novicio curioso** · `switchboard/fungi-i` · [ut pagina](/fungi/i/)
+
+Ostia hinc: [II · 60 Hertz](/md/fungi-ii.md) ([ut pagina](/fungi/ii/)) · [Under the Floor](/md/fungi.md) ([ut pagina](/fungi/))
+
+Tabula urbis: [Textus simplex](/md/index.md) · [/atlas/](/atlas/#switchboard-fungi-i) · [omnia ostia ut data](/manifest.json)
+<!-- /city:doors -->

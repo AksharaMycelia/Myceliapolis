@@ -1,3 +1,4 @@
+// Myceliapolis. Room: /feather/breeze/ · plain text: /md/feather-breeze.md · every room and door: /manifest.json
 // Invented habits, shared measured colours. Memory lasts only in this object.
 import { grow, RATIO } from '../plume.mjs';
 

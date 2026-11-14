@@ -1,3 +1,4 @@
+// Myceliapolis. Room: /fungi/ii/ · plain text: /md/fungi-ii.md · every room and door: /manifest.json
 // A field of lights that slowly fall into step. Mean-field coupled oscillators
 // (Kuramoto). Every light is authored here from a seed; none is a visitor.
 export const COUNT = 1400;

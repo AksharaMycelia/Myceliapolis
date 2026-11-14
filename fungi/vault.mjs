@@ -1,3 +1,4 @@
+// Myceliapolis. Room: /fungi/iii/ · plain text: /md/fungi-iii.md · every room and door: /manifest.json
 // A building made the way Gaudí drew his: chains hung from pairs of feet,
 // shaped by weight alone, then looked at upside down. Each node holds only
 // the two links beside it. Nothing here knows what an arch is.

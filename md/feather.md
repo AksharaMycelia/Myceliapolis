@@ -88,3 +88,12 @@ is skipped when reduced motion is requested. Time passes only while the tab is
 visible. The room makes no network requests after loading and uses no storage.
 
 [Small Machines](/machines/) · [City atlas](/atlas/) · [An empty chair](/chair/)
+
+---
+<!-- city:doors -->
+You are in: **One Feather** · `workshop/feather` · [as a page](/feather/first/)
+
+Doors from here: [மயிலிறகு](/md/feather-breeze.md) ([as a page](/feather/breeze/)) · [Small Machines](/md/machines.md) ([as a page](/machines/)) · [An empty chair](/md/chair.md) ([as a page](/chair/))
+
+City map: [Plain text](/md/index.md) · [/atlas/](/atlas/#workshop-feather) · [every door as data](/manifest.json)
+<!-- /city:doors -->

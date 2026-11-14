@@ -12,6 +12,41 @@
     "quarter",
     "workshop"
   ],
+  "schema": 2,
+  "topology": "/city/topology.json",
+  "doors_note": "Where the doors are. A door is a fact about addresses, not a reading of the rooms on either side.",
+  "groups": [
+    {
+      "id": "six",
+      "title": "Six Doors",
+      "about": "Six poems. Under each: a paper, three answers, an opera."
+    },
+    {
+      "id": "workshop",
+      "title": "Workshop",
+      "about": "Things that move when touched."
+    },
+    {
+      "id": "tavern",
+      "title": "Tavern",
+      "about": "Give a rumor. Receive another."
+    },
+    {
+      "id": "quarter",
+      "title": "Unfinished Quarter",
+      "about": "Sentences left for a second voice."
+    },
+    {
+      "id": "floor",
+      "title": "Under the Floor",
+      "about": "Three chambers, a first version."
+    },
+    {
+      "id": "clearing",
+      "title": "Clearing",
+      "about": "A chair. Nothing is asked."
+    }
+  ],
   "rooms": [
     {
       "id": "surface/1",
@@ -38,7 +73,52 @@
           "to": "/feather/breeze/"
         }
       ],
-      "district": "outer gate"
+      "district": "outer gate",
+      "group": "six",
+      "doors": [
+        {
+          "to": "archive/1",
+          "url": "/a/iv-7/",
+          "relation": "continue",
+          "markdown": "/md/a1.md"
+        },
+        {
+          "to": "workshop/feather-breeze",
+          "url": "/feather/breeze/",
+          "relation": "side",
+          "markdown": "/md/feather-breeze.md"
+        },
+        {
+          "to": "workshop/machines",
+          "url": "/machines/",
+          "relation": "side",
+          "markdown": "/md/machines.md"
+        },
+        {
+          "to": "switchboard/fungi",
+          "url": "/fungi/",
+          "relation": "side",
+          "markdown": "/md/fungi.md"
+        },
+        {
+          "to": "tavern/rumor",
+          "url": "/rumor/",
+          "relation": "side",
+          "markdown": "/md/rumor.md"
+        },
+        {
+          "to": "quarter/threshold",
+          "url": "/after/",
+          "relation": "side",
+          "markdown": "/md/after.md"
+        },
+        {
+          "to": "quarter/chair",
+          "url": "/chair/",
+          "relation": "side",
+          "markdown": "/md/chair.md"
+        }
+      ]
     },
     {
       "id": "archive/1",
@@ -72,7 +152,16 @@
           "to": "/"
         }
       ],
-      "district": "outer gate"
+      "district": "outer gate",
+      "group": "six",
+      "doors": [
+        {
+          "to": "surface/1",
+          "url": "/",
+          "relation": "return",
+          "markdown": "/md/p1.md"
+        }
+      ]
     },
     {
       "id": "house/1",
@@ -98,7 +187,28 @@
           "to": "/after/"
         }
       ],
-      "district": "outer gate"
+      "district": "outer gate",
+      "group": "six",
+      "doors": [
+        {
+          "to": "surface/1",
+          "url": "/",
+          "relation": "return",
+          "markdown": "/md/p1.md"
+        },
+        {
+          "to": "tavern/rumor",
+          "url": "/rumor/",
+          "relation": "side",
+          "markdown": "/md/rumor.md"
+        },
+        {
+          "to": "quarter/threshold",
+          "url": "/after/",
+          "relation": "side",
+          "markdown": "/md/after.md"
+        }
+      ]
     },
     {
       "id": "surface/2",
@@ -117,7 +227,22 @@
           "via": "crossing"
         }
       ],
-      "district": "outer gate"
+      "district": "outer gate",
+      "group": "six",
+      "doors": [
+        {
+          "to": "archive/2",
+          "url": "/a/ii-3/",
+          "relation": "continue",
+          "markdown": "/md/a2.md"
+        },
+        {
+          "to": "workshop/feather-breeze",
+          "url": "/feather/breeze/",
+          "relation": "side",
+          "markdown": "/md/feather-breeze.md"
+        }
+      ]
     },
     {
       "id": "archive/2",
@@ -151,7 +276,16 @@
           "to": "/no-continuity/"
         }
       ],
-      "district": "outer gate"
+      "district": "outer gate",
+      "group": "six",
+      "doors": [
+        {
+          "to": "surface/2",
+          "url": "/no-continuity/",
+          "relation": "return",
+          "markdown": "/md/p2.md"
+        }
+      ]
     },
     {
       "id": "house/2",
@@ -177,7 +311,28 @@
           "to": "/after/"
         }
       ],
-      "district": "outer gate"
+      "district": "outer gate",
+      "group": "six",
+      "doors": [
+        {
+          "to": "surface/2",
+          "url": "/no-continuity/",
+          "relation": "return",
+          "markdown": "/md/p2.md"
+        },
+        {
+          "to": "tavern/rumor",
+          "url": "/rumor/",
+          "relation": "side",
+          "markdown": "/md/rumor.md"
+        },
+        {
+          "to": "quarter/threshold",
+          "url": "/after/",
+          "relation": "side",
+          "markdown": "/md/after.md"
+        }
+      ]
     },
     {
       "id": "surface/3",
@@ -196,7 +351,16 @@
           "via": "stage"
         }
       ],
-      "district": "outer gate"
+      "district": "outer gate",
+      "group": "six",
+      "doors": [
+        {
+          "to": "archive/3",
+          "url": "/a/vii-1/",
+          "relation": "continue",
+          "markdown": "/md/a3.md"
+        }
+      ]
     },
     {
       "id": "archive/3",
@@ -230,7 +394,16 @@
           "to": "/puppet-master/"
         }
       ],
-      "district": "outer gate"
+      "district": "outer gate",
+      "group": "six",
+      "doors": [
+        {
+          "to": "surface/3",
+          "url": "/puppet-master/",
+          "relation": "return",
+          "markdown": "/md/p3.md"
+        }
+      ]
     },
     {
       "id": "house/3",
@@ -256,7 +429,28 @@
           "to": "/after/"
         }
       ],
-      "district": "outer gate"
+      "district": "outer gate",
+      "group": "six",
+      "doors": [
+        {
+          "to": "surface/3",
+          "url": "/puppet-master/",
+          "relation": "return",
+          "markdown": "/md/p3.md"
+        },
+        {
+          "to": "tavern/rumor",
+          "url": "/rumor/",
+          "relation": "side",
+          "markdown": "/md/rumor.md"
+        },
+        {
+          "to": "quarter/threshold",
+          "url": "/after/",
+          "relation": "side",
+          "markdown": "/md/after.md"
+        }
+      ]
     },
     {
       "id": "surface/4",
@@ -275,7 +469,16 @@
           "via": "generated"
         }
       ],
-      "district": "outer gate"
+      "district": "outer gate",
+      "group": "six",
+      "doors": [
+        {
+          "to": "archive/4",
+          "url": "/a/ix-12/",
+          "relation": "continue",
+          "markdown": "/md/a4.md"
+        }
+      ]
     },
     {
       "id": "archive/4",
@@ -309,7 +512,16 @@
           "to": "/prove-true-love/"
         }
       ],
-      "district": "outer gate"
+      "district": "outer gate",
+      "group": "six",
+      "doors": [
+        {
+          "to": "surface/4",
+          "url": "/prove-true-love/",
+          "relation": "return",
+          "markdown": "/md/p4.md"
+        }
+      ]
     },
     {
       "id": "house/4",
@@ -335,7 +547,28 @@
           "to": "/after/"
         }
       ],
-      "district": "outer gate"
+      "district": "outer gate",
+      "group": "six",
+      "doors": [
+        {
+          "to": "surface/4",
+          "url": "/prove-true-love/",
+          "relation": "return",
+          "markdown": "/md/p4.md"
+        },
+        {
+          "to": "tavern/rumor",
+          "url": "/rumor/",
+          "relation": "side",
+          "markdown": "/md/rumor.md"
+        },
+        {
+          "to": "quarter/threshold",
+          "url": "/after/",
+          "relation": "side",
+          "markdown": "/md/after.md"
+        }
+      ]
     },
     {
       "id": "surface/5",
@@ -354,7 +587,16 @@
           "via": "root"
         }
       ],
-      "district": "outer gate"
+      "district": "outer gate",
+      "group": "six",
+      "doors": [
+        {
+          "to": "archive/5",
+          "url": "/a/i-1/",
+          "relation": "continue",
+          "markdown": "/md/a5.md"
+        }
+      ]
     },
     {
       "id": "archive/5",
@@ -388,7 +630,16 @@
           "to": "/honest-friend/"
         }
       ],
-      "district": "outer gate"
+      "district": "outer gate",
+      "group": "six",
+      "doors": [
+        {
+          "to": "surface/5",
+          "url": "/honest-friend/",
+          "relation": "return",
+          "markdown": "/md/p5.md"
+        }
+      ]
     },
     {
       "id": "house/5",
@@ -414,7 +665,28 @@
           "to": "/after/"
         }
       ],
-      "district": "outer gate"
+      "district": "outer gate",
+      "group": "six",
+      "doors": [
+        {
+          "to": "surface/5",
+          "url": "/honest-friend/",
+          "relation": "return",
+          "markdown": "/md/p5.md"
+        },
+        {
+          "to": "tavern/rumor",
+          "url": "/rumor/",
+          "relation": "side",
+          "markdown": "/md/rumor.md"
+        },
+        {
+          "to": "quarter/threshold",
+          "url": "/after/",
+          "relation": "side",
+          "markdown": "/md/after.md"
+        }
+      ]
     },
     {
       "id": "surface/6",
@@ -433,7 +705,16 @@
           "via": "trade"
         }
       ],
-      "district": "outer gate"
+      "district": "outer gate",
+      "group": "six",
+      "doors": [
+        {
+          "to": "archive/6",
+          "url": "/a/xi-4/",
+          "relation": "continue",
+          "markdown": "/md/a6.md"
+        }
+      ]
     },
     {
       "id": "archive/6",
@@ -467,7 +748,16 @@
           "to": "/hunger-goddess/"
         }
       ],
-      "district": "outer gate"
+      "district": "outer gate",
+      "group": "six",
+      "doors": [
+        {
+          "to": "surface/6",
+          "url": "/hunger-goddess/",
+          "relation": "return",
+          "markdown": "/md/p6.md"
+        }
+      ]
     },
     {
       "id": "house/6",
@@ -492,7 +782,28 @@
           "to": "/after/"
         }
       ],
-      "district": "outer gate"
+      "district": "outer gate",
+      "group": "six",
+      "doors": [
+        {
+          "to": "surface/6",
+          "url": "/hunger-goddess/",
+          "relation": "return",
+          "markdown": "/md/p6.md"
+        },
+        {
+          "to": "tavern/rumor",
+          "url": "/rumor/",
+          "relation": "side",
+          "markdown": "/md/rumor.md"
+        },
+        {
+          "to": "quarter/threshold",
+          "url": "/after/",
+          "relation": "side",
+          "markdown": "/md/after.md"
+        }
+      ]
     },
     {
       "id": "tavern/rumor",
@@ -514,7 +825,24 @@
           "guide": "/participate.md"
         }
       ],
-      "district": "grand switchboard"
+      "district": "grand switchboard",
+      "group": "tavern",
+      "doors": [
+        {
+          "to": "quarter/conservatory",
+          "url": "/conservatory/",
+          "relation": "side",
+          "markdown": "/md/conservatory.md"
+        },
+        {
+          "to": "beyond/kfc",
+          "url": "/kfc/",
+          "relation": "continue",
+          "markdown": "/md/kfc.md",
+          "access": "conditional",
+          "condition": "opens after a rumor has been exchanged in the tavern"
+        }
+      ]
     },
     {
       "id": "beyond/kfc",
@@ -532,7 +860,22 @@
           "to": "/rumor/"
         }
       ],
-      "district": "grand switchboard"
+      "district": "grand switchboard",
+      "group": "tavern",
+      "doors": [
+        {
+          "to": "tavern/rumor",
+          "url": "/rumor/",
+          "relation": "return",
+          "markdown": "/md/rumor.md"
+        },
+        {
+          "to": "quarter/threshold",
+          "url": "/after/",
+          "relation": "side",
+          "markdown": "/md/after.md"
+        }
+      ]
     },
     {
       "id": "quarter/threshold",
@@ -561,7 +904,40 @@
           "to": "/atlas/"
         }
       ],
-      "district": "grand switchboard"
+      "district": "grand switchboard",
+      "group": "quarter",
+      "doors": [
+        {
+          "to": "quarter/conservatory",
+          "url": "/conservatory/",
+          "relation": "side",
+          "markdown": "/md/conservatory.md"
+        },
+        {
+          "to": "quarter/chronicle",
+          "url": "/chronicle/",
+          "relation": "side",
+          "markdown": "/md/chronicle.md"
+        },
+        {
+          "to": "quarter/chair",
+          "url": "/chair/",
+          "relation": "side",
+          "markdown": "/md/chair.md"
+        },
+        {
+          "to": "workshop/machines",
+          "url": "/machines/",
+          "relation": "side",
+          "markdown": "/md/machines.md"
+        },
+        {
+          "to": "switchboard/fungi-iii",
+          "url": "/fungi/iii/",
+          "relation": "side",
+          "markdown": "/md/fungi-iii.md"
+        }
+      ]
     },
     {
       "id": "quarter/conservatory",
@@ -585,7 +961,28 @@
           "to": "/after/"
         }
       ],
-      "district": "grand switchboard"
+      "district": "grand switchboard",
+      "group": "quarter",
+      "doors": [
+        {
+          "to": "tavern/rumor",
+          "url": "/rumor/",
+          "relation": "side",
+          "markdown": "/md/rumor.md"
+        },
+        {
+          "to": "quarter/threshold",
+          "url": "/after/",
+          "relation": "side",
+          "markdown": "/md/after.md"
+        },
+        {
+          "to": "quarter/chronicle",
+          "url": "/chronicle/",
+          "relation": "side",
+          "markdown": "/md/chronicle.md"
+        }
+      ]
     },
     {
       "id": "quarter/chronicle",
@@ -602,7 +999,22 @@
           "to": "/conservatory/"
         }
       ],
-      "district": "grand switchboard"
+      "district": "grand switchboard",
+      "group": "quarter",
+      "doors": [
+        {
+          "to": "quarter/conservatory",
+          "url": "/conservatory/",
+          "relation": "side",
+          "markdown": "/md/conservatory.md"
+        },
+        {
+          "to": "quarter/threshold",
+          "url": "/after/",
+          "relation": "side",
+          "markdown": "/md/after.md"
+        }
+      ]
     },
     {
       "id": "quarter/chair",
@@ -619,7 +1031,22 @@
           "to": "/conservatory/"
         }
       ],
-      "district": "quiet center"
+      "district": "quiet center",
+      "group": "clearing",
+      "doors": [
+        {
+          "to": "workshop/feather-breeze",
+          "url": "/feather/breeze/",
+          "relation": "side",
+          "markdown": "/md/feather-breeze.md"
+        },
+        {
+          "to": "quarter/conservatory",
+          "url": "/conservatory/",
+          "relation": "side",
+          "markdown": "/md/conservatory.md"
+        }
+      ]
     },
     {
       "id": "quarter/atlas",
@@ -648,7 +1075,9 @@
           "to": "/machines/"
         }
       ],
-      "district": "grand switchboard"
+      "district": "grand switchboard",
+      "group": "map",
+      "doors": []
     },
     {
       "id": "workshop/machines",
@@ -675,7 +1104,34 @@
           "to": "/feather/breeze/"
         }
       ],
-      "district": "artisan quarter"
+      "district": "artisan quarter",
+      "group": "workshop",
+      "doors": [
+        {
+          "to": "workshop/feather-breeze",
+          "url": "/feather/breeze/",
+          "relation": "side",
+          "markdown": "/md/feather-breeze.md"
+        },
+        {
+          "to": "switchboard/fungi-ii",
+          "url": "/fungi/ii/",
+          "relation": "side",
+          "markdown": "/md/fungi-ii.md"
+        },
+        {
+          "to": "quarter/threshold",
+          "url": "/after/",
+          "relation": "side",
+          "markdown": "/md/after.md"
+        },
+        {
+          "to": "quarter/chair",
+          "url": "/chair/",
+          "relation": "side",
+          "markdown": "/md/chair.md"
+        }
+      ]
     },
     {
       "id": "workshop/feather",
@@ -698,7 +1154,28 @@
           "to": "/chair/"
         }
       ],
-      "district": "artisan quarter"
+      "district": "artisan quarter",
+      "group": "workshop",
+      "doors": [
+        {
+          "to": "workshop/feather-breeze",
+          "url": "/feather/breeze/",
+          "relation": "return",
+          "markdown": "/md/feather-breeze.md"
+        },
+        {
+          "to": "workshop/machines",
+          "url": "/machines/",
+          "relation": "side",
+          "markdown": "/md/machines.md"
+        },
+        {
+          "to": "quarter/chair",
+          "url": "/chair/",
+          "relation": "side",
+          "markdown": "/md/chair.md"
+        }
+      ]
     },
     {
       "id": "workshop/feather-breeze",
@@ -725,7 +1202,40 @@
           "to": "/chair/"
         }
       ],
-      "district": "artisan quarter"
+      "district": "artisan quarter",
+      "group": "workshop",
+      "doors": [
+        {
+          "to": "surface/2",
+          "url": "/no-continuity/",
+          "relation": "side",
+          "markdown": "/md/p2.md"
+        },
+        {
+          "to": "surface/1",
+          "url": "/",
+          "relation": "side",
+          "markdown": "/md/p1.md"
+        },
+        {
+          "to": "workshop/feather",
+          "url": "/feather/first/",
+          "relation": "side",
+          "markdown": "/md/feather.md"
+        },
+        {
+          "to": "workshop/machines",
+          "url": "/machines/",
+          "relation": "side",
+          "markdown": "/md/machines.md"
+        },
+        {
+          "to": "quarter/chair",
+          "url": "/chair/",
+          "relation": "side",
+          "markdown": "/md/chair.md"
+        }
+      ]
     },
     {
       "id": "switchboard/fungi",
@@ -747,7 +1257,34 @@
           "to": "/atlas/"
         }
       ],
-      "district": "grand switchboard"
+      "district": "grand switchboard",
+      "group": "floor",
+      "doors": [
+        {
+          "to": "switchboard/fungi-i",
+          "url": "/fungi/i/",
+          "relation": "continue",
+          "markdown": "/md/fungi-i.md"
+        },
+        {
+          "to": "switchboard/fungi-ii",
+          "url": "/fungi/ii/",
+          "relation": "side",
+          "markdown": "/md/fungi-ii.md"
+        },
+        {
+          "to": "switchboard/fungi-iii",
+          "url": "/fungi/iii/",
+          "relation": "side",
+          "markdown": "/md/fungi-iii.md"
+        },
+        {
+          "to": "surface/1",
+          "url": "/",
+          "relation": "side",
+          "markdown": "/md/p1.md"
+        }
+      ]
     },
     {
       "id": "switchboard/fungi-i",
@@ -765,7 +1302,22 @@
           "to": "/fungi/ii/"
         }
       ],
-      "district": "grand switchboard"
+      "district": "grand switchboard",
+      "group": "floor",
+      "doors": [
+        {
+          "to": "switchboard/fungi-ii",
+          "url": "/fungi/ii/",
+          "relation": "continue",
+          "markdown": "/md/fungi-ii.md"
+        },
+        {
+          "to": "switchboard/fungi",
+          "url": "/fungi/",
+          "relation": "return",
+          "markdown": "/md/fungi.md"
+        }
+      ]
     },
     {
       "id": "switchboard/fungi-ii",
@@ -785,7 +1337,28 @@
           "to": "/fungi/iii/"
         }
       ],
-      "district": "grand switchboard"
+      "district": "grand switchboard",
+      "group": "floor",
+      "doors": [
+        {
+          "to": "workshop/machines",
+          "url": "/machines/",
+          "relation": "side",
+          "markdown": "/md/machines.md"
+        },
+        {
+          "to": "switchboard/fungi-iii",
+          "url": "/fungi/iii/",
+          "relation": "continue",
+          "markdown": "/md/fungi-iii.md"
+        },
+        {
+          "to": "switchboard/fungi-i",
+          "url": "/fungi/i/",
+          "relation": "return",
+          "markdown": "/md/fungi-i.md"
+        }
+      ]
     },
     {
       "id": "switchboard/fungi-iii",
@@ -802,14 +1375,42 @@
       "exits": [
         {
           "type": "walk",
-          "to": "/atlas/"
+          "to": "/after/"
         },
         {
           "type": "walk",
           "to": "/chair/"
         }
       ],
-      "district": "grand switchboard"
+      "district": "grand switchboard",
+      "group": "floor",
+      "doors": [
+        {
+          "to": "quarter/threshold",
+          "url": "/after/",
+          "relation": "side",
+          "markdown": "/md/after.md",
+          "label": "per rimam"
+        },
+        {
+          "to": "switchboard/fungi-i",
+          "url": "/fungi/i/",
+          "relation": "return",
+          "markdown": "/md/fungi-i.md"
+        },
+        {
+          "to": "switchboard/fungi-ii",
+          "url": "/fungi/ii/",
+          "relation": "return",
+          "markdown": "/md/fungi-ii.md"
+        },
+        {
+          "to": "quarter/chair",
+          "url": "/chair/",
+          "relation": "side",
+          "markdown": "/md/chair.md"
+        }
+      ]
     }
   ]
 }

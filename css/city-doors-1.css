@@ -1,0 +1,12 @@
+/* The doors at the foot of a room. Colours are the room's own. */
+.city-doors{display:flex;flex-wrap:wrap;gap:.2rem 1.15rem;justify-content:center;align-items:baseline;max-width:62rem;margin:3.5rem auto 0;padding:1.1rem 1.2rem 2rem;border-top:1px solid;border-color:rgb(128 128 128/.28);font:400 .84rem/1.7 Georgia,'Times New Roman',serif;letter-spacing:.01em;opacity:.78;position:relative;z-index:2}
+.city-doors:hover,.city-doors:focus-within{opacity:1}
+.city-doors span{font-size:.66rem;letter-spacing:.16em;text-transform:uppercase;opacity:.7}
+.city-doors a{color:inherit;text-decoration:underline;text-decoration-thickness:.5px;text-underline-offset:4px;padding:.45rem .1rem;min-height:1.6rem}
+.city-doors a:focus-visible{outline:2px solid currentColor;outline-offset:3px}
+/* The old rooms paint their own floor; the doors stand on the same one. */
+.view~.city-doors{margin:0;max-width:none;border-top:0;padding-top:1.4rem;opacity:1}
+.view~.city-doors a,.view~.city-doors span{opacity:.75}
+.view~.city-doors a:hover,.view~.city-doors a:focus-visible{opacity:1}
+.view.surface~.city-doors{background:#0E1420;color:#B9C2CE}
+.view.opera~.city-doors{background:#160F0D;color:#E7DBC9}

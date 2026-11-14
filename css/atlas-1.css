@@ -1,0 +1,18 @@
+/* The city atlas. Loaded after unfinished-quarter.css. */
+.atlas-jump{display:flex;flex-wrap:wrap;gap:.4rem 1.6rem;margin-top:2rem;font-size:1rem}
+.atlas-jump a{color:var(--muted);text-underline-offset:5px}
+.city-map{display:block;width:100%;height:auto;max-width:900px;margin:auto}
+.city-map a:focus-visible circle+circle,.city-map a:hover circle+circle{fill:var(--gold)}
+.places{list-style:none;margin:2rem 0 0;padding:0}
+.places li{border-top:1px solid var(--line);padding:1.3rem 0;display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:.3rem 2.5rem;align-items:baseline;scroll-margin-top:2rem}
+.places li:target{border-top-color:var(--gold)}
+.places li:target .place{color:var(--gold)}
+.places .place{font-size:1.45rem;text-decoration:none;grid-column:1}
+.places .what,.places .more,.places .to{color:var(--muted);font-size:.95rem}
+.places .what{grid-column:2}
+.places .more{grid-column:1}
+.places .to{grid-column:2}
+.places .to i{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;font-style:normal;opacity:.75;margin-right:.4rem}
+.places a{text-underline-offset:4px}
+#unbuilt summary{cursor:pointer;color:var(--muted);font-style:italic}
+@media(max-width:700px){.places li{grid-template-columns:1fr}.places .what,.places .more,.places .to{grid-column:1}.places .place{font-size:1.3rem}}
