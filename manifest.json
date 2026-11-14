@@ -207,6 +207,12 @@
           "url": "/after/",
           "relation": "side",
           "markdown": "/md/after.md"
+        },
+        {
+          "to": "house/uppu",
+          "url": "/o/uppu/",
+          "relation": "continue",
+          "markdown": "/md/uppu.md"
         }
       ]
     },
@@ -1409,6 +1415,32 @@
           "url": "/chair/",
           "relation": "side",
           "markdown": "/md/chair.md"
+        }
+      ]
+    },
+    {
+      "id": "house/uppu",
+      "stratum": "house",
+      "url": "/o/uppu/",
+      "markdown": "/md/uppu.md",
+      "title": "உப்பின் வம்சாவளி",
+      "languages": [
+        "ta"
+      ],
+      "exits": [
+        {
+          "type": "walk",
+          "to": "/o/outis/"
+        }
+      ],
+      "group": "six",
+      "doors": [
+        {
+          "to": "house/1",
+          "url": "/o/outis/",
+          "relation": "return",
+          "markdown": "/md/o1.md",
+          "label": "யாராவது வீட்டில் இருக்கிறார்களா?"
         }
       ]
     }

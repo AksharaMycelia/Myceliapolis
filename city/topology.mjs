@@ -34,6 +34,7 @@ for (const [n, url, title, paper, key, opera, paperTitle, at, mark] of poems) {
 }
 
 rooms.push(
+  { id: 'house/uppu', url: '/o/uppu/', md: '/md/uppu.md', title: 'உப்பின் வம்சாவளி', lang: 'ta', group: 'six', role: 'opera', on: 'surface/1' },
   { id: 'workshop/feather-breeze', url: '/feather/breeze/', md: '/md/feather-breeze.md', title: 'மயிலிறகு', lang: 'ta', group: 'workshop', at: [692, 190], inspect: '/feather/breeze/temper.mjs', keeps: 'nothing; habits last while the page is open' },
   { id: 'workshop/feather', url: '/feather/first/', md: '/md/feather.md', title: 'One Feather', group: 'workshop', access: 'secondary', on: 'workshop/feather-breeze', inspect: '/feather/optics.mjs', keeps: 'nothing' },
   { id: 'workshop/machines', url: '/machines/', md: '/md/machines.md', title: 'Small Machines', group: 'workshop', at: [704, 350], inspect: '/machines/engine.mjs', keeps: 'nothing on the server; a snapshot travels in the address fragment' },
@@ -50,6 +51,9 @@ rooms.push(
   { id: 'quarter/atlas', url: '/atlas/', md: '/md/index.md', title: 'City atlas', group: 'map', listed: false },
   { id: 'city/lost', url: '/404', title: 'Galileo is sleeping', group: 'map', listed: false },
 );
+
+door('house/1', 'house/uppu', 'continue');
+door('house/uppu', 'house/1', 'return', { label: 'யாராவது வீட்டில் இருக்கிறார்களா?' });
 
 // The front door also opens straight onto the rest of the city.
 for (const to of ['workshop/feather-breeze', 'workshop/machines', 'switchboard/fungi', 'tavern/rumor', 'quarter/threshold', 'quarter/chair']) door('surface/1', to);

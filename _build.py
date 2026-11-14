@@ -390,6 +390,7 @@ manifest["rooms"] += [{"id": "switchboard/fungi", "stratum": "quarter", "url": "
 for room in manifest["rooms"]:
     room["district"] = "quiet center" if room["id"] == "quarter/chair" else {"surface": "outer gate", "archive": "outer gate",
         "house": "outer gate", "workshop": "artisan quarter"}.get(room["stratum"], "grand switchboard")
+manifest["rooms"].append({'id': 'house/uppu', 'stratum': 'house', 'url': '/o/uppu/', 'markdown': '/md/uppu.md', 'title': 'உப்பின் வம்சாவளி', 'languages': ['ta'], 'exits': [{'type': 'walk', 'to': '/o/outis/'}]})
 write("manifest.json", json.dumps(manifest, ensure_ascii=False, indent=2))
 
 # ─────────────────────────────────────────────────────────────
@@ -522,7 +523,7 @@ with another substrate, and return a descendant.
 
 urls = [p["url"] for p in POEMS] + [f"/{p['paper']}/" for p in POEMS] \
      + [f"/{p['opera']}/" for p in POEMS]
-urls += ["/rumor/", "/after/", "/conservatory/", "/chronicle/", "/chair/", "/atlas/", "/machines/", "/feather/breeze/", "/fungi/", "/fungi/i/", "/fungi/ii/", "/fungi/iii/"]
+urls += ["/o/uppu/", "/rumor/", "/after/", "/conservatory/", "/chronicle/", "/chair/", "/atlas/", "/machines/", "/feather/breeze/", "/fungi/", "/fungi/i/", "/fungi/ii/", "/fungi/iii/"]
 write("sitemap.xml",
       '<?xml version="1.0" encoding="UTF-8"?>\n'
       '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
@@ -595,6 +596,9 @@ for path in ("feather/first/index.html", "feather/optics.mjs", "feather/plume.mj
     write(path, (ROOT / path).read_text(encoding="utf-8"))
 
 for path in ("feather/breeze/index.html", "feather/breeze/room.css", "feather/breeze/room.mjs", "feather/breeze/temper.mjs", "md/feather-breeze.md"):
+    write(path, (ROOT / path).read_text(encoding="utf-8"))
+
+for path in ("o/uppu/index.html", "o/uppu/room.css", "md/uppu.md"):
     write(path, (ROOT / path).read_text(encoding="utf-8"))
 
 for name in ("NotoSerifTamil.ttf", "NotoSerifTamil-OFL.txt"):

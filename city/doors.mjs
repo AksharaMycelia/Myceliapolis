@@ -33,7 +33,7 @@ export function doorsHtml(id, page = '') {
     const to = room(d.to);
     if (d.access === 'conditional' || has(to.url)) continue;
     const lang = langOf(to) !== langOf(here) ? ` lang="${langOf(to)}"` : '';
-    links.push(`<a href="${to.url}"${lang}>${esc(name(to))}</a>`);
+    links.push(`<a href="${to.url}"${lang}>${esc(d.label || name(to))}</a>`);
   }
   links.push(`<a href="/atlas/#${anchor(id)}">${esc(f.map)}</a>`);
   if (here.md && !has(here.md)) links.push(`<a href="${here.md}">${esc(f.text)}</a>`);
@@ -47,7 +47,7 @@ export function doorsMd(id) {
   const out = doorsOf(id).map(d => {
     const to = room(d.to);
     const note = d.access === 'conditional' ? ` (${to.condition})` : '';
-    return to.md ? `[${name(to)}](${to.md}) ([${f.also}](${to.url}))${note}` : `[${name(to)}](${to.url})${note}`;
+    return to.md ? `[${d.label || name(to)}](${to.md}) ([${f.also}](${to.url}))${note}` : `[${d.label || name(to)}](${to.url})${note}`;
   });
   return [
     `${f.here}: **${here.title}** · \`${here.id}\` · [${f.also}](${here.url})`,

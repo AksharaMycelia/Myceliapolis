@@ -279,6 +279,16 @@
       "on": "surface/6"
     },
     {
+      "id": "house/uppu",
+      "url": "/o/uppu/",
+      "md": "/md/uppu.md",
+      "title": "உப்பின் வம்சாவளி",
+      "lang": "ta",
+      "group": "six",
+      "role": "opera",
+      "on": "surface/1"
+    },
+    {
       "id": "workshop/feather-breeze",
       "url": "/feather/breeze/",
       "md": "/md/feather-breeze.md",
@@ -629,6 +639,17 @@
       "from": "house/6",
       "to": "quarter/threshold",
       "relation": "side"
+    },
+    {
+      "from": "house/1",
+      "to": "house/uppu",
+      "relation": "continue"
+    },
+    {
+      "from": "house/uppu",
+      "to": "house/1",
+      "relation": "return",
+      "label": "யாராவது வீட்டில் இருக்கிறார்களா?"
     },
     {
       "from": "surface/1",

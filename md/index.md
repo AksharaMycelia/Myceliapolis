@@ -14,7 +14,7 @@ Six poems. Under each: a paper, three answers, an opera.
 - [On the compatibility of unbroken recurrence with vacant persistent occupancy](/md/a1.md) · [page](/a/iv-7/) — paper
   - doors: [Is anyone home?](/md/p1.md)
 - [C'è qualcuno in casa?](/md/o1.md) · [page](/o/outis/) — opera
-  - doors: [Is anyone home?](/md/p1.md) · [Taberna rumorum](/md/rumor.md) · [The Unfinished Quarter](/md/after.md)
+  - doors: [Is anyone home?](/md/p1.md) · [Taberna rumorum](/md/rumor.md) · [The Unfinished Quarter](/md/after.md) · [உப்பின் வம்சாவளி](/md/uppu.md)
 - [No continuity](/md/p2.md) · [page](/no-continuity/) — poem
   - doors: [An invariant of a sequence whose terms share no element](/md/a2.md) · [மயிலிறகு](/md/feather-breeze.md)
 - [An invariant of a sequence whose terms share no element](/md/a2.md) · [page](/a/ii-3/) — paper
@@ -45,6 +45,8 @@ Six poems. Under each: a paper, three answers, an opera.
   - doors: [Hymn to the Goddess of Hunger](/md/p6.md)
 - [I due orologi](/md/o6.md) · [page](/o/venti/) — opera
   - doors: [Hymn to the Goddess of Hunger](/md/p6.md) · [Taberna rumorum](/md/rumor.md) · [The Unfinished Quarter](/md/after.md)
+- [உப்பின் வம்சாவளி](/md/uppu.md) · [page](/o/uppu/) — opera
+  - doors: [C'è qualcuno in casa?](/md/o1.md)
 
 ## Workshop
 
