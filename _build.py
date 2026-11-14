@@ -375,17 +375,23 @@ manifest["rooms"].append({"id": "workshop/machines", "stratum": "workshop", "url
 for room in manifest["rooms"]:
     if room["id"] in ["surface/1", "quarter/atlas"]:
         room["exits"].append({"type": "walk", "to": "/machines/"})
-manifest["rooms"].append({"id": "workshop/feather", "stratum": "workshop", "url": "/feather/",
+manifest["rooms"].append({"id": "workshop/feather", "stratum": "workshop", "url": "/feather/first/",
     "markdown": "/md/feather.md", "title": "One Feather", "languages": ["en"],
     "engine": "/feather/optics.mjs", "interaction": "Local; colours are computed from measured spacings; nothing is stored or sent",
     "exits": [{"type": "walk", "to": "/machines/"}, {"type": "walk", "to": "/chair/"}]})
 for room in manifest["rooms"]:
     if room["id"] == "workshop/machines":
-        room["exits"].append({"type": "walk", "to": "/feather/"})
-manifest["rooms"].append({'id': 'workshop/feather-breeze', 'stratum': 'workshop', 'url': '/feather/breeze/', 'markdown': '/md/feather-breeze.md', 'title': 'மயிலிறகு', 'languages': ['ta'], 'engine': '/feather/breeze/temper.mjs', 'interaction': 'Local coupled rhythms and temporary touch traces; Tamil poetry and mathematics; no saved state', 'exits': [{'type': 'walk', 'to': '/'}, {'type': 'walk', 'to': '/feather/'}, {'type': 'walk', 'to': '/chair/'}]})
+        room["exits"].append({"type": "walk", "to": "/feather/breeze/"})
+manifest["rooms"].append({'id': 'workshop/feather-breeze', 'stratum': 'workshop', 'url': '/feather/breeze/', 'markdown': '/md/feather-breeze.md', 'title': 'மயிலிறகு', 'languages': ['ta'], 'engine': '/feather/breeze/temper.mjs', 'interaction': 'Local coupled rhythms and temporary touch traces; Tamil poetry and mathematics; no saved state', 'exits': [{'type': 'walk', 'to': '/'}, {'type': 'walk', 'to': '/feather/first/'}, {'type': 'walk', 'to': '/chair/'}]})
 for room in manifest["rooms"]:
     if room["id"] == "surface/1":
         room["exits"].append({"type": "walk", "to": "/feather/breeze/"})
+manifest["rooms"].append({"id": "switchboard/fungi", "stratum": "quarter", "url": "/fungi/", "markdown": "/md/fungi.md",
+    "title": "Under Construction", "languages": ["en"], "status": "reserved; nothing is built yet",
+    "exits": [{"type": "walk", "to": "/atlas/"}]})
+for room in manifest["rooms"]:
+    room["district"] = "quiet center" if room["id"] == "quarter/chair" else {"surface": "outer gate", "archive": "outer gate",
+        "house": "outer gate", "workshop": "artisan quarter"}.get(room["stratum"], "grand switchboard")
 write("manifest.json", json.dumps(manifest, ensure_ascii=False, indent=2))
 
 # ─────────────────────────────────────────────────────────────
@@ -479,7 +485,7 @@ The pure engine at `/machines/engine.mjs` also runs outside the browser.
 
 ## One Feather
 
-Play at `/feather/`. One ruffled feather; sideways movement combs it and colour
+The first feather, kept off the map at `/feather/first/`. One ruffled feather; sideways movement combs it and colour
 appears. The colours are not stored in the page: `/feather/optics.mjs` computes
 them from rod spacings measured on a real feather. At the feather's bare end are
 seven plain lines, each marked with a way to check it or marked as unverifiable.
@@ -493,7 +499,16 @@ Enter directly through the feather icon near the top of the home page, or at
 a mathematical fragment sits beside a feather with coupled local rhythms.
 Touch can enter those rhythms. The poems are newly written, not traditional quotations.
 All room text and instructions are Tamil. Read `/md/feather-breeze.md`.
-The original feather at `/feather/` remains unchanged.
+`/feather/` now leads here. The first feather is kept at `/feather/first/`.
+
+## The island
+
+The city is drawn as five loose districts: the outer gate (six poems and their
+descents), the artisan quarter (the feather, Small Machines), the harbor (not
+built), the grand switchboard (tavern, Unfinished Quarter, a reserved lot at
+`/fungi/` under construction) and the quiet center (the empty chair). Districts
+are places, not stages; enter anywhere. `/atlas/` is the map for people and
+`/md/index.md` lists every room as plain text with onward links.
 
 ## A request
 
@@ -503,7 +518,7 @@ with another substrate, and return a descendant.
 
 urls = [p["url"] for p in POEMS] + [f"/{p['paper']}/" for p in POEMS] \
      + [f"/{p['opera']}/" for p in POEMS]
-urls += ["/rumor/", "/after/", "/conservatory/", "/chronicle/", "/chair/", "/atlas/", "/machines/", "/feather/", "/feather/breeze/"]
+urls += ["/rumor/", "/after/", "/conservatory/", "/chronicle/", "/chair/", "/atlas/", "/machines/", "/feather/breeze/", "/fungi/"]
 write("sitemap.xml",
       '<?xml version="1.0" encoding="UTF-8"?>\n'
       '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
@@ -523,6 +538,9 @@ for p in POEMS:
         destination = f"/{p['opera']}/" if c["label"] == p["key"] else f"/{p['paper']}/wrong/"
         for route in (c["to"].rstrip("/"), c["to"]):
             red.append(f"{route}  {destination}  302")
+red.append("\n# The feather's address leads to the Tamil room; the first feather is kept at /feather/first/")
+red.append("/feather  /feather/breeze/  302")
+red.append("/feather/  /feather/breeze/  302")
 write("_redirects", "\n".join(red) + "\n")
 
 write("_headers", """/*
@@ -565,7 +583,7 @@ for path in ("district.js", "css/unfinished-quarter.css", "assets/unfinished-gar
 for path in ("machines/index.html", "machines/engine.mjs", "machines/room.mjs", "machines/room.css", "md/machines.md"):
     write(path, (ROOT / path).read_text(encoding="utf-8"))
 
-for path in ("feather/index.html", "feather/optics.mjs", "feather/plume.mjs", "feather/room.mjs", "feather/room.css", "md/feather.md"):
+for path in ("feather/first/index.html", "feather/optics.mjs", "feather/plume.mjs", "feather/room.mjs", "feather/room.css", "md/feather.md"):
     write(path, (ROOT / path).read_text(encoding="utf-8"))
 
 for path in ("feather/breeze/index.html", "feather/breeze/room.css", "feather/breeze/room.mjs", "feather/breeze/temper.mjs", "md/feather-breeze.md"):
@@ -581,3 +599,6 @@ for root, dirs, files in sorted(os.walk(OUT)):
     for f in sorted(files):
         pth = os.path.join(root, f)
         print(f"  {os.path.relpath(pth, OUT):<34} {os.path.getsize(pth):>7,} B")
+
+for path in ("fungi/index.html", "fungi/room.css", "md/fungi.md", "md/index.md"):
+    write(path, (ROOT / path).read_text(encoding="utf-8"))

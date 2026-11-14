@@ -96,7 +96,7 @@ test('line 1: every colour written in the stylesheet has more red than blue', ()
   assert.doesNotMatch(read('feather/room.css'), /rgba?\(|hsla?\(|\b(blue|green|teal|cyan|navy|aqua|turquoise)\b/i);
 });
 test('line 2: no colour is written in the page or its scripts', () => {
-  for (const path of ['feather/index.html', 'feather/room.mjs', 'feather/optics.mjs', 'feather/plume.mjs']) {
+  for (const path of ['feather/first/index.html', 'feather/room.mjs', 'feather/optics.mjs', 'feather/plume.mjs']) {
     const text = read(path);
     assert.equal([...text.matchAll(HEX)].length, 0, `${path} holds a hex colour`);
     assert.doesNotMatch(text, /rgba?\(\s*\d|hsla?\(\s*\d/i, path);
@@ -108,14 +108,14 @@ test('line 6: the room neither stores nor sends', () => {
   }
 });
 test('the bare end is plain text, and the page and its plain sibling say the same thing', () => {
-  const html = read('feather/index.html'), md = read('md/feather.md').replace(/\s+/g, ' ');
+  const html = read('feather/first/index.html'), md = read('md/feather.md').replace(/\s+/g, ' ');
   const lines = [...html.matchAll(/<li><p>(.*?)<\/p>/g)].map(m => m[1]);
   assert.equal(lines.length, 7);
   for (const line of lines) assert.ok(md.includes(line), line);
   assert.ok(html.indexOf('id="quill"') > html.indexOf('</noscript>'), 'the lines sit outside the scripted part');
 });
 test('the city’s word rule holds here too', () => {
-  for (const path of ['feather/index.html', 'feather/room.css', 'feather/room.mjs', 'feather/optics.mjs', 'feather/plume.mjs', 'md/feather.md']) {
+  for (const path of ['feather/first/index.html', 'feather/room.css', 'feather/room.mjs', 'feather/optics.mjs', 'feather/plume.mjs', 'md/feather.md']) {
     assert.doesNotMatch(read(path), /\bA\.?I\b|consciousness/, path);
   }
 });

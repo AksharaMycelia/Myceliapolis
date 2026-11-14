@@ -295,3 +295,29 @@ and a coupled-band activity that receives and transports temporary touch traces.
 No interpretive status messages or manual dog-roll control. The first feather stays
 unchanged. A self-hosted Noto Serif Tamil font and its OFL license are copied by
 the builder. Keep the home icon outside the six poem sigils.
+
+## The island
+
+In November 2026 the author asked for the site map to be reorganised around a
+plan she, GPT and another assistant talked through. This is its first step.
+
+- The city is drawn as five loose districts: outer gate, artisan quarter,
+  harbor, grand switchboard, quiet center. They are places, not stages. No
+  existing address moved except the feather's (below).
+- `/atlas/` (in `district.js`) lists rooms by district. Unbuilt places appear
+  as plain entries that say "Not built yet." Do not describe an unbuilt room
+  as working.
+- `/md/index.md` is the plain-text index of every room, by district. Add new
+  rooms to it, to the atlas, and to `manifest.json` (each room has a
+  `district`).
+- `/fungi/` is a reserved lot: three rooms the author intends to write. The
+  page says only that they are under construction. Do not build or name them
+  ahead of her libretto.
+- The feather: the author kept only the Tamil room. `/feather/` redirects to
+  `/feather/breeze/`. The first feather's page moved to `/feather/first/`; it
+  is off the atlas and the sitemap, linked only from the Tamil room. Its
+  `optics.mjs`, `plume.mjs` and `room.css` stay at `/feather/` because the
+  Tamil room runs on them.
+- The front page row gained a link to the atlas.
+- The harbor, chalk porch, night stall, relay and further machines are ideas
+  only. All of this is starter culture. Change it.

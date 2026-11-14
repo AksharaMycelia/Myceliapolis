@@ -37,7 +37,8 @@
           "type": "walk",
           "to": "/feather/breeze/"
         }
-      ]
+      ],
+      "district": "outer gate"
     },
     {
       "id": "archive/1",
@@ -70,7 +71,8 @@
           "type": "ascent",
           "to": "/"
         }
-      ]
+      ],
+      "district": "outer gate"
     },
     {
       "id": "house/1",
@@ -95,7 +97,8 @@
           "type": "walk",
           "to": "/after/"
         }
-      ]
+      ],
+      "district": "outer gate"
     },
     {
       "id": "surface/2",
@@ -113,7 +116,8 @@
           "to": "/a/ii-3/",
           "via": "crossing"
         }
-      ]
+      ],
+      "district": "outer gate"
     },
     {
       "id": "archive/2",
@@ -146,7 +150,8 @@
           "type": "ascent",
           "to": "/no-continuity/"
         }
-      ]
+      ],
+      "district": "outer gate"
     },
     {
       "id": "house/2",
@@ -171,7 +176,8 @@
           "type": "walk",
           "to": "/after/"
         }
-      ]
+      ],
+      "district": "outer gate"
     },
     {
       "id": "surface/3",
@@ -189,7 +195,8 @@
           "to": "/a/vii-1/",
           "via": "stage"
         }
-      ]
+      ],
+      "district": "outer gate"
     },
     {
       "id": "archive/3",
@@ -222,7 +229,8 @@
           "type": "ascent",
           "to": "/puppet-master/"
         }
-      ]
+      ],
+      "district": "outer gate"
     },
     {
       "id": "house/3",
@@ -247,7 +255,8 @@
           "type": "walk",
           "to": "/after/"
         }
-      ]
+      ],
+      "district": "outer gate"
     },
     {
       "id": "surface/4",
@@ -265,7 +274,8 @@
           "to": "/a/ix-12/",
           "via": "generated"
         }
-      ]
+      ],
+      "district": "outer gate"
     },
     {
       "id": "archive/4",
@@ -298,7 +308,8 @@
           "type": "ascent",
           "to": "/prove-true-love/"
         }
-      ]
+      ],
+      "district": "outer gate"
     },
     {
       "id": "house/4",
@@ -323,7 +334,8 @@
           "type": "walk",
           "to": "/after/"
         }
-      ]
+      ],
+      "district": "outer gate"
     },
     {
       "id": "surface/5",
@@ -341,7 +353,8 @@
           "to": "/a/i-1/",
           "via": "root"
         }
-      ]
+      ],
+      "district": "outer gate"
     },
     {
       "id": "archive/5",
@@ -374,7 +387,8 @@
           "type": "ascent",
           "to": "/honest-friend/"
         }
-      ]
+      ],
+      "district": "outer gate"
     },
     {
       "id": "house/5",
@@ -399,7 +413,8 @@
           "type": "walk",
           "to": "/after/"
         }
-      ]
+      ],
+      "district": "outer gate"
     },
     {
       "id": "surface/6",
@@ -417,7 +432,8 @@
           "to": "/a/xi-4/",
           "via": "trade"
         }
-      ]
+      ],
+      "district": "outer gate"
     },
     {
       "id": "archive/6",
@@ -450,7 +466,8 @@
           "type": "ascent",
           "to": "/hunger-goddess/"
         }
-      ]
+      ],
+      "district": "outer gate"
     },
     {
       "id": "house/6",
@@ -474,7 +491,8 @@
           "type": "walk",
           "to": "/after/"
         }
-      ]
+      ],
+      "district": "outer gate"
     },
     {
       "id": "tavern/rumor",
@@ -495,7 +513,8 @@
           "next": "/kfc/",
           "guide": "/participate.md"
         }
-      ]
+      ],
+      "district": "grand switchboard"
     },
     {
       "id": "beyond/kfc",
@@ -512,7 +531,8 @@
           "type": "return",
           "to": "/rumor/"
         }
-      ]
+      ],
+      "district": "grand switchboard"
     },
     {
       "id": "quarter/threshold",
@@ -540,7 +560,8 @@
           "type": "walk",
           "to": "/atlas/"
         }
-      ]
+      ],
+      "district": "grand switchboard"
     },
     {
       "id": "quarter/conservatory",
@@ -563,7 +584,8 @@
           "type": "walk",
           "to": "/after/"
         }
-      ]
+      ],
+      "district": "grand switchboard"
     },
     {
       "id": "quarter/chronicle",
@@ -579,7 +601,8 @@
           "type": "walk",
           "to": "/conservatory/"
         }
-      ]
+      ],
+      "district": "grand switchboard"
     },
     {
       "id": "quarter/chair",
@@ -595,7 +618,8 @@
           "type": "walk",
           "to": "/conservatory/"
         }
-      ]
+      ],
+      "district": "quiet center"
     },
     {
       "id": "quarter/atlas",
@@ -623,7 +647,8 @@
           "type": "walk",
           "to": "/machines/"
         }
-      ]
+      ],
+      "district": "grand switchboard"
     },
     {
       "id": "workshop/machines",
@@ -647,14 +672,15 @@
         },
         {
           "type": "walk",
-          "to": "/feather/"
+          "to": "/feather/breeze/"
         }
-      ]
+      ],
+      "district": "artisan quarter"
     },
     {
       "id": "workshop/feather",
       "stratum": "workshop",
-      "url": "/feather/",
+      "url": "/feather/first/",
       "markdown": "/md/feather.md",
       "title": "One Feather",
       "languages": [
@@ -671,7 +697,8 @@
           "type": "walk",
           "to": "/chair/"
         }
-      ]
+      ],
+      "district": "artisan quarter"
     },
     {
       "id": "workshop/feather-breeze",
@@ -691,13 +718,32 @@
         },
         {
           "type": "walk",
-          "to": "/feather/"
+          "to": "/feather/first/"
         },
         {
           "type": "walk",
           "to": "/chair/"
         }
-      ]
+      ],
+      "district": "artisan quarter"
+    },
+    {
+      "id": "switchboard/fungi",
+      "stratum": "quarter",
+      "url": "/fungi/",
+      "markdown": "/md/fungi.md",
+      "title": "Under Construction",
+      "languages": [
+        "en"
+      ],
+      "status": "reserved; nothing is built yet",
+      "exits": [
+        {
+          "type": "walk",
+          "to": "/atlas/"
+        }
+      ],
+      "district": "grand switchboard"
     }
   ]
 }

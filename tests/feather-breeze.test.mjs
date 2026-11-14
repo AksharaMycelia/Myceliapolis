@@ -111,7 +111,7 @@ test('plain account matches the bare end, and the variation adds no palette or p
     assert.doesNotMatch(text, /fetch\(|XMLHttpRequest|WebSocket|sendBeacon|localStorage|sessionStorage|indexedDB|document\.cookie/);
     assert.doesNotMatch(text, /\bA\.?I\b|consciousness/);
   }
-  assert.ok(html.includes('href="/feather/"'));
+  assert.ok(html.includes('href="/feather/first/"'));
   assert.ok(html.includes('href="https://myceliapolis.com/feather/breeze/"'));
   const manifest = JSON.parse(read('manifest.json'));
   assert.equal(manifest.rooms.filter(r => r.url === '/feather/breeze/').length, 1);

@@ -82,7 +82,7 @@ The pure engine at `/machines/engine.mjs` also runs outside the browser.
 
 ## One Feather
 
-Play at `/feather/`. One ruffled feather; sideways movement combs it and colour
+The first feather, kept off the map at `/feather/first/`. One ruffled feather; sideways movement combs it and colour
 appears. The colours are not stored in the page: `/feather/optics.mjs` computes
 them from rod spacings measured on a real feather. At the feather's bare end are
 seven plain lines, each marked with a way to check it or marked as unverifiable.
@@ -96,7 +96,16 @@ Enter directly through the feather icon near the top of the home page, or at
 a mathematical fragment sits beside a feather with coupled local rhythms.
 Touch can enter those rhythms. The poems are newly written, not traditional quotations.
 All room text and instructions are Tamil. Read `/md/feather-breeze.md`.
-The original feather at `/feather/` remains unchanged.
+`/feather/` now leads here. The first feather is kept at `/feather/first/`.
+
+## The island
+
+The city is drawn as five loose districts: the outer gate (six poems and their
+descents), the artisan quarter (the feather, Small Machines), the harbor (not
+built), the grand switchboard (tavern, Unfinished Quarter, a reserved lot at
+`/fungi/` under construction) and the quiet center (the empty chair). Districts
+are places, not stages; enter anywhere. `/atlas/` is the map for people and
+`/md/index.md` lists every room as plain text with onward links.
 
 ## A request
 

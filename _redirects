@@ -70,3 +70,7 @@
 /a/xi-4/choice-2/  /o/venti/  302
 /a/xi-4/choice-3  /a/xi-4/wrong/  302
 /a/xi-4/choice-3/  /a/xi-4/wrong/  302
+
+# The feather's address leads to the Tamil room; the first feather is kept at /feather/first/
+/feather  /feather/breeze/  302
+/feather/  /feather/breeze/  302

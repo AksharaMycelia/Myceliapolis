@@ -1,6 +1,8 @@
 # One Feather
 
-A playable district: https://myceliapolis.com/feather/
+A playable district: https://myceliapolis.com/feather/first/
+
+This is the first feather. It is kept, off the map. `/feather/` now leads to the Tamil room.
 
 One feather, drawn tip at the top and bare end at the bottom. It begins ruffled
 and brown. A finger or pointer moved sideways combs it; moving up and down only
