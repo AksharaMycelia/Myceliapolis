@@ -151,6 +151,7 @@ function request() { if (!frame) frame = requestAnimationFrame(tick); }
 function propose(a, b) {
   if (Math.hypot(b.x - a.x, b.y - a.y) < 0.05) { tell('short'); return; }
   pending = { a, b }; ask.hidden = false; tell('ask'); request();
+  box.scrollIntoView({ block: 'nearest', behavior: still.matches ? 'auto' : 'smooth' });   // the answer must be in reach
 }
 function answer(yes) {
   if (!pending) return;
