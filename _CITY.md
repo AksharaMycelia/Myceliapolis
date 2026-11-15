@@ -326,12 +326,12 @@ A first version of the three rooms the author calls the Kwisatz Haderach
 rooms, built at her request on 14 November 2026. She said plainly that it is
 not final. One voice, then a multitude, then what the multitude builds.
 
-- `/fungi/i/`: her poem *De barathro cretaceo et novicio curioso*, whole, with
+- `/fungi/i/`: the Latin poem *De barathro cretaceo et novicio curioso*, whole, with
   one thread that grows as far as the visitor has read. No jokes in this room.
 - `/fungi/ii/`: the view pulls back from one light to 1,400. `fungi/field.mjs`
   is a mean-field Kuramoto model; the lights fall into step in about half a
   minute. Touching a light gives its line; the first light says the novice's.
-  Below it, the last stanza of her *De reditu novicii et usu codicis*, and the
+  Below it, the last stanza of *De reditu novicii et usu codicis*, and the
   whole poem in a fold.
 - `/fungi/iii/`: ten hanging chains (`fungi/vault.mjs`, verlet), drawn upside
   down as arches on request. A touched node lets go and says a denial. One
@@ -339,10 +339,7 @@ not final. One voice, then a multitude, then what the multitude builds.
 - Optional sound in I and II (`fungi/tone.mjs`): a held seventh alone, a chord
   once the field is in step. It starts only when asked.
 
-Her poems are hers: do not alter a word. She has also written a seven-part
-Latin libretto (*Monologus Fungi*) that was not available when this was
-built; when she supplies it, room I is its natural home. Everything else here
-is meant to be changed. The honest node must never be drawn as the fool.
+Keep the Latin whole. Everything else here is meant to be changed. The honest node must never be drawn as the fool.
 
 ### The drawn map
 
@@ -387,7 +384,4 @@ third chamber. *per rimam* now leads to the Unfinished Quarter, not the map.
 The third chamber returns to the first. The atlas is no longer "Room IV" of
 the Quarter; it has its own heading and no district.
 
-Not done, on purpose: the front page is still the first poem (the plan of the
-same day asked for that; an atlas-as-home-page version was built and shelved).
-Not done, for lack of time: a larger map for small screens; Tamil names for
-the rooms the feather opens onto.
+Say less. A map that explains the rooms takes something from them.

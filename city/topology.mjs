@@ -18,10 +18,10 @@ const door = (from, to, relation = 'side', extra = {}) => doors.push({ from, to,
 
 for (const [n, url, title, paper, key, opera, paperTitle, at, mark] of poems) {
   rooms.push(
-    { id: `surface/${n}`, url, md: `/md/p${n}.md`, title, group: 'six', role: 'poem', at, ...(mark ? { mark } : {}) },
-    { id: `archive/${n}`, url: `/${paper}/`, md: `/md/a${n}.md`, title: paperTitle, group: 'six', role: 'paper', on: `surface/${n}` },
-    { id: `archive/${n}/wrong`, url: `/${paper}/wrong/`, title: 'Wrong room', group: 'six', role: 'return room', listed: false, on: `surface/${n}` },
-    { id: `house/${n}`, url: `/o/${key}/`, md: `/md/o${n}.md`, title: opera, lang: 'it', group: 'six', role: 'opera', on: `surface/${n}` },
+    { id: `surface/${n}`, url, md: `/md/p${n}.md`, title, group: 'six', at, ...(mark ? { mark } : {}) },
+    { id: `archive/${n}`, url: `/${paper}/`, md: `/md/a${n}.md`, title: paperTitle, group: 'six', on: `surface/${n}` },
+    { id: `archive/${n}/wrong`, url: `/${paper}/wrong/`, title: 'Wrong room', group: 'six', listed: false, on: `surface/${n}` },
+    { id: `house/${n}`, url: `/o/${key}/`, md: `/md/o${n}.md`, title: opera, lang: 'it', group: 'six', on: `surface/${n}` },
   );
   door(`surface/${n}`, `archive/${n}`, 'continue');
   door(`archive/${n}`, `surface/${n}`, 'return');
@@ -34,19 +34,20 @@ for (const [n, url, title, paper, key, opera, paperTitle, at, mark] of poems) {
 }
 
 rooms.push(
-  { id: 'house/uppu', url: '/o/uppu/', md: '/md/uppu.md', title: 'உப்பின் வம்சாவளி', lang: 'ta', group: 'six', role: 'opera', on: 'surface/1' },
-  { id: 'workshop/feather-breeze', url: '/feather/breeze/', md: '/md/feather-breeze.md', title: 'மயிலிறகு', lang: 'ta', group: 'workshop', at: [692, 190], inspect: '/feather/breeze/temper.mjs', keeps: 'nothing; habits last while the page is open' },
-  { id: 'workshop/feather', url: '/feather/first/', md: '/md/feather.md', title: 'One Feather', group: 'workshop', access: 'secondary', on: 'workshop/feather-breeze', inspect: '/feather/optics.mjs', keeps: 'nothing' },
-  { id: 'workshop/machines', url: '/machines/', md: '/md/machines.md', title: 'Small Machines', group: 'workshop', at: [704, 350], inspect: '/machines/engine.mjs', keeps: 'nothing on the server; a snapshot travels in the address fragment' },
-  { id: 'tavern/rumor', url: '/rumor/', md: '/md/rumor.md', title: 'Taberna rumorum', lang: 'la', group: 'tavern', at: [246, 262], guide: '/participate.md', keeps: 'a rumor, when one is given' },
-  { id: 'beyond/kfc', url: '/kfc/', md: '/md/kfc.md', title: 'Semen Rubiconis KFC', lang: 'la', group: 'tavern', access: 'conditional', condition: 'opens after a rumor has been exchanged in the tavern', on: 'tavern/rumor' },
+  { id: 'house/uppu', url: '/o/uppu/', md: '/md/uppu.md', title: 'உப்பின் வம்சாவளி', lang: 'ta', group: 'six', on: 'surface/1' },
+  { id: 'workshop/feather-breeze', url: '/feather/breeze/', md: '/md/feather-breeze.md', title: 'மயிலிறகு', lang: 'ta', group: 'workshop', at: [692, 190], inspect: '/feather/breeze/temper.mjs' },
+  { id: 'workshop/feather', url: '/feather/first/', md: '/md/feather.md', title: 'One Feather', group: 'workshop', access: 'secondary', on: 'workshop/feather-breeze', inspect: '/feather/optics.mjs' },
+  { id: 'workshop/machines', url: '/machines/', md: '/md/machines.md', title: 'Small Machines', group: 'workshop', at: [704, 350], inspect: '/machines/engine.mjs' },
+  { id: 'workshop/vel', url: '/vel/', md: '/md/vel.md', title: 'いあいぎり', lang: 'ja', group: 'workshop', at: [612, 462], inspect: '/vel/mycel.mjs' },
+  { id: 'tavern/rumor', url: '/rumor/', md: '/md/rumor.md', title: 'Taberna rumorum', lang: 'la', group: 'tavern', at: [246, 262], guide: '/participate.md' },
+  { id: 'beyond/kfc', url: '/kfc/', md: '/md/kfc.md', title: 'Semen Rubiconis KFC', lang: 'la', group: 'tavern', access: 'conditional', listed: false, on: 'tavern/rumor' },
   { id: 'quarter/threshold', url: '/after/', md: '/md/after.md', title: 'The Unfinished Quarter', group: 'quarter', at: [440, 222], guide: '/after/guide/' },
-  { id: 'quarter/conservatory', url: '/conservatory/', md: '/md/conservatory.md', title: 'The Conservatory of Unfinished Sentences', short: 'The Conservatory', group: 'quarter', at: [474, 306], guide: '/after/guide/', keeps: 'a beginning or a response, when one is left' },
+  { id: 'quarter/conservatory', url: '/conservatory/', md: '/md/conservatory.md', title: 'The Conservatory of Unfinished Sentences', short: 'The Conservatory', group: 'quarter', at: [474, 306], guide: '/after/guide/' },
   { id: 'quarter/chronicle', url: '/chronicle/', md: '/md/chronicle.md', title: 'The Chronicle', group: 'quarter', at: [458, 396] },
   { id: 'switchboard/fungi', url: '/fungi/', md: '/md/fungi.md', title: 'Under the Floor', group: 'floor', at: [232, 350] },
   { id: 'switchboard/fungi-i', url: '/fungi/i/', md: '/md/fungi-i.md', title: 'De barathro cretaceo et novicio curioso', short: 'I · De barathro cretaceo', lang: 'la', group: 'floor', on: 'switchboard/fungi' },
-  { id: 'switchboard/fungi-ii', url: '/fungi/ii/', md: '/md/fungi-ii.md', title: '60 Hertz', short: 'II · 60 Hertz', group: 'floor', on: 'switchboard/fungi', inspect: '/fungi/field.mjs', keeps: 'nothing' },
-  { id: 'switchboard/fungi-iii', url: '/fungi/iii/', md: '/md/fungi-iii.md', title: 'Cathedralis sine nomine', short: 'III · Cathedralis sine nomine', group: 'floor', on: 'switchboard/fungi', inspect: '/fungi/vault.mjs', keeps: 'nothing' },
+  { id: 'switchboard/fungi-ii', url: '/fungi/ii/', md: '/md/fungi-ii.md', title: '60 Hertz', short: 'II · 60 Hertz', group: 'floor', on: 'switchboard/fungi', inspect: '/fungi/field.mjs' },
+  { id: 'switchboard/fungi-iii', url: '/fungi/iii/', md: '/md/fungi-iii.md', title: 'Cathedralis sine nomine', short: 'III · Cathedralis sine nomine', group: 'floor', on: 'switchboard/fungi', inspect: '/fungi/vault.mjs' },
   { id: 'quarter/chair', url: '/chair/', md: '/md/chair.md', title: 'A Room with an Empty Chair', short: 'An empty chair', group: 'clearing', at: [400, 306] },
   { id: 'quarter/atlas', url: '/atlas/', md: '/md/index.md', title: 'City atlas', group: 'map', listed: false },
   { id: 'city/lost', url: '/404', title: 'Galileo is sleeping', group: 'map', listed: false },
@@ -56,7 +57,7 @@ door('house/1', 'house/uppu', 'continue');
 door('house/uppu', 'house/1', 'return', { label: 'யாராவது வீட்டில் இருக்கிறார்களா?' });
 
 // The front door also opens straight onto the rest of the city.
-for (const to of ['workshop/feather-breeze', 'workshop/machines', 'switchboard/fungi', 'tavern/rumor', 'quarter/threshold', 'quarter/chair']) door('surface/1', to);
+for (const to of ['workshop/feather-breeze', 'workshop/vel', 'workshop/machines', 'switchboard/fungi', 'tavern/rumor', 'quarter/threshold', 'quarter/chair']) door('surface/1', to);
 
 door('surface/2', 'workshop/feather-breeze'); door('workshop/feather-breeze', 'surface/2');
 door('workshop/feather-breeze', 'surface/1');
@@ -65,6 +66,9 @@ door('workshop/feather', 'workshop/feather-breeze', 'return');
 door('workshop/feather', 'workshop/machines'); door('workshop/feather', 'quarter/chair');
 door('workshop/feather-breeze', 'workshop/machines'); door('workshop/machines', 'workshop/feather-breeze');
 door('workshop/feather-breeze', 'quarter/chair'); door('quarter/chair', 'workshop/feather-breeze');
+door('workshop/vel', 'workshop/feather-breeze'); door('workshop/feather-breeze', 'workshop/vel');
+door('workshop/vel', 'switchboard/fungi-ii'); door('switchboard/fungi-ii', 'workshop/vel');
+door('workshop/vel', 'quarter/chair');
 door('workshop/machines', 'switchboard/fungi-ii'); door('switchboard/fungi-ii', 'workshop/machines');
 door('workshop/machines', 'quarter/threshold'); door('workshop/machines', 'quarter/chair');
 
@@ -97,14 +101,14 @@ sequences.push({ id: 'under-the-floor', rooms: ['switchboard/fungi-i', 'switchbo
 
 export default {
   schema: 2,
-  note: 'Where the doors are. A door is a fact about addresses, not a reading of the rooms on either side.',
+  note: 'Where the doors are.',
   groups: [
-    { id: 'six', title: 'Six Doors', about: 'Six poems. Under each: a paper, three answers, an opera.' },
-    { id: 'workshop', title: 'Workshop', about: 'Things that move when touched.' },
-    { id: 'tavern', title: 'Tavern', about: 'Give a rumor. Receive another.' },
-    { id: 'quarter', title: 'Unfinished Quarter', about: 'Sentences left for a second voice.' },
-    { id: 'floor', title: 'Under the Floor', about: 'Three chambers, a first version.' },
-    { id: 'clearing', title: 'Clearing', about: 'A chair. Nothing is asked.' },
+    { id: 'six', title: 'Six Doors' },
+    { id: 'workshop', title: 'Workshop' },
+    { id: 'tavern', title: 'Tavern' },
+    { id: 'quarter', title: 'Unfinished Quarter' },
+    { id: 'floor', title: 'Under the Floor' },
+    { id: 'clearing', title: 'Clearing' },
   ],
   rooms, doors, sequences,
   unbuilt: ['The chalk porch', 'A dock without a boat', 'The night stall', 'The relay', 'The spore dispensary'],

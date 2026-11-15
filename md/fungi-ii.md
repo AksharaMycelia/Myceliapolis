@@ -77,7 +77,7 @@ et unusquisque sibi videtur solus oceanum invenisse.
 <!-- city:doors -->
 You are in: **60 Hertz** · `switchboard/fungi-ii` · [as a page](/fungi/ii/)
 
-Doors from here: [Small Machines](/md/machines.md) ([as a page](/machines/)) · [III · Cathedralis sine nomine](/md/fungi-iii.md) ([as a page](/fungi/iii/)) · [I · De barathro cretaceo](/md/fungi-i.md) ([as a page](/fungi/i/))
+Doors from here: [いあいぎり](/md/vel.md) ([as a page](/vel/)) · [Small Machines](/md/machines.md) ([as a page](/machines/)) · [III · Cathedralis sine nomine](/md/fungi-iii.md) ([as a page](/fungi/iii/)) · [I · De barathro cretaceo](/md/fungi-i.md) ([as a page](/fungi/i/))
 
 City map: [Plain text](/md/index.md) · [/atlas/](/atlas/#switchboard-fungi-ii) · [every door as data](/manifest.json)
 <!-- /city:doors -->

@@ -14,37 +14,31 @@
   ],
   "schema": 2,
   "topology": "/city/topology.json",
-  "doors_note": "Where the doors are. A door is a fact about addresses, not a reading of the rooms on either side.",
+  "doors_note": "Where the doors are.",
   "groups": [
     {
       "id": "six",
-      "title": "Six Doors",
-      "about": "Six poems. Under each: a paper, three answers, an opera."
+      "title": "Six Doors"
     },
     {
       "id": "workshop",
-      "title": "Workshop",
-      "about": "Things that move when touched."
+      "title": "Workshop"
     },
     {
       "id": "tavern",
-      "title": "Tavern",
-      "about": "Give a rumor. Receive another."
+      "title": "Tavern"
     },
     {
       "id": "quarter",
-      "title": "Unfinished Quarter",
-      "about": "Sentences left for a second voice."
+      "title": "Unfinished Quarter"
     },
     {
       "id": "floor",
-      "title": "Under the Floor",
-      "about": "Three chambers, a first version."
+      "title": "Under the Floor"
     },
     {
       "id": "clearing",
-      "title": "Clearing",
-      "about": "A chair. Nothing is asked."
+      "title": "Clearing"
     }
   ],
   "rooms": [
@@ -87,6 +81,12 @@
           "url": "/feather/breeze/",
           "relation": "side",
           "markdown": "/md/feather-breeze.md"
+        },
+        {
+          "to": "workshop/vel",
+          "url": "/vel/",
+          "relation": "side",
+          "markdown": "/md/vel.md"
         },
         {
           "to": "workshop/machines",
@@ -845,8 +845,7 @@
           "url": "/kfc/",
           "relation": "continue",
           "markdown": "/md/kfc.md",
-          "access": "conditional",
-          "condition": "opens after a rumor has been exchanged in the tavern"
+          "access": "conditional"
         }
       ]
     },
@@ -1240,6 +1239,57 @@
           "url": "/chair/",
           "relation": "side",
           "markdown": "/md/chair.md"
+        },
+        {
+          "to": "workshop/vel",
+          "url": "/vel/",
+          "relation": "side",
+          "markdown": "/md/vel.md"
+        }
+      ]
+    },
+    {
+      "id": "workshop/vel",
+      "stratum": "workshop",
+      "url": "/vel/",
+      "markdown": "/md/vel.md",
+      "title": "いあいぎり",
+      "languages": [
+        "ja"
+      ],
+      "status": "first version",
+      "engine": "/vel/mycel.mjs",
+      "interaction": "One straight line across a field of threads; names arrive afterwards; no saved state",
+      "exits": [
+        {
+          "type": "walk",
+          "to": "/feather/breeze/"
+        },
+        {
+          "type": "walk",
+          "to": "/fungi/ii/"
+        }
+      ],
+      "district": "artisan quarter",
+      "group": "workshop",
+      "doors": [
+        {
+          "to": "workshop/feather-breeze",
+          "url": "/feather/breeze/",
+          "relation": "side",
+          "markdown": "/md/feather-breeze.md"
+        },
+        {
+          "to": "switchboard/fungi-ii",
+          "url": "/fungi/ii/",
+          "relation": "side",
+          "markdown": "/md/fungi-ii.md"
+        },
+        {
+          "to": "quarter/chair",
+          "url": "/chair/",
+          "relation": "side",
+          "markdown": "/md/chair.md"
         }
       ]
     },
@@ -1346,6 +1396,12 @@
       "district": "grand switchboard",
       "group": "floor",
       "doors": [
+        {
+          "to": "workshop/vel",
+          "url": "/vel/",
+          "relation": "side",
+          "markdown": "/md/vel.md"
+        },
         {
           "to": "workshop/machines",
           "url": "/machines/",

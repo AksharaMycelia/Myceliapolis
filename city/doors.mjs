@@ -20,6 +20,7 @@ const FRAME = {
   en: { doors: 'Doors', map: 'City map', text: 'Plain text', here: 'You are in', also: 'as a page', from: 'Doors from here', data: 'every door as data' },
   it: { doors: 'Porte', map: 'Mappa della città', text: 'Testo semplice', here: 'Sei in', also: 'come pagina', from: 'Porte da qui', data: 'ogni porta come dati' },
   la: { doors: 'Ostia', map: 'Tabula urbis', text: 'Textus simplex', here: 'Hic es', also: 'ut pagina', from: 'Ostia hinc', data: 'omnia ostia ut data' },
+  ja: { doors: 'とびら', map: 'まちの　ちず', text: 'テキスト', here: 'いま　いる　ところ', also: 'ページ', from: 'ここからの　とびら', data: 'すべての　とびら（データ）' },
   ta: { doors: 'கதவுகள்', map: 'நகர வரைபடம்', text: 'உரை வடிவம்', here: 'நீங்கள் இருக்கும் இடம்', also: 'பக்கமாக', from: 'இங்கிருந்து கதவுகள்', data: 'எல்லாக் கதவுகளும் தரவாக' },
 };
 const frame = r => FRAME[langOf(r)] || FRAME.en;
@@ -44,10 +45,9 @@ export function doorsHtml(id, page = '') {
 export function doorsMd(id) {
   const here = room(id); if (!here) return '';
   const f = frame(here);
-  const out = doorsOf(id).map(d => {
+  const out = doorsOf(id).filter(d => !d.access).map(d => {
     const to = room(d.to);
-    const note = d.access === 'conditional' ? ` (${to.condition})` : '';
-    return to.md ? `[${d.label || name(to)}](${to.md}) ([${f.also}](${to.url}))${note}` : `[${d.label || name(to)}](${to.url})${note}`;
+    return to.md ? `[${d.label || name(to)}](${to.md}) ([${f.also}](${to.url}))` : `[${d.label || name(to)}](${to.url})`;
   });
   return [
     `${f.here}: **${here.title}** · \`${here.id}\` · [${f.also}](${here.url})`,
@@ -63,7 +63,7 @@ export function manifestDoors(id) {
     const to = room(d.to), out = { to: to.id, url: to.url, relation: d.relation };
     if (to.md) out.markdown = to.md;
     if (d.label) out.label = d.label;
-    if (d.access) { out.access = d.access; out.condition = to.condition; }
+    if (d.access) out.access = d.access;
     return out;
   });
 }
@@ -95,45 +95,40 @@ export function mapSvg() {
     return `<a href="${r.url}"><circle cx="${x}" cy="${y}" r="16" fill="transparent"/><circle cx="${x}" cy="${y}" r="5" fill="currentColor"/><text x="${tx}" y="${ty}" text-anchor="${mid ? 'middle' : right ? 'end' : 'start'}" font-size="15" fill="currentColor"${lang}>${esc(r.mark || name(r))}</text></a>`;
   }).join('');
   const ghost = ([x, y], label, lx, ly) => `<g opacity=".5"><circle cx="${x}" cy="${y}" r="5" stroke="currentColor" stroke-dasharray="2 3"/><text x="${lx}" y="${ly}" font-size="13" font-style="italic" fill="currentColor">${label}</text></g>`;
-  return `<svg class="city-map" viewBox="0 0 800 640" role="img" aria-labelledby="island-title" font-family="inherit" fill="none" stroke-linecap="round" stroke-linejoin="round"><title id="island-title">A drawing of the city. Dots are places; thin lines are doors between them. Every place and every door is also listed below as text.</title><path d="M62 300C50 190 150 82 300 62 430 42 585 58 668 128 748 196 762 318 720 408 676 500 560 556 420 562 280 568 160 540 104 452 76 408 66 352 62 300Z" stroke="currentColor" stroke-width="1.5" opacity=".6"/><g stroke="currentColor" stroke-width="1" opacity=".3">${line}</g>${dots}${ghost(CITY.sketch.porch, 'chalk porch', 2, 290)}${ghost(CITY.sketch.dock, 'a dock without a boat', 414, 589)}</svg>`;
+  return `<svg class="city-map" viewBox="0 0 800 640" role="img" aria-labelledby="island-title" font-family="inherit" fill="none" stroke-linecap="round" stroke-linejoin="round"><title id="island-title">A drawing of the city: places, and the doors between them.</title><path d="M62 300C50 190 150 82 300 62 430 42 585 58 668 128 748 196 762 318 720 408 676 500 560 556 420 562 280 568 160 540 104 452 76 408 66 352 62 300Z" stroke="currentColor" stroke-width="1.5" opacity=".6"/><g stroke="currentColor" stroke-width="1" opacity=".3">${line}</g>${dots}${ghost(CITY.sketch.porch, 'chalk porch', 2, 290)}${ghost(CITY.sketch.dock, 'a dock without a boat', 414, 589)}</svg>`;
 }
 
-const access = r => r.access === 'conditional' ? r.condition : r.access === 'secondary' ? 'an earlier version, kept' : '';
 function entry(r) {
   const lang = r.lang && r.lang !== 'en' ? ` lang="${r.lang}"` : '';
-  const to = doorsOf(r.id).map(d => { const t = room(d.to); return `<a href="#${anchor(t.id)}">${esc(name(t))}</a>`; }).join(' · ');
-  const bits = [r.role, access(r), r.keeps ? `keeps: ${r.keeps}` : ''].filter(Boolean).map(esc).join(' · ');
+  const to = doorsOf(r.id).filter(d => !d.access).map(d => { const t = room(d.to); return `<a href="#${anchor(t.id)}">${esc(name(t))}</a>`; }).join(' · ');
   const extra = [r.md ? `<a href="${r.md}">plain text</a>` : '', r.inspect ? `<a href="${r.inspect}">source</a>` : '', r.guide ? `<a href="${r.guide}">how to leave words</a>` : ''].filter(Boolean).join(' · ');
-  return `<li id="${anchor(r.id)}"><a class="place" href="${r.url}"${lang}>${esc(r.title)}</a>${bits ? `<span class="what">${bits}</span>` : ''}<span class="more">${extra}</span>${to ? `<span class="to"><i>doors</i> ${to}</span>` : ''}</li>`;
+  return `<li id="${anchor(r.id)}"><a class="place" href="${r.url}"${lang}>${esc(r.title)}</a><span class="more">${extra}</span>${to ? `<span class="to"><i>doors</i> ${to}</span>` : ''}</li>`;
 }
 
 // The body of /atlas/: the drawing, then every place with its doors.
 export function atlasHtml() {
   const groups = CITY.groups.map(g => {
     const list = CITY.rooms.filter(r => r.group === g.id && r.listed !== false);
-    return `<section class="atlas-section" id="${g.id}"><h2>${esc(g.title)}</h2><p class="small">${esc(g.about)}</p><ol class="places">${list.map(entry).join('')}</ol></section>`;
+    return `<section class="atlas-section" id="${g.id}"><h2>${esc(g.title)}</h2><ol class="places">${list.map(entry).join('')}</ol></section>`;
   }).join('');
-  return `<header class="room-heading"><p class="eyebrow">Every door, as far as it is known</p><h1>The city,<br><em>and its doors.</em></h1><p class="lead">Enter anywhere. Leave by any door.<br>No order is the right one.</p><nav class="atlas-jump" aria-label="Parts of the city">${CITY.groups.map(g => `<a href="#${g.id}">${esc(g.title)}</a>`).join('')}</nav></header><section class="atlas-section">${mapSvg()}</section>${groups}<section class="atlas-section" id="unbuilt"><details><summary>Not built</summary><p class="small">${CITY.unbuilt.map(esc).join(' · ')}</p></details></section><p class="atlas-note">The map shows the doors.<br>It cannot tell you what will enter with you.</p><p class="small"><a href="/md/index.md">The same list as plain text</a> · <a href="/manifest.json">as data</a> · <a href="/city/topology.mjs">the file this page is written from</a></p>`;
+  return `<header class="room-heading"><h1>The city,<br><em>and its doors.</em></h1><nav class="atlas-jump" aria-label="Parts of the city">${CITY.groups.map(g => `<a href="#${g.id}">${esc(g.title)}</a>`).join('')}</nav></header><section class="atlas-section">${mapSvg()}</section>${groups}<section class="atlas-section" id="unbuilt"><details><summary>Not built</summary><p class="small">${CITY.unbuilt.map(esc).join(' · ')}</p></details></section><p class="small"><a href="/md/index.md">plain text</a> · <a href="/manifest.json">data</a></p>`;
 }
 
 // /md/index.md and /md/atlas.md: the same list for a reader of text.
 export function atlasMd() {
-  const out = ['# Myceliapolis: every room and its doors', '',
-    'Enter anywhere. Leave by any door. No order is the right one.',
-    'Each plain-text room ends with its own doors, so this page is never required.', '',
-    'Reading a room here is not the same as touching it. Where a room moves, its source is linked.', ''];
+  const out = ['# Myceliapolis: every room and its doors', ''];
   for (const g of CITY.groups) {
-    out.push(`## ${g.title}`, '', g.about, '');
+    out.push(`## ${g.title}`, '');
     for (const r of CITY.rooms.filter(x => x.group === g.id && x.listed !== false)) {
       const head = r.md ? `[${r.title}](${r.md}) · [page](${r.url})` : `[${r.title}](${r.url})`;
-      const bits = [r.role, access(r), r.inspect ? `[source](${r.inspect})` : '', r.guide ? `[how to leave words](${r.guide})` : '', r.keeps ? `keeps: ${r.keeps}` : ''].filter(Boolean).join(' · ');
+      const bits = [r.inspect ? `[source](${r.inspect})` : '', r.guide ? `[how to leave words](${r.guide})` : ''].filter(Boolean).join(' · ');
       out.push(`- ${head}${bits ? ' — ' + bits : ''}`);
-      const to = doorsOf(r.id).map(d => { const t = room(d.to); return `[${name(t)}](${t.md || t.url})${d.access ? ' (conditional)' : ''}`; });
+      const to = doorsOf(r.id).filter(d => !d.access).map(d => { const t = room(d.to); return `[${name(t)}](${t.md || t.url})`; });
       if (to.length) out.push(`  - doors: ${to.join(' · ')}`);
     }
     out.push('');
   }
   out.push('## Not built', '', CITY.unbuilt.join(' · '), '',
-    '[The drawn atlas](/atlas/) · [Every door as data](/manifest.json) · [The file this list is written from](/city/topology.mjs)', '');
+    '[/atlas/](/atlas/) · [data](/manifest.json)', '');
   return out.join('\n');
 }

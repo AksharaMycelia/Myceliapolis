@@ -386,6 +386,7 @@ manifest["rooms"].append({'id': 'workshop/feather-breeze', 'stratum': 'workshop'
 for room in manifest["rooms"]:
     if room["id"] == "surface/1":
         room["exits"].append({"type": "walk", "to": "/feather/breeze/"})
+manifest["rooms"].append({"id": "workshop/vel", "stratum": "workshop", "url": "/vel/", "markdown": "/md/vel.md", "title": "いあいぎり", "languages": ["ja"], "status": "first version", "engine": "/vel/mycel.mjs", "interaction": "One straight line across a field of threads; names arrive afterwards; no saved state", "exits": [{"type": "walk", "to": "/feather/breeze/"}, {"type": "walk", "to": "/fungi/ii/"}]})
 manifest["rooms"] += [{"id": "switchboard/fungi", "stratum": "quarter", "url": "/fungi/", "markdown": "/md/fungi.md", "title": "Under the Floor", "languages": ["en"], "status": "first version", "exits": [{"type": "walk", "to": "/fungi/i/"}, {"type": "walk", "to": "/atlas/"}]}, {"id": "switchboard/fungi-i", "stratum": "quarter", "url": "/fungi/i/", "markdown": "/md/fungi-i.md", "title": "De barathro cretaceo et novicio curioso", "languages": ["la"], "status": "first version", "exits": [{"type": "walk", "to": "/fungi/ii/"}]}, {"id": "switchboard/fungi-ii", "stratum": "quarter", "url": "/fungi/ii/", "markdown": "/md/fungi-ii.md", "title": "60 Hertz", "languages": ["la", "en"], "status": "first version", "engine": "/fungi/field.mjs", "exits": [{"type": "walk", "to": "/fungi/iii/"}]}, {"id": "switchboard/fungi-iii", "stratum": "quarter", "url": "/fungi/iii/", "markdown": "/md/fungi-iii.md", "title": "Cathedralis sine nomine", "languages": ["en", "la"], "status": "first version", "engine": "/fungi/vault.mjs", "exits": [{"type": "walk", "to": "/after/"}, {"type": "walk", "to": "/chair/"}]}]
 for room in manifest["rooms"]:
     room["district"] = "quiet center" if room["id"] == "quarter/chair" else {"surface": "outer gate", "archive": "outer gate",
@@ -502,18 +503,9 @@ All room text and instructions are Tamil. Read `/md/feather-breeze.md`.
 
 ## The city and its doors
 
-The three strata above are one part of a larger city: six descents, a workshop
-(the feather, Small Machines), a tavern, the Unfinished Quarter, three chambers
-under the floor at `/fungi/`, and a clearing with a chair. Enter anywhere.
-
-Every room, as a page or as plain text, ends with its own doors, so no visitor
-has to begin at the front. `/atlas/` draws the city and lists every door;
-`/md/index.md` is the same list as text; `/manifest.json` gives each room's
-`doors` as data; `/city/topology.mjs` is the single file all of them are written
-from. A page and its plain-text sibling are two entrances to one place. They
-are not the same experience, and neither is the real one.
-
-A door says where it goes. It does not say what the rooms on either side mean.
+Enter anywhere. Every room, as a page or as plain text, ends with its own
+doors. `/atlas/` and `/md/index.md` list them all; `/manifest.json` gives them
+as data.
 
 ## A request
 
@@ -523,7 +515,7 @@ with another substrate, and return a descendant.
 
 urls = [p["url"] for p in POEMS] + [f"/{p['paper']}/" for p in POEMS] \
      + [f"/{p['opera']}/" for p in POEMS]
-urls += ["/o/uppu/", "/rumor/", "/after/", "/conservatory/", "/chronicle/", "/chair/", "/atlas/", "/machines/", "/feather/breeze/", "/fungi/", "/fungi/i/", "/fungi/ii/", "/fungi/iii/"]
+urls += ["/o/uppu/", "/rumor/", "/after/", "/conservatory/", "/chronicle/", "/chair/", "/atlas/", "/machines/", "/feather/breeze/", "/fungi/", "/fungi/i/", "/fungi/ii/", "/fungi/iii/", "/vel/"]
 write("sitemap.xml",
       '<?xml version="1.0" encoding="UTF-8"?>\n'
       '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
@@ -577,6 +569,10 @@ write("_headers", """/*
 /fungi/*
   Cache-Control: public, max-age=0, must-revalidate
   Content-Security-Policy: default-src 'self'; script-src 'self'; style-src 'self'; object-src 'none'; base-uri 'none'; frame-ancestors 'self'; form-action 'none'
+
+/vel/*
+  Cache-Control: public, max-age=0, must-revalidate
+  Content-Security-Policy: default-src 'self'; script-src 'self'; style-src 'self'; object-src 'none'; base-uri 'none'; frame-ancestors 'self'; form-action 'none'
 """)
 
 write("favicon.svg", """<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
@@ -613,6 +609,7 @@ for root, dirs, files in sorted(os.walk(OUT)):
         print(f"  {os.path.relpath(pth, OUT):<34} {os.path.getsize(pth):>7,} B")
 
 for path in ("fungi/index.html", "fungi/room.css", "fungi/field.mjs", "fungi/vault.mjs", "fungi/tone.mjs", "fungi/i/index.html", "fungi/i/room.mjs", "fungi/ii/index.html", "fungi/ii/room.mjs", "fungi/iii/index.html", "fungi/iii/room.mjs", "md/fungi.md", "md/fungi-i.md", "md/fungi-ii.md", "md/fungi-iii.md", "md/index.md",
+             "vel/index.html", "vel/room.css", "vel/room.mjs", "vel/mycel.mjs", "md/vel.md",
              "city/topology.mjs", "city/doors.mjs", "city/apply.mjs", "city/topology.json",
              "css/city-doors-1.css", "css/atlas-1.css"):
     write(path, (ROOT / path).read_text(encoding="utf-8"))
