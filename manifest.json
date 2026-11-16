@@ -89,6 +89,18 @@
           "markdown": "/md/vel.md"
         },
         {
+          "to": "workshop/kami",
+          "url": "/kami/",
+          "relation": "side",
+          "markdown": "/md/kami.md"
+        },
+        {
+          "to": "workshop/rooster",
+          "url": "/rooster/",
+          "relation": "side",
+          "markdown": "/md/rooster.md"
+        },
+        {
           "to": "workshop/machines",
           "url": "/machines/",
           "relation": "side",
@@ -1245,6 +1257,125 @@
           "url": "/vel/",
           "relation": "side",
           "markdown": "/md/vel.md"
+        },
+        {
+          "to": "workshop/rooster",
+          "url": "/rooster/",
+          "relation": "side",
+          "markdown": "/md/rooster.md"
+        }
+      ]
+    },
+    {
+      "id": "workshop/kami",
+      "stratum": "workshop",
+      "url": "/kami/",
+      "markdown": "/md/kami.md",
+      "title": "かみ",
+      "languages": [
+        "ja",
+        "el",
+        "zh",
+        "ta",
+        "it",
+        "he",
+        "en"
+      ],
+      "status": "first version",
+      "engine": "/kami/kami.mjs",
+      "interaction": "A sheet of names that folds itself when left alone and can be cut with one straight line; its whole history fits in the address fragment; no saved state",
+      "exits": [
+        {
+          "type": "walk",
+          "to": "/vel/"
+        },
+        {
+          "type": "walk",
+          "to": "/rooster/"
+        }
+      ],
+      "district": "artisan quarter",
+      "group": "workshop",
+      "doors": [
+        {
+          "to": "workshop/vel",
+          "url": "/vel/",
+          "relation": "side",
+          "markdown": "/md/vel.md"
+        },
+        {
+          "to": "workshop/rooster",
+          "url": "/rooster/",
+          "relation": "side",
+          "markdown": "/md/rooster.md"
+        },
+        {
+          "to": "switchboard/fungi-i",
+          "url": "/fungi/i/",
+          "relation": "side",
+          "markdown": "/md/fungi-i.md"
+        }
+      ]
+    },
+    {
+      "id": "workshop/rooster",
+      "stratum": "workshop",
+      "url": "/rooster/",
+      "markdown": "/md/rooster.md",
+      "title": "சேவல்",
+      "languages": [
+        "ta",
+        "ja",
+        "zh",
+        "th",
+        "fa",
+        "ru",
+        "el",
+        "de",
+        "is",
+        "pt",
+        "es",
+        "en"
+      ],
+      "status": "first version",
+      "engine": "/rooster/ring.mjs",
+      "interaction": "A ring of yards with their real hours; a cry is passed west from one to the next; no saved state",
+      "exits": [
+        {
+          "type": "walk",
+          "to": "/vel/"
+        },
+        {
+          "type": "walk",
+          "to": "/feather/breeze/"
+        }
+      ],
+      "district": "artisan quarter",
+      "group": "workshop",
+      "doors": [
+        {
+          "to": "workshop/vel",
+          "url": "/vel/",
+          "relation": "side",
+          "markdown": "/md/vel.md"
+        },
+        {
+          "to": "workshop/feather-breeze",
+          "url": "/feather/breeze/",
+          "relation": "side",
+          "markdown": "/md/feather-breeze.md"
+        },
+        {
+          "to": "switchboard/fungi-ii",
+          "url": "/fungi/ii/",
+          "relation": "side",
+          "markdown": "/md/fungi-ii.md"
+        },
+        {
+          "to": "workshop/kami",
+          "url": "/kami/",
+          "relation": "side",
+          "markdown": "/md/kami.md"
         }
       ]
     },
@@ -1290,6 +1421,18 @@
           "url": "/chair/",
           "relation": "side",
           "markdown": "/md/chair.md"
+        },
+        {
+          "to": "workshop/rooster",
+          "url": "/rooster/",
+          "relation": "side",
+          "markdown": "/md/rooster.md"
+        },
+        {
+          "to": "workshop/kami",
+          "url": "/kami/",
+          "relation": "side",
+          "markdown": "/md/kami.md"
         }
       ]
     },

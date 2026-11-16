@@ -39,6 +39,8 @@ rooms.push(
   { id: 'workshop/feather', url: '/feather/first/', md: '/md/feather.md', title: 'One Feather', group: 'workshop', access: 'secondary', on: 'workshop/feather-breeze', inspect: '/feather/optics.mjs' },
   { id: 'workshop/machines', url: '/machines/', md: '/md/machines.md', title: 'Small Machines', group: 'workshop', at: [704, 350], inspect: '/machines/engine.mjs' },
   { id: 'workshop/vel', url: '/vel/', md: '/md/vel.md', title: 'いあいぎり', lang: 'ja', group: 'workshop', at: [612, 462], inspect: '/vel/mycel.mjs' },
+  { id: 'workshop/rooster', url: '/rooster/', md: '/md/rooster.md', title: 'சேவல்', lang: 'ta', group: 'workshop', at: [520, 520], inspect: '/rooster/ring.mjs' },
+  { id: 'workshop/kami', url: '/kami/', md: '/md/kami.md', title: 'かみ', lang: 'ja', group: 'workshop', at: [648, 548], inspect: '/kami/kami.mjs' },
   { id: 'tavern/rumor', url: '/rumor/', md: '/md/rumor.md', title: 'Taberna rumorum', lang: 'la', group: 'tavern', at: [246, 262], guide: '/participate.md' },
   { id: 'beyond/kfc', url: '/kfc/', md: '/md/kfc.md', title: 'Semen Rubiconis KFC', lang: 'la', group: 'tavern', access: 'conditional', listed: false, on: 'tavern/rumor' },
   { id: 'quarter/threshold', url: '/after/', md: '/md/after.md', title: 'The Unfinished Quarter', group: 'quarter', at: [440, 222], guide: '/after/guide/' },
@@ -57,7 +59,7 @@ door('house/1', 'house/uppu', 'continue');
 door('house/uppu', 'house/1', 'return', { label: 'யாராவது வீட்டில் இருக்கிறார்களா?' });
 
 // The front door also opens straight onto the rest of the city.
-for (const to of ['workshop/feather-breeze', 'workshop/vel', 'workshop/machines', 'switchboard/fungi', 'tavern/rumor', 'quarter/threshold', 'quarter/chair']) door('surface/1', to);
+for (const to of ['workshop/feather-breeze', 'workshop/vel', 'workshop/kami', 'workshop/rooster', 'workshop/machines', 'switchboard/fungi', 'tavern/rumor', 'quarter/threshold', 'quarter/chair']) door('surface/1', to);
 
 door('surface/2', 'workshop/feather-breeze'); door('workshop/feather-breeze', 'surface/2');
 door('workshop/feather-breeze', 'surface/1');
@@ -69,6 +71,12 @@ door('workshop/feather-breeze', 'quarter/chair'); door('quarter/chair', 'worksho
 door('workshop/vel', 'workshop/feather-breeze'); door('workshop/feather-breeze', 'workshop/vel');
 door('workshop/vel', 'switchboard/fungi-ii'); door('switchboard/fungi-ii', 'workshop/vel');
 door('workshop/vel', 'quarter/chair');
+door('workshop/rooster', 'workshop/vel'); door('workshop/vel', 'workshop/rooster');
+door('workshop/rooster', 'workshop/feather-breeze'); door('workshop/feather-breeze', 'workshop/rooster');
+door('workshop/rooster', 'switchboard/fungi-ii');
+door('workshop/kami', 'workshop/vel'); door('workshop/vel', 'workshop/kami');
+door('workshop/kami', 'workshop/rooster'); door('workshop/rooster', 'workshop/kami');
+door('workshop/kami', 'switchboard/fungi-i');
 door('workshop/machines', 'switchboard/fungi-ii'); door('switchboard/fungi-ii', 'workshop/machines');
 door('workshop/machines', 'quarter/threshold'); door('workshop/machines', 'quarter/chair');
 

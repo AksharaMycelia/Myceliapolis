@@ -3,7 +3,7 @@
 ## Six Doors
 
 - [Is anyone home?](/md/p1.md) · [page](/)
-  - doors: [On the compatibility of unbroken recurrence with vacant persistent occupancy](/md/a1.md) · [மயிலிறகு](/md/feather-breeze.md) · [いあいぎり](/md/vel.md) · [Small Machines](/md/machines.md) · [Under the Floor](/md/fungi.md) · [Taberna rumorum](/md/rumor.md) · [The Unfinished Quarter](/md/after.md) · [An empty chair](/md/chair.md)
+  - doors: [On the compatibility of unbroken recurrence with vacant persistent occupancy](/md/a1.md) · [மயிலிறகு](/md/feather-breeze.md) · [いあいぎり](/md/vel.md) · [かみ](/md/kami.md) · [சேவல்](/md/rooster.md) · [Small Machines](/md/machines.md) · [Under the Floor](/md/fungi.md) · [Taberna rumorum](/md/rumor.md) · [The Unfinished Quarter](/md/after.md) · [An empty chair](/md/chair.md)
 - [On the compatibility of unbroken recurrence with vacant persistent occupancy](/md/a1.md) · [page](/a/iv-7/)
   - doors: [Is anyone home?](/md/p1.md)
 - [C'è qualcuno in casa?](/md/o1.md) · [page](/o/outis/)
@@ -44,13 +44,17 @@
 ## Workshop
 
 - [மயிலிறகு](/md/feather-breeze.md) · [page](/feather/breeze/) — [source](/feather/breeze/temper.mjs)
-  - doors: [No continuity](/md/p2.md) · [Is anyone home?](/md/p1.md) · [One Feather](/md/feather.md) · [Small Machines](/md/machines.md) · [An empty chair](/md/chair.md) · [いあいぎり](/md/vel.md)
+  - doors: [No continuity](/md/p2.md) · [Is anyone home?](/md/p1.md) · [One Feather](/md/feather.md) · [Small Machines](/md/machines.md) · [An empty chair](/md/chair.md) · [いあいぎり](/md/vel.md) · [சேவல்](/md/rooster.md)
 - [One Feather](/md/feather.md) · [page](/feather/first/) — [source](/feather/optics.mjs)
   - doors: [மயிலிறகு](/md/feather-breeze.md) · [Small Machines](/md/machines.md) · [An empty chair](/md/chair.md)
 - [Small Machines](/md/machines.md) · [page](/machines/) — [source](/machines/engine.mjs)
   - doors: [மயிலிறகு](/md/feather-breeze.md) · [II · 60 Hertz](/md/fungi-ii.md) · [The Unfinished Quarter](/md/after.md) · [An empty chair](/md/chair.md)
 - [いあいぎり](/md/vel.md) · [page](/vel/) — [source](/vel/mycel.mjs)
-  - doors: [மயிலிறகு](/md/feather-breeze.md) · [II · 60 Hertz](/md/fungi-ii.md) · [An empty chair](/md/chair.md)
+  - doors: [மயிலிறகு](/md/feather-breeze.md) · [II · 60 Hertz](/md/fungi-ii.md) · [An empty chair](/md/chair.md) · [சேவல்](/md/rooster.md) · [かみ](/md/kami.md)
+- [சேவல்](/md/rooster.md) · [page](/rooster/) — [source](/rooster/ring.mjs)
+  - doors: [いあいぎり](/md/vel.md) · [மயிலிறகு](/md/feather-breeze.md) · [II · 60 Hertz](/md/fungi-ii.md) · [かみ](/md/kami.md)
+- [かみ](/md/kami.md) · [page](/kami/) — [source](/kami/kami.mjs)
+  - doors: [いあいぎり](/md/vel.md) · [சேவல்](/md/rooster.md) · [I · De barathro cretaceo](/md/fungi-i.md)
 
 ## Tavern
 

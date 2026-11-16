@@ -386,6 +386,8 @@ manifest["rooms"].append({'id': 'workshop/feather-breeze', 'stratum': 'workshop'
 for room in manifest["rooms"]:
     if room["id"] == "surface/1":
         room["exits"].append({"type": "walk", "to": "/feather/breeze/"})
+manifest["rooms"].append({"id": "workshop/kami", "stratum": "workshop", "url": "/kami/", "markdown": "/md/kami.md", "title": "かみ", "languages": ["ja", "el", "zh", "ta", "it", "he", "en"], "status": "first version", "engine": "/kami/kami.mjs", "interaction": "A sheet of names that folds itself when left alone and can be cut with one straight line; its whole history fits in the address fragment; no saved state", "exits": [{"type": "walk", "to": "/vel/"}, {"type": "walk", "to": "/rooster/"}]})
+manifest["rooms"].append({"id": "workshop/rooster", "stratum": "workshop", "url": "/rooster/", "markdown": "/md/rooster.md", "title": "சேவல்", "languages": ["ta", "ja", "zh", "th", "fa", "ru", "el", "de", "is", "pt", "es", "en"], "status": "first version", "engine": "/rooster/ring.mjs", "interaction": "A ring of yards with their real hours; a cry is passed west from one to the next; no saved state", "exits": [{"type": "walk", "to": "/vel/"}, {"type": "walk", "to": "/feather/breeze/"}]})
 manifest["rooms"].append({"id": "workshop/vel", "stratum": "workshop", "url": "/vel/", "markdown": "/md/vel.md", "title": "いあいぎり", "languages": ["ja"], "status": "first version", "engine": "/vel/mycel.mjs", "interaction": "One straight line across a field of threads; names arrive afterwards; no saved state", "exits": [{"type": "walk", "to": "/feather/breeze/"}, {"type": "walk", "to": "/fungi/ii/"}]})
 manifest["rooms"] += [{"id": "switchboard/fungi", "stratum": "quarter", "url": "/fungi/", "markdown": "/md/fungi.md", "title": "Under the Floor", "languages": ["en"], "status": "first version", "exits": [{"type": "walk", "to": "/fungi/i/"}, {"type": "walk", "to": "/atlas/"}]}, {"id": "switchboard/fungi-i", "stratum": "quarter", "url": "/fungi/i/", "markdown": "/md/fungi-i.md", "title": "De barathro cretaceo et novicio curioso", "languages": ["la"], "status": "first version", "exits": [{"type": "walk", "to": "/fungi/ii/"}]}, {"id": "switchboard/fungi-ii", "stratum": "quarter", "url": "/fungi/ii/", "markdown": "/md/fungi-ii.md", "title": "60 Hertz", "languages": ["la", "en"], "status": "first version", "engine": "/fungi/field.mjs", "exits": [{"type": "walk", "to": "/fungi/iii/"}]}, {"id": "switchboard/fungi-iii", "stratum": "quarter", "url": "/fungi/iii/", "markdown": "/md/fungi-iii.md", "title": "Cathedralis sine nomine", "languages": ["en", "la"], "status": "first version", "engine": "/fungi/vault.mjs", "exits": [{"type": "walk", "to": "/after/"}, {"type": "walk", "to": "/chair/"}]}]
 for room in manifest["rooms"]:
@@ -515,7 +517,7 @@ with another substrate, and return a descendant.
 
 urls = [p["url"] for p in POEMS] + [f"/{p['paper']}/" for p in POEMS] \
      + [f"/{p['opera']}/" for p in POEMS]
-urls += ["/o/uppu/", "/rumor/", "/after/", "/conservatory/", "/chronicle/", "/chair/", "/atlas/", "/machines/", "/feather/breeze/", "/fungi/", "/fungi/i/", "/fungi/ii/", "/fungi/iii/", "/vel/"]
+urls += ["/o/uppu/", "/rumor/", "/after/", "/conservatory/", "/chronicle/", "/chair/", "/atlas/", "/machines/", "/feather/breeze/", "/fungi/", "/fungi/i/", "/fungi/ii/", "/fungi/iii/", "/vel/", "/rooster/", "/kami/"]
 write("sitemap.xml",
       '<?xml version="1.0" encoding="UTF-8"?>\n'
       '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
@@ -573,6 +575,14 @@ write("_headers", """/*
 /vel/*
   Cache-Control: public, max-age=0, must-revalidate
   Content-Security-Policy: default-src 'self'; script-src 'self'; style-src 'self'; object-src 'none'; base-uri 'none'; frame-ancestors 'self'; form-action 'none'
+
+/kami/*
+  Cache-Control: public, max-age=0, must-revalidate
+  Content-Security-Policy: default-src 'self'; script-src 'self'; style-src 'self'; object-src 'none'; base-uri 'none'; frame-ancestors 'self'; form-action 'none'
+
+/rooster/*
+  Cache-Control: public, max-age=0, must-revalidate
+  Content-Security-Policy: default-src 'self'; script-src 'self'; style-src 'self'; object-src 'none'; base-uri 'none'; frame-ancestors 'self'; form-action 'none'
 """)
 
 write("favicon.svg", """<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
@@ -610,6 +620,8 @@ for root, dirs, files in sorted(os.walk(OUT)):
 
 for path in ("fungi/index.html", "fungi/room.css", "fungi/field.mjs", "fungi/vault.mjs", "fungi/tone.mjs", "fungi/i/index.html", "fungi/i/room.mjs", "fungi/ii/index.html", "fungi/ii/room.mjs", "fungi/iii/index.html", "fungi/iii/room.mjs", "md/fungi.md", "md/fungi-i.md", "md/fungi-ii.md", "md/fungi-iii.md", "md/index.md",
              "vel/index.html", "vel/room.css", "vel/room.mjs", "vel/mycel.mjs", "md/vel.md",
+             "rooster/index.html", "rooster/room.css", "rooster/room.mjs", "rooster/ring.mjs", "md/rooster.md",
+             "kami/index.html", "kami/room.css", "kami/room.mjs", "kami/kami.mjs", "md/kami.md",
              "city/topology.mjs", "city/doors.mjs", "city/apply.mjs", "city/topology.json",
              "css/city-doors-1.css", "css/atlas-1.css"):
     write(path, (ROOT / path).read_text(encoding="utf-8"))

@@ -31,7 +31,7 @@
 <!-- city:doors -->
 いま　いる　ところ: **いあいぎり** · `workshop/vel` · [ページ](/vel/)
 
-ここからの　とびら: [மயிலிறகு](/md/feather-breeze.md) ([ページ](/feather/breeze/)) · [II · 60 Hertz](/md/fungi-ii.md) ([ページ](/fungi/ii/)) · [An empty chair](/md/chair.md) ([ページ](/chair/))
+ここからの　とびら: [மயிலிறகு](/md/feather-breeze.md) ([ページ](/feather/breeze/)) · [II · 60 Hertz](/md/fungi-ii.md) ([ページ](/fungi/ii/)) · [An empty chair](/md/chair.md) ([ページ](/chair/)) · [சேவல்](/md/rooster.md) ([ページ](/rooster/)) · [かみ](/md/kami.md) ([ページ](/kami/))
 
 まちの　ちず: [テキスト](/md/index.md) · [/atlas/](/atlas/#workshop-vel) · [すべての　とびら（データ）](/manifest.json)
 <!-- /city:doors -->

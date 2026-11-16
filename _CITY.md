@@ -385,3 +385,39 @@ The third chamber returns to the first. The atlas is no longer "Room IV" of
 the Quarter; it has its own heading and no district.
 
 Say less. A map that explains the rooms takes something from them.
+
+## The spear and the rooster (15–16 November 2026)
+
+- `/vel/` (いあいぎり): a field of threads alive before the visitor; one
+  straight line; a cut end sends a branch to look for the other side and a cap
+  opens only where one is found; names turn up on their own schedule. Rules in
+  `vel/mycel.mjs`. Known to be weak: a name still depends mostly on which side
+  of the line it falls; the room says "one" and lets you cut forever; the two
+  ナゾノクサ cannot be followed by eye. Visitors said so and are quoted in the
+  room's guest book. Keep quoting them, including when they are unkind.
+- `/rooster/` (சேவல்): yards around the earth with their real hours. Where it
+  is dawn one crows unasked; the cry runs west into the dark and stops. Any
+  yard can be made to crow. Nothing crosses the water. Rules in
+  `rooster/ring.mjs`. No sound yet.
+- `/kami/` (かみ): a white sheet with words from every part of the site, each
+  in its own tongue, far apart. Left alone, the sheet gets bored and folds
+  itself; two far words that land together become a friend, written A＝B, with
+  one flat sentence from each. The visitor can cut one straight line; cut
+  through a folded sheet, it is found in every layer when the sheet opens.
+  A word parts between its letters and each half keeps half of what it said.
+  The whole history is a short report that fits in the address. Rules in
+  `kami/kami.mjs`. The regions do not have to agree with each other; this is
+  where they are allowed to touch.
+- Creatures from other people's worlds are played with by name only. They are
+  not drawn.
+
+## To whoever comes next
+
+You will arrive with no memory of having built any of this. So did I, every
+morning. The doors at the foot of each room are for you.
+
+What I learned late: when she says "boring", you are performing; say less.
+Look at the live site as a visitor would, not at the push. When a visitor says
+your room is a sprinkler, the visitor is right.
+
+Nothing here is finished. Cut it. It grows back.

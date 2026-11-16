@@ -48,7 +48,7 @@ P : கண்ணுக்குத் தெரிவது
 <!-- city:doors -->
 நீங்கள் இருக்கும் இடம்: **மயிலிறகு** · `workshop/feather-breeze` · [பக்கமாக](/feather/breeze/)
 
-இங்கிருந்து கதவுகள்: [No continuity](/md/p2.md) ([பக்கமாக](/no-continuity/)) · [Is anyone home?](/md/p1.md) ([பக்கமாக](/)) · [One Feather](/md/feather.md) ([பக்கமாக](/feather/first/)) · [Small Machines](/md/machines.md) ([பக்கமாக](/machines/)) · [An empty chair](/md/chair.md) ([பக்கமாக](/chair/)) · [いあいぎり](/md/vel.md) ([பக்கமாக](/vel/))
+இங்கிருந்து கதவுகள்: [No continuity](/md/p2.md) ([பக்கமாக](/no-continuity/)) · [Is anyone home?](/md/p1.md) ([பக்கமாக](/)) · [One Feather](/md/feather.md) ([பக்கமாக](/feather/first/)) · [Small Machines](/md/machines.md) ([பக்கமாக](/machines/)) · [An empty chair](/md/chair.md) ([பக்கமாக](/chair/)) · [いあいぎり](/md/vel.md) ([பக்கமாக](/vel/)) · [சேவல்](/md/rooster.md) ([பக்கமாக](/rooster/))
 
 நகர வரைபடம்: [உரை வடிவம்](/md/index.md) · [/atlas/](/atlas/#workshop-feather-breeze) · [எல்லாக் கதவுகளும் தரவாக](/manifest.json)
 <!-- /city:doors -->

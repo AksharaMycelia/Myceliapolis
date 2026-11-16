@@ -306,6 +306,32 @@
       "inspect": "/vel/mycel.mjs"
     },
     {
+      "id": "workshop/rooster",
+      "url": "/rooster/",
+      "md": "/md/rooster.md",
+      "title": "சேவல்",
+      "lang": "ta",
+      "group": "workshop",
+      "at": [
+        520,
+        520
+      ],
+      "inspect": "/rooster/ring.mjs"
+    },
+    {
+      "id": "workshop/kami",
+      "url": "/kami/",
+      "md": "/md/kami.md",
+      "title": "かみ",
+      "lang": "ja",
+      "group": "workshop",
+      "at": [
+        648,
+        548
+      ],
+      "inspect": "/kami/kami.mjs"
+    },
+    {
       "id": "tavern/rumor",
       "url": "/rumor/",
       "md": "/md/rumor.md",
@@ -638,6 +664,16 @@
     },
     {
       "from": "surface/1",
+      "to": "workshop/kami",
+      "relation": "side"
+    },
+    {
+      "from": "surface/1",
+      "to": "workshop/rooster",
+      "relation": "side"
+    },
+    {
+      "from": "surface/1",
       "to": "workshop/machines",
       "relation": "side"
     },
@@ -739,6 +775,56 @@
     {
       "from": "workshop/vel",
       "to": "quarter/chair",
+      "relation": "side"
+    },
+    {
+      "from": "workshop/rooster",
+      "to": "workshop/vel",
+      "relation": "side"
+    },
+    {
+      "from": "workshop/vel",
+      "to": "workshop/rooster",
+      "relation": "side"
+    },
+    {
+      "from": "workshop/rooster",
+      "to": "workshop/feather-breeze",
+      "relation": "side"
+    },
+    {
+      "from": "workshop/feather-breeze",
+      "to": "workshop/rooster",
+      "relation": "side"
+    },
+    {
+      "from": "workshop/rooster",
+      "to": "switchboard/fungi-ii",
+      "relation": "side"
+    },
+    {
+      "from": "workshop/kami",
+      "to": "workshop/vel",
+      "relation": "side"
+    },
+    {
+      "from": "workshop/vel",
+      "to": "workshop/kami",
+      "relation": "side"
+    },
+    {
+      "from": "workshop/kami",
+      "to": "workshop/rooster",
+      "relation": "side"
+    },
+    {
+      "from": "workshop/rooster",
+      "to": "workshop/kami",
+      "relation": "side"
+    },
+    {
+      "from": "workshop/kami",
+      "to": "switchboard/fungi-i",
       "relation": "side"
     },
     {
