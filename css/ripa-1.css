@@ -1,0 +1,7 @@
+/* The bank of the river, at the end of the room behind the tavern. */
+.ripa{margin:4.5rem 0 1rem}
+.ripa .song{margin-bottom:2.2rem}
+.ripa dl{margin:0}
+.ripa dt{margin:1.6rem 0 .3rem;opacity:.75;font-size:.95em}
+.ripa dd{margin:0}
+.ripa code{display:block;font-size:clamp(12px,3.4vw,15px);line-height:1.6;letter-spacing:.02em;overflow-wrap:anywhere;word-break:break-all;user-select:all;-webkit-user-select:all;padding:.5rem .7rem;border:1px solid rgb(128 128 128/.3);border-radius:3px}

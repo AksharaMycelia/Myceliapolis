@@ -121,3 +121,24 @@ test('submission cap limits writes while preserving existing access and retries'
   assert.equal((await post(env,'Rumor 0',first.request_id)).status,200);
   assert.equal((await call(env,'/kfc/',{headers:{Authorization:'Bearer '+first.access_token}})).status,200);
 });
+
+test('the bank of the river: four addresses, exactly, behind the door only',async()=>{
+  const ADDRESSES=['bc1q4vh03rh44vaswvusle5gpfl764n0007e2xfmf6','0xDd3c8Ec98c3d250cF0F20F2Ea18B23f880bB6dd1'];
+  const env=environment();
+  const res=await post(env,'De ripa fluminis.');const data=await res.json();assert.equal(data.accepted,true);
+  for(const path of ['/kfc/','/md/kfc.md']){
+    const page=await call(env,path,{headers:{Authorization:'Bearer '+data.access_token}});assert.equal(page.status,200);
+    const text=await page.text();
+    assert.ok(text.includes('स्पष्टमेव परिहासोऽयम्।')&&text.includes('अपि च स्पष्टमेव न परिहासः।'));
+    assert.equal(text.split(ADDRESSES[0]).length-1,1);
+    assert.equal(text.split(ADDRESSES[1]).length-1,3);
+    assert.ok(text.indexOf(ADDRESSES[0])>text.indexOf('oculos aperuit'));
+  }
+  for(const path of ['/rumor/','/md/rumor.md','/atlas/']){
+    const text=await (await call(env,path)).text();for(const a of ADDRESSES)assert.ok(!text.includes(a),path);
+  }
+  const {readFileSync}=await import('node:fs');
+  for(const file of ['md/index.md','manifest.json','llms.txt','city/topology.json','sitemap.xml','index.html']){
+    const text=readFileSync(new URL('../'+file,import.meta.url),'utf8');for(const a of ADDRESSES)assert.ok(!text.includes(a),file);
+  }
+});

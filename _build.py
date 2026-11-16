@@ -592,7 +592,7 @@ write("favicon.svg", """<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 
 </svg>
 """)
 
-for path in ("district.js", "css/unfinished-quarter.css", "assets/unfinished-garden.svg", "_worker.js", "wrangler.jsonc", ".assetsignore", "css/rumor-room.css", "css/puzzle-choices.css", "assets/sleeping-pomeranian.svg", "participate.md"):
+for path in ("district.js", "css/unfinished-quarter.css", "assets/unfinished-garden.svg", "_worker.js", "wrangler.jsonc", ".assetsignore", "css/rumor-room.css", "css/ripa-1.css", "css/puzzle-choices.css", "assets/sleeping-pomeranian.svg", "participate.md"):
     write(path, (ROOT / path).read_text(encoding="utf-8"))
 
 for path in ("machines/index.html", "machines/engine.mjs", "machines/room.mjs", "machines/room.css", "md/machines.md"):
