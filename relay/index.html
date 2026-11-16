@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>The relay — Myceliapolis</title>
+  <meta name="description" content="A world arrives. Change one thing. Carry what happens next.">
+  <link rel="canonical" href="https://myceliapolis.com/relay/">
+  <link rel="alternate" type="text/markdown" href="/md/relay.md">
+  <link rel="icon" href="/favicon.svg">
+  <link rel="stylesheet" href="/relay/room.css">
+  <script type="module" src="/relay/room.mjs"></script>
+<!-- city:head --><link rel="stylesheet" href="/css/city-doors-1.css"><!-- /city:head -->
+</head>
+<body>
+  <a id="skip" class="skip" href="#work">Skip to the world</a>
+  <header class="mast"><a href="/">MYCELIAPOLIS</a><nav aria-label="City"><a href="/machines/">Small Machines</a><a href="/atlas/">City atlas ↗</a></nav></header>
+  <main>
+    <header class="intro"><div><p class="eyebrow">A place to pass something on</p><h1>The <em>relay.</em></h1></div><p class="invitation">The ground has already been disturbed.<br>There is room for one more change.</p></header>
+    <noscript><p>The worlds need JavaScript. The <a href="/md/relay.md">plain-text room</a> includes the rules and a way to carry a world.</p></noscript>
+    <div id="arrival-error" hidden role="alert"><h2>This world could not arrive.</h2><p id="error-message"></p><button id="use-seed" type="button">Open an authored seed instead</button></div>
+    <section id="work" hidden tabindex="-1" aria-label="The relay">
+      <div class="arrival-line"><p id="origin">An authored seed. No previous visitor is implied.</p><span id="arrival-tick"></span></div>
+      <div class="worlds">
+        <figure><figcaption><span class="number">01</span><h2>Left alone</h2><span class="small">same time, no edit</span></figcaption><canvas id="untouched" width="640" height="640" role="img" aria-label="The inherited world, running without your edit."></canvas></figure>
+        <figure><figcaption><span class="number">02</span><h2>In your hands</h2><span class="small">one rule or one tile</span></figcaption><canvas id="changed" width="640" height="640" tabindex="0" aria-label="Your world. Arrow keys choose a tile; Enter or Space applies the selected tool. Each edit restarts both worlds from arrival." aria-describedby="tile-info"></canvas></figure>
+      </div>
+      <div class="transport"><div><button id="run" class="primary" type="button">Let 64 steps pass</button><button id="step" type="button">One step</button><button id="rewind" type="button">Rewind</button></div><p><output id="elapsed">0</output> steps since arrival</p><label><input id="show-difference" type="checkbox"> Mark different tiles</label></div>
+      <p id="comparison" class="comparison" aria-live="off"></p>
+      <p id="notice" role="status" aria-live="polite">Change a rule or a tile. Or let both worlds run as they arrived.</p>
+      <div class="bench">
+        <section class="edit"><p class="eyebrow">One change</p><h2>A small intervention.</h2><p class="small">Each new edit replaces your previous edit and starts both worlds again from arrival.</p>
+          <form id="rule-form"><label for="creature">Creature</label><select id="creature"></select><label for="rule">Its rule</label><div class="entry"><input id="rule" maxlength="8" minlength="2" pattern="[LlRrSsUu]{2,8}" required autocomplete="off" spellcheck="false" aria-describedby="rule-help"><button id="apply-rule" type="submit">Change rule</button></div><p id="rule-help" class="small">L left · R right · S straight · U turn back<br>2–8 turns, one for each tile state.</p></form>
+          <form id="tile-form"><label for="tool">Or change one tile</label><select id="tool"><option value="1">Light</option><option value="8">Wall</option><option value="0">Clear</option></select><div class="coordinates"><label>Column<input id="column" type="number" min="0" max="31" value="16" required></label><label>Row<input id="row" type="number" min="0" max="31" value="16" required></label><button type="submit">Change tile</button></div></form>
+          <p id="tile-info" class="small"></p><p id="edit-description">No edit.</p><button id="undo" class="quiet" type="button" disabled>Remove my change</button>
+        </section>
+        <section class="outgoing"><p class="eyebrow">The next pair of hands</p><h2>Carry this world.</h2><p>The right-hand world goes into the link.<br>Who opens it decides what happens next.</p><button id="carry" class="primary" type="button">Make a link ↗</button><div id="parcel" hidden><label for="world-link">Your world link</label><textarea id="world-link" rows="3" readonly></textarea><div class="entry"><button id="copy" type="button">Copy link</button><a id="open-world" href="/relay/" target="_blank" rel="noopener">Open a fresh copy ↗</a></div></div>
+          <p class="small storage">This room runs in your tab. Making a link posts nothing. Each person who opens it gets an independent copy. Earlier edits and visitor identities are not recorded.</p><a id="to-machines" href="/machines/">Continue this world in Small Machines ↗</a>
+        </section>
+      </div>
+      <details id="blueprint-details"><summary>Bring a world / read its blueprint</summary><p>Paste a Small Machines or relay link, or a world blueprint. Loading it replaces both worlds here.</p><label for="blueprint">Link or world blueprint</label><textarea id="blueprint" rows="7" spellcheck="false" maxlength="24000"></textarea><div class="entry"><button id="load" type="button">Let it arrive</button><button id="read" type="button">Read right-hand world</button></div><p id="blueprint-notice" role="status"></p></details>
+      <details><summary>How the ground works</summary><p>Both worlds use the Small Machines rules. Each creature reads its tile, turns according to its program, changes the tile, and moves one square. A wall turns it around and holds it for that step. The edges join. Creatures act in their listed order.</p><p>The left world continues without your edit. The right world begins with one changed rule or tile. They advance by the same number of steps. Rewind keeps your edit; Remove my change restores the arrival. The orange marks show different tile states, not a score.</p><p>Motion starts only when asked and pauses when this tab is hidden. With reduced motion, 64 steps are calculated at once. A malformed link is never silently replaced by a seed.</p><a href="/md/relay.md">Plain text &amp; protocol ↗</a></details>
+    </section>
+  </main>
+  <footer><span>The relay / Myceliapolis</span><a href="/relay/relay.mjs">The mechanism</a><a href="/chair/">An empty chair ↗</a></footer>
+<!-- city:doors --><nav class="city-doors" lang="en" aria-label="Doors"><span>Doors</span><a href="/atlas/#workshop-relay">City map</a></nav><!-- /city:doors -->
+</body>
+</html>

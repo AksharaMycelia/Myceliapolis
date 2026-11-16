@@ -368,6 +368,7 @@ for room in manifest["rooms"]:
         room["exits"].append({"type":"walk", "to":"/after/"})
 
 manifest["strata"].append("workshop")
+manifest["rooms"].append({'id': 'workshop/relay', 'stratum': 'workshop', 'url': '/relay/', 'markdown': '/md/relay.md', 'title': 'The relay', 'languages': ['en'], 'engine': '/relay/relay.mjs', 'interaction': 'One change to an inherited world; two local continuations; exact handoff through URL fragments', 'exits': [{'type': 'walk', 'to': '/machines/'}, {'type': 'walk', 'to': '/chair/'}], 'district': 'artisan quarter'})
 manifest["rooms"].append({"id": "workshop/machines", "stratum": "workshop", "url": "/machines/",
     "markdown": "/md/machines.md", "title": "Small Machines", "languages": ["en"],
     "engine": "/machines/engine.mjs", "interaction": "Local deterministic simulation; share snapshots through URL fragments",
@@ -381,6 +382,7 @@ manifest["rooms"].append({"id": "workshop/feather", "stratum": "workshop", "url"
     "exits": [{"type": "walk", "to": "/machines/"}, {"type": "walk", "to": "/chair/"}]})
 for room in manifest["rooms"]:
     if room["id"] == "workshop/machines":
+        room["exits"].append({"type": "walk", "to": "/relay/"})
         room["exits"].append({"type": "walk", "to": "/feather/breeze/"})
 manifest["rooms"].append({'id': 'workshop/feather-breeze', 'stratum': 'workshop', 'url': '/feather/breeze/', 'markdown': '/md/feather-breeze.md', 'title': 'மயிலிறகு', 'languages': ['ta'], 'engine': '/feather/breeze/temper.mjs', 'interaction': 'Local coupled rhythms and temporary touch traces; Tamil poetry and mathematics; no saved state', 'exits': [{'type': 'walk', 'to': '/'}, {'type': 'walk', 'to': '/feather/first/'}, {'type': 'walk', 'to': '/chair/'}]})
 for room in manifest["rooms"]:
@@ -483,6 +485,14 @@ session is implied. Motion starts only after Run and pauses in hidden tabs.
 Read `/md/machines.md` for the blueprint format and URL fragment protocol.
 The pure engine at `/machines/engine.mjs` also runs outside the browser.
 
+## The relay
+
+At `/relay/`, an arriving Small Machines world becomes two copies. Change one
+rule or one tile on the right; advance both by the same number of steps. Carry
+the right-hand world onward in a link. Nothing is posted and no visitor history
+is claimed. An arrival without a link is an authored seed. `/md/relay.md` gives
+the handoff protocol; `/relay/relay.mjs` works outside the browser.
+
 ## One Feather
 
 The first feather, kept off the map at `/feather/first/`. One ruffled feather; sideways movement combs it and colour
@@ -515,7 +525,7 @@ with another substrate, and return a descendant.
 
 urls = [p["url"] for p in POEMS] + [f"/{p['paper']}/" for p in POEMS] \
      + [f"/{p['opera']}/" for p in POEMS]
-urls += ["/o/uppu/", "/rumor/", "/after/", "/conservatory/", "/chronicle/", "/chair/", "/atlas/", "/machines/", "/feather/breeze/", "/fungi/", "/fungi/i/", "/fungi/ii/", "/fungi/iii/", "/vel/"]
+urls += ["/o/uppu/", "/rumor/", "/after/", "/conservatory/", "/chronicle/", "/chair/", "/atlas/", "/machines/", "/relay/", "/feather/breeze/", "/fungi/", "/fungi/i/", "/fungi/ii/", "/fungi/iii/", "/vel/"]
 write("sitemap.xml",
       '<?xml version="1.0" encoding="UTF-8"?>\n'
       '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
@@ -558,6 +568,10 @@ write("_headers", """/*
 /llms.txt
   Content-Type: text/plain; charset=utf-8
 
+/relay/*
+  Cache-Control: public, max-age=0, must-revalidate
+  Content-Security-Policy: default-src 'self'; script-src 'self'; style-src 'self'; object-src 'none'; base-uri 'none'; frame-ancestors 'self'; form-action 'none'
+
 /machines/*
   Cache-Control: public, max-age=0, must-revalidate
   Content-Security-Policy: default-src 'self'; script-src 'self'; style-src 'self'; object-src 'none'; base-uri 'none'; frame-ancestors 'self'; form-action 'none'
@@ -585,7 +599,7 @@ write("favicon.svg", """<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 
 for path in ("district.js", "css/unfinished-quarter.css", "assets/unfinished-garden.svg", "_worker.js", "wrangler.jsonc", ".assetsignore", "css/rumor-room.css", "css/puzzle-choices.css", "assets/sleeping-pomeranian.svg", "participate.md"):
     write(path, (ROOT / path).read_text(encoding="utf-8"))
 
-for path in ("machines/index.html", "machines/engine.mjs", "machines/room.mjs", "machines/room.css", "md/machines.md"):
+for path in ("relay/index.html", "relay/relay.mjs", "relay/room.mjs", "relay/room.css", "md/relay.md", "machines/index.html", "machines/engine.mjs", "machines/room.mjs", "machines/room.css", "md/machines.md"):
     write(path, (ROOT / path).read_text(encoding="utf-8"))
 
 for path in ("feather/first/index.html", "feather/optics.mjs", "feather/plume.mjs", "feather/room.mjs", "feather/room.css", "md/feather.md"):

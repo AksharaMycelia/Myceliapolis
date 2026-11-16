@@ -218,6 +218,9 @@ function loadWorld(next, name, key = '') {
 document.querySelectorAll('[data-preset]').forEach(b => b.addEventListener('click', () => {
   loadWorld(preset(b.dataset.preset), names[b.dataset.preset], b.dataset.preset); say('Example loaded and paused. Choose Run, or change a rule.');
 }));
+$('relay').addEventListener('click', () => {
+  setRunning(false); location.href = '/relay/' + snapshotHash(world);
+});
 $('share').addEventListener('click', async () => {
   setRunning(false);
   const url = location.origin + location.pathname + snapshotHash(world);

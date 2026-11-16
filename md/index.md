@@ -48,7 +48,9 @@
 - [One Feather](/md/feather.md) · [page](/feather/first/) — [source](/feather/optics.mjs)
   - doors: [மயிலிறகு](/md/feather-breeze.md) · [Small Machines](/md/machines.md) · [An empty chair](/md/chair.md)
 - [Small Machines](/md/machines.md) · [page](/machines/) — [source](/machines/engine.mjs)
-  - doors: [மயிலிறகு](/md/feather-breeze.md) · [II · 60 Hertz](/md/fungi-ii.md) · [The Unfinished Quarter](/md/after.md) · [An empty chair](/md/chair.md)
+  - doors: [மயிலிறகு](/md/feather-breeze.md) · [II · 60 Hertz](/md/fungi-ii.md) · [The relay](/md/relay.md) · [The Unfinished Quarter](/md/after.md) · [An empty chair](/md/chair.md)
+- [The relay](/md/relay.md) · [page](/relay/) — [source](/relay/relay.mjs)
+  - doors: [Small Machines](/md/machines.md) · [An empty chair](/md/chair.md)
 - [いあいぎり](/md/vel.md) · [page](/vel/) — [source](/vel/mycel.mjs)
   - doors: [மயிலிறகு](/md/feather-breeze.md) · [II · 60 Hertz](/md/fungi-ii.md) · [An empty chair](/md/chair.md)
 
@@ -84,6 +86,6 @@
 
 ## Not built
 
-The chalk porch · A dock without a boat · The night stall · The relay · The spore dispensary
+The chalk porch · A dock without a boat · The night stall · The spore dispensary
 
 [/atlas/](/atlas/) · [data](/manifest.json)

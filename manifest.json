@@ -1107,6 +1107,10 @@
         {
           "type": "walk",
           "to": "/feather/breeze/"
+        },
+        {
+          "type": "walk",
+          "to": "/relay/"
         }
       ],
       "district": "artisan quarter",
@@ -1123,6 +1127,12 @@
           "url": "/fungi/ii/",
           "relation": "side",
           "markdown": "/md/fungi-ii.md"
+        },
+        {
+          "to": "workshop/relay",
+          "url": "/relay/",
+          "relation": "side",
+          "markdown": "/md/relay.md"
         },
         {
           "to": "quarter/threshold",
@@ -1497,6 +1507,44 @@
           "relation": "return",
           "markdown": "/md/o1.md",
           "label": "யாராவது வீட்டில் இருக்கிறார்களா?"
+        }
+      ]
+    },
+    {
+      "id": "workshop/relay",
+      "stratum": "workshop",
+      "url": "/relay/",
+      "markdown": "/md/relay.md",
+      "title": "The relay",
+      "languages": [
+        "en"
+      ],
+      "engine": "/relay/relay.mjs",
+      "interaction": "One change to an inherited world; two local continuations; exact handoff through URL fragments",
+      "exits": [
+        {
+          "type": "walk",
+          "to": "/machines/"
+        },
+        {
+          "type": "walk",
+          "to": "/chair/"
+        }
+      ],
+      "district": "artisan quarter",
+      "group": "workshop",
+      "doors": [
+        {
+          "to": "workshop/machines",
+          "url": "/machines/",
+          "relation": "side",
+          "markdown": "/md/machines.md"
+        },
+        {
+          "to": "quarter/chair",
+          "url": "/chair/",
+          "relation": "side",
+          "markdown": "/md/chair.md"
         }
       ]
     }
