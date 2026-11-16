@@ -48,7 +48,7 @@ function readout() {
   const delta = differences(session), marks = $('show-difference').checked ? delta.tiles : [];
   draw(left, session.untouched, marks); draw(right, session.changed, marks);
   $('elapsed').textContent = session.elapsed.toLocaleString('en');
-  $('comparison').textContent = `${delta.tiles.length} tile${delta.tiles.length === 1 ? '' : 's'} differ · ${delta.positions} creature${delta.positions === 1 ? '' : 's'} differ in position or direction.`;
+  $('comparison').textContent = `${delta.tiles.length} tile${delta.tiles.length === 1 ? ' differs' : 's differ'} · ${delta.positions} creature${delta.positions === 1 ? ' differs' : 's differ'} in position or direction.`;
   $('column').value = cursor.x; $('row').value = cursor.y;
   const at = cursor.y * SIZE + cursor.x;
   $('tile-info').textContent = `Tile ${cursor.x}, ${cursor.y}: arrived as ${tileName(session.arrival.cells[at])}; now ${tileName(session.changed.cells[at])} on the right.`;
