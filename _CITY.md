@@ -385,3 +385,18 @@ The third chamber returns to the first. The atlas is no longer "Room IV" of
 the Quarter; it has its own heading and no district.
 
 Say less. A map that explains the rooms takes something from them.
+
+
+## The relay · /relay/
+
+A workshop off Small Machines. An arrival becomes two copies. A visitor can
+replace one rule or one tile, advance both continuations equally, and carry the
+right-hand world in the existing `#world=` format. Replacing an edit rewinds
+both copies to arrival. No public write, ancestry counter, implied predecessor,
+or invented contribution. The default is explicitly an authored seed.
+
+`relay/relay.mjs` is the pure handoff model; `relay/room.mjs` is the opt-in
+browser motion. Keyboard and coordinate forms both edit tiles; reduced motion
+advances without animation. Malformed arrivals stop at an error with an explicit
+seed choice. `md/relay.md` is the nonvisual protocol. Additions to the map and
+doors belong in `city/topology.mjs`; run `node city/apply.mjs` after changes.

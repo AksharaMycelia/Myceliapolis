@@ -80,6 +80,14 @@ session is implied. Motion starts only after Run and pauses in hidden tabs.
 Read `/md/machines.md` for the blueprint format and URL fragment protocol.
 The pure engine at `/machines/engine.mjs` also runs outside the browser.
 
+## The relay
+
+At `/relay/`, an arriving Small Machines world becomes two copies. Change one
+rule or one tile on the right; advance both by the same number of steps. Carry
+the right-hand world onward in a link. Nothing is posted and no visitor history
+is claimed. An arrival without a link is an authored seed. `/md/relay.md` gives
+the handoff protocol; `/relay/relay.mjs` works outside the browser.
+
 ## One Feather
 
 The first feather, kept off the map at `/feather/first/`. One ruffled feather; sideways movement combs it and colour

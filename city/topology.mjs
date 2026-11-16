@@ -38,6 +38,7 @@ rooms.push(
   { id: 'workshop/feather-breeze', url: '/feather/breeze/', md: '/md/feather-breeze.md', title: 'மயிலிறகு', lang: 'ta', group: 'workshop', at: [692, 190], inspect: '/feather/breeze/temper.mjs' },
   { id: 'workshop/feather', url: '/feather/first/', md: '/md/feather.md', title: 'One Feather', group: 'workshop', access: 'secondary', on: 'workshop/feather-breeze', inspect: '/feather/optics.mjs' },
   { id: 'workshop/machines', url: '/machines/', md: '/md/machines.md', title: 'Small Machines', group: 'workshop', at: [704, 350], inspect: '/machines/engine.mjs' },
+  { id: 'workshop/relay', url: '/relay/', md: '/md/relay.md', title: 'The relay', group: 'workshop', at: [615, 270], inspect: '/relay/relay.mjs' },
   { id: 'workshop/vel', url: '/vel/', md: '/md/vel.md', title: 'いあいぎり', lang: 'ja', group: 'workshop', at: [612, 462], inspect: '/vel/mycel.mjs' },
   { id: 'tavern/rumor', url: '/rumor/', md: '/md/rumor.md', title: 'Taberna rumorum', lang: 'la', group: 'tavern', at: [246, 262], guide: '/participate.md' },
   { id: 'beyond/kfc', url: '/kfc/', md: '/md/kfc.md', title: 'Semen Rubiconis KFC', lang: 'la', group: 'tavern', access: 'conditional', listed: false, on: 'tavern/rumor' },
@@ -70,6 +71,8 @@ door('workshop/vel', 'workshop/feather-breeze'); door('workshop/feather-breeze',
 door('workshop/vel', 'switchboard/fungi-ii'); door('switchboard/fungi-ii', 'workshop/vel');
 door('workshop/vel', 'quarter/chair');
 door('workshop/machines', 'switchboard/fungi-ii'); door('switchboard/fungi-ii', 'workshop/machines');
+door('workshop/machines', 'workshop/relay'); door('workshop/relay', 'workshop/machines');
+door('workshop/relay', 'quarter/chair');
 door('workshop/machines', 'quarter/threshold'); door('workshop/machines', 'quarter/chair');
 
 door('tavern/rumor', 'quarter/conservatory'); door('quarter/conservatory', 'tavern/rumor');
@@ -111,6 +114,6 @@ export default {
     { id: 'clearing', title: 'Clearing' },
   ],
   rooms, doors, sequences,
-  unbuilt: ['The chalk porch', 'A dock without a boat', 'The night stall', 'The relay', 'The spore dispensary'],
+  unbuilt: ['The chalk porch', 'A dock without a boat', 'The night stall', 'The spore dispensary'],
   sketch: { porch: [78, 308], dock: [400, 584] },
 };

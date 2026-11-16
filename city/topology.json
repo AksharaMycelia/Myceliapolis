@@ -293,6 +293,18 @@
       "inspect": "/machines/engine.mjs"
     },
     {
+      "id": "workshop/relay",
+      "url": "/relay/",
+      "md": "/md/relay.md",
+      "title": "The relay",
+      "group": "workshop",
+      "at": [
+        615,
+        270
+      ],
+      "inspect": "/relay/relay.mjs"
+    },
+    {
       "id": "workshop/vel",
       "url": "/vel/",
       "md": "/md/vel.md",
@@ -753,6 +765,21 @@
     },
     {
       "from": "workshop/machines",
+      "to": "workshop/relay",
+      "relation": "side"
+    },
+    {
+      "from": "workshop/relay",
+      "to": "workshop/machines",
+      "relation": "side"
+    },
+    {
+      "from": "workshop/relay",
+      "to": "quarter/chair",
+      "relation": "side"
+    },
+    {
+      "from": "workshop/machines",
       "to": "quarter/threshold",
       "relation": "side"
     },
@@ -1040,7 +1067,6 @@
     "The chalk porch",
     "A dock without a boat",
     "The night stall",
-    "The relay",
     "The spore dispensary"
   ],
   "sketch": {
