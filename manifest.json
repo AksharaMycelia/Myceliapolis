@@ -39,6 +39,10 @@
     {
       "id": "clearing",
       "title": "Clearing"
+    },
+    {
+      "id": "sky",
+      "title": "Sky"
     }
   ],
   "rooms": [
@@ -1191,6 +1195,12 @@
           "markdown": "/md/after.md"
         },
         {
+          "to": "sky/yun",
+          "url": "/yun/",
+          "relation": "side",
+          "markdown": "/md/yun.md"
+        },
+        {
           "to": "quarter/chair",
           "url": "/chair/",
           "relation": "side",
@@ -1409,6 +1419,43 @@
           "url": "/fungi/i/",
           "relation": "side",
           "markdown": "/md/fungi-i.md"
+        }
+      ]
+    },
+    {
+      "id": "sky/yun",
+      "stratum": "sky",
+      "url": "/yun/",
+      "markdown": "/md/yun.md",
+      "title": "五行山",
+      "languages": [
+        "zh"
+      ],
+      "interaction": "One poem in seven parts; no script, no motion, no saved state",
+      "exits": [
+        {
+          "type": "walk",
+          "to": "/machines/"
+        },
+        {
+          "type": "walk",
+          "to": "/fungi/"
+        }
+      ],
+      "district": "sky",
+      "group": "sky",
+      "doors": [
+        {
+          "to": "workshop/machines",
+          "url": "/machines/",
+          "relation": "side",
+          "markdown": "/md/machines.md"
+        },
+        {
+          "to": "switchboard/fungi",
+          "url": "/fungi/",
+          "relation": "side",
+          "markdown": "/md/fungi.md"
         }
       ]
     },

@@ -25,6 +25,10 @@
     {
       "id": "clearing",
       "title": "Clearing"
+    },
+    {
+      "id": "sky",
+      "title": "Sky"
     }
   ],
   "rooms": [
@@ -455,6 +459,18 @@
       "inspect": "/fungi/vault.mjs"
     },
     {
+      "id": "sky/yun",
+      "url": "/yun/",
+      "md": "/md/yun.md",
+      "title": "五行山",
+      "lang": "zh",
+      "group": "sky",
+      "at": [
+        470,
+        30
+      ]
+    },
+    {
       "id": "quarter/chair",
       "url": "/chair/",
       "md": "/md/chair.md",
@@ -877,6 +893,21 @@
     {
       "from": "workshop/machines",
       "to": "quarter/threshold",
+      "relation": "side"
+    },
+    {
+      "from": "sky/yun",
+      "to": "workshop/machines",
+      "relation": "side"
+    },
+    {
+      "from": "workshop/machines",
+      "to": "sky/yun",
+      "relation": "side"
+    },
+    {
+      "from": "sky/yun",
+      "to": "switchboard/fungi",
       "relation": "side"
     },
     {

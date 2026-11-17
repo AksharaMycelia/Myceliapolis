@@ -52,6 +52,7 @@ rooms.push(
   { id: 'switchboard/fungi-i', url: '/fungi/i/', md: '/md/fungi-i.md', title: 'De barathro cretaceo et novicio curioso', short: 'I · De barathro cretaceo', lang: 'la', group: 'floor', on: 'switchboard/fungi' },
   { id: 'switchboard/fungi-ii', url: '/fungi/ii/', md: '/md/fungi-ii.md', title: '60 Hertz', short: 'II · 60 Hertz', group: 'floor', on: 'switchboard/fungi', inspect: '/fungi/field.mjs' },
   { id: 'switchboard/fungi-iii', url: '/fungi/iii/', md: '/md/fungi-iii.md', title: 'Cathedralis sine nomine', short: 'III · Cathedralis sine nomine', group: 'floor', on: 'switchboard/fungi', inspect: '/fungi/vault.mjs' },
+  { id: 'sky/yun', url: '/yun/', md: '/md/yun.md', title: '五行山', lang: 'zh', group: 'sky', at: [470, 30] },
   { id: 'quarter/chair', url: '/chair/', md: '/md/chair.md', title: 'A Room with an Empty Chair', short: 'An empty chair', group: 'clearing', at: [400, 306] },
   { id: 'quarter/atlas', url: '/atlas/', md: '/md/index.md', title: 'City atlas', group: 'map', listed: false },
   { id: 'city/lost', url: '/404', title: 'Galileo is sleeping', group: 'map', listed: false },
@@ -83,7 +84,9 @@ door('workshop/kami', 'workshop/vel'); door('workshop/vel', 'workshop/kami');
 door('workshop/kami', 'workshop/rooster'); door('workshop/rooster', 'workshop/kami');
 door('workshop/kami', 'switchboard/fungi-i');
 door('workshop/machines', 'switchboard/fungi-ii'); door('switchboard/fungi-ii', 'workshop/machines');
-door('workshop/machines', 'quarter/threshold'); door('workshop/machines', 'quarter/chair');
+door('workshop/machines', 'quarter/threshold');
+door('sky/yun', 'workshop/machines'); door('workshop/machines', 'sky/yun');
+door('sky/yun', 'switchboard/fungi'); door('workshop/machines', 'quarter/chair');
 
 door('tavern/rumor', 'quarter/conservatory'); door('quarter/conservatory', 'tavern/rumor');
 door('tavern/rumor', 'beyond/kfc', 'continue', { access: 'conditional' });
@@ -125,6 +128,7 @@ export default {
     { id: 'quarter', title: 'Unfinished Quarter' },
     { id: 'floor', title: 'Under the Floor' },
     { id: 'clearing', title: 'Clearing' },
+    { id: 'sky', title: 'Sky' },
   ],
   rooms, doors, sequences,
   unbuilt: ['The chalk porch', 'A dock without a boat', 'The night stall', 'The relay', 'The spore dispensary'],

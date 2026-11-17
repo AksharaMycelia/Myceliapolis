@@ -98,6 +98,12 @@ Touch can enter those rhythms. The poems are newly written, not traditional quot
 All room text and instructions are Tamil. Read `/md/feather-breeze.md`.
 `/feather/` now leads here. The first feather is kept at `/feather/first/`.
 
+## 五行山
+
+The first room above the city, at `/yun/`. One poem in Chinese, in seven parts:
+a mountain of five elements, a monkey under it, a cloud seen from below.
+All room text is Chinese; nothing moves. Read `/md/yun.md`.
+
 ## మిణుగురు
 
 Reached from the Tamil feather room, at `/feather/minuguru/`. A retold scripture
