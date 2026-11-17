@@ -614,7 +614,7 @@ for path in ("feather/first/index.html", "feather/optics.mjs", "feather/plume.mj
 for path in ("feather/breeze/index.html", "feather/breeze/room.css", "feather/breeze/room.mjs", "feather/breeze/temper.mjs", "md/feather-breeze.md"):
     write(path, (ROOT / path).read_text(encoding="utf-8"))
 
-for path in ("feather/minuguru/index.html", "md/feather-minuguru.md"):
+for path in ("feather/minuguru/index.html", "feather/minuguru/room.css", "md/feather-minuguru.md"):
     write(path, (ROOT / path).read_text(encoding="utf-8"))
 
 for path in ("o/uppu/index.html", "o/uppu/room.css", "md/uppu.md"):
