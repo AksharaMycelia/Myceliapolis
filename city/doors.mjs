@@ -21,6 +21,7 @@ const FRAME = {
   it: { doors: 'Porte', map: 'Mappa della città', text: 'Testo semplice', here: 'Sei in', also: 'come pagina', from: 'Porte da qui', data: 'ogni porta come dati' },
   la: { doors: 'Ostia', map: 'Tabula urbis', text: 'Textus simplex', here: 'Hic es', also: 'ut pagina', from: 'Ostia hinc', data: 'omnia ostia ut data' },
   ja: { doors: 'とびら', map: 'まちの　ちず', text: 'テキスト', here: 'いま　いる　ところ', also: 'ページ', from: 'ここからの　とびら', data: 'すべての　とびら（データ）' },
+  te: { doors: 'తలుపులు', map: 'నగర పటం', text: 'సాదా వచనం', here: 'మీరు ఉన్న చోటు', also: 'పేజీగా', from: 'ఇక్కడి నుండి తలుపులు', data: 'అన్ని తలుపులూ డేటాగా' },
   ta: { doors: 'கதவுகள்', map: 'நகர வரைபடம்', text: 'உரை வடிவம்', here: 'நீங்கள் இருக்கும் இடம்', also: 'பக்கமாக', from: 'இங்கிருந்து கதவுகள்', data: 'எல்லாக் கதவுகளும் தரவாக' },
 };
 const frame = r => FRAME[langOf(r)] || FRAME.en;

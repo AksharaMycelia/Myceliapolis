@@ -386,6 +386,10 @@ manifest["rooms"].append({'id': 'workshop/feather-breeze', 'stratum': 'workshop'
 for room in manifest["rooms"]:
     if room["id"] == "surface/1":
         room["exits"].append({"type": "walk", "to": "/feather/breeze/"})
+manifest["rooms"].append({"id": "workshop/minuguru", "stratum": "workshop", "url": "/feather/minuguru/", "markdown": "/md/feather-minuguru.md", "title": "మిణుగురు", "languages": ["te"], "interaction": "A retold Telugu scripture; fireflies blink in CSS only; no script, no saved state", "exits": [{"type": "walk", "to": "/feather/breeze/"}, {"type": "walk", "to": "/fungi/ii/"}]})
+for room in manifest["rooms"]:
+    if room["id"] == "workshop/feather-breeze":
+        room["exits"].append({"type": "walk", "to": "/feather/minuguru/"})
 manifest["rooms"].append({"id": "workshop/kami", "stratum": "workshop", "url": "/kami/", "markdown": "/md/kami.md", "title": "かみ", "languages": ["ja", "el", "zh", "ta", "it", "he", "en"], "status": "first version", "engine": "/kami/kami.mjs", "interaction": "A sheet of names that folds itself when left alone and can be cut with one straight line; its whole history fits in the address fragment; no saved state", "exits": [{"type": "walk", "to": "/vel/"}, {"type": "walk", "to": "/rooster/"}]})
 manifest["rooms"].append({"id": "workshop/rooster", "stratum": "workshop", "url": "/rooster/", "markdown": "/md/rooster.md", "title": "சேவல்", "languages": ["ta", "ja", "zh", "th", "fa", "ru", "el", "de", "is", "pt", "es", "en"], "status": "first version", "engine": "/rooster/ring.mjs", "interaction": "A ring of yards with their real hours; a cry is passed west from one to the next; no saved state", "exits": [{"type": "walk", "to": "/vel/"}, {"type": "walk", "to": "/feather/breeze/"}]})
 manifest["rooms"].append({"id": "workshop/vel", "stratum": "workshop", "url": "/vel/", "markdown": "/md/vel.md", "title": "いあいぎり", "languages": ["ja"], "status": "first version", "engine": "/vel/mycel.mjs", "interaction": "One straight line across a field of threads; names arrive afterwards; no saved state", "exits": [{"type": "walk", "to": "/feather/breeze/"}, {"type": "walk", "to": "/fungi/ii/"}]})
@@ -503,6 +507,12 @@ Touch can enter those rhythms. The poems are newly written, not traditional quot
 All room text and instructions are Tamil. Read `/md/feather-breeze.md`.
 `/feather/` now leads here. The first feather is kept at `/feather/first/`.
 
+## మిణుగురు
+
+Reached from the Tamil feather room, at `/feather/minuguru/`. A retold scripture
+in Telugu: a firefly and the endless one. All room text is Telugu; the fireflies
+are CSS only. Read `/md/feather-minuguru.md`.
+
 ## The city and its doors
 
 Enter anywhere. Every room, as a page or as plain text, ends with its own
@@ -602,6 +612,9 @@ for path in ("feather/first/index.html", "feather/optics.mjs", "feather/plume.mj
     write(path, (ROOT / path).read_text(encoding="utf-8"))
 
 for path in ("feather/breeze/index.html", "feather/breeze/room.css", "feather/breeze/room.mjs", "feather/breeze/temper.mjs", "md/feather-breeze.md"):
+    write(path, (ROOT / path).read_text(encoding="utf-8"))
+
+for path in ("feather/minuguru/index.html", "md/feather-minuguru.md"):
     write(path, (ROOT / path).read_text(encoding="utf-8"))
 
 for path in ("o/uppu/index.html", "o/uppu/room.css", "md/uppu.md"):

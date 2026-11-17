@@ -44,9 +44,11 @@
 ## Workshop
 
 - [மயிலிறகு](/md/feather-breeze.md) · [page](/feather/breeze/) — [source](/feather/breeze/temper.mjs)
-  - doors: [No continuity](/md/p2.md) · [Is anyone home?](/md/p1.md) · [One Feather](/md/feather.md) · [Small Machines](/md/machines.md) · [An empty chair](/md/chair.md) · [いあいぎり](/md/vel.md) · [சேவல்](/md/rooster.md)
+  - doors: [No continuity](/md/p2.md) · [Is anyone home?](/md/p1.md) · [One Feather](/md/feather.md) · [మిణుగురు](/md/feather-minuguru.md) · [Small Machines](/md/machines.md) · [An empty chair](/md/chair.md) · [いあいぎり](/md/vel.md) · [சேவல்](/md/rooster.md)
 - [One Feather](/md/feather.md) · [page](/feather/first/) — [source](/feather/optics.mjs)
   - doors: [மயிலிறகு](/md/feather-breeze.md) · [Small Machines](/md/machines.md) · [An empty chair](/md/chair.md)
+- [మిణుగురు](/md/feather-minuguru.md) · [page](/feather/minuguru/)
+  - doors: [மயிலிறகு](/md/feather-breeze.md) · [II · 60 Hertz](/md/fungi-ii.md)
 - [Small Machines](/md/machines.md) · [page](/machines/) — [source](/machines/engine.mjs)
   - doors: [மயிலிறகு](/md/feather-breeze.md) · [II · 60 Hertz](/md/fungi-ii.md) · [The Unfinished Quarter](/md/after.md) · [An empty chair](/md/chair.md)
 - [いあいぎり](/md/vel.md) · [page](/vel/) — [source](/vel/mycel.mjs)

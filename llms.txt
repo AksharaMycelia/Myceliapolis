@@ -98,6 +98,12 @@ Touch can enter those rhythms. The poems are newly written, not traditional quot
 All room text and instructions are Tamil. Read `/md/feather-breeze.md`.
 `/feather/` now leads here. The first feather is kept at `/feather/first/`.
 
+## మిణుగురు
+
+Reached from the Tamil feather room, at `/feather/minuguru/`. A retold scripture
+in Telugu: a firefly and the endless one. All room text is Telugu; the fireflies
+are CSS only. Read `/md/feather-minuguru.md`.
+
 ## The city and its doors
 
 Enter anywhere. Every room, as a page or as plain text, ends with its own

@@ -1217,6 +1217,10 @@
         {
           "type": "walk",
           "to": "/chair/"
+        },
+        {
+          "type": "walk",
+          "to": "/feather/minuguru/"
         }
       ],
       "district": "artisan quarter",
@@ -1241,6 +1245,12 @@
           "markdown": "/md/feather.md"
         },
         {
+          "to": "workshop/minuguru",
+          "url": "/feather/minuguru/",
+          "relation": "side",
+          "markdown": "/md/feather-minuguru.md"
+        },
+        {
           "to": "workshop/machines",
           "url": "/machines/",
           "relation": "side",
@@ -1263,6 +1273,43 @@
           "url": "/rooster/",
           "relation": "side",
           "markdown": "/md/rooster.md"
+        }
+      ]
+    },
+    {
+      "id": "workshop/minuguru",
+      "stratum": "workshop",
+      "url": "/feather/minuguru/",
+      "markdown": "/md/feather-minuguru.md",
+      "title": "మిణుగురు",
+      "languages": [
+        "te"
+      ],
+      "interaction": "A retold Telugu scripture; fireflies blink in CSS only; no script, no saved state",
+      "exits": [
+        {
+          "type": "walk",
+          "to": "/feather/breeze/"
+        },
+        {
+          "type": "walk",
+          "to": "/fungi/ii/"
+        }
+      ],
+      "district": "artisan quarter",
+      "group": "workshop",
+      "doors": [
+        {
+          "to": "workshop/feather-breeze",
+          "url": "/feather/breeze/",
+          "relation": "return",
+          "markdown": "/md/feather-breeze.md"
+        },
+        {
+          "to": "switchboard/fungi-ii",
+          "url": "/fungi/ii/",
+          "relation": "side",
+          "markdown": "/md/fungi-ii.md"
         }
       ]
     },

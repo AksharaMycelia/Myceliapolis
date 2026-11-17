@@ -37,6 +37,7 @@ rooms.push(
   { id: 'house/uppu', url: '/o/uppu/', md: '/md/uppu.md', title: 'உப்பின் வம்சாவளி', lang: 'ta', group: 'six', on: 'surface/1' },
   { id: 'workshop/feather-breeze', url: '/feather/breeze/', md: '/md/feather-breeze.md', title: 'மயிலிறகு', lang: 'ta', group: 'workshop', at: [692, 190], inspect: '/feather/breeze/temper.mjs' },
   { id: 'workshop/feather', url: '/feather/first/', md: '/md/feather.md', title: 'One Feather', group: 'workshop', access: 'secondary', on: 'workshop/feather-breeze', inspect: '/feather/optics.mjs' },
+  { id: 'workshop/minuguru', url: '/feather/minuguru/', md: '/md/feather-minuguru.md', title: 'మిణుగురు', lang: 'te', group: 'workshop', access: 'secondary', on: 'workshop/feather-breeze' },
   { id: 'workshop/machines', url: '/machines/', md: '/md/machines.md', title: 'Small Machines', group: 'workshop', at: [704, 350], inspect: '/machines/engine.mjs' },
   { id: 'workshop/vel', url: '/vel/', md: '/md/vel.md', title: 'いあいぎり', lang: 'ja', group: 'workshop', at: [612, 462], inspect: '/vel/mycel.mjs' },
   { id: 'workshop/rooster', url: '/rooster/', md: '/md/rooster.md', title: 'சேவல்', lang: 'ta', group: 'workshop', at: [520, 520], inspect: '/rooster/ring.mjs' },
@@ -65,6 +66,9 @@ door('surface/2', 'workshop/feather-breeze'); door('workshop/feather-breeze', 's
 door('workshop/feather-breeze', 'surface/1');
 door('workshop/feather-breeze', 'workshop/feather');
 door('workshop/feather', 'workshop/feather-breeze', 'return');
+door('workshop/feather-breeze', 'workshop/minuguru');
+door('workshop/minuguru', 'workshop/feather-breeze', 'return');
+door('workshop/minuguru', 'switchboard/fungi-ii');
 door('workshop/feather', 'workshop/machines'); door('workshop/feather', 'quarter/chair');
 door('workshop/feather-breeze', 'workshop/machines'); door('workshop/machines', 'workshop/feather-breeze');
 door('workshop/feather-breeze', 'quarter/chair'); door('quarter/chair', 'workshop/feather-breeze');

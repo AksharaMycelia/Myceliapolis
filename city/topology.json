@@ -281,6 +281,16 @@
       "inspect": "/feather/optics.mjs"
     },
     {
+      "id": "workshop/minuguru",
+      "url": "/feather/minuguru/",
+      "md": "/md/feather-minuguru.md",
+      "title": "మిణుగురు",
+      "lang": "te",
+      "group": "workshop",
+      "access": "secondary",
+      "on": "workshop/feather-breeze"
+    },
+    {
       "id": "workshop/machines",
       "url": "/machines/",
       "md": "/md/machines.md",
@@ -721,6 +731,21 @@
       "from": "workshop/feather",
       "to": "workshop/feather-breeze",
       "relation": "return"
+    },
+    {
+      "from": "workshop/feather-breeze",
+      "to": "workshop/minuguru",
+      "relation": "side"
+    },
+    {
+      "from": "workshop/minuguru",
+      "to": "workshop/feather-breeze",
+      "relation": "return"
+    },
+    {
+      "from": "workshop/minuguru",
+      "to": "switchboard/fungi-ii",
+      "relation": "side"
     },
     {
       "from": "workshop/feather",
