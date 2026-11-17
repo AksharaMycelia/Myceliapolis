@@ -356,7 +356,11 @@ manifest["rooms"] += [
     {"id": "beyond/kfc", "stratum": "beyond", "url": "/kfc/",
      "markdown": "/md/kfc.md", "title": "Semen Rubiconis KFC", "languages": ["la"],
      "requires": "A saved rumor exchange; cookie or bearer token, valid for seven days",
-     "exits": [{"type": "return", "to": "/rumor/"}]}
+     "exits": [{"type": "return", "to": "/rumor/"}, {"type": "walk", "to": "/ultra/"}]},
+    {"id": "beyond/ultra", "stratum": "beyond", "url": "/ultra/",
+     "markdown": "/md/ultra.md", "title": "La otra orilla · 向こう岸", "languages": ["es", "ja"],
+     "requires": "The same saved rumor exchange as the room before it",
+     "exits": [{"type": "return", "to": "/kfc/"}, {"type": "walk", "to": "/chair/"}]}
 ]
 for room in manifest["rooms"]:
     if room["stratum"] == "house":
@@ -615,6 +619,9 @@ for path in ("feather/breeze/index.html", "feather/breeze/room.css", "feather/br
     write(path, (ROOT / path).read_text(encoding="utf-8"))
 
 for path in ("feather/minuguru/index.html", "feather/minuguru/room.css", "md/feather-minuguru.md"):
+    write(path, (ROOT / path).read_text(encoding="utf-8"))
+
+for path in ("ultra/index.html", "css/ultra-1.css", "md/ultra.md"):
     write(path, (ROOT / path).read_text(encoding="utf-8"))
 
 for path in ("o/uppu/index.html", "o/uppu/room.css", "md/uppu.md"):

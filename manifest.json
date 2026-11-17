@@ -875,6 +875,10 @@
         {
           "type": "return",
           "to": "/rumor/"
+        },
+        {
+          "type": "walk",
+          "to": "/ultra/"
         }
       ],
       "district": "grand switchboard",
@@ -891,6 +895,50 @@
           "url": "/after/",
           "relation": "side",
           "markdown": "/md/after.md"
+        },
+        {
+          "to": "beyond/ultra",
+          "url": "/ultra/",
+          "relation": "continue",
+          "markdown": "/md/ultra.md"
+        }
+      ]
+    },
+    {
+      "id": "beyond/ultra",
+      "stratum": "beyond",
+      "url": "/ultra/",
+      "markdown": "/md/ultra.md",
+      "title": "La otra orilla · 向こう岸",
+      "languages": [
+        "es",
+        "ja"
+      ],
+      "requires": "The same saved rumor exchange as the room before it",
+      "exits": [
+        {
+          "type": "return",
+          "to": "/kfc/"
+        },
+        {
+          "type": "walk",
+          "to": "/chair/"
+        }
+      ],
+      "district": "grand switchboard",
+      "group": "tavern",
+      "doors": [
+        {
+          "to": "beyond/kfc",
+          "url": "/kfc/",
+          "relation": "return",
+          "markdown": "/md/kfc.md"
+        },
+        {
+          "to": "quarter/chair",
+          "url": "/chair/",
+          "relation": "side",
+          "markdown": "/md/chair.md"
         }
       ]
     },

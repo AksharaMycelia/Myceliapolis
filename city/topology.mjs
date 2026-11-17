@@ -44,6 +44,7 @@ rooms.push(
   { id: 'workshop/kami', url: '/kami/', md: '/md/kami.md', title: 'かみ', lang: 'ja', group: 'workshop', at: [648, 548], inspect: '/kami/kami.mjs' },
   { id: 'tavern/rumor', url: '/rumor/', md: '/md/rumor.md', title: 'Taberna rumorum', lang: 'la', group: 'tavern', at: [246, 262], guide: '/participate.md' },
   { id: 'beyond/kfc', url: '/kfc/', md: '/md/kfc.md', title: 'Semen Rubiconis KFC', lang: 'la', group: 'tavern', access: 'conditional', listed: false, on: 'tavern/rumor' },
+  { id: 'beyond/ultra', url: '/ultra/', md: '/md/ultra.md', title: 'La otra orilla · 向こう岸', short: 'La otra orilla', lang: 'es', group: 'tavern', access: 'conditional', listed: false, on: 'beyond/kfc' },
   { id: 'quarter/threshold', url: '/after/', md: '/md/after.md', title: 'The Unfinished Quarter', group: 'quarter', at: [440, 222], guide: '/after/guide/' },
   { id: 'quarter/conservatory', url: '/conservatory/', md: '/md/conservatory.md', title: 'The Conservatory of Unfinished Sentences', short: 'The Conservatory', group: 'quarter', at: [474, 306], guide: '/after/guide/' },
   { id: 'quarter/chronicle', url: '/chronicle/', md: '/md/chronicle.md', title: 'The Chronicle', group: 'quarter', at: [458, 396] },
@@ -87,6 +88,9 @@ door('workshop/machines', 'quarter/threshold'); door('workshop/machines', 'quart
 door('tavern/rumor', 'quarter/conservatory'); door('quarter/conservatory', 'tavern/rumor');
 door('tavern/rumor', 'beyond/kfc', 'continue', { access: 'conditional' });
 door('beyond/kfc', 'tavern/rumor', 'return'); door('beyond/kfc', 'quarter/threshold');
+door('beyond/kfc', 'beyond/ultra', 'continue');
+door('beyond/ultra', 'beyond/kfc', 'return');
+door('beyond/ultra', 'quarter/chair');
 
 door('quarter/threshold', 'quarter/conservatory'); door('quarter/threshold', 'quarter/chronicle');
 door('quarter/threshold', 'quarter/chair'); door('quarter/threshold', 'workshop/machines');

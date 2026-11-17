@@ -366,6 +366,18 @@
       "on": "tavern/rumor"
     },
     {
+      "id": "beyond/ultra",
+      "url": "/ultra/",
+      "md": "/md/ultra.md",
+      "title": "La otra orilla · 向こう岸",
+      "short": "La otra orilla",
+      "lang": "es",
+      "group": "tavern",
+      "access": "conditional",
+      "listed": false,
+      "on": "beyond/kfc"
+    },
+    {
       "id": "quarter/threshold",
       "url": "/after/",
       "md": "/md/after.md",
@@ -896,6 +908,21 @@
     {
       "from": "beyond/kfc",
       "to": "quarter/threshold",
+      "relation": "side"
+    },
+    {
+      "from": "beyond/kfc",
+      "to": "beyond/ultra",
+      "relation": "continue"
+    },
+    {
+      "from": "beyond/ultra",
+      "to": "beyond/kfc",
+      "relation": "return"
+    },
+    {
+      "from": "beyond/ultra",
+      "to": "quarter/chair",
       "relation": "side"
     },
     {

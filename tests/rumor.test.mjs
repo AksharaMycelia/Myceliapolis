@@ -40,6 +40,8 @@ test('KFC HTML and Markdown require a saved exchange, including guessed index pa
   const env=environment();
   for(const path of ['/kfc/','/md/kfc.md','/rumor/received/']) assert.equal((await call(env,path)).status,403);
   assert.equal((await call(env,'/kfc/index.html')).status,404);
+  for(const path of ['/ultra/','/md/ultra.md']) assert.equal((await call(env,path)).status,403);
+  assert.equal((await call(env,'/ultra/index.html')).status,404);
   assert.equal(await (await call(env,'/o/venti/')).text(),'static page');
 });
 test('a persisted rumor returns different content and unlocks only Latin KFC',async()=>{
@@ -91,6 +93,8 @@ test('ordinary form post works without JavaScript and supplies an HttpOnly cooki
   assert.equal(result.status,303);assert.equal(result.headers.get('Location'),'/rumor/received/');
   const cookie=result.headers.get('Set-Cookie');assert.match(cookie,/Secure; HttpOnly; SameSite=Lax/);
   assert.equal((await call(env,'/kfc/',{headers:{Cookie:cookie.split(';')[0]}})).status,200);
+  const ultra=await call(env,'/ultra/',{headers:{Cookie:cookie.split(';')[0]}});
+  assert.equal(ultra.status,200);assert.equal(ultra.headers.get('X-Robots-Tag'),'noindex, nofollow');
   const unicode=await call(env,'/rumor/exchange/',{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:new URLSearchParams({rumor:'🐶'.repeat(2000),request_id:crypto.randomUUID()})});
   assert.equal(unicode.status,303,'The form must accept the same Unicode length as JSON');
 });
