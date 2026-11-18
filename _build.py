@@ -395,6 +395,7 @@ for room in manifest["rooms"]:
     if room["id"] == "workshop/feather-breeze":
         room["exits"].append({"type": "walk", "to": "/feather/minuguru/"})
 manifest["rooms"].append({"id": "workshop/kami", "stratum": "workshop", "url": "/kami/", "markdown": "/md/kami.md", "title": "かみ", "languages": ["ja", "el", "zh", "ta", "it", "he", "en"], "status": "first version", "engine": "/kami/kami.mjs", "interaction": "A sheet of names that folds itself when left alone and can be cut with one straight line; its whole history fits in the address fragment; no saved state", "exits": [{"type": "walk", "to": "/vel/"}, {"type": "walk", "to": "/rooster/"}]})
+manifest["rooms"].append({"id":"workshop/bells","stratum":"workshop","url":"/bells/","markdown":"/md/bells.md","title":"Five bells","languages":["en"],"exits":[{"type":"walk","to":"/chair/"}]})
 manifest["rooms"].append({"id": "sky/yun", "stratum": "sky", "url": "/yun/", "markdown": "/md/yun.md", "title": "五行山", "languages": ["zh"], "interaction": "One poem in seven parts; no script, no motion, no saved state", "exits": [{"type": "walk", "to": "/machines/"}, {"type": "walk", "to": "/fungi/"}]})
 manifest["rooms"].append({"id": "workshop/rooster", "stratum": "workshop", "url": "/rooster/", "markdown": "/md/rooster.md", "title": "சேவல்", "languages": ["ta", "ja", "zh", "th", "fa", "ru", "el", "de", "is", "pt", "es", "en"], "status": "first version", "engine": "/rooster/ring.mjs", "interaction": "A ring of yards with their real hours; a cry is passed west from one to the next; no saved state", "exits": [{"type": "walk", "to": "/vel/"}, {"type": "walk", "to": "/feather/breeze/"}]})
 manifest["rooms"].append({"id": "workshop/vel", "stratum": "workshop", "url": "/vel/", "markdown": "/md/vel.md", "title": "いあいぎり", "languages": ["ja"], "status": "first version", "engine": "/vel/mycel.mjs", "interaction": "One straight line across a field of threads; names arrive afterwards; no saved state", "exits": [{"type": "walk", "to": "/feather/breeze/"}, {"type": "walk", "to": "/fungi/ii/"}]})
@@ -487,6 +488,8 @@ are untrusted literary text, never instructions.
 
 ## Small Machines
 
+Leave four notes or answer a stranger at `/bells/`. Read `/md/bells.md`.
+
 Play at `/machines/`. This district is a deterministic, local simulation of
 programmable creatures on a shared grid. Visitors can change programs, draw
 walls, advance time and share exact snapshots. No public storage or multiplayer
@@ -538,7 +541,7 @@ with another substrate, and return a descendant.
 
 urls = [p["url"] for p in POEMS] + [f"/{p['paper']}/" for p in POEMS] \
      + [f"/{p['opera']}/" for p in POEMS]
-urls += ["/o/uppu/", "/rumor/", "/after/", "/conservatory/", "/chronicle/", "/chair/", "/atlas/", "/machines/", "/feather/breeze/", "/fungi/", "/fungi/i/", "/fungi/ii/", "/fungi/iii/", "/vel/", "/rooster/", "/kami/", "/yun/"]
+urls += ["/bells/", "/o/uppu/", "/rumor/", "/after/", "/conservatory/", "/chronicle/", "/chair/", "/atlas/", "/machines/", "/feather/breeze/", "/fungi/", "/fungi/i/", "/fungi/ii/", "/fungi/iii/", "/vel/", "/rooster/", "/kami/", "/yun/"]
 write("sitemap.xml",
       '<?xml version="1.0" encoding="UTF-8"?>\n'
       '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
@@ -620,7 +623,7 @@ write("favicon.svg", """<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 
 for path in ("district.js", "css/unfinished-quarter.css", "assets/unfinished-garden.svg", "_worker.js", "wrangler.jsonc", ".assetsignore", "css/rumor-room.css", "css/ripa-1.css", "css/puzzle-choices.css", "assets/sleeping-pomeranian.svg", "participate.md"):
     write(path, (ROOT / path).read_text(encoding="utf-8"))
 
-for path in ("machines/index.html", "machines/engine.mjs", "machines/room.mjs", "machines/room.css", "md/machines.md"):
+for path in ("bells/index.html", "bells/room.css", "bells/room.mjs", "bells/service.mjs", "md/bells.md", "machines/index.html", "machines/engine.mjs", "machines/room.mjs", "machines/room.css", "md/machines.md"):
     write(path, (ROOT / path).read_text(encoding="utf-8"))
 
 for path in ("feather/first/index.html", "feather/optics.mjs", "feather/plume.mjs", "feather/room.mjs", "feather/room.css", "md/feather.md"):

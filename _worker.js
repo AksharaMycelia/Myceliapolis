@@ -136,7 +136,9 @@ async function exchange(request,db,api,now) {
     return errorPage('Responsum incertum est. Eundem rumorem eadem clave petitionis repete.',503,api,'temporarily_unavailable',id,text);
   }
 }
+import { bellRequest } from './bells/service.mjs';
 async function handle(request,env) {
+  if(new URL(request.url).pathname === '/api/bells/') return bellRequest(request,env.RUMORS_DB);
   const districtResponse=await handleDistrict(request,env);
   if(districtResponse)return districtResponse;
   const path=new URL(request.url).pathname;

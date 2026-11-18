@@ -1114,6 +1114,12 @@
           "url": "/conservatory/",
           "relation": "side",
           "markdown": "/md/conservatory.md"
+        },
+        {
+          "to": "workshop/bells",
+          "url": "/bells/",
+          "relation": "side",
+          "markdown": "/md/bells.md"
         }
       ]
     },
@@ -1782,6 +1788,31 @@
           "relation": "return",
           "markdown": "/md/o1.md",
           "label": "யாராவது வீட்டில் இருக்கிறார்களா?"
+        }
+      ]
+    },
+    {
+      "id": "workshop/bells",
+      "stratum": "workshop",
+      "url": "/bells/",
+      "markdown": "/md/bells.md",
+      "title": "Five bells",
+      "languages": [
+        "en"
+      ],
+      "exits": [
+        {
+          "type": "walk",
+          "to": "/chair/"
+        }
+      ],
+      "group": "workshop",
+      "doors": [
+        {
+          "to": "quarter/chair",
+          "url": "/chair/",
+          "relation": "side",
+          "markdown": "/md/chair.md"
         }
       ]
     }

@@ -53,6 +53,7 @@ rooms.push(
   { id: 'switchboard/fungi-ii', url: '/fungi/ii/', md: '/md/fungi-ii.md', title: '60 Hertz', short: 'II · 60 Hertz', group: 'floor', on: 'switchboard/fungi', inspect: '/fungi/field.mjs' },
   { id: 'switchboard/fungi-iii', url: '/fungi/iii/', md: '/md/fungi-iii.md', title: 'Cathedralis sine nomine', short: 'III · Cathedralis sine nomine', group: 'floor', on: 'switchboard/fungi', inspect: '/fungi/vault.mjs' },
   { id: 'sky/yun', url: '/yun/', md: '/md/yun.md', title: '五行山', lang: 'zh', group: 'sky', at: [470, 30] },
+  { id: 'workshop/bells', url: '/bells/', md: '/md/bells.md', title: 'Five bells', group: 'workshop', at: [515, 325] },
   { id: 'quarter/chair', url: '/chair/', md: '/md/chair.md', title: 'A Room with an Empty Chair', short: 'An empty chair', group: 'clearing', at: [400, 306] },
   { id: 'quarter/atlas', url: '/atlas/', md: '/md/index.md', title: 'City atlas', group: 'map', listed: false },
   { id: 'city/lost', url: '/404', title: 'Galileo is sleeping', group: 'map', listed: false },
@@ -101,6 +102,7 @@ door('quarter/threshold', 'switchboard/fungi-iii');
 door('quarter/conservatory', 'quarter/threshold'); door('quarter/conservatory', 'quarter/chronicle');
 door('quarter/chronicle', 'quarter/conservatory'); door('quarter/chronicle', 'quarter/threshold');
 door('quarter/chair', 'quarter/conservatory');
+door('quarter/chair', 'workshop/bells'); door('workshop/bells', 'quarter/chair');
 
 door('switchboard/fungi', 'switchboard/fungi-i', 'continue');
 door('switchboard/fungi', 'switchboard/fungi-ii'); door('switchboard/fungi', 'switchboard/fungi-iii');
