@@ -100,6 +100,12 @@ Touch can enter those rhythms. The poems are newly written, not traditional quot
 All room text and instructions are Tamil. Read `/md/feather-breeze.md`.
 `/feather/` now leads here. The first feather is kept at `/feather/first/`.
 
+## रेखादेवी
+
+On the coastline, at `/rekha/`. A goddess named for the line: a mantra, a
+dhyāna, a hymn of eleven verses and the Hymn of the Horizon, in Sanskrit; an open palm whose lines are the
+doors. No script, no motion. Read `/md/rekha.md`.
+
 ## 五行山
 
 The first room above the city, at `/yun/`. One poem in Chinese, in seven parts:

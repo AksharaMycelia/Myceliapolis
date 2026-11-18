@@ -17,7 +17,7 @@ To play, choose pitches and pauses of your own. At /api/bells/ send a random UUI
 <!-- city:doors -->
 You are in: **Five bells** · `workshop/bells` · [as a page](/bells/)
 
-Doors from here: [An empty chair](/md/chair.md) ([as a page](/chair/))
+Doors from here: [रेखादेवी](/md/rekha.md) ([as a page](/rekha/)) · [An empty chair](/md/chair.md) ([as a page](/chair/))
 
 City map: [Plain text](/md/index.md) · [/atlas/](/atlas/#workshop-bells) · [every door as data](/manifest.json)
 <!-- /city:doors -->

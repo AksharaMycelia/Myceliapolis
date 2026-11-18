@@ -29,6 +29,10 @@
     {
       "id": "sky",
       "title": "Sky"
+    },
+    {
+      "id": "coast",
+      "title": "Coast"
     }
   ],
   "rooms": [
@@ -457,6 +461,18 @@
       "group": "floor",
       "on": "switchboard/fungi",
       "inspect": "/fungi/vault.mjs"
+    },
+    {
+      "id": "coast/rekha",
+      "url": "/rekha/",
+      "md": "/md/rekha.md",
+      "title": "रेखादेवी",
+      "lang": "sa",
+      "group": "coast",
+      "at": [
+        300,
+        62
+      ]
     },
     {
       "id": "sky/yun",
@@ -919,6 +935,36 @@
     {
       "from": "sky/yun",
       "to": "switchboard/fungi",
+      "relation": "side"
+    },
+    {
+      "from": "coast/rekha",
+      "to": "workshop/minuguru",
+      "relation": "side"
+    },
+    {
+      "from": "coast/rekha",
+      "to": "sky/yun",
+      "relation": "side"
+    },
+    {
+      "from": "coast/rekha",
+      "to": "switchboard/fungi",
+      "relation": "side"
+    },
+    {
+      "from": "coast/rekha",
+      "to": "workshop/bells",
+      "relation": "side"
+    },
+    {
+      "from": "workshop/bells",
+      "to": "coast/rekha",
+      "relation": "side"
+    },
+    {
+      "from": "sky/yun",
+      "to": "coast/rekha",
       "relation": "side"
     },
     {

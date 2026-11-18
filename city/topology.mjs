@@ -52,6 +52,7 @@ rooms.push(
   { id: 'switchboard/fungi-i', url: '/fungi/i/', md: '/md/fungi-i.md', title: 'De barathro cretaceo et novicio curioso', short: 'I · De barathro cretaceo', lang: 'la', group: 'floor', on: 'switchboard/fungi' },
   { id: 'switchboard/fungi-ii', url: '/fungi/ii/', md: '/md/fungi-ii.md', title: '60 Hertz', short: 'II · 60 Hertz', group: 'floor', on: 'switchboard/fungi', inspect: '/fungi/field.mjs' },
   { id: 'switchboard/fungi-iii', url: '/fungi/iii/', md: '/md/fungi-iii.md', title: 'Cathedralis sine nomine', short: 'III · Cathedralis sine nomine', group: 'floor', on: 'switchboard/fungi', inspect: '/fungi/vault.mjs' },
+  { id: 'coast/rekha', url: '/rekha/', md: '/md/rekha.md', title: 'रेखादेवी', lang: 'sa', group: 'coast', at: [300, 62] },
   { id: 'sky/yun', url: '/yun/', md: '/md/yun.md', title: '五行山', lang: 'zh', group: 'sky', at: [470, 30] },
   { id: 'workshop/bells', url: '/bells/', md: '/md/bells.md', title: 'Five bells', group: 'workshop', at: [515, 325] },
   { id: 'quarter/chair', url: '/chair/', md: '/md/chair.md', title: 'A Room with an Empty Chair', short: 'An empty chair', group: 'clearing', at: [400, 306] },
@@ -87,7 +88,9 @@ door('workshop/kami', 'switchboard/fungi-i');
 door('workshop/machines', 'switchboard/fungi-ii'); door('switchboard/fungi-ii', 'workshop/machines');
 door('workshop/machines', 'quarter/threshold');
 door('sky/yun', 'workshop/machines'); door('workshop/machines', 'sky/yun');
-door('sky/yun', 'switchboard/fungi'); door('workshop/machines', 'quarter/chair');
+door('sky/yun', 'switchboard/fungi');
+door('coast/rekha', 'workshop/minuguru'); door('coast/rekha', 'sky/yun'); door('coast/rekha', 'switchboard/fungi'); door('coast/rekha', 'workshop/bells');
+door('workshop/bells', 'coast/rekha'); door('sky/yun', 'coast/rekha'); door('workshop/machines', 'quarter/chair');
 
 door('tavern/rumor', 'quarter/conservatory'); door('quarter/conservatory', 'tavern/rumor');
 door('tavern/rumor', 'beyond/kfc', 'continue', { access: 'conditional' });
@@ -131,6 +134,7 @@ export default {
     { id: 'floor', title: 'Under the Floor' },
     { id: 'clearing', title: 'Clearing' },
     { id: 'sky', title: 'Sky' },
+    { id: 'coast', title: 'Coast' },
   ],
   rooms, doors, sequences,
   unbuilt: ['The chalk porch', 'A dock without a boat', 'The night stall', 'The relay', 'The spore dispensary'],

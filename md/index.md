@@ -58,7 +58,7 @@
 - [かみ](/md/kami.md) · [page](/kami/) — [source](/kami/kami.mjs)
   - doors: [いあいぎり](/md/vel.md) · [சேவல்](/md/rooster.md) · [I · De barathro cretaceo](/md/fungi-i.md)
 - [Five bells](/md/bells.md) · [page](/bells/)
-  - doors: [An empty chair](/md/chair.md)
+  - doors: [रेखादेवी](/md/rekha.md) · [An empty chair](/md/chair.md)
 
 ## Tavern
 
@@ -93,7 +93,12 @@
 ## Sky
 
 - [五行山](/md/yun.md) · [page](/yun/)
-  - doors: [Small Machines](/md/machines.md) · [Under the Floor](/md/fungi.md)
+  - doors: [Small Machines](/md/machines.md) · [Under the Floor](/md/fungi.md) · [रेखादेवी](/md/rekha.md)
+
+## Coast
+
+- [रेखादेवी](/md/rekha.md) · [page](/rekha/)
+  - doors: [మిణుగురు](/md/feather-minuguru.md) · [五行山](/md/yun.md) · [Under the Floor](/md/fungi.md) · [Five bells](/md/bells.md)
 
 ## Not built
 

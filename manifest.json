@@ -43,6 +43,10 @@
     {
       "id": "sky",
       "title": "Sky"
+    },
+    {
+      "id": "coast",
+      "title": "Coast"
     }
   ],
   "rooms": [
@@ -1462,6 +1466,69 @@
           "url": "/fungi/",
           "relation": "side",
           "markdown": "/md/fungi.md"
+        },
+        {
+          "to": "coast/rekha",
+          "url": "/rekha/",
+          "relation": "side",
+          "markdown": "/md/rekha.md"
+        }
+      ]
+    },
+    {
+      "id": "coast/rekha",
+      "stratum": "coast",
+      "url": "/rekha/",
+      "markdown": "/md/rekha.md",
+      "title": "रेखादेवी",
+      "languages": [
+        "sa"
+      ],
+      "interaction": "A hymn and an open palm; the palm lines are the doors; no script, no motion",
+      "exits": [
+        {
+          "type": "walk",
+          "to": "/feather/minuguru/"
+        },
+        {
+          "type": "walk",
+          "to": "/yun/"
+        },
+        {
+          "type": "walk",
+          "to": "/fungi/"
+        },
+        {
+          "type": "walk",
+          "to": "/bells/"
+        }
+      ],
+      "district": "coast",
+      "group": "coast",
+      "doors": [
+        {
+          "to": "workshop/minuguru",
+          "url": "/feather/minuguru/",
+          "relation": "side",
+          "markdown": "/md/feather-minuguru.md"
+        },
+        {
+          "to": "sky/yun",
+          "url": "/yun/",
+          "relation": "side",
+          "markdown": "/md/yun.md"
+        },
+        {
+          "to": "switchboard/fungi",
+          "url": "/fungi/",
+          "relation": "side",
+          "markdown": "/md/fungi.md"
+        },
+        {
+          "to": "workshop/bells",
+          "url": "/bells/",
+          "relation": "side",
+          "markdown": "/md/bells.md"
         }
       ]
     },
@@ -1808,6 +1875,12 @@
       ],
       "group": "workshop",
       "doors": [
+        {
+          "to": "coast/rekha",
+          "url": "/rekha/",
+          "relation": "side",
+          "markdown": "/md/rekha.md"
+        },
         {
           "to": "quarter/chair",
           "url": "/chair/",

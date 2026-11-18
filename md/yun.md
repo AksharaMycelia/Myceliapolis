@@ -99,7 +99,7 @@
 <!-- city:doors -->
 你在: **五行山** · `sky/yun` · [作为页面](/yun/)
 
-从这里出去的门: [Small Machines](/md/machines.md) ([作为页面](/machines/)) · [Under the Floor](/md/fungi.md) ([作为页面](/fungi/))
+从这里出去的门: [Small Machines](/md/machines.md) ([作为页面](/machines/)) · [Under the Floor](/md/fungi.md) ([作为页面](/fungi/)) · [रेखादेवी](/md/rekha.md) ([作为页面](/rekha/))
 
 城市地图: [纯文本](/md/index.md) · [/atlas/](/atlas/#sky-yun) · [所有的门（数据）](/manifest.json)
 <!-- /city:doors -->

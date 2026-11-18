@@ -21,6 +21,7 @@ const FRAME = {
   it: { doors: 'Porte', map: 'Mappa della città', text: 'Testo semplice', here: 'Sei in', also: 'come pagina', from: 'Porte da qui', data: 'ogni porta come dati' },
   la: { doors: 'Ostia', map: 'Tabula urbis', text: 'Textus simplex', here: 'Hic es', also: 'ut pagina', from: 'Ostia hinc', data: 'omnia ostia ut data' },
   ja: { doors: 'とびら', map: 'まちの　ちず', text: 'テキスト', here: 'いま　いる　ところ', also: 'ページ', from: 'ここからの　とびら', data: 'すべての　とびら（データ）' },
+  sa: { doors: 'द्वाराणि', map: 'नगरचित्रम्', text: 'सरलपाठः', here: 'अत्र त्वम्', also: 'पृष्ठरूपेण', from: 'इतः द्वाराणि', data: 'सर्वाणि द्वाराणि दत्तरूपेण' },
   zh: { doors: '门', map: '城市地图', text: '纯文本', here: '你在', also: '作为页面', from: '从这里出去的门', data: '所有的门（数据）' },
   es: { doors: 'Puertas', map: 'Mapa de la ciudad', text: 'Texto plano', here: 'Estás en', also: 'como página', from: 'Puertas desde aquí', data: 'todas las puertas como datos' },
   te: { doors: 'తలుపులు', map: 'నగర పటం', text: 'సాదా వచనం', here: 'మీరు ఉన్న చోటు', also: 'పేజీగా', from: 'ఇక్కడి నుండి తలుపులు', data: 'అన్ని తలుపులూ డేటాగా' },
