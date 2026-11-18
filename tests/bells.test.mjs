@@ -45,3 +45,18 @@ test('out-of-range notes or time travel cannot enter the room', async () => {
     assert.equal((await visit(key,{notes})).status,400);
   assert.equal(await (await visit(key)).json(),null);
 });
+
+test('a reader can discover the rules, follow a duet, and hear the spoon without a key', async () => {
+  const visit = room();
+  const card = await (await visit('')).json();
+  assert.equal(card.listen,'/api/bells/?listen');
+  const notes = [[0,0],[1,50],[3,55],[4,100]];
+  const {id} = await (await visit(crypto.randomUUID(),{notes})).json();
+  const open = await (await visit('',undefined,'?listen')).json();
+  assert.equal(open.id,id);
+  await visit(crypto.randomUUID(),{id,notes:[[0,40000]]});
+  const duet = await (await visit('',undefined,'?score='+id)).json();
+  assert.deepEqual(duet.downstairs.at(-1),[40100,'G3']);
+  assert.deepEqual(duet.spoon_taps_ms,[65,114,184,40165,40214,40284]);
+  assert.equal((await visit('',{notes})).status,400);
+});

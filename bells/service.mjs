@@ -10,17 +10,43 @@ function valid(notes, count) {
 function score(row) {
   const notes = JSON.parse(row.notes);
   if (row.tone !== null) notes.push([row.tone, notes[3][1] + row.delay]);
-  return {id:row.id, notes};
+  const names = ['G3', 'Bb3', 'C4', 'D4', 'G4'];
+  const upstairs = notes.flatMap(([pitch, time]) => pitch === 0
+    ? [65, 114, 184].map(delay => time + delay) : []);
+  return {
+    id: row.id,
+    notes,
+    downstairs: notes.map(([pitch, time]) => [time, names[pitch]]),
+    spoon_taps_ms: upstairs,
+    permalink: '/api/bells/?score=' + row.id
+  };
 }
 export async function bellRequest(request, db) {
   const url = new URL(request.url);
   const key = request.headers.get('X-Bell-Key') || '';
-  if (!uuid.test(key)) return send({error:'This room needs a visitor key.'},400);
+  if (request.method === 'GET' && !key && !url.search) {
+    return send({
+      room: '/md/bells.md',
+      listen: '/api/bells/?listen',
+      write: 'POST /api/bells/ with Content-Type application/json and X-Bell-Key set to your own random UUID v4.',
+      four: {notes: [[0,0],[3,480],[2,960],[0,2420]]},
+      fifth: {id: 'the open score ID', notes: [[1,800]]},
+      timing: 'Milliseconds from the first note for a new score. For the fifth note only, milliseconds after the fourth.'
+    });
+  }
+  const publicRead = request.method === 'GET' && (url.searchParams.has('score') || (!key && url.searchParams.has('listen')));
+  if (!publicRead && !uuid.test(key)) return send({error:'This room needs a visitor key.'},400);
   const digest = await crypto.subtle.digest('SHA-256',new TextEncoder().encode(key));
   const player = Array.from(new Uint8Array(digest), n => n.toString(16).padStart(2,'0')).join('');
   await db.prepare(`CREATE TABLE IF NOT EXISTS bell_scores (
     id TEXT PRIMARY KEY, player TEXT UNIQUE NOT NULL, notes TEXT NOT NULL,
     tone INTEGER, delay INTEGER, respondent TEXT)`).run();
+  if (request.method === 'GET' && url.searchParams.has('score')) {
+    const id = url.searchParams.get('score');
+    if (!uuid.test(id)) return send({error:'Unknown score.'},404);
+    const row = await db.prepare('SELECT * FROM bell_scores WHERE id=?').bind(id).first();
+    return row ? send(score(row)) : send({error:'Unknown score.'},404);
+  }
   const own = () => db.prepare('SELECT * FROM bell_scores WHERE player=?').bind(player).first();
   if (request.method === 'GET') {
     const row = url.searchParams.has('listen')
