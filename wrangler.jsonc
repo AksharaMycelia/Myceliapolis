@@ -36,6 +36,7 @@
       "/chair/*",
       "/atlas",
       "/atlas/*",
+      "/api/bells/*",
       "/api/quarter",
       "/api/quarter/*",
       "/api/fragments",

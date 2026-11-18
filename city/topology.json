@@ -471,6 +471,17 @@
       ]
     },
     {
+      "id": "workshop/bells",
+      "url": "/bells/",
+      "md": "/md/bells.md",
+      "title": "Five bells",
+      "group": "workshop",
+      "at": [
+        515,
+        325
+      ]
+    },
+    {
       "id": "quarter/chair",
       "url": "/chair/",
       "md": "/md/chair.md",
@@ -1004,6 +1015,16 @@
     {
       "from": "quarter/chair",
       "to": "quarter/conservatory",
+      "relation": "side"
+    },
+    {
+      "from": "quarter/chair",
+      "to": "workshop/bells",
+      "relation": "side"
+    },
+    {
+      "from": "workshop/bells",
+      "to": "quarter/chair",
       "relation": "side"
     },
     {

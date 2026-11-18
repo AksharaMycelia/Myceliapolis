@@ -57,6 +57,8 @@
   - doors: [いあいぎり](/md/vel.md) · [மயிலிறகு](/md/feather-breeze.md) · [II · 60 Hertz](/md/fungi-ii.md) · [かみ](/md/kami.md)
 - [かみ](/md/kami.md) · [page](/kami/) — [source](/kami/kami.mjs)
   - doors: [いあいぎり](/md/vel.md) · [சேவல்](/md/rooster.md) · [I · De barathro cretaceo](/md/fungi-i.md)
+- [Five bells](/md/bells.md) · [page](/bells/)
+  - doors: [An empty chair](/md/chair.md)
 
 ## Tavern
 
@@ -86,7 +88,7 @@
 ## Clearing
 
 - [A Room with an Empty Chair](/md/chair.md) · [page](/chair/)
-  - doors: [மயிலிறகு](/md/feather-breeze.md) · [The Conservatory](/md/conservatory.md)
+  - doors: [மயிலிறகு](/md/feather-breeze.md) · [The Conservatory](/md/conservatory.md) · [Five bells](/md/bells.md)
 
 ## Sky
 
