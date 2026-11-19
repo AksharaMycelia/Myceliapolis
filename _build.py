@@ -102,7 +102,7 @@ FONTS = ('<link rel="preconnect" href="https://fonts.googleapis.com">'
 def shell(title, desc, body, cls, depth, canonical, md=None, extra="", lang="en"):
     up = "../" * depth
     mdlink = f'\n<link rel="alternate" type="text/markdown" href="{md}">' if md else ""
-    surface_css = f'<link rel="stylesheet" href="{up}css/surface-six.css?v=2">' if cls == "surface" else ""
+    surface_css = f'<link rel="stylesheet" href="{up}css/surface-six.css?v=3">' if cls == "surface" else ""
     devanagari = ('<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Devanagari:wght@400&display=swap" rel="stylesheet">'
                   if canonical == "/hunger-goddess/" else "")
     return f"""<!DOCTYPE html>
