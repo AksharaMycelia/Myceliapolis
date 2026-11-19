@@ -1,7 +1,7 @@
   :root{--ink:#e9e4d4;--dim:#9a9480;--gold:#e8d36a;--bg:#07080a}
   *{box-sizing:border-box}
   html,body{margin:0;background:var(--bg);color:var(--ink)}
-  body{font-family:"Noto Serif Telugu","Noto Sans Telugu","Gautami","Nirmala UI","Telugu Sangam MN","Kohinoor Telugu",serif;line-height:1.95;font-size:1.08rem;min-height:100vh;position:relative;overflow-x:hidden}
+  body{font-family:"Noto Serif Telugu","Noto Sans Telugu","Gautami","Nirmala UI","Telugu Sangam MN","Kohinoor Telugu","Noto Serif Tamil",serif;line-height:1.95;font-size:1.08rem;min-height:100vh;position:relative;overflow-x:hidden}
   main{max-width:38rem;margin:0 auto;padding:4rem 1.4rem 6rem;position:relative;z-index:1}
   nav{font-size:.9rem;color:var(--dim);margin-bottom:3rem}
   nav a{color:var(--dim)}

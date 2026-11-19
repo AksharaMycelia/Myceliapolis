@@ -12,6 +12,7 @@ export const anchor = id => id.replace(/\//g, '-');
 export const doorsOf = id => CITY.doors.filter(d => d.from === id);
 export const STYLE = '/css/city-doors-1.css';
 export const HEAD = `<link rel="stylesheet" href="${STYLE}">`;
+export const INDIC_HEAD = '<link rel="stylesheet" href="/css/indic-1.css">';
 const name = r => r.short || r.title;
 const langOf = r => r.lang || 'en';
 

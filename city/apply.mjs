@@ -10,7 +10,7 @@
 import { readFileSync, writeFileSync, existsSync } from 'node:fs';
 import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { CITY, HEAD, doorsHtml, doorsMd, manifestDoors, atlasMd, room } from './doors.mjs';
+import { CITY, HEAD, INDIC_HEAD, doorsHtml, doorsMd, manifestDoors, atlasMd, room } from './doors.mjs';
 
 const args = process.argv.slice(2), check = args.includes('--check');
 const root = join(dirname(fileURLToPath(import.meta.url)), '..', args.find(a => !a.startsWith('--')) || '.');
@@ -32,6 +32,7 @@ function create(path, text) {
 }
 
 const H = [/\n?<!-- city:head -->[\s\S]*?<!-- \/city:head -->/, /\n?<!-- city:doors -->[\s\S]*?<!-- \/city:doors -->/];
+const INDIC = /[\u0900-\u097f\u0b80-\u0bff\u0c00-\u0c7f]/u;
 const M = /\n*---\n<!-- city:doors -->[\s\S]*?<!-- \/city:doors -->\n*$/;
 
 for (const r of CITY.rooms) {
@@ -41,7 +42,7 @@ for (const r of CITY.rooms) {
     const nav = doorsHtml(r.id, bare);
     if (!nav || !bare.includes('</head>') || !bare.includes('</body>')) return bare;
     return bare
-      .replace('</head>', `<!-- city:head -->${HEAD}<!-- /city:head -->\n</head>`)
+      .replace('</head>', `<!-- city:head -->${HEAD}${INDIC.test(bare + nav) ? INDIC_HEAD : ''}<!-- /city:head -->\n</head>`)
       .replace(/\n?<\/body>/, `\n<!-- city:doors -->${nav}<!-- /city:doors -->\n</body>`);
   });
   if (r.md && r.md !== '/md/index.md') put(r.md.slice(1), text =>

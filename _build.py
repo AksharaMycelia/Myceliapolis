@@ -103,8 +103,6 @@ def shell(title, desc, body, cls, depth, canonical, md=None, extra="", lang="en"
     up = "../" * depth
     mdlink = f'\n<link rel="alternate" type="text/markdown" href="{md}">' if md else ""
     surface_css = f'<link rel="stylesheet" href="{up}css/surface-six.css?v=3">' if cls == "surface" else ""
-    devanagari = ('<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Devanagari:wght@400&display=swap" rel="stylesheet">'
-                  if canonical == "/hunger-goddess/" else "")
     return f"""<!DOCTYPE html>
 <html lang="{lang}">
 <head>
@@ -121,7 +119,7 @@ def shell(title, desc, body, cls, depth, canonical, md=None, extra="", lang="en"
 <link rel="icon" href="{up}favicon.svg" type="image/svg+xml">
 {FONTS}
 <link rel="stylesheet" href="{up}css/city.css">
-{surface_css}{devanagari}
+{surface_css}
 <link rel="stylesheet" href="/css/puzzle-choices.css">
 </head>
 <body>
@@ -522,7 +520,10 @@ All room text and instructions are Tamil. Read `/md/feather-breeze.md`.
 
 On the coastline, at `/rekha/`. A goddess named for the line: a mantra, a
 dhyāna, a hymn of eleven verses and the Hymn of the Horizon, in Sanskrit; an open palm whose lines are the
-doors. No script, no motion. Read `/md/rekha.md`.
+doors. No script, no motion. Read the shrine at `/rekha/` for browser-rendered
+Devanagari, or `/md/rekha.md` for the Markdown. The Tamil feather at
+`/feather/breeze/` and Telugu firefly at `/feather/minuguru/` also load their
+fonts from Myceliapolis.
 
 ## लक्षिता
 
@@ -683,7 +684,9 @@ for path in ("ultra/index.html", "css/ultra-1.css", "md/ultra.md"):
 for path in ("o/uppu/index.html", "o/uppu/room.css", "md/uppu.md"):
     write(path, (ROOT / path).read_text(encoding="utf-8"))
 
-for name in ("NotoSerifTamil.ttf", "NotoSerifTamil-OFL.txt"):
+for name in ("NotoSerifTamil.ttf", "NotoSerifTamil-OFL.txt",
+             "NotoSerifDevanagari.woff2", "NotoSerifDevanagari-OFL.txt",
+             "NotoSerifTelugu.woff2", "NotoSerifTelugu-OFL.txt"):
     destination = Path(OUT) / "assets/fonts" / name
     destination.parent.mkdir(parents=True, exist_ok=True)
     shutil.copyfile(ROOT / "assets/fonts" / name, destination)
@@ -699,7 +702,7 @@ for path in ("fungi/index.html", "fungi/room.css", "fungi/field.mjs", "fungi/vau
              "rooster/index.html", "rooster/room.css", "rooster/room.mjs", "rooster/ring.mjs", "md/rooster.md",
              "kami/index.html", "kami/room.css", "kami/room.mjs", "kami/kami.mjs", "md/kami.md",
              "city/topology.mjs", "city/doors.mjs", "city/apply.mjs", "city/topology.json",
-             "css/city-doors-1.css", "css/atlas-1.css"):
+             "css/city-doors-1.css", "css/atlas-1.css", "css/indic-1.css"):
     write(path, (ROOT / path).read_text(encoding="utf-8"))
 
 # The doors: one authored list (city/topology.mjs), written into every room.

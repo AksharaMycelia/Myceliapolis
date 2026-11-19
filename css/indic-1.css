@@ -1,0 +1,46 @@
+/* Script-limited faces keep the surrounding Latin and CJK typography intact. */
+@font-face {
+  font-family: "Noto Serif Devanagari";
+  src: url("/assets/fonts/NotoSerifDevanagari.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  unicode-range: U+0900-097F, U+1CD0-1CF4, U+1CF7-1CF9, U+200C-200D, U+20A8, U+20B9, U+20F0, U+25CC, U+A830-A839, U+A8E0-A8FF, U+11B00-11B0A;
+}
+
+@font-face {
+  font-family: "Noto Serif Tamil";
+  src: url("/assets/fonts/NotoSerifTamil.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  unicode-range: U+0B80-0BFF, U+200C-200D, U+25CC, U+11FC0-11FFF;
+}
+
+@font-face {
+  font-family: "Noto Serif Telugu";
+  src: url("/assets/fonts/NotoSerifTelugu.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  unicode-range: U+0951-0952, U+0964-0965, U+0C00-0C7F, U+1CD5-1CD6, U+1CD8, U+1CDA, U+1CF2, U+200C-200D, U+25CC;
+}
+
+:root {
+  --indic-fonts: "Noto Serif Devanagari", "Noto Serif Tamil", "Noto Serif Telugu";
+}
+
+.city-doors {
+  font-family: var(--indic-fonts), Georgia, "Times New Roman", serif;
+}
+
+.places,
+.city-map,
+.tavern .received,
+.tavern textarea {
+  font-family: var(--indic-fonts), "EB Garamond", Georgia, serif;
+}
+
+.palm text[lang="te"] {
+  font-family: "Noto Serif Telugu", serif;
+}

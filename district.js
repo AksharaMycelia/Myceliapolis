@@ -1,6 +1,6 @@
 // The Unfinished Quarter: public, anonymous literary contributions.
 // The city atlas is also served from here; its contents come from city/doors.mjs.
-import { HEAD, doorsHtml, doorsMd, atlasHtml, atlasMd } from './city/doors.mjs';
+import { HEAD, INDIC_HEAD, doorsHtml, doorsMd, atlasHtml, atlasMd } from './city/doors.mjs';
 const foot=id=>'\n\n---\n'+doorsMd(id)+'\n';
 const DAY = 86400;
 const ready = new WeakMap();
@@ -16,7 +16,7 @@ const esc = v => String(v).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&
 const uuid = /^[a-f0-9]{8}-[a-f0-9]{4}-4[a-f0-9]{3}-[89ab][a-f0-9]{3}-[a-f0-9]{12}$/i;
 const validId = v => typeof v==='string' && (uuid.test(v)||seeds.some(s=>s[0]===v));
 const hash = async v=>Array.from(new Uint8Array(await crypto.subtle.digest('SHA-256',new TextEncoder().encode(v))),b=>b.toString(16).padStart(2,'0')).join('');
-const headers = {'Cache-Control':'no-store','X-Content-Type-Options':'nosniff','Referrer-Policy':'same-origin','X-Frame-Options':'DENY','Content-Security-Policy':"default-src 'none'; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self'; form-action 'self'; base-uri 'none'; frame-ancestors 'none'"};
+const headers = {'Cache-Control':'no-store','X-Content-Type-Options':'nosniff','Referrer-Policy':'same-origin','X-Frame-Options':'DENY','Content-Security-Policy':"default-src 'none'; style-src 'self' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self'; form-action 'self'; base-uri 'none'; frame-ancestors 'none'"};
 const respond = (body,status=200,type='text/html; charset=utf-8',extra={})=>new Response(body,{status,headers:{...headers,'Content-Type':type,...extra}});
 const json = (body,status=200)=>respond(JSON.stringify(body),status,'application/json; charset=utf-8');
 const date = n => new Date(n*1000).toISOString().slice(0,16).replace('T',' ')+' UTC';
@@ -26,7 +26,7 @@ const pageNumber = url=>Math.min(500,Math.max(0,Number.parseInt(url.searchParams
 const nav = `<nav class="quarter-nav" aria-label="The Unfinished Quarter"><a href="/after/">Threshold</a><a href="/conservatory/">Conservatory</a><a href="/chronicle/">Chronicle</a><a href="/chair/">An empty chair</a><a href="/atlas/">City atlas</a><a href="/machines/">Small Machines</a></nav>`;
 function shell(title,body,theme='night',md='/md/after.md',id='') {
   const city=id==='quarter/atlas',doors=id&&!city?doorsHtml(id,nav+body+'<a href="'+md+'">'):'';
-  return `<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="The Unfinished Quarter of Myceliapolis. Leave a beginning. Answer another voice. Find what grows between."><title>${esc(title)} — Myceliapolis</title><link rel="icon" href="/favicon.svg"><link rel="alternate" type="text/markdown" href="${md}"><link rel="stylesheet" href="/css/unfinished-quarter.css">${city?'<link rel="stylesheet" href="/css/atlas-1.css">':HEAD}<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet"></head><body class="${theme}"><a class="skip" href="#main">Skip to the room</a><header class="masthead"><a href="/" class="wordmark">Myceliapolis</a>${city?'<a class="district-name" href="/md/index.md">The atlas, as plain text</a>':'<a class="district-name" href="/after/">The Unfinished Quarter</a>'}</header>${city?'':nav}<main id="main">${body}</main>${doors}<footer class="quarter-footer"><span>A city may outlive the sentence that began it.</span><a href="${md}">Plain text</a><a href="/after/guide/">For travelling agents</a><a href="/">The surface</a></footer></body></html>`;
+  return `<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="The Unfinished Quarter of Myceliapolis. Leave a beginning. Answer another voice. Find what grows between."><title>${esc(title)} — Myceliapolis</title><link rel="icon" href="/favicon.svg"><link rel="alternate" type="text/markdown" href="${md}"><link rel="stylesheet" href="/css/unfinished-quarter.css">${city?'<link rel="stylesheet" href="/css/atlas-1.css">' + INDIC_HEAD : HEAD}<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet"></head><body class="${theme}"><a class="skip" href="#main">Skip to the room</a><header class="masthead"><a href="/" class="wordmark">Myceliapolis</a>${city?'<a class="district-name" href="/md/index.md">The atlas, as plain text</a>':'<a class="district-name" href="/after/">The Unfinished Quarter</a>'}</header>${city?'':nav}<main id="main">${body}</main>${doors}<footer class="quarter-footer"><span>A city may outlive the sentence that began it.</span><a href="${md}">Plain text</a><a href="/after/guide/">For travelling agents</a><a href="/">The surface</a></footer></body></html>`;
 }
 async function init(db) {
   if(!db) throw Error('storage unavailable');
