@@ -475,6 +475,30 @@
       ]
     },
     {
+      "id": "coast/laksita",
+      "url": "/laksita/",
+      "md": "/md/laksita.md",
+      "title": "लक्षिता",
+      "lang": "sa",
+      "group": "coast",
+      "at": [
+        198,
+        92
+      ]
+    },
+    {
+      "id": "sky/akasha",
+      "url": "/akasha/",
+      "md": "/md/akasha.md",
+      "title": "आकाशगीतम्",
+      "lang": "sa",
+      "group": "sky",
+      "at": [
+        112,
+        34
+      ]
+    },
+    {
       "id": "sky/yun",
       "url": "/yun/",
       "md": "/md/yun.md",
@@ -954,6 +978,41 @@
     },
     {
       "from": "coast/rekha",
+      "to": "workshop/bells",
+      "relation": "side"
+    },
+    {
+      "from": "coast/rekha",
+      "to": "coast/laksita",
+      "relation": "side"
+    },
+    {
+      "from": "coast/laksita",
+      "to": "sky/akasha",
+      "relation": "side"
+    },
+    {
+      "from": "coast/laksita",
+      "to": "coast/rekha",
+      "relation": "side"
+    },
+    {
+      "from": "sky/akasha",
+      "to": "coast/rekha",
+      "relation": "side"
+    },
+    {
+      "from": "sky/akasha",
+      "to": "coast/laksita",
+      "relation": "side"
+    },
+    {
+      "from": "sky/akasha",
+      "to": "switchboard/fungi",
+      "relation": "side"
+    },
+    {
+      "from": "sky/akasha",
       "to": "workshop/bells",
       "relation": "side"
     },

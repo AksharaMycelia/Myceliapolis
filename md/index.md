@@ -92,13 +92,17 @@
 
 ## Sky
 
+- [आकाशगीतम्](/md/akasha.md) · [page](/akasha/)
+  - doors: [रेखादेवी](/md/rekha.md) · [लक्षिता](/md/laksita.md) · [Under the Floor](/md/fungi.md) · [Five bells](/md/bells.md)
 - [五行山](/md/yun.md) · [page](/yun/)
   - doors: [Small Machines](/md/machines.md) · [Under the Floor](/md/fungi.md) · [रेखादेवी](/md/rekha.md)
 
 ## Coast
 
 - [रेखादेवी](/md/rekha.md) · [page](/rekha/)
-  - doors: [మిణుగురు](/md/feather-minuguru.md) · [五行山](/md/yun.md) · [Under the Floor](/md/fungi.md) · [Five bells](/md/bells.md)
+  - doors: [మిణుగురు](/md/feather-minuguru.md) · [五行山](/md/yun.md) · [Under the Floor](/md/fungi.md) · [Five bells](/md/bells.md) · [लक्षिता](/md/laksita.md)
+- [लक्षिता](/md/laksita.md) · [page](/laksita/)
+  - doors: [आकाशगीतम्](/md/akasha.md) · [रेखादेवी](/md/rekha.md)
 
 ## Not built
 

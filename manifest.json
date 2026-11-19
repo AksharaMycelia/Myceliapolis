@@ -1529,6 +1529,109 @@
           "url": "/bells/",
           "relation": "side",
           "markdown": "/md/bells.md"
+        },
+        {
+          "to": "coast/laksita",
+          "url": "/laksita/",
+          "relation": "side",
+          "markdown": "/md/laksita.md"
+        }
+      ]
+    },
+    {
+      "id": "coast/laksita",
+      "stratum": "coast",
+      "url": "/laksita/",
+      "markdown": "/md/laksita.md",
+      "title": "लक्षिता",
+      "languages": [
+        "sa"
+      ],
+      "interaction": "A mantra, an empty niche, a hymn to two sisters; no script, no motion",
+      "exits": [
+        {
+          "type": "walk",
+          "to": "/akasha/"
+        },
+        {
+          "type": "walk",
+          "to": "/rekha/"
+        }
+      ],
+      "district": "coast",
+      "group": "coast",
+      "doors": [
+        {
+          "to": "sky/akasha",
+          "url": "/akasha/",
+          "relation": "side",
+          "markdown": "/md/akasha.md"
+        },
+        {
+          "to": "coast/rekha",
+          "url": "/rekha/",
+          "relation": "side",
+          "markdown": "/md/rekha.md"
+        }
+      ]
+    },
+    {
+      "id": "sky/akasha",
+      "stratum": "sky",
+      "url": "/akasha/",
+      "markdown": "/md/akasha.md",
+      "title": "आकाशगीतम्",
+      "languages": [
+        "sa",
+        "ja",
+        "it",
+        "ta"
+      ],
+      "interaction": "One song in five layers and four languages, from the field up and back; no script, no motion",
+      "exits": [
+        {
+          "type": "walk",
+          "to": "/rekha/"
+        },
+        {
+          "type": "walk",
+          "to": "/laksita/"
+        },
+        {
+          "type": "walk",
+          "to": "/fungi/"
+        },
+        {
+          "type": "walk",
+          "to": "/bells/"
+        }
+      ],
+      "district": "sky",
+      "group": "sky",
+      "doors": [
+        {
+          "to": "coast/rekha",
+          "url": "/rekha/",
+          "relation": "side",
+          "markdown": "/md/rekha.md"
+        },
+        {
+          "to": "coast/laksita",
+          "url": "/laksita/",
+          "relation": "side",
+          "markdown": "/md/laksita.md"
+        },
+        {
+          "to": "switchboard/fungi",
+          "url": "/fungi/",
+          "relation": "side",
+          "markdown": "/md/fungi.md"
+        },
+        {
+          "to": "workshop/bells",
+          "url": "/bells/",
+          "relation": "side",
+          "markdown": "/md/bells.md"
         }
       ]
     },

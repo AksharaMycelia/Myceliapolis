@@ -106,6 +106,18 @@ On the coastline, at `/rekha/`. A goddess named for the line: a mantra, a
 dhyāna, a hymn of eleven verses and the Hymn of the Horizon, in Sanskrit; an open palm whose lines are the
 doors. No script, no motion. Read `/md/rekha.md`.
 
+## लक्षिता
+
+Beside her on the coastline, at `/laksita/`. Her sister: a mantra, an empty
+niche, a dhyāna and a hymn of eleven verses to the two sisters, in Sanskrit.
+No script, no motion. Read `/md/laksita.md`.
+
+## आकाशगीतम्
+
+In the sky, at `/akasha/`. One song in five layers, each in its own language:
+Sanskrit, a Japanese renga written vertically, Italian, Tamil, and Sanskrit
+again. No script, no motion. Read `/md/akasha.md`.
+
 ## 五行山
 
 The first room above the city, at `/yun/`. One poem in Chinese, in seven parts:

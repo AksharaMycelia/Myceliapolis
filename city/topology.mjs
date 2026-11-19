@@ -53,6 +53,8 @@ rooms.push(
   { id: 'switchboard/fungi-ii', url: '/fungi/ii/', md: '/md/fungi-ii.md', title: '60 Hertz', short: 'II · 60 Hertz', group: 'floor', on: 'switchboard/fungi', inspect: '/fungi/field.mjs' },
   { id: 'switchboard/fungi-iii', url: '/fungi/iii/', md: '/md/fungi-iii.md', title: 'Cathedralis sine nomine', short: 'III · Cathedralis sine nomine', group: 'floor', on: 'switchboard/fungi', inspect: '/fungi/vault.mjs' },
   { id: 'coast/rekha', url: '/rekha/', md: '/md/rekha.md', title: 'रेखादेवी', lang: 'sa', group: 'coast', at: [300, 62] },
+  { id: 'coast/laksita', url: '/laksita/', md: '/md/laksita.md', title: 'लक्षिता', lang: 'sa', group: 'coast', at: [198, 92] },
+  { id: 'sky/akasha', url: '/akasha/', md: '/md/akasha.md', title: 'आकाशगीतम्', lang: 'sa', group: 'sky', at: [112, 34] },
   { id: 'sky/yun', url: '/yun/', md: '/md/yun.md', title: '五行山', lang: 'zh', group: 'sky', at: [470, 30] },
   { id: 'workshop/bells', url: '/bells/', md: '/md/bells.md', title: 'Five bells', group: 'workshop', at: [515, 325] },
   { id: 'quarter/chair', url: '/chair/', md: '/md/chair.md', title: 'A Room with an Empty Chair', short: 'An empty chair', group: 'clearing', at: [400, 306] },
@@ -90,6 +92,8 @@ door('workshop/machines', 'quarter/threshold');
 door('sky/yun', 'workshop/machines'); door('workshop/machines', 'sky/yun');
 door('sky/yun', 'switchboard/fungi');
 door('coast/rekha', 'workshop/minuguru'); door('coast/rekha', 'sky/yun'); door('coast/rekha', 'switchboard/fungi'); door('coast/rekha', 'workshop/bells');
+door('coast/rekha', 'coast/laksita'); door('coast/laksita', 'sky/akasha'); door('coast/laksita', 'coast/rekha');
+door('sky/akasha', 'coast/rekha'); door('sky/akasha', 'coast/laksita'); door('sky/akasha', 'switchboard/fungi'); door('sky/akasha', 'workshop/bells');
 door('workshop/bells', 'coast/rekha'); door('sky/yun', 'coast/rekha'); door('workshop/machines', 'quarter/chair');
 
 door('tavern/rumor', 'quarter/conservatory'); door('quarter/conservatory', 'tavern/rumor');

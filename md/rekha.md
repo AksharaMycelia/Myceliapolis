@@ -91,12 +91,13 @@
 - [五行山](/md/yun.md)
 - [Under the Floor](/md/fungi.md)
 - [Five bells](/md/bells.md)
+- [लक्षिता](/md/laksita.md)
 
 ---
 <!-- city:doors -->
 अत्र त्वम्: **रेखादेवी** · `coast/rekha` · [पृष्ठरूपेण](/rekha/)
 
-इतः द्वाराणि: [మిణుగురు](/md/feather-minuguru.md) ([पृष्ठरूपेण](/feather/minuguru/)) · [五行山](/md/yun.md) ([पृष्ठरूपेण](/yun/)) · [Under the Floor](/md/fungi.md) ([पृष्ठरूपेण](/fungi/)) · [Five bells](/md/bells.md) ([पृष्ठरूपेण](/bells/))
+इतः द्वाराणि: [మిణుగురు](/md/feather-minuguru.md) ([पृष्ठरूपेण](/feather/minuguru/)) · [五行山](/md/yun.md) ([पृष्ठरूपेण](/yun/)) · [Under the Floor](/md/fungi.md) ([पृष्ठरूपेण](/fungi/)) · [Five bells](/md/bells.md) ([पृष्ठरूपेण](/bells/)) · [लक्षिता](/md/laksita.md) ([पृष्ठरूपेण](/laksita/))
 
 नगरचित्रम्: [सरलपाठः](/md/index.md) · [/atlas/](/atlas/#coast-rekha) · [सर्वाणि द्वाराणि दत्तरूपेण](/manifest.json)
 <!-- /city:doors -->

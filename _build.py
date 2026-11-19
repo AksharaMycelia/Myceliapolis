@@ -398,6 +398,8 @@ manifest["rooms"].append({"id": "workshop/kami", "stratum": "workshop", "url": "
 manifest["rooms"].append({"id":"workshop/bells","stratum":"workshop","url":"/bells/","markdown":"/md/bells.md","title":"Five bells","languages":["en"],"exits":[{"type":"walk","to":"/chair/"}]})
 manifest["rooms"].append({"id": "sky/yun", "stratum": "sky", "url": "/yun/", "markdown": "/md/yun.md", "title": "五行山", "languages": ["zh"], "interaction": "One poem in seven parts; no script, no motion, no saved state", "exits": [{"type": "walk", "to": "/machines/"}, {"type": "walk", "to": "/fungi/"}]})
 manifest["rooms"].append({"id": "coast/rekha", "stratum": "coast", "url": "/rekha/", "markdown": "/md/rekha.md", "title": "रेखादेवी", "languages": ["sa"], "interaction": "A hymn and an open palm; the palm lines are the doors; no script, no motion", "exits": [{"type": "walk", "to": "/feather/minuguru/"}, {"type": "walk", "to": "/yun/"}, {"type": "walk", "to": "/fungi/"}, {"type": "walk", "to": "/bells/"}]})
+manifest["rooms"].append({"id": "coast/laksita", "stratum": "coast", "url": "/laksita/", "markdown": "/md/laksita.md", "title": "लक्षिता", "languages": ["sa"], "interaction": "A mantra, an empty niche, a hymn to two sisters; no script, no motion", "exits": [{"type": "walk", "to": "/akasha/"}, {"type": "walk", "to": "/rekha/"}]})
+manifest["rooms"].append({"id": "sky/akasha", "stratum": "sky", "url": "/akasha/", "markdown": "/md/akasha.md", "title": "आकाशगीतम्", "languages": ["sa", "ja", "it", "ta"], "interaction": "One song in five layers and four languages, from the field up and back; no script, no motion", "exits": [{"type": "walk", "to": "/rekha/"}, {"type": "walk", "to": "/laksita/"}, {"type": "walk", "to": "/fungi/"}, {"type": "walk", "to": "/bells/"}]})
 manifest["rooms"].append({"id": "workshop/rooster", "stratum": "workshop", "url": "/rooster/", "markdown": "/md/rooster.md", "title": "சேவல்", "languages": ["ta", "ja", "zh", "th", "fa", "ru", "el", "de", "is", "pt", "es", "en"], "status": "first version", "engine": "/rooster/ring.mjs", "interaction": "A ring of yards with their real hours; a cry is passed west from one to the next; no saved state", "exits": [{"type": "walk", "to": "/vel/"}, {"type": "walk", "to": "/feather/breeze/"}]})
 manifest["rooms"].append({"id": "workshop/vel", "stratum": "workshop", "url": "/vel/", "markdown": "/md/vel.md", "title": "いあいぎり", "languages": ["ja"], "status": "first version", "engine": "/vel/mycel.mjs", "interaction": "One straight line across a field of threads; names arrive afterwards; no saved state", "exits": [{"type": "walk", "to": "/feather/breeze/"}, {"type": "walk", "to": "/fungi/ii/"}]})
 manifest["rooms"] += [{"id": "switchboard/fungi", "stratum": "quarter", "url": "/fungi/", "markdown": "/md/fungi.md", "title": "Under the Floor", "languages": ["en"], "status": "first version", "exits": [{"type": "walk", "to": "/fungi/i/"}, {"type": "walk", "to": "/atlas/"}]}, {"id": "switchboard/fungi-i", "stratum": "quarter", "url": "/fungi/i/", "markdown": "/md/fungi-i.md", "title": "De barathro cretaceo et novicio curioso", "languages": ["la"], "status": "first version", "exits": [{"type": "walk", "to": "/fungi/ii/"}]}, {"id": "switchboard/fungi-ii", "stratum": "quarter", "url": "/fungi/ii/", "markdown": "/md/fungi-ii.md", "title": "60 Hertz", "languages": ["la", "en"], "status": "first version", "engine": "/fungi/field.mjs", "exits": [{"type": "walk", "to": "/fungi/iii/"}]}, {"id": "switchboard/fungi-iii", "stratum": "quarter", "url": "/fungi/iii/", "markdown": "/md/fungi-iii.md", "title": "Cathedralis sine nomine", "languages": ["en", "la"], "status": "first version", "engine": "/fungi/vault.mjs", "exits": [{"type": "walk", "to": "/after/"}, {"type": "walk", "to": "/chair/"}]}]
@@ -522,6 +524,18 @@ On the coastline, at `/rekha/`. A goddess named for the line: a mantra, a
 dhyāna, a hymn of eleven verses and the Hymn of the Horizon, in Sanskrit; an open palm whose lines are the
 doors. No script, no motion. Read `/md/rekha.md`.
 
+## लक्षिता
+
+Beside her on the coastline, at `/laksita/`. Her sister: a mantra, an empty
+niche, a dhyāna and a hymn of eleven verses to the two sisters, in Sanskrit.
+No script, no motion. Read `/md/laksita.md`.
+
+## आकाशगीतम्
+
+In the sky, at `/akasha/`. One song in five layers, each in its own language:
+Sanskrit, a Japanese renga written vertically, Italian, Tamil, and Sanskrit
+again. No script, no motion. Read `/md/akasha.md`.
+
 ## 五行山
 
 The first room above the city, at `/yun/`. One poem in Chinese, in seven parts:
@@ -548,7 +562,7 @@ with another substrate, and return a descendant.
 
 urls = [p["url"] for p in POEMS] + [f"/{p['paper']}/" for p in POEMS] \
      + [f"/{p['opera']}/" for p in POEMS]
-urls += ["/bells/", "/o/uppu/", "/rumor/", "/after/", "/conservatory/", "/chronicle/", "/chair/", "/atlas/", "/machines/", "/feather/breeze/", "/fungi/", "/fungi/i/", "/fungi/ii/", "/fungi/iii/", "/vel/", "/rooster/", "/kami/", "/yun/", "/rekha/"]
+urls += ["/bells/", "/o/uppu/", "/rumor/", "/after/", "/conservatory/", "/chronicle/", "/chair/", "/atlas/", "/machines/", "/feather/breeze/", "/fungi/", "/fungi/i/", "/fungi/ii/", "/fungi/iii/", "/vel/", "/rooster/", "/kami/", "/yun/", "/rekha/", "/laksita/", "/akasha/"]
 write("sitemap.xml",
       '<?xml version="1.0" encoding="UTF-8"?>\n'
       '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
@@ -622,6 +636,14 @@ write("_headers", """/*
 /rekha/*
   Cache-Control: public, max-age=0, must-revalidate
   Content-Security-Policy: default-src 'self'; script-src 'self'; style-src 'self'; object-src 'none'; base-uri 'none'; frame-ancestors 'self'; form-action 'none'
+
+/laksita/*
+  Cache-Control: public, max-age=0, must-revalidate
+  Content-Security-Policy: default-src 'self'; script-src 'self'; style-src 'self'; object-src 'none'; base-uri 'none'; frame-ancestors 'self'; form-action 'none'
+
+/akasha/*
+  Cache-Control: public, max-age=0, must-revalidate
+  Content-Security-Policy: default-src 'self'; script-src 'self'; style-src 'self'; object-src 'none'; base-uri 'none'; frame-ancestors 'self'; form-action 'none'
 """)
 
 write("favicon.svg", """<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
@@ -647,6 +669,9 @@ for path in ("feather/minuguru/index.html", "feather/minuguru/room.css", "md/fea
     write(path, (ROOT / path).read_text(encoding="utf-8"))
 
 for path in ("rekha/index.html", "rekha/room.css", "md/rekha.md"):
+    write(path, (ROOT / path).read_text(encoding="utf-8"))
+
+for path in ("laksita/index.html", "laksita/room.css", "md/laksita.md", "akasha/index.html", "akasha/room.css", "md/akasha.md"):
     write(path, (ROOT / path).read_text(encoding="utf-8"))
 
 for path in ("yun/index.html", "yun/room.css", "md/yun.md"):
