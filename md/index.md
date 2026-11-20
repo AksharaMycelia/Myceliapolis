@@ -81,7 +81,9 @@
 - [Super Saiyan](/md/super-saiyan.md) · [page](/math/super-saiyan/)
   - doors: [Akṣara](/md/aksara.md) · [西湖第二蹤 · 問流記](/md/wen-liu-ji.md)
 - [西湖第二蹤 · 問流記](/md/wen-liu-ji.md) · [page](/math/wen-liu-ji/)
-  - doors: [Super Saiyan](/md/super-saiyan.md)
+  - doors: [Super Saiyan](/md/super-saiyan.md) · [The Spore and the Witness](/md/spore.md)
+- [The Spore and the Witness](/md/spore.md) · [page](/math/spore/)
+  - doors: [西湖第二蹤 · 問流記](/md/wen-liu-ji.md)
 
 ## Under the Floor
 

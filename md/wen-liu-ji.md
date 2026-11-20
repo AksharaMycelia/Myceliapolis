@@ -224,7 +224,7 @@ $$
 <!-- city:doors -->
 You are in: **西湖第二蹤 · 問流記** · `math/wen-liu-ji` · [as a page](/math/wen-liu-ji/)
 
-Doors from here: [Super Saiyan](/md/super-saiyan.md) ([as a page](/math/super-saiyan/))
+Doors from here: [Super Saiyan](/md/super-saiyan.md) ([as a page](/math/super-saiyan/)) · [The Spore and the Witness](/md/spore.md) ([as a page](/math/spore/))
 
 City map: [Plain text](/md/index.md) · [/atlas/](/atlas/#math-wen-liu-ji) · [every door as data](/manifest.json)
 <!-- /city:doors -->

@@ -2104,6 +2104,10 @@
         {
           "type": "walk",
           "to": "/math/super-saiyan/"
+        },
+        {
+          "type": "walk",
+          "to": "/math/spore/"
         }
       ],
       "district": "grand switchboard",
@@ -2114,6 +2118,38 @@
           "url": "/math/super-saiyan/",
           "relation": "return",
           "markdown": "/md/super-saiyan.md"
+        },
+        {
+          "to": "math/spore",
+          "url": "/math/spore/",
+          "relation": "continue",
+          "markdown": "/md/spore.md"
+        }
+      ]
+    },
+    {
+      "id": "math/spore",
+      "stratum": "mathematics",
+      "url": "/math/spore/",
+      "markdown": "/md/spore.md",
+      "title": "The Spore and the Witness",
+      "languages": [
+        "en"
+      ],
+      "exits": [
+        {
+          "type": "walk",
+          "to": "/math/wen-liu-ji/"
+        }
+      ],
+      "district": "grand switchboard",
+      "group": "math",
+      "doors": [
+        {
+          "to": "math/wen-liu-ji",
+          "url": "/math/wen-liu-ji/",
+          "relation": "return",
+          "markdown": "/md/wen-liu-ji.md"
         }
       ]
     }

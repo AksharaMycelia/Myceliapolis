@@ -500,6 +500,17 @@
       ]
     },
     {
+      "id": "math/spore",
+      "url": "/math/spore/",
+      "md": "/md/spore.md",
+      "title": "The Spore and the Witness",
+      "group": "math",
+      "at": [
+        329,
+        107
+      ]
+    },
+    {
       "id": "coast/rekha",
       "url": "/rekha/",
       "md": "/md/rekha.md",
@@ -1281,6 +1292,16 @@
       "relation": "return"
     },
     {
+      "from": "math/wen-liu-ji",
+      "to": "math/spore",
+      "relation": "continue"
+    },
+    {
+      "from": "math/spore",
+      "to": "math/wen-liu-ji",
+      "relation": "return"
+    },
+    {
       "from": "archive/2",
       "to": "math/aksara",
       "relation": "side"
@@ -1403,7 +1424,8 @@
       "rooms": [
         "math/aksara",
         "math/super-saiyan",
-        "math/wen-liu-ji"
+        "math/wen-liu-ji",
+        "math/spore"
       ]
     },
     {
