@@ -478,6 +478,17 @@
       ]
     },
     {
+      "id": "math/super-saiyan",
+      "url": "/math/super-saiyan/",
+      "md": "/md/super-saiyan.md",
+      "title": "Super Saiyan",
+      "group": "math",
+      "at": [
+        315,
+        202
+      ]
+    },
+    {
       "id": "coast/rekha",
       "url": "/rekha/",
       "md": "/md/rekha.md",
@@ -1239,6 +1250,16 @@
       "relation": "side"
     },
     {
+      "from": "math/aksara",
+      "to": "math/super-saiyan",
+      "relation": "continue"
+    },
+    {
+      "from": "math/super-saiyan",
+      "to": "math/aksara",
+      "relation": "return"
+    },
+    {
       "from": "archive/2",
       "to": "math/aksara",
       "relation": "side"
@@ -1359,7 +1380,8 @@
     {
       "id": "mathematics",
       "rooms": [
-        "math/aksara"
+        "math/aksara",
+        "math/super-saiyan"
       ]
     },
     {

@@ -53,6 +53,7 @@ rooms.push(
   { id: 'switchboard/fungi-ii', url: '/fungi/ii/', md: '/md/fungi-ii.md', title: '60 Hertz', short: 'II · 60 Hertz', group: 'floor', on: 'switchboard/fungi', inspect: '/fungi/field.mjs' },
   { id: 'switchboard/fungi-iii', url: '/fungi/iii/', md: '/md/fungi-iii.md', title: 'Cathedralis sine nomine', short: 'III · Cathedralis sine nomine', group: 'floor', on: 'switchboard/fungi', inspect: '/fungi/vault.mjs' },
   { id: 'math/aksara', url: '/math/aksara/', md: '/md/aksara.md', title: 'Akṣara', group: 'math', at: [308, 254] },
+  { id: 'math/super-saiyan', url: '/math/super-saiyan/', md: '/md/super-saiyan.md', title: 'Super Saiyan', group: 'math', at: [315, 202] },
   { id: 'coast/rekha', url: '/rekha/', md: '/md/rekha.md', title: 'रेखादेवी', lang: 'sa', group: 'coast', at: [300, 62] },
   { id: 'coast/laksita', url: '/laksita/', md: '/md/laksita.md', title: 'लक्षिता', lang: 'sa', group: 'coast', at: [198, 92] },
   { id: 'sky/akasha', url: '/akasha/', md: '/md/akasha.md', title: 'आकाशगीतम्', lang: 'sa', group: 'sky', at: [112, 34] },
@@ -126,7 +127,7 @@ door('switchboard/fungi-iii', 'quarter/chair');
 
 for (const to of ['surface/1', 'surface/2', 'surface/3', 'surface/4', 'surface/5', 'surface/6']) door('city/lost', to);
 
-const mathematics = ['math/aksara'];
+const mathematics = ['math/aksara', 'math/super-saiyan'];
 sequences.push({ id: 'mathematics', rooms: mathematics });
 for (const [i, id] of mathematics.entries()) {
   if (i === 0) continue;

@@ -77,7 +77,9 @@
 ## Mathematics
 
 - [Akṣara](/md/aksara.md) · [page](/math/aksara/)
-  - doors: [An invariant of a sequence whose terms share no element](/md/a2.md) · [II · 60 Hertz](/md/fungi-ii.md)
+  - doors: [Super Saiyan](/md/super-saiyan.md) · [An invariant of a sequence whose terms share no element](/md/a2.md) · [II · 60 Hertz](/md/fungi-ii.md)
+- [Super Saiyan](/md/super-saiyan.md) · [page](/math/super-saiyan/)
+  - doors: [Akṣara](/md/aksara.md)
 
 ## Under the Floor
 

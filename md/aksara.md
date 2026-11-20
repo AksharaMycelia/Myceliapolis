@@ -212,7 +212,7 @@ $$
 <!-- city:doors -->
 You are in: **Akṣara** · `math/aksara` · [as a page](/math/aksara/)
 
-Doors from here: [An invariant of a sequence whose terms share no element](/md/a2.md) ([as a page](/a/ii-3/)) · [II · 60 Hertz](/md/fungi-ii.md) ([as a page](/fungi/ii/))
+Doors from here: [Super Saiyan](/md/super-saiyan.md) ([as a page](/math/super-saiyan/)) · [An invariant of a sequence whose terms share no element](/md/a2.md) ([as a page](/a/ii-3/)) · [II · 60 Hertz](/md/fungi-ii.md) ([as a page](/fungi/ii/))
 
 City map: [Plain text](/md/index.md) · [/atlas/](/atlas/#math-aksara) · [every door as data](/manifest.json)
 <!-- /city:doors -->

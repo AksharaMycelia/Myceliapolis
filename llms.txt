@@ -137,6 +137,7 @@ are CSS only. Read `/md/feather-minuguru.md`.
 
 The connected mathematics rooms are listed at `/atlas/#math`.
 Akṣara opens at `/math/aksara/`. Its TeX source is `/md/aksara.md`.
+Its next room is Super Saiyan, at `/math/super-saiyan/` with TeX at `/md/super-saiyan.md`.
 
 ## The city and its doors
 

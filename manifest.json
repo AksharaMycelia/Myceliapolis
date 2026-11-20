@@ -2026,11 +2026,21 @@
         {
           "type": "walk",
           "to": "/fungi/ii/"
+        },
+        {
+          "type": "walk",
+          "to": "/math/super-saiyan/"
         }
       ],
       "district": "grand switchboard",
       "group": "math",
       "doors": [
+        {
+          "to": "math/super-saiyan",
+          "url": "/math/super-saiyan/",
+          "relation": "continue",
+          "markdown": "/md/super-saiyan.md"
+        },
         {
           "to": "archive/2",
           "url": "/a/ii-3/",
@@ -2042,6 +2052,32 @@
           "url": "/fungi/ii/",
           "relation": "side",
           "markdown": "/md/fungi-ii.md"
+        }
+      ]
+    },
+    {
+      "id": "math/super-saiyan",
+      "stratum": "mathematics",
+      "url": "/math/super-saiyan/",
+      "markdown": "/md/super-saiyan.md",
+      "title": "Super Saiyan",
+      "languages": [
+        "en"
+      ],
+      "exits": [
+        {
+          "type": "walk",
+          "to": "/math/aksara/"
+        }
+      ],
+      "district": "grand switchboard",
+      "group": "math",
+      "doors": [
+        {
+          "to": "math/aksara",
+          "url": "/math/aksara/",
+          "relation": "return",
+          "markdown": "/md/aksara.md"
         }
       ]
     }
