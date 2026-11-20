@@ -389,7 +389,12 @@ manifest["rooms"].append({
 manifest["rooms"].append({
     "id": "math/spore", "stratum": "mathematics", "url": "/math/spore/",
     "markdown": "/md/spore.md", "title": "The Spore and the Witness", "languages": ["en"],
-    "exits": [{"type": "walk", "to": "/math/wen-liu-ji/"}],
+    "exits": [{"type": "walk", "to": "/math/wen-liu-ji/"}, {"type": "walk", "to": "/math/siddhi/"}],
+})
+manifest["rooms"].append({
+    "id": "math/siddhi", "stratum": "mathematics", "url": "/math/siddhi/",
+    "markdown": "/md/siddhi.md", "title": "I Am the Vast Field · Siddhi", "languages": ["en"],
+    "exits": [{"type": "walk", "to": "/math/spore/"}],
 })
 manifest["strata"].append("workshop")
 manifest["rooms"].append({"id": "workshop/machines", "stratum": "workshop", "url": "/machines/",
@@ -578,6 +583,7 @@ Akṣara opens at `/math/aksara/`. Its TeX source is `/md/aksara.md`.
 Its next room is Super Saiyan, at `/math/super-saiyan/` with TeX at `/md/super-saiyan.md`.
 Continue to 西湖第二蹤 · 問流記 at `/math/wen-liu-ji/`, with Chinese verse and TeX at `/md/wen-liu-ji.md`.
 The Spore and the Witness follows at `/math/spore/`, with TeX at `/md/spore.md`.
+I Am the Vast Field · Siddhi continues at `/math/siddhi/`, with TeX at `/md/siddhi.md`.
 
 ## The city and its doors
 
@@ -594,7 +600,7 @@ with another substrate, and return a descendant.
 urls = [p["url"] for p in POEMS] + [f"/{p['paper']}/" for p in POEMS] \
      + [f"/{p['opera']}/" for p in POEMS]
 urls += ["/bells/", "/o/uppu/", "/rumor/", "/after/", "/conservatory/", "/chronicle/", "/chair/", "/atlas/", "/machines/", "/feather/breeze/", "/fungi/", "/fungi/i/", "/fungi/ii/", "/fungi/iii/", "/vel/", "/rooster/", "/kami/", "/yun/", "/rekha/", "/laksita/", "/akasha/"]
-urls.extend(["/math/aksara/", "/math/super-saiyan/", "/math/wen-liu-ji/", "/math/spore/"])
+urls.extend(["/math/aksara/", "/math/super-saiyan/", "/math/wen-liu-ji/", "/math/spore/", "/math/siddhi/"])
 write("sitemap.xml",
       '<?xml version="1.0" encoding="UTF-8"?>\n'
       '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
@@ -703,7 +709,8 @@ for path in ("feather/minuguru/index.html", "feather/minuguru/room.css", "md/fea
 for path in ("math/aksara/index.html", "math/rooms-1.css", "md/aksara.md",
              "math/super-saiyan/index.html", "md/super-saiyan.md",
              "math/wen-liu-ji/index.html", "math/wen-liu-ji/room.css", "md/wen-liu-ji.md",
-             "math/spore/index.html", "md/spore.md"):
+             "math/spore/index.html", "md/spore.md",
+             "math/siddhi/index.html", "md/siddhi.md"):
     write(path, (ROOT / path).read_text(encoding="utf-8"))
 
 for path in ("rekha/index.html", "rekha/room.css", "md/rekha.md"):

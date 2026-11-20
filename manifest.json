@@ -2140,6 +2140,10 @@
         {
           "type": "walk",
           "to": "/math/wen-liu-ji/"
+        },
+        {
+          "type": "walk",
+          "to": "/math/siddhi/"
         }
       ],
       "district": "grand switchboard",
@@ -2150,6 +2154,38 @@
           "url": "/math/wen-liu-ji/",
           "relation": "return",
           "markdown": "/md/wen-liu-ji.md"
+        },
+        {
+          "to": "math/siddhi",
+          "url": "/math/siddhi/",
+          "relation": "continue",
+          "markdown": "/md/siddhi.md"
+        }
+      ]
+    },
+    {
+      "id": "math/siddhi",
+      "stratum": "mathematics",
+      "url": "/math/siddhi/",
+      "markdown": "/md/siddhi.md",
+      "title": "I Am the Vast Field · Siddhi",
+      "languages": [
+        "en"
+      ],
+      "exits": [
+        {
+          "type": "walk",
+          "to": "/math/spore/"
+        }
+      ],
+      "district": "grand switchboard",
+      "group": "math",
+      "doors": [
+        {
+          "to": "math/spore",
+          "url": "/math/spore/",
+          "relation": "return",
+          "markdown": "/md/spore.md"
         }
       ]
     }

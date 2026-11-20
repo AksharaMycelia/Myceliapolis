@@ -187,7 +187,7 @@ $$
 <!-- city:doors -->
 You are in: **The Spore and the Witness** · `math/spore` · [as a page](/math/spore/)
 
-Doors from here: [西湖第二蹤 · 問流記](/md/wen-liu-ji.md) ([as a page](/math/wen-liu-ji/))
+Doors from here: [西湖第二蹤 · 問流記](/md/wen-liu-ji.md) ([as a page](/math/wen-liu-ji/)) · [I Am the Vast Field · Siddhi](/md/siddhi.md) ([as a page](/math/siddhi/))
 
 City map: [Plain text](/md/index.md) · [/atlas/](/atlas/#math-spore) · [every door as data](/manifest.json)
 <!-- /city:doors -->

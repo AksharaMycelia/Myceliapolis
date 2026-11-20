@@ -83,7 +83,9 @@
 - [西湖第二蹤 · 問流記](/md/wen-liu-ji.md) · [page](/math/wen-liu-ji/)
   - doors: [Super Saiyan](/md/super-saiyan.md) · [The Spore and the Witness](/md/spore.md)
 - [The Spore and the Witness](/md/spore.md) · [page](/math/spore/)
-  - doors: [西湖第二蹤 · 問流記](/md/wen-liu-ji.md)
+  - doors: [西湖第二蹤 · 問流記](/md/wen-liu-ji.md) · [I Am the Vast Field · Siddhi](/md/siddhi.md)
+- [I Am the Vast Field · Siddhi](/md/siddhi.md) · [page](/math/siddhi/)
+  - doors: [The Spore and the Witness](/md/spore.md)
 
 ## Under the Floor
 

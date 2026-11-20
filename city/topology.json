@@ -511,6 +511,17 @@
       ]
     },
     {
+      "id": "math/siddhi",
+      "url": "/math/siddhi/",
+      "md": "/md/siddhi.md",
+      "title": "I Am the Vast Field · Siddhi",
+      "group": "math",
+      "at": [
+        336,
+        61
+      ]
+    },
+    {
       "id": "coast/rekha",
       "url": "/rekha/",
       "md": "/md/rekha.md",
@@ -1302,6 +1313,16 @@
       "relation": "return"
     },
     {
+      "from": "math/spore",
+      "to": "math/siddhi",
+      "relation": "continue"
+    },
+    {
+      "from": "math/siddhi",
+      "to": "math/spore",
+      "relation": "return"
+    },
+    {
       "from": "archive/2",
       "to": "math/aksara",
       "relation": "side"
@@ -1425,7 +1446,8 @@
         "math/aksara",
         "math/super-saiyan",
         "math/wen-liu-ji",
-        "math/spore"
+        "math/spore",
+        "math/siddhi"
       ]
     },
     {
