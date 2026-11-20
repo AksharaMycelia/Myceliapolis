@@ -489,6 +489,17 @@
       ]
     },
     {
+      "id": "math/wen-liu-ji",
+      "url": "/math/wen-liu-ji/",
+      "md": "/md/wen-liu-ji.md",
+      "title": "西湖第二蹤 · 問流記",
+      "group": "math",
+      "at": [
+        322,
+        154
+      ]
+    },
+    {
       "id": "coast/rekha",
       "url": "/rekha/",
       "md": "/md/rekha.md",
@@ -1260,6 +1271,16 @@
       "relation": "return"
     },
     {
+      "from": "math/super-saiyan",
+      "to": "math/wen-liu-ji",
+      "relation": "continue"
+    },
+    {
+      "from": "math/wen-liu-ji",
+      "to": "math/super-saiyan",
+      "relation": "return"
+    },
+    {
       "from": "archive/2",
       "to": "math/aksara",
       "relation": "side"
@@ -1381,7 +1402,8 @@
       "id": "mathematics",
       "rooms": [
         "math/aksara",
-        "math/super-saiyan"
+        "math/super-saiyan",
+        "math/wen-liu-ji"
       ]
     },
     {

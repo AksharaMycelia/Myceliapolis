@@ -79,7 +79,9 @@
 - [Akṣara](/md/aksara.md) · [page](/math/aksara/)
   - doors: [Super Saiyan](/md/super-saiyan.md) · [An invariant of a sequence whose terms share no element](/md/a2.md) · [II · 60 Hertz](/md/fungi-ii.md)
 - [Super Saiyan](/md/super-saiyan.md) · [page](/math/super-saiyan/)
-  - doors: [Akṣara](/md/aksara.md)
+  - doors: [Akṣara](/md/aksara.md) · [西湖第二蹤 · 問流記](/md/wen-liu-ji.md)
+- [西湖第二蹤 · 問流記](/md/wen-liu-ji.md) · [page](/math/wen-liu-ji/)
+  - doors: [Super Saiyan](/md/super-saiyan.md)
 
 ## Under the Floor
 

@@ -2068,6 +2068,10 @@
         {
           "type": "walk",
           "to": "/math/aksara/"
+        },
+        {
+          "type": "walk",
+          "to": "/math/wen-liu-ji/"
         }
       ],
       "district": "grand switchboard",
@@ -2078,6 +2082,38 @@
           "url": "/math/aksara/",
           "relation": "return",
           "markdown": "/md/aksara.md"
+        },
+        {
+          "to": "math/wen-liu-ji",
+          "url": "/math/wen-liu-ji/",
+          "relation": "continue",
+          "markdown": "/md/wen-liu-ji.md"
+        }
+      ]
+    },
+    {
+      "id": "math/wen-liu-ji",
+      "stratum": "mathematics",
+      "url": "/math/wen-liu-ji/",
+      "markdown": "/md/wen-liu-ji.md",
+      "title": "西湖第二蹤 · 問流記",
+      "languages": [
+        "zh-Hant"
+      ],
+      "exits": [
+        {
+          "type": "walk",
+          "to": "/math/super-saiyan/"
+        }
+      ],
+      "district": "grand switchboard",
+      "group": "math",
+      "doors": [
+        {
+          "to": "math/super-saiyan",
+          "url": "/math/super-saiyan/",
+          "relation": "return",
+          "markdown": "/md/super-saiyan.md"
         }
       ]
     }

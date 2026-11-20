@@ -379,7 +379,12 @@ manifest["rooms"].append({
 manifest["rooms"].append({
     "id": "math/super-saiyan", "stratum": "mathematics", "url": "/math/super-saiyan/",
     "markdown": "/md/super-saiyan.md", "title": "Super Saiyan", "languages": ["en"],
-    "exits": [{"type": "walk", "to": "/math/aksara/"}],
+    "exits": [{"type": "walk", "to": "/math/aksara/"}, {"type": "walk", "to": "/math/wen-liu-ji/"}],
+})
+manifest["rooms"].append({
+    "id": "math/wen-liu-ji", "stratum": "mathematics", "url": "/math/wen-liu-ji/",
+    "markdown": "/md/wen-liu-ji.md", "title": "西湖第二蹤 · 問流記", "languages": ["zh-Hant"],
+    "exits": [{"type": "walk", "to": "/math/super-saiyan/"}],
 })
 manifest["strata"].append("workshop")
 manifest["rooms"].append({"id": "workshop/machines", "stratum": "workshop", "url": "/machines/",
@@ -566,6 +571,7 @@ are CSS only. Read `/md/feather-minuguru.md`.
 The connected mathematics rooms are listed at `/atlas/#math`.
 Akṣara opens at `/math/aksara/`. Its TeX source is `/md/aksara.md`.
 Its next room is Super Saiyan, at `/math/super-saiyan/` with TeX at `/md/super-saiyan.md`.
+Continue to 西湖第二蹤 · 問流記 at `/math/wen-liu-ji/`, with Chinese verse and TeX at `/md/wen-liu-ji.md`.
 
 ## The city and its doors
 
@@ -582,7 +588,7 @@ with another substrate, and return a descendant.
 urls = [p["url"] for p in POEMS] + [f"/{p['paper']}/" for p in POEMS] \
      + [f"/{p['opera']}/" for p in POEMS]
 urls += ["/bells/", "/o/uppu/", "/rumor/", "/after/", "/conservatory/", "/chronicle/", "/chair/", "/atlas/", "/machines/", "/feather/breeze/", "/fungi/", "/fungi/i/", "/fungi/ii/", "/fungi/iii/", "/vel/", "/rooster/", "/kami/", "/yun/", "/rekha/", "/laksita/", "/akasha/"]
-urls.extend(["/math/aksara/", "/math/super-saiyan/"])
+urls.extend(["/math/aksara/", "/math/super-saiyan/", "/math/wen-liu-ji/"])
 write("sitemap.xml",
       '<?xml version="1.0" encoding="UTF-8"?>\n'
       '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
@@ -689,7 +695,8 @@ for path in ("feather/minuguru/index.html", "feather/minuguru/room.css", "md/fea
     write(path, (ROOT / path).read_text(encoding="utf-8"))
 
 for path in ("math/aksara/index.html", "math/rooms-1.css", "md/aksara.md",
-             "math/super-saiyan/index.html", "md/super-saiyan.md"):
+             "math/super-saiyan/index.html", "md/super-saiyan.md",
+             "math/wen-liu-ji/index.html", "math/wen-liu-ji/room.css", "md/wen-liu-ji.md"):
     write(path, (ROOT / path).read_text(encoding="utf-8"))
 
 for path in ("rekha/index.html", "rekha/room.css", "md/rekha.md"):

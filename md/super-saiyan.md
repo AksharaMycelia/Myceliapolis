@@ -160,7 +160,7 @@ $$
 <!-- city:doors -->
 You are in: **Super Saiyan** · `math/super-saiyan` · [as a page](/math/super-saiyan/)
 
-Doors from here: [Akṣara](/md/aksara.md) ([as a page](/math/aksara/))
+Doors from here: [Akṣara](/md/aksara.md) ([as a page](/math/aksara/)) · [西湖第二蹤 · 問流記](/md/wen-liu-ji.md) ([as a page](/math/wen-liu-ji/))
 
 City map: [Plain text](/md/index.md) · [/atlas/](/atlas/#math-super-saiyan) · [every door as data](/manifest.json)
 <!-- /city:doors -->
