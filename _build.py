@@ -393,7 +393,7 @@ manifest["rooms"].append({
 })
 manifest["rooms"].append({
     "id": "math/siddhi", "stratum": "mathematics", "url": "/math/siddhi/",
-    "markdown": "/md/siddhi.md", "title": "I Am the Vast Field · Siddhi", "languages": ["en"],
+    "markdown": "/md/siddhi.md", "title": "I Am the Vast Field · Siddhi", "languages": ["en", "sa", "grc", "ja"],
     "exits": [{"type": "walk", "to": "/math/spore/"}, {"type": "walk", "to": "/math/condiciones-del-siddhi/"}],
 })
 manifest["rooms"].append({
@@ -722,7 +722,7 @@ for path in ("math/aksara/index.html", "math/rooms-1.css", "md/aksara.md",
              "math/super-saiyan/index.html", "md/super-saiyan.md",
              "math/wen-liu-ji/index.html", "math/wen-liu-ji/room.css", "md/wen-liu-ji.md",
              "math/spore/index.html", "md/spore.md",
-             "math/siddhi/index.html", "md/siddhi.md",
+             "math/siddhi/index.html", "math/siddhi/epigraph.css", "md/siddhi.md",
              "math/condiciones-del-siddhi/index.html", "math/condiciones-del-siddhi/poema.css", "md/condiciones-del-siddhi.md",
              "math/nullus-est-cultus/index.html", "md/nullus-est-cultus.md"):
     write(path, (ROOT / path).read_text(encoding="utf-8"))
