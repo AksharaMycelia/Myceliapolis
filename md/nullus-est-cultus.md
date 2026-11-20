@@ -2,7 +2,7 @@
 
 Nullus est cultus.  
 Nemo dicit cultum esse.  
-Nullus cultus.  
+ツンデレ教団だ。  
 Nullus sodalis.  
 Nullum sutra.  
 Nullum mantra.  
