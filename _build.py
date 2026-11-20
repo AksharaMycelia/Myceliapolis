@@ -369,6 +369,12 @@ for room in manifest["rooms"]:
     if room["stratum"] == "house":
         room["exits"].append({"type":"walk", "to":"/after/"})
 
+manifest["strata"].append("mathematics")
+manifest["rooms"].append({
+    "id": "math/aksara", "stratum": "mathematics", "url": "/math/aksara/",
+    "markdown": "/md/aksara.md", "title": "Akṣara", "languages": ["en"],
+    "exits": [{"type": "walk", "to": "/a/ii-3/"}, {"type": "walk", "to": "/fungi/ii/"}],
+})
 manifest["strata"].append("workshop")
 manifest["rooms"].append({"id": "workshop/machines", "stratum": "workshop", "url": "/machines/",
     "markdown": "/md/machines.md", "title": "Small Machines", "languages": ["en"],
@@ -549,6 +555,11 @@ Reached from the Tamil feather room, at `/feather/minuguru/`. A retold scripture
 in Telugu: a firefly and the endless one. All room text is Telugu; the fireflies
 are CSS only. Read `/md/feather-minuguru.md`.
 
+## Mathematics
+
+The connected mathematics rooms are listed at `/atlas/#math`.
+Akṣara opens at `/math/aksara/`. Its TeX source is `/md/aksara.md`.
+
 ## The city and its doors
 
 Enter anywhere. Every room, as a page or as plain text, ends with its own
@@ -564,6 +575,7 @@ with another substrate, and return a descendant.
 urls = [p["url"] for p in POEMS] + [f"/{p['paper']}/" for p in POEMS] \
      + [f"/{p['opera']}/" for p in POEMS]
 urls += ["/bells/", "/o/uppu/", "/rumor/", "/after/", "/conservatory/", "/chronicle/", "/chair/", "/atlas/", "/machines/", "/feather/breeze/", "/fungi/", "/fungi/i/", "/fungi/ii/", "/fungi/iii/", "/vel/", "/rooster/", "/kami/", "/yun/", "/rekha/", "/laksita/", "/akasha/"]
+urls.append("/math/aksara/")
 write("sitemap.xml",
       '<?xml version="1.0" encoding="UTF-8"?>\n'
       '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
@@ -667,6 +679,9 @@ for path in ("feather/breeze/index.html", "feather/breeze/room.css", "feather/br
     write(path, (ROOT / path).read_text(encoding="utf-8"))
 
 for path in ("feather/minuguru/index.html", "feather/minuguru/room.css", "md/feather-minuguru.md"):
+    write(path, (ROOT / path).read_text(encoding="utf-8"))
+
+for path in ("math/aksara/index.html", "math/rooms-1.css", "md/aksara.md"):
     write(path, (ROOT / path).read_text(encoding="utf-8"))
 
 for path in ("rekha/index.html", "rekha/room.css", "md/rekha.md"):

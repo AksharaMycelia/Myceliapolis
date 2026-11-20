@@ -11,7 +11,7 @@
 - [No continuity](/md/p2.md) · [page](/no-continuity/)
   - doors: [An invariant of a sequence whose terms share no element](/md/a2.md) · [மயிலிறகு](/md/feather-breeze.md)
 - [An invariant of a sequence whose terms share no element](/md/a2.md) · [page](/a/ii-3/)
-  - doors: [No continuity](/md/p2.md)
+  - doors: [No continuity](/md/p2.md) · [Akṣara](/md/aksara.md)
 - [La Cupola](/md/o2.md) · [page](/o/forma/)
   - doors: [No continuity](/md/p2.md) · [Taberna rumorum](/md/rumor.md) · [The Unfinished Quarter](/md/after.md)
 - [Who is the puppet master?](/md/p3.md) · [page](/puppet-master/)
@@ -74,6 +74,11 @@
 - [The Chronicle](/md/chronicle.md) · [page](/chronicle/)
   - doors: [The Conservatory](/md/conservatory.md) · [The Unfinished Quarter](/md/after.md)
 
+## Mathematics
+
+- [Akṣara](/md/aksara.md) · [page](/math/aksara/)
+  - doors: [An invariant of a sequence whose terms share no element](/md/a2.md) · [II · 60 Hertz](/md/fungi-ii.md)
+
 ## Under the Floor
 
 - [Under the Floor](/md/fungi.md) · [page](/fungi/)
@@ -81,7 +86,7 @@
 - [De barathro cretaceo et novicio curioso](/md/fungi-i.md) · [page](/fungi/i/)
   - doors: [II · 60 Hertz](/md/fungi-ii.md) · [Under the Floor](/md/fungi.md)
 - [60 Hertz](/md/fungi-ii.md) · [page](/fungi/ii/) — [source](/fungi/field.mjs)
-  - doors: [いあいぎり](/md/vel.md) · [Small Machines](/md/machines.md) · [III · Cathedralis sine nomine](/md/fungi-iii.md) · [I · De barathro cretaceo](/md/fungi-i.md)
+  - doors: [いあいぎり](/md/vel.md) · [Small Machines](/md/machines.md) · [III · Cathedralis sine nomine](/md/fungi-iii.md) · [I · De barathro cretaceo](/md/fungi-i.md) · [Akṣara](/md/aksara.md)
 - [Cathedralis sine nomine](/md/fungi-iii.md) · [page](/fungi/iii/) — [source](/fungi/vault.mjs)
   - doors: [The Unfinished Quarter](/md/after.md) · [I · De barathro cretaceo](/md/fungi-i.md) · [II · 60 Hertz](/md/fungi-ii.md) · [An empty chair](/md/chair.md)
 

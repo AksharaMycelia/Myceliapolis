@@ -133,6 +133,11 @@ Reached from the Tamil feather room, at `/feather/minuguru/`. A retold scripture
 in Telugu: a firefly and the endless one. All room text is Telugu; the fireflies
 are CSS only. Read `/md/feather-minuguru.md`.
 
+## Mathematics
+
+The connected mathematics rooms are listed at `/atlas/#math`.
+Akṣara opens at `/math/aksara/`. Its TeX source is `/md/aksara.md`.
+
 ## The city and its doors
 
 Enter anywhere. Every room, as a page or as plain text, ends with its own

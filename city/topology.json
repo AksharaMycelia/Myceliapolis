@@ -19,6 +19,10 @@
       "title": "Unfinished Quarter"
     },
     {
+      "id": "math",
+      "title": "Mathematics"
+    },
+    {
       "id": "floor",
       "title": "Under the Floor"
     },
@@ -461,6 +465,17 @@
       "group": "floor",
       "on": "switchboard/fungi",
       "inspect": "/fungi/vault.mjs"
+    },
+    {
+      "id": "math/aksara",
+      "url": "/math/aksara/",
+      "md": "/md/aksara.md",
+      "title": "Akṣara",
+      "group": "math",
+      "at": [
+        308,
+        254
+      ]
     },
     {
       "id": "coast/rekha",
@@ -1222,6 +1237,26 @@
       "from": "city/lost",
       "to": "surface/6",
       "relation": "side"
+    },
+    {
+      "from": "archive/2",
+      "to": "math/aksara",
+      "relation": "side"
+    },
+    {
+      "from": "math/aksara",
+      "to": "archive/2",
+      "relation": "side"
+    },
+    {
+      "from": "switchboard/fungi-ii",
+      "to": "math/aksara",
+      "relation": "side"
+    },
+    {
+      "from": "math/aksara",
+      "to": "switchboard/fungi-ii",
+      "relation": "side"
     }
   ],
   "sequences": [
@@ -1320,6 +1355,12 @@
           "/a/xi-4/choice-3/"
         ]
       }
+    },
+    {
+      "id": "mathematics",
+      "rooms": [
+        "math/aksara"
+      ]
     },
     {
       "id": "under-the-floor",

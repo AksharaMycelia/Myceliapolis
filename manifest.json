@@ -10,6 +10,7 @@
     "tavern",
     "beyond",
     "quarter",
+    "mathematics",
     "workshop"
   ],
   "schema": 2,
@@ -31,6 +32,10 @@
     {
       "id": "quarter",
       "title": "Unfinished Quarter"
+    },
+    {
+      "id": "math",
+      "title": "Mathematics"
     },
     {
       "id": "floor",
@@ -310,6 +315,12 @@
           "url": "/no-continuity/",
           "relation": "return",
           "markdown": "/md/p2.md"
+        },
+        {
+          "to": "math/aksara",
+          "url": "/math/aksara/",
+          "relation": "side",
+          "markdown": "/md/aksara.md"
         }
       ]
     },
@@ -1880,6 +1891,12 @@
           "url": "/fungi/i/",
           "relation": "return",
           "markdown": "/md/fungi-i.md"
+        },
+        {
+          "to": "math/aksara",
+          "url": "/math/aksara/",
+          "relation": "side",
+          "markdown": "/md/aksara.md"
         }
       ]
     },
@@ -1989,6 +2006,42 @@
           "url": "/chair/",
           "relation": "side",
           "markdown": "/md/chair.md"
+        }
+      ]
+    },
+    {
+      "id": "math/aksara",
+      "stratum": "mathematics",
+      "url": "/math/aksara/",
+      "markdown": "/md/aksara.md",
+      "title": "Akṣara",
+      "languages": [
+        "en"
+      ],
+      "exits": [
+        {
+          "type": "walk",
+          "to": "/a/ii-3/"
+        },
+        {
+          "type": "walk",
+          "to": "/fungi/ii/"
+        }
+      ],
+      "district": "grand switchboard",
+      "group": "math",
+      "doors": [
+        {
+          "to": "archive/2",
+          "url": "/a/ii-3/",
+          "relation": "side",
+          "markdown": "/md/a2.md"
+        },
+        {
+          "to": "switchboard/fungi-ii",
+          "url": "/fungi/ii/",
+          "relation": "side",
+          "markdown": "/md/fungi-ii.md"
         }
       ]
     }

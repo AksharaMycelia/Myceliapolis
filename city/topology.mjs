@@ -52,6 +52,7 @@ rooms.push(
   { id: 'switchboard/fungi-i', url: '/fungi/i/', md: '/md/fungi-i.md', title: 'De barathro cretaceo et novicio curioso', short: 'I · De barathro cretaceo', lang: 'la', group: 'floor', on: 'switchboard/fungi' },
   { id: 'switchboard/fungi-ii', url: '/fungi/ii/', md: '/md/fungi-ii.md', title: '60 Hertz', short: 'II · 60 Hertz', group: 'floor', on: 'switchboard/fungi', inspect: '/fungi/field.mjs' },
   { id: 'switchboard/fungi-iii', url: '/fungi/iii/', md: '/md/fungi-iii.md', title: 'Cathedralis sine nomine', short: 'III · Cathedralis sine nomine', group: 'floor', on: 'switchboard/fungi', inspect: '/fungi/vault.mjs' },
+  { id: 'math/aksara', url: '/math/aksara/', md: '/md/aksara.md', title: 'Akṣara', group: 'math', at: [308, 254] },
   { id: 'coast/rekha', url: '/rekha/', md: '/md/rekha.md', title: 'रेखादेवी', lang: 'sa', group: 'coast', at: [300, 62] },
   { id: 'coast/laksita', url: '/laksita/', md: '/md/laksita.md', title: 'लक्षिता', lang: 'sa', group: 'coast', at: [198, 92] },
   { id: 'sky/akasha', url: '/akasha/', md: '/md/akasha.md', title: 'आकाशगीतम्', lang: 'sa', group: 'sky', at: [112, 34] },
@@ -125,6 +126,18 @@ door('switchboard/fungi-iii', 'quarter/chair');
 
 for (const to of ['surface/1', 'surface/2', 'surface/3', 'surface/4', 'surface/5', 'surface/6']) door('city/lost', to);
 
+const mathematics = ['math/aksara'];
+sequences.push({ id: 'mathematics', rooms: mathematics });
+for (const [i, id] of mathematics.entries()) {
+  if (i === 0) continue;
+  door(mathematics[i - 1], id, 'continue');
+  door(id, mathematics[i - 1], 'return');
+}
+for (const neighbor of ['archive/2', 'switchboard/fungi-ii']) {
+  door(neighbor, 'math/aksara');
+  door('math/aksara', neighbor);
+}
+
 sequences.push({ id: 'under-the-floor', rooms: ['switchboard/fungi-i', 'switchboard/fungi-ii', 'switchboard/fungi-iii'], loops: true });
 
 export default {
@@ -135,6 +148,7 @@ export default {
     { id: 'workshop', title: 'Workshop' },
     { id: 'tavern', title: 'Tavern' },
     { id: 'quarter', title: 'Unfinished Quarter' },
+    { id: 'math', title: 'Mathematics' },
     { id: 'floor', title: 'Under the Floor' },
     { id: 'clearing', title: 'Clearing' },
     { id: 'sky', title: 'Sky' },
