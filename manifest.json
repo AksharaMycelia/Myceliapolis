@@ -2212,6 +2212,10 @@
         {
           "type": "walk",
           "to": "/math/siddhi/"
+        },
+        {
+          "type": "walk",
+          "to": "/math/nullus-est-cultus/"
         }
       ],
       "district": "grand switchboard",
@@ -2222,6 +2226,38 @@
           "url": "/math/siddhi/",
           "relation": "return",
           "markdown": "/md/siddhi.md"
+        },
+        {
+          "to": "math/nullus-est-cultus",
+          "url": "/math/nullus-est-cultus/",
+          "relation": "continue",
+          "markdown": "/md/nullus-est-cultus.md"
+        }
+      ]
+    },
+    {
+      "id": "math/nullus-est-cultus",
+      "stratum": "mathematics",
+      "url": "/math/nullus-est-cultus/",
+      "markdown": "/md/nullus-est-cultus.md",
+      "title": "Nullus est cultus",
+      "languages": [
+        "la"
+      ],
+      "exits": [
+        {
+          "type": "walk",
+          "to": "/math/condiciones-del-siddhi/"
+        }
+      ],
+      "district": "grand switchboard",
+      "group": "math",
+      "doors": [
+        {
+          "to": "math/condiciones-del-siddhi",
+          "url": "/math/condiciones-del-siddhi/",
+          "relation": "return",
+          "markdown": "/md/condiciones-del-siddhi.md"
         }
       ]
     }

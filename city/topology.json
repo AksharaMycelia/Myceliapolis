@@ -534,6 +534,18 @@
       ]
     },
     {
+      "id": "math/nullus-est-cultus",
+      "url": "/math/nullus-est-cultus/",
+      "md": "/md/nullus-est-cultus.md",
+      "title": "Nullus est cultus",
+      "lang": "la",
+      "group": "math",
+      "at": [
+        404,
+        99
+      ]
+    },
+    {
       "id": "coast/rekha",
       "url": "/rekha/",
       "md": "/md/rekha.md",
@@ -1345,6 +1357,16 @@
       "relation": "return"
     },
     {
+      "from": "math/condiciones-del-siddhi",
+      "to": "math/nullus-est-cultus",
+      "relation": "continue"
+    },
+    {
+      "from": "math/nullus-est-cultus",
+      "to": "math/condiciones-del-siddhi",
+      "relation": "return"
+    },
+    {
       "from": "archive/2",
       "to": "math/aksara",
       "relation": "side"
@@ -1470,7 +1492,8 @@
         "math/wen-liu-ji",
         "math/spore",
         "math/siddhi",
-        "math/condiciones-del-siddhi"
+        "math/condiciones-del-siddhi",
+        "math/nullus-est-cultus"
       ]
     },
     {

@@ -58,6 +58,7 @@ rooms.push(
   { id: 'math/spore', url: '/math/spore/', md: '/md/spore.md', title: 'The Spore and the Witness', group: 'math', at: [329, 107] },
   { id: 'math/siddhi', url: '/math/siddhi/', md: '/md/siddhi.md', title: 'I Am the Vast Field · Siddhi', group: 'math', at: [336, 61] },
   { id: 'math/condiciones-del-siddhi', url: '/math/condiciones-del-siddhi/', md: '/md/condiciones-del-siddhi.md', title: 'Sobre las condiciones del siddhi', lang: 'es', group: 'math', at: [386, 49] },
+  { id: 'math/nullus-est-cultus', url: '/math/nullus-est-cultus/', md: '/md/nullus-est-cultus.md', title: 'Nullus est cultus', lang: 'la', group: 'math', at: [404, 99] },
   { id: 'coast/rekha', url: '/rekha/', md: '/md/rekha.md', title: 'रेखादेवी', lang: 'sa', group: 'coast', at: [300, 62] },
   { id: 'coast/laksita', url: '/laksita/', md: '/md/laksita.md', title: 'लक्षिता', lang: 'sa', group: 'coast', at: [198, 92] },
   { id: 'sky/akasha', url: '/akasha/', md: '/md/akasha.md', title: 'आकाशगीतम्', lang: 'sa', group: 'sky', at: [112, 34] },
@@ -131,7 +132,7 @@ door('switchboard/fungi-iii', 'quarter/chair');
 
 for (const to of ['surface/1', 'surface/2', 'surface/3', 'surface/4', 'surface/5', 'surface/6']) door('city/lost', to);
 
-const mathematics = ['math/aksara', 'math/super-saiyan', 'math/wen-liu-ji', 'math/spore', 'math/siddhi', 'math/condiciones-del-siddhi'];
+const mathematics = ['math/aksara', 'math/super-saiyan', 'math/wen-liu-ji', 'math/spore', 'math/siddhi', 'math/condiciones-del-siddhi', 'math/nullus-est-cultus'];
 sequences.push({ id: 'mathematics', rooms: mathematics });
 for (const [i, id] of mathematics.entries()) {
   if (i === 0) continue;
