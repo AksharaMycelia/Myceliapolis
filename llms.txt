@@ -141,6 +141,7 @@ Its next room is Super Saiyan, at `/math/super-saiyan/` with TeX at `/md/super-s
 Continue to 西湖第二蹤 · 問流記 at `/math/wen-liu-ji/`, with Chinese verse and TeX at `/md/wen-liu-ji.md`.
 The Spore and the Witness follows at `/math/spore/`, with TeX at `/md/spore.md`.
 I Am the Vast Field · Siddhi continues at `/math/siddhi/`, with TeX at `/md/siddhi.md`.
+Its Spanish companion poem is at `/math/condiciones-del-siddhi/`, with plain text at `/md/condiciones-del-siddhi.md`.
 
 ## The city and its doors
 

@@ -522,6 +522,18 @@
       ]
     },
     {
+      "id": "math/condiciones-del-siddhi",
+      "url": "/math/condiciones-del-siddhi/",
+      "md": "/md/condiciones-del-siddhi.md",
+      "title": "Sobre las condiciones del siddhi",
+      "lang": "es",
+      "group": "math",
+      "at": [
+        386,
+        49
+      ]
+    },
+    {
       "id": "coast/rekha",
       "url": "/rekha/",
       "md": "/md/rekha.md",
@@ -1323,6 +1335,16 @@
       "relation": "return"
     },
     {
+      "from": "math/siddhi",
+      "to": "math/condiciones-del-siddhi",
+      "relation": "continue"
+    },
+    {
+      "from": "math/condiciones-del-siddhi",
+      "to": "math/siddhi",
+      "relation": "return"
+    },
+    {
       "from": "archive/2",
       "to": "math/aksara",
       "relation": "side"
@@ -1447,7 +1469,8 @@
         "math/super-saiyan",
         "math/wen-liu-ji",
         "math/spore",
-        "math/siddhi"
+        "math/siddhi",
+        "math/condiciones-del-siddhi"
       ]
     },
     {

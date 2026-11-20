@@ -1,0 +1,5 @@
+main { max-width: 49rem; margin: auto; padding-inline: clamp(1.1rem, 5vw, 3.25rem); font: 1.125rem/1.7 Georgia, serif; }
+h1 { font-size: clamp(2rem, 6vw, 3.25rem); text-wrap: balance; }
+section { margin-block: 3rem; }
+h2 { font-weight: normal; font-size: 1.125rem; }
+section p { overflow: visible; padding: 0; margin-block: 1rem; }

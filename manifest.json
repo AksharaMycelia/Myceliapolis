@@ -2176,6 +2176,10 @@
         {
           "type": "walk",
           "to": "/math/spore/"
+        },
+        {
+          "type": "walk",
+          "to": "/math/condiciones-del-siddhi/"
         }
       ],
       "district": "grand switchboard",
@@ -2186,6 +2190,38 @@
           "url": "/math/spore/",
           "relation": "return",
           "markdown": "/md/spore.md"
+        },
+        {
+          "to": "math/condiciones-del-siddhi",
+          "url": "/math/condiciones-del-siddhi/",
+          "relation": "continue",
+          "markdown": "/md/condiciones-del-siddhi.md"
+        }
+      ]
+    },
+    {
+      "id": "math/condiciones-del-siddhi",
+      "stratum": "mathematics",
+      "url": "/math/condiciones-del-siddhi/",
+      "markdown": "/md/condiciones-del-siddhi.md",
+      "title": "Sobre las condiciones del siddhi",
+      "languages": [
+        "es"
+      ],
+      "exits": [
+        {
+          "type": "walk",
+          "to": "/math/siddhi/"
+        }
+      ],
+      "district": "grand switchboard",
+      "group": "math",
+      "doors": [
+        {
+          "to": "math/siddhi",
+          "url": "/math/siddhi/",
+          "relation": "return",
+          "markdown": "/md/siddhi.md"
         }
       ]
     }

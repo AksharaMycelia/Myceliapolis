@@ -85,7 +85,9 @@
 - [The Spore and the Witness](/md/spore.md) · [page](/math/spore/)
   - doors: [西湖第二蹤 · 問流記](/md/wen-liu-ji.md) · [I Am the Vast Field · Siddhi](/md/siddhi.md)
 - [I Am the Vast Field · Siddhi](/md/siddhi.md) · [page](/math/siddhi/)
-  - doors: [The Spore and the Witness](/md/spore.md)
+  - doors: [The Spore and the Witness](/md/spore.md) · [Sobre las condiciones del siddhi](/md/condiciones-del-siddhi.md)
+- [Sobre las condiciones del siddhi](/md/condiciones-del-siddhi.md) · [page](/math/condiciones-del-siddhi/)
+  - doors: [I Am the Vast Field · Siddhi](/md/siddhi.md)
 
 ## Under the Floor
 
