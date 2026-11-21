@@ -64,6 +64,7 @@
 
 - [Taberna rumorum](/md/rumor.md) · [page](/rumor/) — [how to leave words](/participate.md)
   - doors: [The Conservatory](/md/conservatory.md)
+- [The Chamber of Secrets](/rumor/) — A hidden door in the Rumor Tavern.
 
 ## Unfinished Quarter
 

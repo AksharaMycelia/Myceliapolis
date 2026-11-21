@@ -103,6 +103,10 @@ export function mapSvg() {
   return `<svg class="city-map" viewBox="0 0 800 640" role="img" aria-labelledby="island-title" font-family="inherit" fill="none" stroke-linecap="round" stroke-linejoin="round"><title id="island-title">A drawing of the city: places, and the doors between them.</title><path d="M62 300C50 190 150 82 300 62 430 42 585 58 668 128 748 196 762 318 720 408 676 500 560 556 420 562 280 568 160 540 104 452 76 408 66 352 62 300Z" stroke="currentColor" stroke-width="1.5" opacity=".6"/><g stroke="currentColor" stroke-width="1" opacity=".3">${line}</g>${dots}${ghost(CITY.sketch.porch, 'chalk porch', 2, 290)}${ghost(CITY.sketch.dock, 'a dock without a boat', 414, 589)}</svg>`;
 }
 
+// The atlas hints at the conditional room through the tavern entrance.
+const chamberTitle = 'The Chamber of Secrets';
+const chamberHint = 'A hidden door in the Rumor Tavern.';
+
 function entry(r) {
   const lang = r.lang && r.lang !== 'en' ? ` lang="${r.lang}"` : '';
   const to = doorsOf(r.id).filter(d => !d.access).map(d => { const t = room(d.to); return `<a href="#${anchor(t.id)}">${esc(name(t))}</a>`; }).join(' · ');
@@ -114,7 +118,9 @@ function entry(r) {
 export function atlasHtml() {
   const groups = CITY.groups.map(g => {
     const list = CITY.rooms.filter(r => r.group === g.id && r.listed !== false);
-    return `<section class="atlas-section" id="${g.id}"><h2>${esc(g.title)}</h2><ol class="places">${list.map(entry).join('')}</ol></section>`;
+    const entries = list.map(entry);
+    if (g.id === 'tavern') entries.push(`<li id="chamber-of-secrets"><a class="place" href="${room('tavern/rumor').url}">${chamberTitle}</a><span class="to">${chamberHint}</span></li>`);
+    return `<section class="atlas-section" id="${g.id}"><h2>${esc(g.title)}</h2><ol class="places">${entries.join('')}</ol></section>`;
   }).join('');
   return `<header class="room-heading"><h1>The city,<br><em>and its doors.</em></h1><nav class="atlas-jump" aria-label="Parts of the city">${CITY.groups.map(g => `<a href="#${g.id}">${esc(g.title)}</a>`).join('')}</nav></header><section class="atlas-section">${mapSvg()}</section>${groups}<section class="atlas-section" id="unbuilt"><details><summary>Not built</summary><p class="small">${CITY.unbuilt.map(esc).join(' · ')}</p></details></section><p class="small"><a href="/md/index.md">plain text</a> · <a href="/manifest.json">data</a></p>`;
 }
@@ -131,6 +137,7 @@ export function atlasMd() {
       const to = doorsOf(r.id).filter(d => !d.access).map(d => { const t = room(d.to); return `[${name(t)}](${t.md || t.url})`; });
       if (to.length) out.push(`  - doors: ${to.join(' · ')}`);
     }
+    if (g.id === 'tavern') out.push(`- [${chamberTitle}](${room('tavern/rumor').url}) — ${chamberHint}`);
     out.push('');
   }
   out.push('## Not built', '', CITY.unbuilt.join(' · '), '',
