@@ -93,7 +93,7 @@ $$
 <!-- city:doors -->
 Hic es: **Nullus est cultus** · `math/nullus-est-cultus` · [ut pagina](/math/nullus-est-cultus/)
 
-Ostia hinc: [Sobre las condiciones del siddhi](/md/condiciones-del-siddhi.md) ([ut pagina](/math/condiciones-del-siddhi/))
+Ostia hinc: [Sobre las condiciones del siddhi](/md/condiciones-del-siddhi.md) ([ut pagina](/math/condiciones-del-siddhi/)) · [विपुलक्षेत्रव्रतम्](/md/vipulaksetra-vratam.md) ([ut pagina](/math/vipulaksetra-vratam/))
 
 Tabula urbis: [Textus simplex](/md/index.md) · [/atlas/](/atlas/#math-nullus-est-cultus) · [omnia ostia ut data](/manifest.json)
 <!-- /city:doors -->

@@ -2189,6 +2189,12 @@
       "group": "math",
       "doors": [
         {
+          "to": "math/vipulaksetra-vratam",
+          "url": "/math/vipulaksetra-vratam/",
+          "relation": "side",
+          "markdown": "/md/vipulaksetra-vratam.md"
+        },
+        {
           "to": "math/spore",
           "url": "/math/spore/",
           "relation": "return",
@@ -2261,6 +2267,49 @@
           "url": "/math/condiciones-del-siddhi/",
           "relation": "return",
           "markdown": "/md/condiciones-del-siddhi.md"
+        },
+        {
+          "to": "math/vipulaksetra-vratam",
+          "url": "/math/vipulaksetra-vratam/",
+          "relation": "continue",
+          "markdown": "/md/vipulaksetra-vratam.md"
+        }
+      ]
+    },
+    {
+      "id": "math/vipulaksetra-vratam",
+      "stratum": "mathematics",
+      "url": "/math/vipulaksetra-vratam/",
+      "markdown": "/md/vipulaksetra-vratam.md",
+      "title": "विपुलक्षेत्रव्रतम्",
+      "languages": [
+        "sa",
+        "en",
+        "ko"
+      ],
+      "exits": [
+        {
+          "type": "walk",
+          "to": "/math/siddhi/"
+        },
+        {
+          "type": "walk",
+          "to": "/math/nullus-est-cultus/"
+        }
+      ],
+      "group": "math",
+      "doors": [
+        {
+          "to": "math/siddhi",
+          "url": "/math/siddhi/",
+          "relation": "side",
+          "markdown": "/md/siddhi.md"
+        },
+        {
+          "to": "math/nullus-est-cultus",
+          "url": "/math/nullus-est-cultus/",
+          "relation": "return",
+          "markdown": "/md/nullus-est-cultus.md"
         }
       ]
     }

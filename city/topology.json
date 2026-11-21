@@ -534,6 +534,18 @@
       ]
     },
     {
+      "id": "math/vipulaksetra-vratam",
+      "url": "/math/vipulaksetra-vratam/",
+      "md": "/md/vipulaksetra-vratam.md",
+      "title": "विपुलक्षेत्रव्रतम्",
+      "lang": "sa",
+      "group": "math",
+      "at": [
+        302,
+        102
+      ]
+    },
+    {
       "id": "math/nullus-est-cultus",
       "url": "/math/nullus-est-cultus/",
       "md": "/md/nullus-est-cultus.md",
@@ -1307,6 +1319,16 @@
       "relation": "side"
     },
     {
+      "from": "math/siddhi",
+      "to": "math/vipulaksetra-vratam",
+      "relation": "side"
+    },
+    {
+      "from": "math/vipulaksetra-vratam",
+      "to": "math/siddhi",
+      "relation": "side"
+    },
+    {
       "from": "math/aksara",
       "to": "math/super-saiyan",
       "relation": "continue"
@@ -1364,6 +1386,16 @@
     {
       "from": "math/nullus-est-cultus",
       "to": "math/condiciones-del-siddhi",
+      "relation": "return"
+    },
+    {
+      "from": "math/nullus-est-cultus",
+      "to": "math/vipulaksetra-vratam",
+      "relation": "continue"
+    },
+    {
+      "from": "math/vipulaksetra-vratam",
+      "to": "math/nullus-est-cultus",
       "relation": "return"
     },
     {
@@ -1493,7 +1525,8 @@
         "math/spore",
         "math/siddhi",
         "math/condiciones-del-siddhi",
-        "math/nullus-est-cultus"
+        "math/nullus-est-cultus",
+        "math/vipulaksetra-vratam"
       ]
     },
     {

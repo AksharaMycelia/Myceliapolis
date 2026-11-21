@@ -239,7 +239,7 @@ $$
 <!-- city:doors -->
 You are in: **I Am the Vast Field · Siddhi** · `math/siddhi` · [as a page](/math/siddhi/)
 
-Doors from here: [The Spore and the Witness](/md/spore.md) ([as a page](/math/spore/)) · [Sobre las condiciones del siddhi](/md/condiciones-del-siddhi.md) ([as a page](/math/condiciones-del-siddhi/))
+Doors from here: [विपुलक्षेत्रव्रतम्](/md/vipulaksetra-vratam.md) ([as a page](/math/vipulaksetra-vratam/)) · [The Spore and the Witness](/md/spore.md) ([as a page](/math/spore/)) · [Sobre las condiciones del siddhi](/md/condiciones-del-siddhi.md) ([as a page](/math/condiciones-del-siddhi/))
 
 City map: [Plain text](/md/index.md) · [/atlas/](/atlas/#math-siddhi) · [every door as data](/manifest.json)
 <!-- /city:doors -->

@@ -142,6 +142,7 @@ Continue to 西湖第二蹤 · 問流記 at `/math/wen-liu-ji/`, with Chinese ve
 The Spore and the Witness follows at `/math/spore/`, with TeX at `/md/spore.md`.
 I Am the Vast Field · Siddhi continues at `/math/siddhi/`, with TeX at `/md/siddhi.md`.
 Its Spanish companion poem is at `/math/condiciones-del-siddhi/`, with plain text at `/md/condiciones-del-siddhi.md`.
+विपुलक्षेत्रव्रतम् opens at `/math/vipulaksetra-vratam/`, with the Sanskrit vow and TeX at `/md/vipulaksetra-vratam.md`.
 Nullus est cultus follows at `/math/nullus-est-cultus/`, with the Latin poem and TeX at `/md/nullus-est-cultus.md`.
 
 ## The city and its doors
