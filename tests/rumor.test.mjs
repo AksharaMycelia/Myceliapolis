@@ -161,7 +161,13 @@ test('the KFC back room shares the receipt gate across its page, text and pictur
   const {access_token} = await (await post(env, 'A bucket in the back room.')).json();
   const headers = {Authorization: 'Bearer ' + access_token};
   const entrance = await (await call(env, '/kfc/', {headers})).text();
-  assert.match(entrance, /href="\/kfc\/oku\/"/);
+  const articleStart = entrance.indexOf('<article class="latin">');
+  const articleEnd = entrance.indexOf('</article>', articleStart);
+  assert.ok(articleStart > 0 && articleEnd > articleStart);
+  assert.match(entrance.slice(0, articleStart), /href="\/kfc\/oku\/"[^>]*>.*?Enter the back room/);
+  assert.match(entrance.slice(articleEnd), /id="sleeping-door" href="\/kfc\/oku\/">\s*<img[^>]+sleeping-pom-door\.webp[^>]+>[\s\S]*?Enter the back room[\s\S]*?<\/a>/);
+  const seedText = await (await call(env, '/md/kfc.md', {headers})).text();
+  assert.ok(seedText.includes('[Enter the back room · 奥の間](/md/kfc-oku.md)'));
   assert.doesNotMatch(entrance, /href="\/(ultra|after)\/"/);
   const page = await call(env, '/kfc/oku/', {headers});
   assert.equal(page.status, 200);

@@ -8,3 +8,32 @@
 
 .rudra-recording { margin: 1.5rem 0; }
 .rudra-recording iframe { display: block; width: 100%; aspect-ratio: 16 / 9; border: 0; }
+
+.sleeping-dog-door {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: .65rem;
+  width: fit-content;
+  max-width: 100%;
+  margin: 3rem auto 1rem;
+  padding: .9rem 1.5rem 1.05rem;
+  border: 2px solid #c7a066;
+  background: #151822;
+  color: #ffdda0;
+  text-align: center;
+  text-decoration: none;
+}
+.sleeping-dog-door img {
+  display: block;
+  width: 10rem;
+  max-width: 100%;
+  height: auto;
+  image-rendering: pixelated;
+}
+.sleeping-dog-door .door-label {
+  font-size: 1.2rem;
+  text-decoration: underline;
+  text-underline-offset: .2em;
+}
+.sleeping-dog-door:hover, .sleeping-dog-door:focus-visible { border-color: #ffe3ae; }
