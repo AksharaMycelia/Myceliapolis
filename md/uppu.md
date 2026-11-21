@@ -374,7 +374,7 @@
 
 [Girls’ Generation · Gee](https://www.youtube.com/watch?v=U7mPqycQ0tQ)
 
-[Spice Girls · Spice Up Your Life](https://www.youtube.com/watch?v=9wfpXI5PKlw)
+[Stray Kids · God’s Menu](https://www.youtube.com/watch?v=TQTlCHxyuu8)
 
 ---
 <!-- city:doors -->

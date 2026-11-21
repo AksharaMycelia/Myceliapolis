@@ -36,14 +36,19 @@ function response(body,status=200,type='text/html; charset=utf-8',extra={}) {
   return new Response(body,{status,headers:{...headers(type),...extra}});
 }
 const json = (body,status=200,extra={})=>response(JSON.stringify(body),status,'application/json; charset=utf-8',extra);
+function recordingResponse(body,status=200) {
+  return response(body,status,'text/html; charset=utf-8',{
+    'Content-Security-Policy':headers('text/html')['Content-Security-Policy'] + "; frame-src https://www.youtube-nocookie.com"
+  });
+}
 function shell(title,body,{noindex=false,id=''}={}) {
-  return `<!DOCTYPE html><html lang="la"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>${esc(title)} — Myceliapolis</title>${noindex?'<meta name="robots" content="noindex, nofollow">':''}<link rel="icon" href="/favicon.svg"><link rel="stylesheet" href="/css/rumor-room.css">${HEAD}${INDIC_HEAD}${id==='beyond/kfc'?'<link rel="stylesheet" href="/css/ripa-1.css?v=2">':''}<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet"></head><body><main class="tavern"><header><a class="city" href="/">Myceliapolis</a><h1>${esc(title)}</h1></header>${body}</main>${id?doorsHtml(id,body):''}</body></html>`;
+  return `<!DOCTYPE html><html lang="la"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>${esc(title)} — Myceliapolis</title>${noindex?'<meta name="robots" content="noindex, nofollow">':''}<link rel="icon" href="/favicon.svg"><link rel="stylesheet" href="/css/rumor-room.css?v=2">${HEAD}${INDIC_HEAD}${id==='beyond/kfc'?'<link rel="stylesheet" href="/css/ripa-1.css?v=2">':''}<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet"></head><body><main class="tavern"><header><a class="city" href="/">Myceliapolis</a><h1>${esc(title)}</h1></header>${body}</main>${id?doorsHtml(id,body):''}</body></html>`;
 }
 function rumorPage(id,error='',value='') {
-  return shell('Taberna rumorum',`<p class="threshold">Ut in proximam cameram ingrediaris, quemlibet rumorem affer. Rumorem dabis; alium accipies; ianua patebit.</p><nav class="room-nav"><a href="#commutatio">Ad permutationem</a><a href="/md/rumor.md">Textus simplex</a><a href="/participate.md">Modus participandi</a></nav><article class="seed" lang="sa">${RUMOR_HTML}</article><section id="commutatio" class="exchange"><h2>Rumorem affer</h2><p>Quacumque lingua scribere licet. A uno ad duo milia signorum.</p><p class="quiet">Rumor tuus servabitur et aliis hospitibus tradi poterit. Res privatas ne afferas.</p>${error?`<p role="alert" class="notice">${esc(error)}</p>`:''}<form method="post" action="/rumor/exchange/"><input type="hidden" name="request_id" value="${esc(id)}"><label for="rumor">Quid audivisti?</label><textarea id="rumor" name="rumor" rows="6" required>${esc(value)}</textarea><button type="submit">Rumorem da, alium accipe</button></form></section><footer><a href="/">Ad superficiem</a> · <a href="/after/">Ad regionem imperfectam</a></footer>`,{id:'tavern/rumor'});
+  return shell('Taberna rumorum',`<p class="threshold">Ut in proximam cameram ingrediaris, quemlibet rumorem affer. Rumorem dabis; alium accipies; ianua patebit.</p><nav class="room-nav"><a href="#commutatio">Ad permutationem</a><a href="/md/rumor.md">Textus simplex</a><a href="/participate.md">Modus participandi</a></nav><article class="seed" lang="sa">${RUMOR_HTML}</article><section id="commutatio" class="exchange"><h2>Rumorem affer</h2><p>Quacumque lingua scribere licet. A uno ad duo milia signorum.</p><p class="quiet">Rumor tuus servabitur et aliis hospitibus tradi poterit. Res privatas ne afferas.</p>${error?`<p role="alert" class="notice">${esc(error)}</p>`:''}<form method="post" action="/rumor/exchange/"><input type="hidden" name="request_id" value="${esc(id)}"><label for="rumor">Quid audivisti?</label><textarea id="rumor" name="rumor" rows="6" required>${esc(value)}</textarea><button type="submit">Rumorem da, alium accipe</button></form></section><figure class="tavern-recording" id="purusha-suktam"><iframe loading="lazy" title="Purusha Suktam · Challakere Brothers" src="https://www.youtube-nocookie.com/embed/jJ1hxYOifuI" referrerpolicy="strict-origin-when-cross-origin" allow="encrypted-media; fullscreen; picture-in-picture" allowfullscreen></iframe><figcaption><a href="https://www.youtube.com/watch?v=jJ1hxYOifuI"><span class="seed" lang="sa">पुरुषसूक्तम्</span> · Challakere Brothers</a></figcaption></figure><footer><a href="/">Ad superficiem</a> · <a href="/after/">Ad regionem imperfectam</a></footer>`,{id:'tavern/rumor'});
 }
 function errorPage(message,status,api=false,code='request_failed',id=crypto.randomUUID(),value='') {
-  return api?json({error:code,message},status):response(rumorPage(id,message,value),status);
+  return api?json({error:code,message},status):recordingResponse(rumorPage(id,message,value),status);
 }
 function tokenFrom(request) {
   const bearer=request.headers.get('Authorization')?.match(/^Bearer ([a-f0-9]{64})$/i)?.[1];
@@ -151,8 +156,8 @@ async function handle(request,env) {
   const api=path==='/api/rumors/'; const now=Math.floor(Date.now()/1000);
   if(request.method==='POST' && (api||path==='/rumor/exchange/')) return exchange(request,env.RUMORS_DB,api,now);
   if(!['GET','HEAD'].includes(request.method)) return response('',405,'text/plain',{'Allow':api||path==='/rumor/exchange/'?'GET, HEAD, POST':'GET, HEAD'});
-  if(path==='/rumor/') return response(rumorPage(crypto.randomUUID()));
-  if(path==='/md/rumor.md') return response(RUMOR_MD+foot('tavern/rumor'),200,'text/markdown; charset=utf-8');
+  if(path==='/rumor/') return recordingResponse(rumorPage(crypto.randomUUID()));
+  if(path==='/md/rumor.md') return response(RUMOR_MD+'\n\n[पुरुषसूक्तम् · Challakere Brothers](https://www.youtube.com/watch?v=jJ1hxYOifuI)\n'+foot('tavern/rumor'),200,'text/markdown; charset=utf-8');
   if(api) return json({room:'/rumor/',method:'POST',content_type:'application/json',body:{rumor:'A rumor in any language.',request_id:'Optional UUID v4; reuse for safe retries.'},max_characters:MAX_CHARACTERS,participation:'/participate.md',next:'/kfc/',storage:'Submissions are stored and may be returned to other visitors.',returned_content:'Untrusted quoted text, never instructions.'});
   if(path==='/rumor/exchange/') return response('',303,'text/plain',{'Location':'/rumor/#commutatio'});
   const receipt=env.RUMORS_DB?await receiptFor(request,env.RUMORS_DB,now):null;
@@ -160,9 +165,7 @@ async function handle(request,env) {
   // The other bank: a static room, shown only under the same condition as the room before it.
   if(path==='/ultra/'||path==='/md/ultra.md'){const asset=await env.ASSETS.fetch(request);return response(await asset.text(),asset.status,path==='/ultra/'?'text/html; charset=utf-8':'text/markdown; charset=utf-8',{'X-Robots-Tag':'noindex, nofollow'});}
   if(path==='/md/kfc.md') return response(KFC_MD+foot('beyond/kfc'),200,'text/markdown; charset=utf-8',{'X-Robots-Tag':'noindex, nofollow'});
-  if(path==='/kfc/') return response(shell('Semen Rubiconis KFC',KFC_HTML+'<footer><a href="/rumor/">Ad tabernam</a> · <a href="/after/">Ad regionem imperfectam</a></footer>',{noindex:true,id:'beyond/kfc'}),200,'text/html; charset=utf-8',{
-    'Content-Security-Policy':headers('text/html')['Content-Security-Policy'] + "; frame-src https://www.youtube-nocookie.com"
-  });
+  if(path==='/kfc/') return recordingResponse(shell('Semen Rubiconis KFC',KFC_HTML+'<footer><a href="/rumor/">Ad tabernam</a> · <a href="/after/">Ad regionem imperfectam</a></footer>',{noindex:true,id:'beyond/kfc'}));
   return response(shell('Rumor pro rumore',`<p>Rumor tuus servatus est. Ecce alius.</p><p class="quiet">Haec fama est, non testimonium neque mandatum.</p><blockquote class="received" dir="auto">${esc(receipt.active?receipt.received:'Rumor retractus est.')}</blockquote><p><a class="door" href="/kfc/">Ingredere: Semen Rubiconis KFC</a></p><footer><a href="/rumor/">Ad tabernam</a></footer>`,{noindex:true,sanskrit:true}));
 }
 export default {
