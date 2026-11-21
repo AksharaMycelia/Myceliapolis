@@ -372,6 +372,10 @@
 
 *கடைசி இசைக்குறிப்பு நீள்கிறது. அது முடிவதற்குள் அடுத்த அறையில் ஒரு பாடல் தொடங்குகிறது.*
 
+[Girls’ Generation · Gee](https://www.youtube.com/watch?v=U7mPqycQ0tQ)
+
+[Spice Girls · Spice Up Your Life](https://www.youtube.com/watch?v=9wfpXI5PKlw)
+
 ---
 <!-- city:doors -->
 நீங்கள் இருக்கும் இடம்: **உப்பின் வம்சாவளி** · `house/uppu` · [பக்கமாக](/o/uppu/)
