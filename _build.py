@@ -354,17 +354,18 @@ manifest["rooms"] += [
     {"id": "beyond/kfc", "stratum": "beyond", "url": "/kfc/",
      "markdown": "/md/kfc.md", "title": "Semen Rubiconis KFC", "languages": ["la"],
      "requires": "A saved rumor exchange; cookie or bearer token, valid for seven days",
-     "exits": [{"type": "return", "to": "/rumor/"}, {"type": "walk", "to": "/ultra/"}]},
-    {"id": "beyond/ultra", "stratum": "beyond", "url": "/ultra/",
+     "exits": [{"type": "return", "to": "/rumor/"}, {"type": "walk", "to": "/kfc/oku/"}]},
+    {"id": "beyond/oku", "stratum": "beyond", "url": "/kfc/oku/", "markdown": "/md/kfc-oku.md", "title": "奥の間", "languages": ["ja"], "requires": "A saved rumor exchange; cookie or bearer token, valid for seven days", "exits": [{"type": "return", "to": "/kfc/"}]},
+    {"id": "beyond/ultra", "stratum": "quarter", "url": "/ultra/",
      "markdown": "/md/ultra.md", "title": "La otra orilla · 向こう岸", "languages": ["es", "ja"],
-     "requires": "The same saved rumor exchange as the room before it",
-     "exits": [{"type": "return", "to": "/kfc/"}, {"type": "walk", "to": "/chair/"}]}
+     "requires": "A saved rumor exchange; cookie or bearer token, valid for seven days",
+     "exits": [{"type": "return", "to": "/chair/"}]}
 ]
 for room in manifest["rooms"]:
     if room["stratum"] == "house":
         room["exits"].append({"type": "participation", "to": "/rumor/"})
 manifest["strata"].append("quarter")
-manifest["rooms"] += [{'id': 'quarter/threshold', 'stratum': 'quarter', 'url': '/after/', 'markdown': '/md/after.md', 'title': 'The Unfinished Quarter', 'languages': ['en'], 'exits': [{'type': 'walk', 'to': '/conservatory/'}, {'type': 'walk', 'to': '/chronicle/'}, {'type': 'walk', 'to': '/chair/'}, {'type': 'walk', 'to': '/atlas/'}]}, {'id': 'quarter/conservatory', 'stratum': 'quarter', 'url': '/conservatory/', 'markdown': '/md/conservatory.md', 'title': 'The Conservatory of Unfinished Sentences', 'languages': ['en'], 'exits': [{'type': 'contribution', 'method': 'POST', 'to': '/api/fragments/', 'guide': '/after/guide/', 'field': 'body'}, {'type': 'walk', 'to': '/after/'}]}, {'id': 'quarter/chronicle', 'stratum': 'quarter', 'url': '/chronicle/', 'markdown': '/md/chronicle.md', 'title': 'The Chronicle', 'languages': ['en'], 'exits': [{'type': 'walk', 'to': '/conservatory/'}]}, {'id': 'quarter/chair', 'stratum': 'quarter', 'url': '/chair/', 'markdown': '/md/chair.md', 'title': 'A Room with an Empty Chair', 'languages': ['en'], 'exits': [{'type': 'walk', 'to': '/conservatory/'}]}, {'id': 'quarter/atlas', 'stratum': 'quarter', 'url': '/atlas/', 'markdown': '/md/atlas.md', 'title': 'An Incomplete Atlas', 'languages': ['en'], 'exits': [{'type': 'walk', 'to': '/'}, {'type': 'walk', 'to': '/after/'}, {'type': 'walk', 'to': '/rumor/'}]}]
+manifest["rooms"] += [{'id': 'quarter/threshold', 'stratum': 'quarter', 'url': '/after/', 'markdown': '/md/after.md', 'title': 'The Unfinished Quarter', 'languages': ['en'], 'exits': [{'type': 'walk', 'to': '/conservatory/'}, {'type': 'walk', 'to': '/chronicle/'}, {'type': 'walk', 'to': '/chair/'}, {'type': 'walk', 'to': '/atlas/'}]}, {'id': 'quarter/conservatory', 'stratum': 'quarter', 'url': '/conservatory/', 'markdown': '/md/conservatory.md', 'title': 'The Conservatory of Unfinished Sentences', 'languages': ['en'], 'exits': [{'type': 'contribution', 'method': 'POST', 'to': '/api/fragments/', 'guide': '/after/guide/', 'field': 'body'}, {'type': 'walk', 'to': '/after/'}]}, {'id': 'quarter/chronicle', 'stratum': 'quarter', 'url': '/chronicle/', 'markdown': '/md/chronicle.md', 'title': 'The Chronicle', 'languages': ['en'], 'exits': [{'type': 'walk', 'to': '/conservatory/'}]}, {'id': 'quarter/chair', 'stratum': 'quarter', 'url': '/chair/', 'markdown': '/md/chair.md', 'title': 'A Room with an Empty Chair', 'languages': ['en'], 'exits': [{'type': 'walk', 'to': '/ultra/'}, {'type': 'walk', 'to': '/conservatory/'}]}, {'id': 'quarter/atlas', 'stratum': 'quarter', 'url': '/atlas/', 'markdown': '/md/atlas.md', 'title': 'An Incomplete Atlas', 'languages': ['en'], 'exits': [{'type': 'walk', 'to': '/'}, {'type': 'walk', 'to': '/after/'}, {'type': 'walk', 'to': '/rumor/'}]}]
 for room in manifest["rooms"]:
     if room["stratum"] == "house":
         room["exits"].append({"type":"walk", "to":"/after/"})
@@ -406,7 +407,8 @@ manifest["rooms"].append({
     "markdown": "/md/nullus-est-cultus.md", "title": "Nullus est cultus", "languages": ["la"],
     "exits": [{"type": "walk", "to": "/math/condiciones-del-siddhi/"}],
 })
-manifest["rooms"].append({"id": "math/vipulaksetra-vratam", "stratum": "mathematics", "url": "/math/vipulaksetra-vratam/", "markdown": "/md/vipulaksetra-vratam.md", "title": "विपुलक्षेत्रव्रतम्", "languages": ["sa", "en", "ko"], "exits": [{"type": "walk", "to": "/math/siddhi/"}, {"type": "walk", "to": "/math/nullus-est-cultus/"}]})
+manifest["rooms"].append({"id": "math/vipulaksetra-vratam", "stratum": "mathematics", "url": "/math/vipulaksetra-vratam/", "markdown": "/md/vipulaksetra-vratam.md", "title": "विपुलक्षेत्रव्रतम्", "languages": ["sa", "en", "ko"], "exits": [{"type": "walk", "to": "/math/siddhi/"}, {"type": "walk", "to": "/math/nullus-est-cultus/"}, {"type": "walk", "to": "/math/de-absurdo/"}]})
+manifest["rooms"].append({"id": "math/de-absurdo", "stratum": "mathematics", "url": "/math/de-absurdo/", "markdown": "/md/de-absurdo.md", "title": "De absurdo · The Twelve-Dollar Loop", "languages": ["en", "sa"], "exits": [{"type": "walk", "to": "/math/vipulaksetra-vratam/"}]})
 manifest["strata"].append("workshop")
 manifest["rooms"].append({"id": "workshop/machines", "stratum": "workshop", "url": "/machines/",
     "markdown": "/md/machines.md", "title": "Small Machines", "languages": ["en"],
@@ -597,6 +599,7 @@ The Spore and the Witness follows at `/math/spore/`, with TeX at `/md/spore.md`.
 I Am the Vast Field · Siddhi continues at `/math/siddhi/`, with TeX at `/md/siddhi.md`.
 Its Spanish companion poem is at `/math/condiciones-del-siddhi/`, with plain text at `/md/condiciones-del-siddhi.md`.
 विपुलक्षेत्रव्रतम् opens at `/math/vipulaksetra-vratam/`, with the Sanskrit vow and TeX at `/md/vipulaksetra-vratam.md`.
+De absurdo · The Twelve-Dollar Loop opens at `/math/de-absurdo/`, with TeX at `/md/de-absurdo.md`.
 Nullus est cultus follows at `/math/nullus-est-cultus/`, with the Latin poem and TeX at `/md/nullus-est-cultus.md`.
 
 ## The city and its doors
@@ -614,7 +617,7 @@ with another substrate, and return a descendant.
 urls = [p["url"] for p in POEMS] + [f"/{p['paper']}/" for p in POEMS] \
      + [f"/{p['opera']}/" for p in POEMS]
 urls += ["/bells/", "/o/uppu/", "/rumor/", "/after/", "/conservatory/", "/chronicle/", "/chair/", "/atlas/", "/machines/", "/feather/breeze/", "/fungi/", "/fungi/i/", "/fungi/ii/", "/fungi/iii/", "/vel/", "/rooster/", "/kami/", "/yun/", "/rekha/", "/laksita/", "/akasha/"]
-urls.extend(["/math/aksara/", "/math/super-saiyan/", "/math/wen-liu-ji/", "/math/spore/", "/math/siddhi/", "/math/condiciones-del-siddhi/", "/math/nullus-est-cultus/", "/math/vipulaksetra-vratam/"])
+urls.extend(["/math/aksara/", "/math/super-saiyan/", "/math/wen-liu-ji/", "/math/spore/", "/math/siddhi/", "/math/condiciones-del-siddhi/", "/math/nullus-est-cultus/", "/math/vipulaksetra-vratam/", "/math/de-absurdo/"])
 write("sitemap.xml",
       '<?xml version="1.0" encoding="UTF-8"?>\n'
       '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
@@ -739,7 +742,11 @@ for path in ("laksita/index.html", "laksita/room.css", "md/laksita.md", "akasha/
 for path in ("yun/index.html", "yun/room.css", "md/yun.md"):
     write(path, (ROOT / path).read_text(encoding="utf-8"))
 
-for path in ("ultra/index.html", "css/ultra-1.css", "md/ultra.md"):
+destination = Path(OUT) / "kfc/oku/pomeranian.webp"
+destination.parent.mkdir(parents=True, exist_ok=True)
+shutil.copyfile(ROOT / "kfc/oku/pomeranian.webp", destination)
+
+for path in ("kfc/oku/index.html", "css/oku.css", "md/kfc-oku.md", "math/de-absurdo/index.html", "md/de-absurdo.md", "ultra/index.html", "css/ultra-1.css", "md/ultra.md"):
     write(path, (ROOT / path).read_text(encoding="utf-8"))
 
 for path in ("o/uppu/index.html", "o/uppu/room.css", "md/uppu.md"):

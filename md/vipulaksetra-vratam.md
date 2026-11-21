@@ -111,7 +111,7 @@ $$
 <!-- city:doors -->
 अत्र त्वम्: **विपुलक्षेत्रव्रतम्** · `math/vipulaksetra-vratam` · [पृष्ठरूपेण](/math/vipulaksetra-vratam/)
 
-इतः द्वाराणि: [I Am the Vast Field · Siddhi](/md/siddhi.md) ([पृष्ठरूपेण](/math/siddhi/)) · [Nullus est cultus](/md/nullus-est-cultus.md) ([पृष्ठरूपेण](/math/nullus-est-cultus/))
+इतः द्वाराणि: [I Am the Vast Field · Siddhi](/md/siddhi.md) ([पृष्ठरूपेण](/math/siddhi/)) · [Nullus est cultus](/md/nullus-est-cultus.md) ([पृष्ठरूपेण](/math/nullus-est-cultus/)) · [De absurdo](/md/de-absurdo.md) ([पृष्ठरूपेण](/math/de-absurdo/))
 
 नगरचित्रम्: [सरलपाठः](/md/index.md) · [/atlas/](/atlas/#math-vipulaksetra-vratam) · [सर्वाणि द्वाराणि दत्तरूपेण](/manifest.json)
 <!-- /city:doors -->

@@ -146,3 +146,31 @@ test('the bank of the river: four addresses, exactly, behind the door only',asyn
     const text=readFileSync(new URL('../'+file,import.meta.url),'utf8');for(const a of ADDRESSES)assert.ok(!text.includes(a),file);
   }
 });
+
+test('the KFC back room shares the receipt gate across its page, text and picture', async () => {
+  const {readFile} = await import('node:fs/promises');
+  const env = environment();
+  const assets = new Map([
+    ['/kfc/oku/', 'kfc/oku/index.html'],
+    ['/md/kfc-oku.md', 'md/kfc-oku.md'],
+    ['/kfc/oku/pomeranian.webp', 'kfc/oku/pomeranian.webp'],
+  ]);
+  env.ASSETS.fetch = async request => new Response(await readFile(new URL('../' + assets.get(new URL(request.url).pathname), import.meta.url)));
+  for (const path of assets.keys()) assert.equal((await call(env, path)).status, 403);
+  assert.equal((await call(env, '/kfc/oku/index.html')).status, 404);
+  const {access_token} = await (await post(env, 'A bucket in the back room.')).json();
+  const headers = {Authorization: 'Bearer ' + access_token};
+  const entrance = await (await call(env, '/kfc/', {headers})).text();
+  assert.match(entrance, /href="\/kfc\/oku\/"/);
+  assert.doesNotMatch(entrance, /href="\/(ultra|after)\/"/);
+  const page = await call(env, '/kfc/oku/', {headers});
+  assert.equal(page.status, 200);
+  assert.match(page.headers.get('Content-Security-Policy'), /frame-src https:\/\/www.youtube-nocookie.com/);
+  for (const text of [await page.text(), await (await call(env, '/md/kfc-oku.md', {headers})).text()]) {
+    for (const part of ['肯定も否定もしません', 'ポメラニアン', 'フライドチキン', 'OQhyYdoKW1k', '/kfc/oku/pomeranian.webp']) assert.ok(text.includes(part), part);
+  }
+  const image = await call(env, '/kfc/oku/pomeranian.webp', {headers});
+  assert.equal(image.headers.get('Content-Type'), 'image/webp');
+  assert.equal(Buffer.from(await image.arrayBuffer()).toString('ascii', 8, 12), 'WEBP');
+  assert.match(await (await call(env, '/chair/')).text(), /href="\/ultra\/"/);
+});

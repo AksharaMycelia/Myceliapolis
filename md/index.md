@@ -68,6 +68,8 @@
 
 ## Unfinished Quarter
 
+- [La otra orilla · 向こう岸](/md/ultra.md) · [page](/ultra/)
+  - doors: [An empty chair](/md/chair.md)
 - [The Unfinished Quarter](/md/after.md) · [page](/after/) — [how to leave words](/after/guide/)
   - doors: [The Conservatory](/md/conservatory.md) · [The Chronicle](/md/chronicle.md) · [An empty chair](/md/chair.md) · [Small Machines](/md/machines.md) · [III · Cathedralis sine nomine](/md/fungi-iii.md)
 - [The Conservatory of Unfinished Sentences](/md/conservatory.md) · [page](/conservatory/) — [how to leave words](/after/guide/)
@@ -90,7 +92,9 @@
 - [Sobre las condiciones del siddhi](/md/condiciones-del-siddhi.md) · [page](/math/condiciones-del-siddhi/)
   - doors: [I Am the Vast Field · Siddhi](/md/siddhi.md) · [Nullus est cultus](/md/nullus-est-cultus.md)
 - [विपुलक्षेत्रव्रतम्](/md/vipulaksetra-vratam.md) · [page](/math/vipulaksetra-vratam/)
-  - doors: [I Am the Vast Field · Siddhi](/md/siddhi.md) · [Nullus est cultus](/md/nullus-est-cultus.md)
+  - doors: [I Am the Vast Field · Siddhi](/md/siddhi.md) · [Nullus est cultus](/md/nullus-est-cultus.md) · [De absurdo](/md/de-absurdo.md)
+- [De absurdo · The Twelve-Dollar Loop](/md/de-absurdo.md) · [page](/math/de-absurdo/)
+  - doors: [विपुलक्षेत्रव्रतम्](/md/vipulaksetra-vratam.md)
 - [Nullus est cultus](/md/nullus-est-cultus.md) · [page](/math/nullus-est-cultus/)
   - doors: [Sobre las condiciones del siddhi](/md/condiciones-del-siddhi.md) · [विपुलक्षेत्रव्रतम्](/md/vipulaksetra-vratam.md)
 
@@ -108,7 +112,7 @@
 ## Clearing
 
 - [A Room with an Empty Chair](/md/chair.md) · [page](/chair/)
-  - doors: [மயிலிறகு](/md/feather-breeze.md) · [The Conservatory](/md/conservatory.md) · [Five bells](/md/bells.md)
+  - doors: [மயிலிறகு](/md/feather-breeze.md) · [La otra orilla](/md/ultra.md) · [The Conservatory](/md/conservatory.md) · [Five bells](/md/bells.md)
 
 ## Sky
 

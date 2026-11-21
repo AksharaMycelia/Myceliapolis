@@ -44,7 +44,8 @@ rooms.push(
   { id: 'workshop/kami', url: '/kami/', md: '/md/kami.md', title: 'かみ', lang: 'ja', group: 'workshop', at: [648, 548], inspect: '/kami/kami.mjs' },
   { id: 'tavern/rumor', url: '/rumor/', md: '/md/rumor.md', title: 'Taberna rumorum', lang: 'la', group: 'tavern', at: [246, 262], guide: '/participate.md' },
   { id: 'beyond/kfc', url: '/kfc/', md: '/md/kfc.md', title: 'Semen Rubiconis KFC', lang: 'la', group: 'tavern', access: 'conditional', listed: false, on: 'tavern/rumor' },
-  { id: 'beyond/ultra', url: '/ultra/', md: '/md/ultra.md', title: 'La otra orilla · 向こう岸', short: 'La otra orilla', lang: 'es', group: 'tavern', access: 'conditional', listed: false, on: 'beyond/kfc' },
+  { id: 'beyond/oku', url: '/kfc/oku/', md: '/md/kfc-oku.md', title: '奥の間', lang: 'ja', group: 'tavern', access: 'conditional', listed: false, on: 'beyond/kfc' },
+  { id: 'beyond/ultra', url: '/ultra/', md: '/md/ultra.md', title: 'La otra orilla · 向こう岸', short: 'La otra orilla', lang: 'es', group: 'quarter', access: 'conditional', on: 'quarter/chair' },
   { id: 'quarter/threshold', url: '/after/', md: '/md/after.md', title: 'The Unfinished Quarter', group: 'quarter', at: [440, 222], guide: '/after/guide/' },
   { id: 'quarter/conservatory', url: '/conservatory/', md: '/md/conservatory.md', title: 'The Conservatory of Unfinished Sentences', short: 'The Conservatory', group: 'quarter', at: [474, 306], guide: '/after/guide/' },
   { id: 'quarter/chronicle', url: '/chronicle/', md: '/md/chronicle.md', title: 'The Chronicle', group: 'quarter', at: [458, 396] },
@@ -59,6 +60,7 @@ rooms.push(
   { id: 'math/siddhi', url: '/math/siddhi/', md: '/md/siddhi.md', title: 'I Am the Vast Field · Siddhi', group: 'math', at: [336, 61] },
   { id: 'math/condiciones-del-siddhi', url: '/math/condiciones-del-siddhi/', md: '/md/condiciones-del-siddhi.md', title: 'Sobre las condiciones del siddhi', lang: 'es', group: 'math', at: [386, 49] },
   { id: 'math/vipulaksetra-vratam', url: '/math/vipulaksetra-vratam/', md: '/md/vipulaksetra-vratam.md', title: 'विपुलक्षेत्रव्रतम्', lang: 'sa', group: 'math', at: [302, 102] },
+  { id: 'math/de-absurdo', url: '/math/de-absurdo/', md: '/md/de-absurdo.md', title: 'De absurdo · The Twelve-Dollar Loop', short: 'De absurdo', group: 'math', at: [193, 142] },
   { id: 'math/nullus-est-cultus', url: '/math/nullus-est-cultus/', md: '/md/nullus-est-cultus.md', title: 'Nullus est cultus', lang: 'la', group: 'math', at: [404, 99] },
   { id: 'coast/rekha', url: '/rekha/', md: '/md/rekha.md', title: 'रेखादेवी', lang: 'sa', group: 'coast', at: [300, 62] },
   { id: 'coast/laksita', url: '/laksita/', md: '/md/laksita.md', title: 'लक्षिता', lang: 'sa', group: 'coast', at: [198, 92] },
@@ -106,10 +108,11 @@ door('workshop/bells', 'coast/rekha'); door('sky/yun', 'coast/rekha'); door('wor
 
 door('tavern/rumor', 'quarter/conservatory'); door('quarter/conservatory', 'tavern/rumor');
 door('tavern/rumor', 'beyond/kfc', 'continue', { access: 'conditional' });
-door('beyond/kfc', 'tavern/rumor', 'return'); door('beyond/kfc', 'quarter/threshold');
-door('beyond/kfc', 'beyond/ultra', 'continue');
-door('beyond/ultra', 'beyond/kfc', 'return');
-door('beyond/ultra', 'quarter/chair');
+door('beyond/kfc', 'tavern/rumor', 'return');
+door('beyond/kfc', 'beyond/oku', 'continue');
+door('beyond/oku', 'beyond/kfc', 'return', { label: '戻る' });
+door('quarter/chair', 'beyond/ultra');
+door('beyond/ultra', 'quarter/chair', 'return');
 
 door('quarter/threshold', 'quarter/conservatory'); door('quarter/threshold', 'quarter/chronicle');
 door('quarter/threshold', 'quarter/chair'); door('quarter/threshold', 'workshop/machines');
@@ -135,7 +138,7 @@ for (const to of ['surface/1', 'surface/2', 'surface/3', 'surface/4', 'surface/5
 
 door('math/siddhi', 'math/vipulaksetra-vratam');
 door('math/vipulaksetra-vratam', 'math/siddhi');
-const mathematics = ['math/aksara', 'math/super-saiyan', 'math/wen-liu-ji', 'math/spore', 'math/siddhi', 'math/condiciones-del-siddhi', 'math/nullus-est-cultus', 'math/vipulaksetra-vratam'];
+const mathematics = ['math/aksara', 'math/super-saiyan', 'math/wen-liu-ji', 'math/spore', 'math/siddhi', 'math/condiciones-del-siddhi', 'math/nullus-est-cultus', 'math/vipulaksetra-vratam', 'math/de-absurdo'];
 sequences.push({ id: 'mathematics', rooms: mathematics });
 for (const [i, id] of mathematics.entries()) {
   if (i === 0) continue;

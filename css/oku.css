@@ -1,0 +1,9 @@
+:root { color-scheme: light; background: #fff7e6; color: #342217; }
+body { margin: 0; }
+main { max-width: 36rem; margin: auto; padding: clamp(2rem, 7vw, 5rem) 1.25rem 1rem; text-align: center; }
+h1 { margin: 0 auto; max-width: 21em; font: 500 clamp(1.15rem, 3vw, 1.5rem)/1.9 "Yu Mincho", "Hiragino Mincho ProN", serif; text-wrap: balance; }
+img { display: block; width: min(100%, 27rem); height: auto; margin: 1rem auto 2rem; }
+figure { margin: 0 auto; max-width: 28rem; }
+iframe { display: block; width: 100%; aspect-ratio: 16 / 9; border: 0; }
+figcaption { margin: .8rem auto; font: 1rem/1.65 serif; }
+a { color: inherit; text-underline-offset: .22em; }

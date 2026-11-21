@@ -378,16 +378,26 @@
       "on": "tavern/rumor"
     },
     {
+      "id": "beyond/oku",
+      "url": "/kfc/oku/",
+      "md": "/md/kfc-oku.md",
+      "title": "奥の間",
+      "lang": "ja",
+      "group": "tavern",
+      "access": "conditional",
+      "listed": false,
+      "on": "beyond/kfc"
+    },
+    {
       "id": "beyond/ultra",
       "url": "/ultra/",
       "md": "/md/ultra.md",
       "title": "La otra orilla · 向こう岸",
       "short": "La otra orilla",
       "lang": "es",
-      "group": "tavern",
+      "group": "quarter",
       "access": "conditional",
-      "listed": false,
-      "on": "beyond/kfc"
+      "on": "quarter/chair"
     },
     {
       "id": "quarter/threshold",
@@ -543,6 +553,18 @@
       "at": [
         302,
         102
+      ]
+    },
+    {
+      "id": "math/de-absurdo",
+      "url": "/math/de-absurdo/",
+      "md": "/md/de-absurdo.md",
+      "title": "De absurdo · The Twelve-Dollar Loop",
+      "short": "De absurdo",
+      "group": "math",
+      "at": [
+        193,
+        142
       ]
     },
     {
@@ -1149,23 +1171,24 @@
     },
     {
       "from": "beyond/kfc",
-      "to": "quarter/threshold",
-      "relation": "side"
-    },
-    {
-      "from": "beyond/kfc",
-      "to": "beyond/ultra",
+      "to": "beyond/oku",
       "relation": "continue"
     },
     {
-      "from": "beyond/ultra",
+      "from": "beyond/oku",
       "to": "beyond/kfc",
-      "relation": "return"
+      "relation": "return",
+      "label": "戻る"
+    },
+    {
+      "from": "quarter/chair",
+      "to": "beyond/ultra",
+      "relation": "side"
     },
     {
       "from": "beyond/ultra",
       "to": "quarter/chair",
-      "relation": "side"
+      "relation": "return"
     },
     {
       "from": "quarter/threshold",
@@ -1399,6 +1422,16 @@
       "relation": "return"
     },
     {
+      "from": "math/vipulaksetra-vratam",
+      "to": "math/de-absurdo",
+      "relation": "continue"
+    },
+    {
+      "from": "math/de-absurdo",
+      "to": "math/vipulaksetra-vratam",
+      "relation": "return"
+    },
+    {
       "from": "archive/2",
       "to": "math/aksara",
       "relation": "side"
@@ -1526,7 +1559,8 @@
         "math/siddhi",
         "math/condiciones-del-siddhi",
         "math/nullus-est-cultus",
-        "math/vipulaksetra-vratam"
+        "math/vipulaksetra-vratam",
+        "math/de-absurdo"
       ]
     },
     {

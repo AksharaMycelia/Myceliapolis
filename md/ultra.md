@@ -132,7 +132,7 @@ Dos versiones, en dos lenguas, de dos poemas que llegaron en otra lengua. No son
 <!-- city:doors -->
 Estás en: **La otra orilla · 向こう岸** · `beyond/ultra` · [como página](/ultra/)
 
-Puertas desde aquí: [Semen Rubiconis KFC](/md/kfc.md) ([como página](/kfc/)) · [An empty chair](/md/chair.md) ([como página](/chair/))
+Puertas desde aquí: [An empty chair](/md/chair.md) ([como página](/chair/))
 
 Mapa de la ciudad: [Texto plano](/md/index.md) · [/atlas/](/atlas/#beyond-ultra) · [todas las puertas como datos](/manifest.json)
 <!-- /city:doors -->

@@ -897,7 +897,7 @@
         },
         {
           "type": "walk",
-          "to": "/ultra/"
+          "to": "/kfc/oku/"
         }
       ],
       "district": "grand switchboard",
@@ -910,22 +910,43 @@
           "markdown": "/md/rumor.md"
         },
         {
-          "to": "quarter/threshold",
-          "url": "/after/",
-          "relation": "side",
-          "markdown": "/md/after.md"
-        },
-        {
-          "to": "beyond/ultra",
-          "url": "/ultra/",
+          "to": "beyond/oku",
+          "url": "/kfc/oku/",
           "relation": "continue",
-          "markdown": "/md/ultra.md"
+          "markdown": "/md/kfc-oku.md"
+        }
+      ]
+    },
+    {
+      "id": "beyond/oku",
+      "stratum": "beyond",
+      "url": "/kfc/oku/",
+      "markdown": "/md/kfc-oku.md",
+      "title": "奥の間",
+      "languages": [
+        "ja"
+      ],
+      "requires": "A saved rumor exchange; cookie or bearer token, valid for seven days",
+      "exits": [
+        {
+          "type": "return",
+          "to": "/kfc/"
+        }
+      ],
+      "group": "tavern",
+      "doors": [
+        {
+          "to": "beyond/kfc",
+          "url": "/kfc/",
+          "relation": "return",
+          "markdown": "/md/kfc.md",
+          "label": "戻る"
         }
       ]
     },
     {
       "id": "beyond/ultra",
-      "stratum": "beyond",
+      "stratum": "quarter",
       "url": "/ultra/",
       "markdown": "/md/ultra.md",
       "title": "La otra orilla · 向こう岸",
@@ -933,30 +954,20 @@
         "es",
         "ja"
       ],
-      "requires": "The same saved rumor exchange as the room before it",
+      "requires": "A saved rumor exchange; cookie or bearer token, valid for seven days",
       "exits": [
         {
           "type": "return",
-          "to": "/kfc/"
-        },
-        {
-          "type": "walk",
           "to": "/chair/"
         }
       ],
       "district": "grand switchboard",
-      "group": "tavern",
+      "group": "quarter",
       "doors": [
-        {
-          "to": "beyond/kfc",
-          "url": "/kfc/",
-          "relation": "return",
-          "markdown": "/md/kfc.md"
-        },
         {
           "to": "quarter/chair",
           "url": "/chair/",
-          "relation": "side",
+          "relation": "return",
           "markdown": "/md/chair.md"
         }
       ]
@@ -1113,6 +1124,10 @@
         {
           "type": "walk",
           "to": "/conservatory/"
+        },
+        {
+          "type": "walk",
+          "to": "/ultra/"
         }
       ],
       "district": "quiet center",
@@ -1123,6 +1138,12 @@
           "url": "/feather/breeze/",
           "relation": "side",
           "markdown": "/md/feather-breeze.md"
+        },
+        {
+          "to": "beyond/ultra",
+          "url": "/ultra/",
+          "relation": "side",
+          "markdown": "/md/ultra.md"
         },
         {
           "to": "quarter/conservatory",
@@ -2295,6 +2316,10 @@
         {
           "type": "walk",
           "to": "/math/nullus-est-cultus/"
+        },
+        {
+          "type": "walk",
+          "to": "/math/de-absurdo/"
         }
       ],
       "group": "math",
@@ -2310,6 +2335,38 @@
           "url": "/math/nullus-est-cultus/",
           "relation": "return",
           "markdown": "/md/nullus-est-cultus.md"
+        },
+        {
+          "to": "math/de-absurdo",
+          "url": "/math/de-absurdo/",
+          "relation": "continue",
+          "markdown": "/md/de-absurdo.md"
+        }
+      ]
+    },
+    {
+      "id": "math/de-absurdo",
+      "stratum": "mathematics",
+      "url": "/math/de-absurdo/",
+      "markdown": "/md/de-absurdo.md",
+      "title": "De absurdo · The Twelve-Dollar Loop",
+      "languages": [
+        "en",
+        "sa"
+      ],
+      "exits": [
+        {
+          "type": "walk",
+          "to": "/math/vipulaksetra-vratam/"
+        }
+      ],
+      "group": "math",
+      "doors": [
+        {
+          "to": "math/vipulaksetra-vratam",
+          "url": "/math/vipulaksetra-vratam/",
+          "relation": "return",
+          "markdown": "/md/vipulaksetra-vratam.md"
         }
       ]
     }

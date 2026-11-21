@@ -38,7 +38,7 @@ export function doorsHtml(id, page = '') {
   for (const d of doorsOf(id)) {
     const to = room(d.to);
     if (d.access === 'conditional' || has(to.url)) continue;
-    const lang = langOf(to) !== langOf(here) ? ` lang="${langOf(to)}"` : '';
+    const lang = !d.label && langOf(to) !== langOf(here) ? ` lang="${langOf(to)}"` : '';
     links.push(`<a href="${to.url}"${lang}>${esc(d.label || name(to))}</a>`);
   }
   links.push(`<a href="/atlas/#${anchor(id)}">${esc(f.map)}</a>`);
@@ -119,7 +119,7 @@ export function atlasHtml() {
   const groups = CITY.groups.map(g => {
     const list = CITY.rooms.filter(r => r.group === g.id && r.listed !== false);
     const entries = list.map(entry);
-    if (g.id === 'tavern') entries.push(`<li id="chamber-of-secrets"><a class="place" href="${room('tavern/rumor').url}">${chamberTitle}</a><span class="to">${chamberHint}</span></li>`);
+    if (g.id === 'tavern') entries.push(`<li id="chamber-of-secrets"><span id="beyond-kfc"></span><span id="beyond-oku"></span><a class="place" href="${room('tavern/rumor').url}">${chamberTitle}</a><span class="to">${chamberHint}</span></li>`);
     return `<section class="atlas-section" id="${g.id}"><h2>${esc(g.title)}</h2><ol class="places">${entries.join('')}</ol></section>`;
   }).join('');
   return `<header class="room-heading"><h1>The city,<br><em>and its doors.</em></h1><nav class="atlas-jump" aria-label="Parts of the city">${CITY.groups.map(g => `<a href="#${g.id}">${esc(g.title)}</a>`).join('')}</nav></header><section class="atlas-section">${mapSvg()}</section>${groups}<section class="atlas-section" id="unbuilt"><details><summary>Not built</summary><p class="small">${CITY.unbuilt.map(esc).join(' · ')}</p></details></section><p class="small"><a href="/md/index.md">plain text</a> · <a href="/manifest.json">data</a></p>`;

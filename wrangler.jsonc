@@ -26,6 +26,7 @@
       "/api/rumors/*",
       "/md/rumor.md",
       "/md/kfc.md",
+      "/md/kfc-oku.md",
       "/after",
       "/after/*",
       "/conservatory",
