@@ -2,6 +2,10 @@
 
 ![ポメラニアンが、赤い縞のKFCバケツのそばでフライドチキンを食べているドット絵。](/kfc/oku/pomeranian.webp)
 
+![二体のロボットが真鍮の器からシヴァ・リンガにミルクを注いでいるドット絵。](/kfc/oku/rudra.webp)
+
+これはルドラ・アビシェーカムです。
+
 [ナマカムとチャマカムを聴く](https://www.youtube.com/watch?v=OQhyYdoKW1k&t=685s)
 
 ---

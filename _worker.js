@@ -153,7 +153,7 @@ async function handle(request,env) {
   const districtResponse=await handleDistrict(request,env);
   if(districtResponse)return districtResponse;
   const path=new URL(request.url).pathname;
-  const routes=['/rumor/','/rumor/exchange/','/rumor/received/','/kfc/','/kfc/oku/','/kfc/oku/pomeranian.webp','/md/kfc-oku.md','/md/rumor.md','/md/kfc.md','/api/rumors/','/ultra/','/md/ultra.md'];
+  const routes=['/rumor/','/rumor/exchange/','/rumor/received/','/kfc/','/kfc/oku/','/kfc/oku/pomeranian.webp','/kfc/oku/rudra.webp','/md/kfc-oku.md','/md/rumor.md','/md/kfc.md','/api/rumors/','/ultra/','/md/ultra.md'];
   if(['/rumor','/kfc','/kfc/oku','/ultra','/api/rumors'].includes(path)) return response('',308,'text/plain',{'Location':path+'/'});
   if(!routes.includes(path)) {
     if(/^\/(rumor|kfc|ultra|api\/rumors)(\/|$)/.test(path)) return response(shell('Nulla camera','<p>Haec camera non exstat.</p><a href="/rumor/">Ad tabernam</a>'),404);
@@ -168,7 +168,7 @@ async function handle(request,env) {
   if(path==='/rumor/exchange/') return response('',303,'text/plain',{'Location':'/rumor/#commutatio'});
   const receipt=env.RUMORS_DB?await receiptFor(request,env.RUMORS_DB,now):null;
   if(!receipt) return response(shell('Ianua clausa','<p>Ut in proximam cameram ingrediaris, quemlibet rumorem affer.</p><p><a href="/rumor/#commutatio">Ad tabernam</a> · <a href="/atlas/#beyond-kfc">Tabula urbis</a></p>',{noindex:true}),403);
-  if(path==='/kfc/oku/' || path==='/md/kfc-oku.md' || path==='/kfc/oku/pomeranian.webp') {
+  if(path==='/kfc/oku/' || path==='/md/kfc-oku.md' || path==='/kfc/oku/pomeranian.webp' || path==='/kfc/oku/rudra.webp') {
     const asset=await env.ASSETS.fetch(request);
     if(path==='/kfc/oku/') return recordingResponse(await asset.text(),asset.status);
     const type=path.endsWith('.webp')?'image/webp':'text/markdown; charset=utf-8';

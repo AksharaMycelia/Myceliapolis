@@ -153,6 +153,7 @@ test('the KFC back room shares the receipt gate across its page, text and pictur
   const assets = new Map([
     ['/kfc/oku/', 'kfc/oku/index.html'],
     ['/md/kfc-oku.md', 'md/kfc-oku.md'],
+    ['/kfc/oku/rudra.webp', 'kfc/oku/rudra.webp'],
     ['/kfc/oku/pomeranian.webp', 'kfc/oku/pomeranian.webp'],
   ]);
   env.ASSETS.fetch = async request => new Response(await readFile(new URL('../' + assets.get(new URL(request.url).pathname), import.meta.url)));

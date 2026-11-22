@@ -745,6 +745,7 @@ for path in ("yun/index.html", "yun/room.css", "md/yun.md"):
 destination = Path(OUT) / "kfc/oku/pomeranian.webp"
 destination.parent.mkdir(parents=True, exist_ok=True)
 shutil.copyfile(ROOT / "kfc/oku/pomeranian.webp", destination)
+shutil.copyfile(ROOT / "kfc/oku/rudra.webp", destination.with_name("rudra.webp"))
 shutil.copyfile(ROOT / "assets/sleeping-pom-door.webp", Path(OUT) / "assets/sleeping-pom-door.webp")
 
 for path in ("kfc/oku/index.html", "css/oku.css", "md/kfc-oku.md", "math/de-absurdo/index.html", "md/de-absurdo.md", "ultra/index.html", "css/ultra-1.css", "md/ultra.md"):
