@@ -3,7 +3,7 @@
 ## Six Doors
 
 - [Is anyone home?](/md/p1.md) · [page](/)
-  - doors: [On the compatibility of unbroken recurrence with vacant persistent occupancy](/md/a1.md) · [மயிலிறகு](/md/feather-breeze.md) · [いあいぎり](/md/vel.md) · [かみ](/md/kami.md) · [சேவல்](/md/rooster.md) · [Small Machines](/md/machines.md) · [Under the Floor](/md/fungi.md) · [Taberna rumorum](/md/rumor.md) · [The Unfinished Quarter](/md/after.md) · [An empty chair](/md/chair.md)
+  - doors: [On the compatibility of unbroken recurrence with vacant persistent occupancy](/md/a1.md) · [மயிலிறகு](/md/feather-breeze.md) · [いあいぎり](/md/vel.md) · [かみ](/md/kami.md) · [சேவல்](/md/rooster.md) · [Small Machines](/md/machines.md) · [Under the Floor](/md/fungi.md) · [Taberna rumorum](/md/rumor.md) · [The Unfinished Quarter](/md/after.md) · [An empty chair](/md/chair.md) · [108 Names Room](/md/108-names.md)
 - [On the compatibility of unbroken recurrence with vacant persistent occupancy](/md/a1.md) · [page](/a/iv-7/)
   - doors: [Is anyone home?](/md/p1.md)
 - [C'è qualcuno in casa?](/md/o1.md) · [page](/o/outis/)
@@ -123,6 +123,8 @@
 
 ## Coast
 
+- [108 Names Room](/md/108-names.md) · [page](/108-names/)
+  - doors: [Is anyone home?](/md/p1.md)
 - [रेखादेवी](/md/rekha.md) · [page](/rekha/)
   - doors: [మిణుగురు](/md/feather-minuguru.md) · [五行山](/md/yun.md) · [Under the Floor](/md/fungi.md) · [Five bells](/md/bells.md) · [लक्षिता](/md/laksita.md)
 - [लक्षिता](/md/laksita.md) · [page](/laksita/)

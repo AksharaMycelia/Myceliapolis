@@ -580,6 +580,14 @@
       ]
     },
     {
+      "id": "coast/108-names",
+      "url": "/108-names/",
+      "md": "/md/108-names.md",
+      "title": "108 Names Room",
+      "group": "coast",
+      "on": "surface/1"
+    },
+    {
       "id": "coast/rekha",
       "url": "/rekha/",
       "md": "/md/rekha.md",
@@ -915,6 +923,16 @@
     },
     {
       "from": "workshop/feather-breeze",
+      "to": "surface/1",
+      "relation": "side"
+    },
+    {
+      "from": "surface/1",
+      "to": "coast/108-names",
+      "relation": "side"
+    },
+    {
+      "from": "coast/108-names",
       "to": "surface/1",
       "relation": "side"
     },

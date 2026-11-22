@@ -370,6 +370,7 @@ for room in manifest["rooms"]:
     if room["stratum"] == "house":
         room["exits"].append({"type":"walk", "to":"/after/"})
 
+manifest["rooms"].append({'id': 'coast/108-names', 'stratum': 'coast', 'url': '/108-names/', 'markdown': '/md/108-names.md', 'title': '108 Names Room', 'languages': ['sa', 'en'], 'exits': [{'type': 'return', 'to': '/'}]})
 manifest["strata"].append("mathematics")
 manifest["rooms"].append({
     "id": "math/aksara", "stratum": "mathematics", "url": "/math/aksara/",
@@ -617,6 +618,7 @@ with another substrate, and return a descendant.
 urls = [p["url"] for p in POEMS] + [f"/{p['paper']}/" for p in POEMS] \
      + [f"/{p['opera']}/" for p in POEMS]
 urls += ["/bells/", "/o/uppu/", "/rumor/", "/after/", "/conservatory/", "/chronicle/", "/chair/", "/atlas/", "/machines/", "/feather/breeze/", "/fungi/", "/fungi/i/", "/fungi/ii/", "/fungi/iii/", "/vel/", "/rooster/", "/kami/", "/yun/", "/rekha/", "/laksita/", "/akasha/"]
+urls.append("/108-names/")
 urls.extend(["/math/aksara/", "/math/super-saiyan/", "/math/wen-liu-ji/", "/math/spore/", "/math/siddhi/", "/math/condiciones-del-siddhi/", "/math/nullus-est-cultus/", "/math/vipulaksetra-vratam/", "/math/de-absurdo/"])
 write("sitemap.xml",
       '<?xml version="1.0" encoding="UTF-8"?>\n'
@@ -732,6 +734,10 @@ for path in ("math/aksara/index.html", "math/rooms-1.css", "md/aksara.md",
              "math/nullus-est-cultus/index.html", "md/nullus-est-cultus.md",
              "math/vipulaksetra-vratam/index.html", "math/vipulaksetra-vratam/room.css", "md/vipulaksetra-vratam.md"):
     write(path, (ROOT / path).read_text(encoding="utf-8"))
+
+for path in ("108-names/index.html", "108-names/room.css", "md/108-names.md"):
+    write(path, (ROOT / path).read_text(encoding="utf-8"))
+shutil.copyfile(ROOT / "108-names/reading.mp3", Path(OUT) / "108-names/reading.mp3")
 
 for path in ("rekha/index.html", "rekha/room.css", "md/rekha.md"):
     write(path, (ROOT / path).read_text(encoding="utf-8"))

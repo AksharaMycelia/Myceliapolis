@@ -142,6 +142,12 @@
           "url": "/chair/",
           "relation": "side",
           "markdown": "/md/chair.md"
+        },
+        {
+          "to": "coast/108-names",
+          "url": "/108-names/",
+          "relation": "side",
+          "markdown": "/md/108-names.md"
         }
       ]
     },
@@ -2367,6 +2373,32 @@
           "url": "/math/vipulaksetra-vratam/",
           "relation": "return",
           "markdown": "/md/vipulaksetra-vratam.md"
+        }
+      ]
+    },
+    {
+      "id": "coast/108-names",
+      "stratum": "coast",
+      "url": "/108-names/",
+      "markdown": "/md/108-names.md",
+      "title": "108 Names Room",
+      "languages": [
+        "sa",
+        "en"
+      ],
+      "exits": [
+        {
+          "type": "return",
+          "to": "/"
+        }
+      ],
+      "group": "coast",
+      "doors": [
+        {
+          "to": "surface/1",
+          "url": "/",
+          "relation": "side",
+          "markdown": "/md/p1.md"
         }
       ]
     }

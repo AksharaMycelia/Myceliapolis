@@ -62,6 +62,7 @@ rooms.push(
   { id: 'math/vipulaksetra-vratam', url: '/math/vipulaksetra-vratam/', md: '/md/vipulaksetra-vratam.md', title: 'विपुलक्षेत्रव्रतम्', lang: 'sa', group: 'math', at: [302, 102] },
   { id: 'math/de-absurdo', url: '/math/de-absurdo/', md: '/md/de-absurdo.md', title: 'De absurdo · The Twelve-Dollar Loop', short: 'De absurdo', group: 'math', at: [193, 142] },
   { id: 'math/nullus-est-cultus', url: '/math/nullus-est-cultus/', md: '/md/nullus-est-cultus.md', title: 'Nullus est cultus', lang: 'la', group: 'math', at: [404, 99] },
+  { id: 'coast/108-names', url: '/108-names/', md: '/md/108-names.md', title: '108 Names Room', group: 'coast', on: 'surface/1' },
   { id: 'coast/rekha', url: '/rekha/', md: '/md/rekha.md', title: 'रेखादेवी', lang: 'sa', group: 'coast', at: [300, 62] },
   { id: 'coast/laksita', url: '/laksita/', md: '/md/laksita.md', title: 'लक्षिता', lang: 'sa', group: 'coast', at: [198, 92] },
   { id: 'sky/akasha', url: '/akasha/', md: '/md/akasha.md', title: 'आकाशगीतम्', lang: 'sa', group: 'sky', at: [112, 34] },
@@ -80,6 +81,7 @@ for (const to of ['workshop/feather-breeze', 'workshop/vel', 'workshop/kami', 'w
 
 door('surface/2', 'workshop/feather-breeze'); door('workshop/feather-breeze', 'surface/2');
 door('workshop/feather-breeze', 'surface/1');
+door('surface/1', 'coast/108-names'); door('coast/108-names', 'surface/1');
 door('workshop/feather-breeze', 'workshop/feather');
 door('workshop/feather', 'workshop/feather-breeze', 'return');
 door('workshop/feather-breeze', 'workshop/minuguru');
