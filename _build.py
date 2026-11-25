@@ -738,6 +738,7 @@ for path in ("math/aksara/index.html", "math/rooms-1.css", "md/aksara.md",
 for path in ("108-names/index.html", "108-names/room.css", "md/108-names.md"):
     write(path, (ROOT / path).read_text(encoding="utf-8"))
 shutil.copyfile(ROOT / "108-names/reading.mp3", Path(OUT) / "108-names/reading.mp3")
+shutil.copyfile(ROOT / "108-names/four-stations.mp3", Path(OUT) / "108-names/four-stations.mp3")
 
 for path in ("rekha/index.html", "rekha/room.css", "md/rekha.md"):
     write(path, (ROOT / path).read_text(encoding="utf-8"))
